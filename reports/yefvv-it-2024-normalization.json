@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "source_id": "yefvv-it-2024",
+  "status": "normalized",
+  "input": {
+    "file": "data/enriched/yefvv-it-2024.json",
+    "sha256": "1fc9a93b0e189ad4fc973e63a5fd2eca6bbebeefb0be59613bee152ddf72c205"
+  },
+  "tools": {
+    "node": "v24.14.0",
+    "ruby": "ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin25]"
+  },
+  "rules": {
+    "layout_line_breaks": "Join PDF layout wraps with one space inside markdown blocks.",
+    "hyphenated_line_breaks": "Join split compound words without adding a space and preserve the hyphen.",
+    "numbered_lists": "Preserve numbered list items as separate markdown lines.",
+    "source_fidelity": "Do not silently correct spelling, punctuation, or official answers.",
+    "code_blocks": "Represent SQL, macro-like text, and command sequences as typed code blocks."
+  },
+  "statistics": {
+    "markdown_blocks_visited": 683,
+    "markdown_blocks_changed": 153,
+    "layout_line_breaks_removed": 214,
+    "hyphenated_line_breaks_joined": 5,
+    "question_count": 140,
+    "option_count": 560,
+    "markdown_block_count": 677,
+    "code_block_count": 26,
+    "math_block_count": 53,
+    "table_block_count": 1,
+    "image_block_count": 9,
+    "editorial_note_count": 6
+  },
+  "structured_content": {
+    "newly_structured_code_questions": [
+      59,
+      79,
+      83,
+      84,
+      91,
+      101
+    ],
+    "all_code_questions": [
+      51,
+      59,
+      79,
+      83,
+      84,
+      86,
+      91,
+      101,
+      126
+    ],
+    "image_questions": [
+      9,
+      71,
+      75,
+      113,
+      119,
+      140
+    ],
+    "markdown_line_break_questions": [
+      107
+    ]
+  },
+  "editorial_review": {
+    "question_count": 6,
+    "question_numbers": [
+      24,
+      68,
+      82,
+      102,
+      107,
+      132
+    ]
+  },
+  "batches": [
+    {
+      "batch": 1,
+      "range": "1-20",
+      "question_count": 20,
+      "option_count": 80,
+      "page_spanning_questions": [
+        5,
+        16
+      ],
+      "editorial_note_questions": [],
+      "verified": true
+    },
+    {
+      "batch": 2,
+      "range": "21-40",
+      "question_count": 20,
+      "option_count": 80,
+      "page_spanning_questions": [
+        21,
+        26,
+        31,
+        37
+      ],
+      "editorial_note_questions": [
+        24
+      ],
+      "verified": true
+    },
+    {
+      "batch": 3,
+      "range": "41-60",
+      "question_count": 20,
+      "option_count": 80,
+      "page_spanning_questions": [
+        42,
+        57
+      ],
+      "editorial_note_questions": [],
+      "verified": true
+    },
+    {
+      "batch": 4,
+      "range": "61-80",
+      "question_count": 20,
+      "option_count": 80,
+      "page_spanning_questions": [
+        73,
+        77
+      ],
+      "editorial_note_questions": [
+        68
+      ],
+      "verified": true
+    },
+    {
+      "batch": 5,
+      "range": "81-100",
+      "question_count": 20,
+      "option_count": 80,
+      "page_spanning_questions": [
+        81
+      ],
+      "editorial_note_questions": [
+        82
+      ],
+      "verified": true
+    },
+    {
+      "batch": 6,
+      "range": "101-120",
+      "question_count": 20,
+      "option_count": 80,
+      "page_spanning_questions": [
+        101,
+        106,
+        116
+      ],
+      "editorial_note_questions": [
+        102,
+        107
+      ],
+      "verified": true
+    },
+    {
+      "batch": 7,
+      "range": "121-140",
+      "question_count": 20,
+      "option_count": 80,
+      "page_spanning_questions": [
+        126
+      ],
+      "editorial_note_questions": [
+        132
+      ],
+      "verified": true
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "complete_question_sequence": true,
+    "four_options_per_question": true,
+    "official_answers_unchanged": true,
+    "source_references_unchanged": true,
+    "page_spanning_questions_verified": true,
+    "page_spanning_question_numbers": [
+      5,
+      16,
+      21,
+      26,
+      31,
+      37,
+      42,
+      57,
+      73,
+      77,
+      81,
+      101,
+      106,
+      116,
+      126
+    ],
+    "all_batches_verified": true,
+    "unexpected_markdown_line_breaks": 0
+  },
+  "outputs": {
+    "normalized_yaml": "data/normalized/yefvv-it-2024.yaml",
+    "normalized_json": "data/normalized/yefvv-it-2024.json",
+    "report": "reports/yefvv-it-2024-normalization.json",
+    "manual_validation_report": "reports/yefvv-it-2024-manual-validation.json"
+  }
+}

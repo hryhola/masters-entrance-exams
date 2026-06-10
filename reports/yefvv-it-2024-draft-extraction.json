@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "source_id": "yefvv-it-2024",
+  "status": "draft_extracted",
+  "source": {
+    "file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/YEFVV_2024-Informatsijni-tehnologiyi-na_sajt__.pdf",
+    "sha256": "9f07d30a5c71ac087c9e11b6b2e5794a3f5ccc15ead05f69474c2f59312bef81",
+    "pages": 29
+  },
+  "extraction": {
+    "tool": "pdftotext",
+    "tool_version": "pdftotext version 26.04.0",
+    "question_count": 140,
+    "option_count": 560,
+    "correct_answer_count": 140
+  },
+  "review": {
+    "visual_review_question_count": 17,
+    "visual_review_questions": [
+      {
+        "number": 9,
+        "reasons": [
+          "answer_options_are_er_diagrams",
+          "one_or_more_options_missing_text"
+        ]
+      },
+      {
+        "number": 13,
+        "reasons": [
+          "formula_missing_from_text_layer",
+          "one_or_more_options_missing_text"
+        ]
+      },
+      {
+        "number": 16,
+        "reasons": [
+          "answer_options_contain_formula_images",
+          "one_or_more_options_missing_text"
+        ]
+      },
+      {
+        "number": 31,
+        "reasons": [
+          "formula_list_is_image_based"
+        ]
+      },
+      {
+        "number": 38,
+        "reasons": [
+          "formula_missing_from_text_layer",
+          "one_or_more_options_missing_text"
+        ]
+      },
+      {
+        "number": 51,
+        "reasons": [
+          "prompt_and_answer_options_contain_code_images",
+          "one_or_more_options_missing_text"
+        ]
+      },
+      {
+        "number": 57,
+        "reasons": [
+          "prompt_and_answer_options_contain_formula_images",
+          "one_or_more_options_missing_text"
+        ]
+      },
+      {
+        "number": 71,
+        "reasons": [
+          "prompt_contains_uml_diagram"
+        ]
+      },
+      {
+        "number": 75,
+        "reasons": [
+          "prompt_contains_directed_graph"
+        ]
+      },
+      {
+        "number": 76,
+        "reasons": [
+          "prompt_and_answer_options_contain_formula_images",
+          "one_or_more_options_missing_text"
+        ]
+      },
+      {
+        "number": 86,
+        "reasons": [
+          "prompt_contains_data_table_image"
+        ]
+      },
+      {
+        "number": 97,
+        "reasons": [
+          "prompt_and_answer_options_contain_formula_images",
+          "one_or_more_options_missing_text"
+        ]
+      },
+      {
+        "number": 103,
+        "reasons": [
+          "prompt_contains_vector_formula_images"
+        ]
+      },
+      {
+        "number": 113,
+        "reasons": [
+          "prompt_contains_network_topology_image"
+        ]
+      },
+      {
+        "number": 119,
+        "reasons": [
+          "prompt_contains_directed_graph"
+        ]
+      },
+      {
+        "number": 126,
+        "reasons": [
+          "prompt_contains_code_image"
+        ]
+      },
+      {
+        "number": 140,
+        "reasons": [
+          "prompt_contains_graph"
+        ]
+      }
+    ],
+    "page_spanning_questions": [
+      {
+        "number": 5,
+        "page_start": 1,
+        "page_end": 2
+      },
+      {
+        "number": 16,
+        "page_start": 3,
+        "page_end": 4
+      },
+      {
+        "number": 21,
+        "page_start": 4,
+        "page_end": 5
+      },
+      {
+        "number": 26,
+        "page_start": 5,
+        "page_end": 6
+      },
+      {
+        "number": 31,
+        "page_start": 6,
+        "page_end": 7
+      },
+      {
+        "number": 37,
+        "page_start": 7,
+        "page_end": 8
+      },
+      {
+        "number": 42,
+        "page_start": 8,
+        "page_end": 9
+      },
+      {
+        "number": 57,
+        "page_start": 12,
+        "page_end": 13
+      },
+      {
+        "number": 73,
+        "page_start": 15,
+        "page_end": 16
+      },
+      {
+        "number": 77,
+        "page_start": 16,
+        "page_end": 17
+      },
+      {
+        "number": 81,
+        "page_start": 17,
+        "page_end": 18
+      },
+      {
+        "number": 101,
+        "page_start": 21,
+        "page_end": 22
+      },
+      {
+        "number": 106,
+        "page_start": 22,
+        "page_end": 23
+      },
+      {
+        "number": 116,
+        "page_start": 24,
+        "page_end": 25
+      },
+      {
+        "number": 126,
+        "page_start": 26,
+        "page_end": 27
+      }
+    ],
+    "questions_with_empty_option_text": [
+      {
+        "number": 9,
+        "option_ids": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      {
+        "number": 13,
+        "option_ids": [
+          "a"
+        ]
+      },
+      {
+        "number": 16,
+        "option_ids": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      {
+        "number": 38,
+        "option_ids": [
+          "c"
+        ]
+      },
+      {
+        "number": 51,
+        "option_ids": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      {
+        "number": 57,
+        "option_ids": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      {
+        "number": 76,
+        "option_ids": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      {
+        "number": 97,
+        "option_ids": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      }
+    ]
+  },
+  "validation": {
+    "passed": true,
+    "expected_question_count": 140,
+    "expected_options_per_question": 4,
+    "expected_correct_answers_per_question": 1
+  },
+  "outputs": {
+    "draft_yaml": "data/drafts/yefvv-it-2024.yaml",
+    "draft_json": "data/drafts/yefvv-it-2024.json",
+    "cleaned_text": "sources/yefvv-it-2024/text",
+    "report": "reports/yefvv-it-2024-draft-extraction.json"
+  }
+}

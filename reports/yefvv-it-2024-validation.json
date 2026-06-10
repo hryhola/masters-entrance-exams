@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "source_id": "yefvv-it-2024",
+  "status": "validation_passed",
+  "inputs": {
+    "normalized_json": "data/normalized/yefvv-it-2024.json",
+    "normalized_yaml": "data/normalized/yefvv-it-2024.yaml",
+    "schema": "schemas/yefvv-it-question-dataset.schema.json",
+    "manual_validation_report": "reports/yefvv-it-2024-manual-validation.json",
+    "json_sha256": "f44192d3a2877765e8285e008383e238447c2d5437b5db04650da1d8d954a16b",
+    "yaml_sha256": "aee0b0e772722164634f8b24203fba9ec49e643ecff04f9758f414d72ffa06c4",
+    "schema_sha256": "13f0522766b0611cba21d134fa1fe1d9b6da078d14aed3487b1ad4db1e3bd147",
+    "manual_validation_report_sha256": "571382172eb2ea0e8485c498f8da70c42b1d74efca1de117f97f313bf2be2c33"
+  },
+  "tools": {
+    "node": "v24.14.0",
+    "ruby": "ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin25]"
+  },
+  "summary": {
+    "passed": true,
+    "check_count": 12,
+    "passed_check_count": 12,
+    "failed_check_count": 0,
+    "question_count": 140,
+    "option_count": 560
+  },
+  "checks": [
+    {
+      "id": "json_syntax",
+      "description": "Normalized JSON parses successfully.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "yaml_syntax",
+      "description": "Normalized YAML parses safely without aliases.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "schema_syntax",
+      "description": "JSON Schema parses successfully.",
+      "passed": true,
+      "details": {
+        "schema": "schemas/yefvv-it-question-dataset.schema.json"
+      }
+    },
+    {
+      "id": "yaml_json_equivalence",
+      "description": "YAML and JSON represent the same data.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "schema_conformance",
+      "description": "Dataset conforms to the documented application schema.",
+      "passed": true,
+      "details": {
+        "error_count": 0,
+        "errors": []
+      }
+    },
+    {
+      "id": "unique_question_ids",
+      "description": "Every question ID is unique.",
+      "passed": true,
+      "details": {
+        "count": 140,
+        "question_count": 140
+      }
+    },
+    {
+      "id": "no_service_answer_markers",
+      "description": "No standalone service marker (x) appears in content.",
+      "passed": true,
+      "details": {
+        "matches": []
+      }
+    },
+    {
+      "id": "file_references",
+      "description": "Every image and source-image reference points to an existing file.",
+      "passed": true,
+      "details": {
+        "reference_count": 54,
+        "unique_file_count": 54,
+        "missing": [],
+        "not_files": []
+      }
+    },
+    {
+      "id": "visual_verification",
+      "description": "Every visually dependent question has completed manual verification.",
+      "passed": true,
+      "details": {
+        "visually_dependent_count": 17,
+        "question_numbers": [
+          9,
+          13,
+          16,
+          31,
+          38,
+          51,
+          57,
+          71,
+          75,
+          76,
+          86,
+          97,
+          103,
+          113,
+          119,
+          126,
+          140
+        ],
+        "unverified_question_numbers": []
+      }
+    },
+    {
+      "id": "manual_page_validation",
+      "description": "Every question, source page, and linked medium is covered by the completed manual review.",
+      "passed": true,
+      "details": {
+        "report": "reports/yefvv-it-2024-manual-validation.json",
+        "report_error": null,
+        "verified_question_count": 140,
+        "verified_page_count": 29,
+        "linked_media_count": 54,
+        "question_errors": [],
+        "report_matches_dataset": true
+      }
+    },
+    {
+      "id": "source_checksum",
+      "description": "The source PDF exists and matches its recorded SHA-256.",
+      "passed": true,
+      "details": {
+        "file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/YEFVV_2024-Informatsijni-tehnologiyi-na_sajt__.pdf",
+        "expected_sha256": "9f07d30a5c71ac087c9e11b6b2e5794a3f5ccc15ead05f69474c2f59312bef81",
+        "actual_sha256": "9f07d30a5c71ac087c9e11b6b2e5794a3f5ccc15ead05f69474c2f59312bef81"
+      }
+    },
+    {
+      "id": "content_inventory",
+      "description": "All content blocks use known, validated types.",
+      "passed": true,
+      "details": {
+        "block_counts": {
+          "markdown": 677,
+          "image": 9,
+          "math": 53,
+          "code": 26,
+          "table": 1
+        }
+      }
+    }
+  ]
+}

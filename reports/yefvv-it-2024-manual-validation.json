@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "source_id": "yefvv-it-2024",
+  "status": "manual_validation_completed",
+  "completed_on": "2026-06-10",
+  "method": "Sequential visual comparison of each rendered PDF page against normalized questions and linked media.",
+  "coverage": {
+    "page_count": 29,
+    "question_count": 140,
+    "option_count": 560,
+    "linked_media_count": 54,
+    "pages": [
+      {
+        "page": 1,
+        "status": "verified",
+        "question_numbers": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "page": 2,
+        "status": "verified",
+        "question_numbers": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "page": 3,
+        "status": "verified",
+        "question_numbers": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      {
+        "page": 4,
+        "status": "verified",
+        "question_numbers": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ]
+      },
+      {
+        "page": 5,
+        "status": "verified",
+        "question_numbers": [
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      {
+        "page": 6,
+        "status": "verified",
+        "question_numbers": [
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ]
+      },
+      {
+        "page": 7,
+        "status": "verified",
+        "question_numbers": [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37
+        ]
+      },
+      {
+        "page": 8,
+        "status": "verified",
+        "question_numbers": [
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ]
+      },
+      {
+        "page": 9,
+        "status": "verified",
+        "question_numbers": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47
+        ]
+      },
+      {
+        "page": 10,
+        "status": "verified",
+        "question_numbers": [
+          48,
+          49,
+          50
+        ]
+      },
+      {
+        "page": 11,
+        "status": "verified",
+        "question_numbers": [
+          51
+        ]
+      },
+      {
+        "page": 12,
+        "status": "verified",
+        "question_numbers": [
+          52,
+          53,
+          54,
+          55,
+          56,
+          57
+        ]
+      },
+      {
+        "page": 13,
+        "status": "verified",
+        "question_numbers": [
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63
+        ]
+      },
+      {
+        "page": 14,
+        "status": "verified",
+        "question_numbers": [
+          64,
+          65,
+          66,
+          67,
+          68,
+          69
+        ]
+      },
+      {
+        "page": 15,
+        "status": "verified",
+        "question_numbers": [
+          70,
+          71,
+          72,
+          73
+        ]
+      },
+      {
+        "page": 16,
+        "status": "verified",
+        "question_numbers": [
+          73,
+          74,
+          75,
+          76,
+          77
+        ]
+      },
+      {
+        "page": 17,
+        "status": "verified",
+        "question_numbers": [
+          77,
+          78,
+          79,
+          80,
+          81
+        ]
+      },
+      {
+        "page": 18,
+        "status": "verified",
+        "question_numbers": [
+          81,
+          82,
+          83,
+          84,
+          85
+        ]
+      },
+      {
+        "page": 19,
+        "status": "verified",
+        "question_numbers": [
+          86,
+          87,
+          88,
+          89,
+          90
+        ]
+      },
+      {
+        "page": 20,
+        "status": "verified",
+        "question_numbers": [
+          91,
+          92,
+          93,
+          94,
+          95,
+          96
+        ]
+      },
+      {
+        "page": 21,
+        "status": "verified",
+        "question_numbers": [
+          97,
+          98,
+          99,
+          100,
+          101
+        ]
+      },
+      {
+        "page": 22,
+        "status": "verified",
+        "question_numbers": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ]
+      },
+      {
+        "page": 23,
+        "status": "verified",
+        "question_numbers": [
+          106,
+          107,
+          108,
+          109,
+          110,
+          111
+        ]
+      },
+      {
+        "page": 24,
+        "status": "verified",
+        "question_numbers": [
+          112,
+          113,
+          114,
+          115,
+          116
+        ]
+      },
+      {
+        "page": 25,
+        "status": "verified",
+        "question_numbers": [
+          116,
+          117,
+          118,
+          119,
+          120
+        ]
+      },
+      {
+        "page": 26,
+        "status": "verified",
+        "question_numbers": [
+          121,
+          122,
+          123,
+          124,
+          125,
+          126
+        ]
+      },
+      {
+        "page": 27,
+        "status": "verified",
+        "question_numbers": [
+          126,
+          127,
+          128,
+          129,
+          130
+        ]
+      },
+      {
+        "page": 28,
+        "status": "verified",
+        "question_numbers": [
+          131,
+          132,
+          133,
+          134,
+          135,
+          136
+        ]
+      },
+      {
+        "page": 29,
+        "status": "verified",
+        "question_numbers": [
+          137,
+          138,
+          139,
+          140
+        ]
+      }
+    ]
+  },
+  "corrections": [
+    {
+      "question": 8,
+      "type": "ocr_script",
+      "change": "Replaced Cyrillic lookalikes in «High-voltage Electrical Networks» with Latin characters."
+    },
+    {
+      "question": 15,
+      "type": "math_structure",
+      "change": "Restored the subscript in A_2 and structured the number as math."
+    },
+    {
+      "question": 16,
+      "type": "formula_fidelity",
+      "change": "Restored the source multiplication symbol * in the tanh formula."
+    },
+    {
+      "question": 51,
+      "type": "code_fidelity",
+      "change": "Restored source spacing, comments, and statement line layout in C++ snippets."
+    },
+    {
+      "question": 64,
+      "type": "typography",
+      "change": "Restored the Ukrainian typographic apostrophe in «об’єктів»."
+    },
+    {
+      "question": 74,
+      "type": "math_structure",
+      "change": "Restored the exponent in O(m^2) and typed all options as math."
+    },
+    {
+      "question": 91,
+      "type": "ocr_script",
+      "change": "Replaced Cyrillic с with Latin c in push (c)."
+    },
+    {
+      "question": 116,
+      "type": "math_structure",
+      "change": "Restored mathematical variables and expressions as typed math blocks."
+    },
+    {
+      "question": 120,
+      "type": "ocr_script_and_math_structure",
+      "change": "Restored Latin set names a, b, c and structured Boolean vectors as math."
+    },
+    {
+      "question": 123,
+      "type": "ocr_script_and_math_structure",
+      "change": "Restored Latin O and n in O(n) and structured the notation as math."
+    }
+  ],
+  "corrected_question_numbers": [
+    8,
+    15,
+    16,
+    51,
+    64,
+    74,
+    91,
+    116,
+    120,
+    123
+  ],
+  "invariants": {
+    "official_answers_changed": false,
+    "question_ids_changed": false,
+    "source_pages_changed": false
+  },
+  "outputs": {
+    "normalized_yaml": "data/normalized/yefvv-it-2024.yaml",
+    "normalized_json": "data/normalized/yefvv-it-2024.json"
+  }
+}

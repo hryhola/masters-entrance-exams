@@ -1,0 +1,1314 @@
+{
+  "schema_version": 1,
+  "taxonomy": {
+    "id": "yefvv-it-program-2025",
+    "title": "Програма предметного тесту з інформаційних технологій ЄФВВ",
+    "approved_on": "2025-12-02",
+    "order": "МОН України № 1578",
+    "intended_exam_year": 2026,
+    "language": "uk",
+    "source": {
+      "file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf",
+      "page_count": 12,
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "41cde7339e94ac7a1aae6ca5e7003fefe0148ae60923eb9b607bc34a2a16f8f4"
+      }
+    }
+  },
+  "restrictions": {
+    "prohibited_in_test_items": [
+      "concrete_programming_language",
+      "pseudocode",
+      "program_fragment"
+    ],
+    "sql_exception": "SQL query construction is explicitly required by topics 3.5 and 3.6 and is not treated as a prohibited programming-language fragment."
+  },
+  "sections": [
+    {
+      "code": "1",
+      "title": "Алгоритми та обчислювальна складність",
+      "weight_summary": {
+        "min": 8,
+        "max": 12
+      },
+      "weight_detailed": {
+        "min": 8,
+        "max": 12
+      },
+      "weight_midpoint": 10,
+      "topic_count": 11
+    },
+    {
+      "code": "2",
+      "title": "Архітектура комп’ютера",
+      "weight_summary": {
+        "min": 8,
+        "max": 10
+      },
+      "weight_detailed": {
+        "min": 8,
+        "max": 10
+      },
+      "weight_midpoint": 9,
+      "topic_count": 7
+    },
+    {
+      "code": "3",
+      "title": "Бази та сховища даних",
+      "weight_summary": {
+        "min": 10,
+        "max": 14
+      },
+      "weight_detailed": {
+        "min": 10,
+        "max": 14
+      },
+      "weight_midpoint": 12,
+      "topic_count": 6
+    },
+    {
+      "code": "4",
+      "title": "Інженерія систем і програмного забезпечення",
+      "weight_summary": {
+        "min": 10,
+        "max": 14
+      },
+      "weight_detailed": {
+        "min": 10,
+        "max": 14
+      },
+      "weight_midpoint": 12,
+      "topic_count": 29
+    },
+    {
+      "code": "5",
+      "title": "Кібербезпека та захист інформації",
+      "weight_summary": {
+        "min": 8,
+        "max": 10
+      },
+      "weight_detailed": {
+        "min": 8,
+        "max": 10
+      },
+      "weight_midpoint": 9,
+      "topic_count": 15
+    },
+    {
+      "code": "6",
+      "title": "Прикладна математика",
+      "weight_summary": {
+        "min": 16,
+        "max": 18
+      },
+      "weight_detailed": {
+        "min": 15,
+        "max": 19
+      },
+      "weight_midpoint": 17,
+      "topic_count": 38
+    },
+    {
+      "code": "7",
+      "title": "Комп’ютерні мережі та обмін даними",
+      "weight_summary": {
+        "min": 5,
+        "max": 7
+      },
+      "weight_detailed": {
+        "min": 5,
+        "max": 7
+      },
+      "weight_midpoint": 6,
+      "topic_count": 3
+    },
+    {
+      "code": "8",
+      "title": "Операційні системи",
+      "weight_summary": {
+        "min": 8,
+        "max": 10
+      },
+      "weight_detailed": {
+        "min": 8,
+        "max": 10
+      },
+      "weight_midpoint": 9,
+      "topic_count": 5
+    },
+    {
+      "code": "9",
+      "title": "Основи мов програмування",
+      "weight_summary": {
+        "min": 8,
+        "max": 10
+      },
+      "weight_detailed": {
+        "min": 8,
+        "max": 10
+      },
+      "weight_midpoint": 9,
+      "topic_count": 7
+    },
+    {
+      "code": "10",
+      "title": "Штучний інтелект",
+      "weight_summary": {
+        "min": 6,
+        "max": 8
+      },
+      "weight_detailed": {
+        "min": 6,
+        "max": 8
+      },
+      "weight_midpoint": 7,
+      "topic_count": 6
+    }
+  ],
+  "topics": [
+    {
+      "code": "1.1.1",
+      "section_code": "1",
+      "title": "Поняття алгоритму, часова та просторова складність",
+      "cognitive_level": "B",
+      "source_page": 4,
+      "section": "Алгоритми та обчислювальна складність",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "1.1.2",
+      "section_code": "1",
+      "title": "Абстрактні типи даних: стек, список, вектор, словник, множина, мультимножина, черга та черга з пріоритетами",
+      "cognitive_level": "B",
+      "source_page": 4,
+      "section": "Алгоритми та обчислювальна складність",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "1.1.3",
+      "section_code": "1",
+      "title": "Кортежі, множини, словники, одно- та двобічнозв’язні списки і складність операцій",
+      "cognitive_level": "B",
+      "source_page": 4,
+      "section": "Алгоритми та обчислювальна складність",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "1.1.4",
+      "section_code": "1",
+      "title": "Базові алгоритми пошуку й сортування та їх складність",
+      "cognitive_level": "B",
+      "source_page": 4,
+      "section": "Алгоритми та обчислювальна складність",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "1.1.5",
+      "section_code": "1",
+      "title": "Алгоритми на графах: BFS, DFS, компоненти зв’язності, кістякові дерева та найкоротші шляхи",
+      "cognitive_level": "B",
+      "source_page": 4,
+      "section": "Алгоритми та обчислювальна складність",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "1.2.1",
+      "section_code": "1",
+      "title": "Стратегія «розділяй та володарюй»",
+      "cognitive_level": "B",
+      "source_page": 4,
+      "section": "Алгоритми та обчислювальна складність",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "1.2.2",
+      "section_code": "1",
+      "title": "Стратегія балансування",
+      "cognitive_level": "B",
+      "source_page": 4,
+      "section": "Алгоритми та обчислювальна складність",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "1.2.3",
+      "section_code": "1",
+      "title": "Динамічне програмування",
+      "cognitive_level": "B",
+      "source_page": 4,
+      "section": "Алгоритми та обчислювальна складність",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "1.2.4",
+      "section_code": "1",
+      "title": "Складність алгоритмів для стратегій розроблення",
+      "cognitive_level": "B",
+      "source_page": 4,
+      "section": "Алгоритми та обчислювальна складність",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "1.3.1",
+      "section_code": "1",
+      "title": "Імперативний та декларативний підходи до програмування",
+      "cognitive_level": "B",
+      "source_page": 4,
+      "section": "Алгоритми та обчислювальна складність",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "1.3.2",
+      "section_code": "1",
+      "title": "Розв’язні, напіврозв’язні та нерозв’язні проблеми, проблема зупинки",
+      "cognitive_level": "B",
+      "source_page": 4,
+      "section": "Алгоритми та обчислювальна складність",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "2.1",
+      "section_code": "2",
+      "title": "Функції бінарної логіки",
+      "cognitive_level": "B",
+      "source_page": 4,
+      "section": "Архітектура комп’ютера",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "2.2.1",
+      "section_code": "2",
+      "title": "Позиційні системи числення, беззнаковий і доповнювальний коди та арифметичні операції",
+      "cognitive_level": "B",
+      "source_page": 4,
+      "section": "Архітектура комп’ютера",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "2.2.2",
+      "section_code": "2",
+      "title": "Подання й арифметика чисел із плаваючою комою",
+      "cognitive_level": "B",
+      "source_page": 5,
+      "section": "Архітектура комп’ютера",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "2.3",
+      "section_code": "2",
+      "title": "Пристрої введення-виведення та поняття шини комп’ютера",
+      "cognitive_level": "A",
+      "source_page": 5,
+      "section": "Архітектура комп’ютера",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "2.4.1",
+      "section_code": "2",
+      "title": "Структура комп’ютера, архітектури фон Неймана і Гарвардська",
+      "cognitive_level": "A",
+      "source_page": 5,
+      "section": "Архітектура комп’ютера",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "2.4.2",
+      "section_code": "2",
+      "title": "Ієрархія пам’яті та процесор універсального комп’ютера",
+      "cognitive_level": "A",
+      "source_page": 5,
+      "section": "Архітектура комп’ютера",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "2.4.3",
+      "section_code": "2",
+      "title": "Пристрої введення-виведення",
+      "cognitive_level": "A",
+      "source_page": 5,
+      "section": "Архітектура комп’ютера",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "3.1",
+      "section_code": "3",
+      "title": "Ключі та нормалізація даних: 1NF, 2NF, 3NF і BCNF",
+      "cognitive_level": "B",
+      "source_page": 5,
+      "section": "Бази та сховища даних",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "3.2",
+      "section_code": "3",
+      "title": "Моделі даних, мови запитів, транзакції, ACID, індекси, резервування, реплікація та безпека",
+      "cognitive_level": "B",
+      "source_page": 5,
+      "section": "Бази та сховища даних",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "3.3",
+      "section_code": "3",
+      "title": "Концептуальні, логічні й фізичні моделі даних та ER-моделювання",
+      "cognitive_level": "C",
+      "source_page": 5,
+      "section": "Бази та сховища даних",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "3.4",
+      "section_code": "3",
+      "title": "Реляційні бази даних і системи керування базами даних",
+      "cognitive_level": "B",
+      "source_page": 5,
+      "section": "Бази та сховища даних",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "3.5",
+      "section_code": "3",
+      "title": "Побудова SQL-запитів, DDL, DML, DCL і TCL",
+      "cognitive_level": "C",
+      "source_page": 5,
+      "section": "Бази та сховища даних",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "3.6",
+      "section_code": "3",
+      "title": "Операції реляційної алгебри",
+      "cognitive_level": "C",
+      "source_page": 5,
+      "section": "Бази та сховища даних",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.1.1",
+      "section_code": "4",
+      "title": "Властивості систем: емерджентність, адитивність та еквіфінальність",
+      "cognitive_level": "B",
+      "source_page": 6,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.1.2",
+      "section_code": "4",
+      "title": "Відкриті й закриті системи",
+      "cognitive_level": "B",
+      "source_page": 6,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.1.3",
+      "section_code": "4",
+      "title": "Спільне та відмінності складних і великих систем",
+      "cognitive_level": "B",
+      "source_page": 6,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.2.1",
+      "section_code": "4",
+      "title": "Склад і структура системи, моделі чорної та білої скриньки",
+      "cognitive_level": "B",
+      "source_page": 6,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.2.2",
+      "section_code": "4",
+      "title": "Концептуальні, математичні й комп’ютерні моделі",
+      "cognitive_level": "B",
+      "source_page": 6,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.2.3",
+      "section_code": "4",
+      "title": "Зв’язок між системою та моделлю, гомоморфізм",
+      "cognitive_level": "B",
+      "source_page": 6,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.3.1",
+      "section_code": "4",
+      "title": "Поняття, цілі та класифікація інформаційних систем",
+      "cognitive_level": "B",
+      "source_page": 6,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.3.2",
+      "section_code": "4",
+      "title": "Види забезпечення інформаційних систем",
+      "cognitive_level": "B",
+      "source_page": 6,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.4.1",
+      "section_code": "4",
+      "title": "Класифікація, джерела та методи збирання вимог",
+      "cognitive_level": "B",
+      "source_page": 6,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.4.2",
+      "section_code": "4",
+      "title": "Вимоги користувача, варіанти використання та історії користувачів",
+      "cognitive_level": "B",
+      "source_page": 6,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.4.3",
+      "section_code": "4",
+      "title": "Функціональні й нефункціональні вимоги та обмеження",
+      "cognitive_level": "B",
+      "source_page": 6,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.5.1",
+      "section_code": "4",
+      "title": "Структурне, об’єктне, функціональне, архітектурне та інтерфейсне проєктування",
+      "cognitive_level": "B",
+      "source_page": 6,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.5.2",
+      "section_code": "4",
+      "title": "Парадигми проєктування програмного забезпечення",
+      "cognitive_level": "B",
+      "source_page": 6,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.5.3",
+      "section_code": "4",
+      "title": "Ідентифікація класів предметної області та UML-діаграми класів",
+      "cognitive_level": "C",
+      "source_page": 6,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.5.4",
+      "section_code": "4",
+      "title": "UML-діаграми послідовностей і комунікації",
+      "cognitive_level": "B",
+      "source_page": 7,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.5.5",
+      "section_code": "4",
+      "title": "Шаблони проєктування MVC, Abstract Factory, Facade, Decorator, Flyweight, Visitor, Observer, Proxy, Strategy та Chain of Responsibility",
+      "cognitive_level": "B",
+      "source_page": 7,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.6.1",
+      "section_code": "4",
+      "title": "Стиль коду, структуровані одиниці та найменування",
+      "cognitive_level": "B",
+      "source_page": 7,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.6.2",
+      "section_code": "4",
+      "title": "Засоби автоматичної генерації програмного коду",
+      "cognitive_level": "B",
+      "source_page": 7,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.6.3",
+      "section_code": "4",
+      "title": "Налагодження та аналіз коду",
+      "cognitive_level": "B",
+      "source_page": 7,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.6.4",
+      "section_code": "4",
+      "title": "Керування конфігурацією та версіями програмного забезпечення",
+      "cognitive_level": "B",
+      "source_page": 7,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.6.5",
+      "section_code": "4",
+      "title": "Постійна інтеграція та постійне впровадження",
+      "cognitive_level": "B",
+      "source_page": 7,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.7.1",
+      "section_code": "4",
+      "title": "Тестування методами білої та чорної скриньки",
+      "cognitive_level": "C",
+      "source_page": 7,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.7.2",
+      "section_code": "4",
+      "title": "Модульне, інтеграційне, системне та валідаційне тестування",
+      "cognitive_level": "B",
+      "source_page": 7,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.7.3",
+      "section_code": "4",
+      "title": "Розробка через тестування",
+      "cognitive_level": "B",
+      "source_page": 7,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.7.4",
+      "section_code": "4",
+      "title": "Інспекція, стандарти, UX, продуктивність і масштабованість",
+      "cognitive_level": "B",
+      "source_page": 7,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.8.1",
+      "section_code": "4",
+      "title": "Каскадна, ітераційна та інкрементна моделі розробки",
+      "cognitive_level": "B",
+      "source_page": 7,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.8.2",
+      "section_code": "4",
+      "title": "RUP, MSF, Agile, Scrum, XP і Kanban",
+      "cognitive_level": "B",
+      "source_page": 7,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.8.3",
+      "section_code": "4",
+      "title": "Ролі, обов’язки та командна робота",
+      "cognitive_level": "B",
+      "source_page": 7,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "4.8.4",
+      "section_code": "4",
+      "title": "Планування, виконання та життєвий цикл ІТ-проєкту",
+      "cognitive_level": "B",
+      "source_page": 7,
+      "section": "Інженерія систем і програмного забезпечення",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "5.1.1",
+      "section_code": "5",
+      "title": "Кіберпростір та інформаційний простір",
+      "cognitive_level": "A",
+      "source_page": 8,
+      "section": "Кібербезпека та захист інформації",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "5.1.2",
+      "section_code": "5",
+      "title": "Інформаційна безпека як складова національної, організаційної та особистої безпеки",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Кібербезпека та захист інформації",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "5.1.3",
+      "section_code": "5",
+      "title": "Кібербезпека, захист інформації та кіберзахист",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Кібербезпека та захист інформації",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "5.1.4",
+      "section_code": "5",
+      "title": "Технічний, інженерний, криптографічний та організаційний захист інформації",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Кібербезпека та захист інформації",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "5.1.5",
+      "section_code": "5",
+      "title": "Конфіденційність, цілісність і доступність інформації",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Кібербезпека та захист інформації",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "5.1.6",
+      "section_code": "5",
+      "title": "Принципи кібербезпеки",
+      "cognitive_level": "A",
+      "source_page": 8,
+      "section": "Кібербезпека та захист інформації",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "5.2.1",
+      "section_code": "5",
+      "title": "Загроза, атака та вразливість",
+      "cognitive_level": "A",
+      "source_page": 8,
+      "section": "Кібербезпека та захист інформації",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "5.2.2",
+      "section_code": "5",
+      "title": "Класифікація загроз і атак",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Кібербезпека та захист інформації",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "5.2.3",
+      "section_code": "5",
+      "title": "Кіберзлочини, кібервійна та кібероборона",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Кібербезпека та захист інформації",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "5.2.4",
+      "section_code": "5",
+      "title": "Кібертероризм та кіберрозвідка",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Кібербезпека та захист інформації",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "5.2.5",
+      "section_code": "5",
+      "title": "Модель порушника",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Кібербезпека та захист інформації",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "5.2.6",
+      "section_code": "5",
+      "title": "Комплексна система захисту інформації",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Кібербезпека та захист інформації",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "5.3.1",
+      "section_code": "5",
+      "title": "Шкідливе програмне забезпечення",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Кібербезпека та захист інформації",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "5.3.2",
+      "section_code": "5",
+      "title": "Шпигунські програми, фішинг і програми-вимагачі",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Кібербезпека та захист інформації",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "5.3.3",
+      "section_code": "5",
+      "title": "DDoS-атаки",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Кібербезпека та захист інформації",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.1.1",
+      "section_code": "6",
+      "title": "Числові послідовності, границі та нескінченно малі й великі величини",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.1.2",
+      "section_code": "6",
+      "title": "Похідна та дослідження функцій однієї змінної",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.1.3",
+      "section_code": "6",
+      "title": "Чисельне інтегрування, похибка та обчислювальна стійкість",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.1.4",
+      "section_code": "6",
+      "title": "Функції багатьох змінних, частинні похідні та екстремуми",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.1.5",
+      "section_code": "6",
+      "title": "Лінійна й нелінійна оптимізація та градієнтний спуск",
+      "cognitive_level": "B",
+      "source_page": 8,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.1.6",
+      "section_code": "6",
+      "title": "Апроксимація, метод найменших квадратів, інтерполяція та сплайни",
+      "cognitive_level": "B",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.1.7",
+      "section_code": "6",
+      "title": "Числові й степеневі ряди та їх збіжність",
+      "cognitive_level": "B",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.1.8",
+      "section_code": "6",
+      "title": "Пряма, площина, гіперплощина та криві й поверхні другого порядку",
+      "cognitive_level": "B",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.1.9",
+      "section_code": "6",
+      "title": "Матриці, визначники та обернена матриця",
+      "cognitive_level": "B",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.1.10",
+      "section_code": "6",
+      "title": "Власні вектори та власні числа матриці",
+      "cognitive_level": "B",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.1.11",
+      "section_code": "6",
+      "title": "Системи лінійних рівнянь і чисельні методи їх розв’язання",
+      "cognitive_level": "B",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.1.12",
+      "section_code": "6",
+      "title": "Лінійний векторний простір, розмірність і базис",
+      "cognitive_level": "B",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.1.13",
+      "section_code": "6",
+      "title": "Чисельні методи розв’язування нелінійних рівнянь",
+      "cognitive_level": "B",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.2.1",
+      "section_code": "6",
+      "title": "Множини та операції над множинами",
+      "cognitive_level": "C",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.2.2",
+      "section_code": "6",
+      "title": "Бінарні відношення та їх властивості",
+      "cognitive_level": "B",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.2.3",
+      "section_code": "6",
+      "title": "Комбінаторний аналіз, правила суми й добутку та принцип включень-виключень",
+      "cognitive_level": "B",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.2.4",
+      "section_code": "6",
+      "title": "Математична логіка, таблиці істинності й булеві функції",
+      "cognitive_level": "B",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.2.5",
+      "section_code": "6",
+      "title": "Типи графів, вершини, ребра, ступені, суміжність, ізоморфізм та операції",
+      "cognitive_level": "B",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.2.6",
+      "section_code": "6",
+      "title": "Маршрути, ланцюги та цикли у графах",
+      "cognitive_level": "B",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.2.7",
+      "section_code": "6",
+      "title": "Зв’язність графа, компоненти та відстані",
+      "cognitive_level": "B",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.2.8",
+      "section_code": "6",
+      "title": "Дерева й ліси",
+      "cognitive_level": "B",
+      "source_page": 9,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.2.9",
+      "section_code": "6",
+      "title": "Цілочисельна й дискретна оптимізація, задачі рюкзака і комівояжера",
+      "cognitive_level": "B",
+      "source_page": 10,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.3",
+      "section_code": "6",
+      "title": "Застосування теорії ймовірностей та математичної статистики в ІТ",
+      "cognitive_level": "B",
+      "source_page": 10,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.3.1",
+      "section_code": "6",
+      "title": "Стохастичні експерименти, події, комбінаторна, геометрична й умовна ймовірність",
+      "cognitive_level": "B",
+      "source_page": 10,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.3.2",
+      "section_code": "6",
+      "title": "Повна ймовірність, формула Байєса, схема Бернуллі та закон великих чисел",
+      "cognitive_level": "B",
+      "source_page": 10,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.3.3",
+      "section_code": "6",
+      "title": "Числові характеристики випадкових величин і вибірок",
+      "cognitive_level": "B",
+      "source_page": 10,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.3.4",
+      "section_code": "6",
+      "title": "Розподіли випадкових величин",
+      "cognitive_level": "B",
+      "source_page": 10,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.3.5",
+      "section_code": "6",
+      "title": "Статистичний зв’язок, регресія та кореляція",
+      "cognitive_level": "B",
+      "source_page": 10,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.3.6",
+      "section_code": "6",
+      "title": "Багатовимірні дискретні величини, сумісний розподіл і кореляційна матриця",
+      "cognitive_level": "A",
+      "source_page": 10,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.3.7",
+      "section_code": "6",
+      "title": "Випадкові функції та випадкові процеси",
+      "cognitive_level": "B",
+      "source_page": 10,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.3.8",
+      "section_code": "6",
+      "title": "Первинна обробка даних, емпіричні розподіли та регресійний аналіз",
+      "cognitive_level": "B",
+      "source_page": 10,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.3.9",
+      "section_code": "6",
+      "title": "Візуалізація даних",
+      "cognitive_level": "C",
+      "source_page": 10,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.3.10",
+      "section_code": "6",
+      "title": "Точкові й інтервальні оцінки та довірчі інтервали",
+      "cognitive_level": "B",
+      "source_page": 10,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.3.11",
+      "section_code": "6",
+      "title": "Статистичні гіпотези та рівень значущості",
+      "cognitive_level": "B",
+      "source_page": 10,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.3.12",
+      "section_code": "6",
+      "title": "Системи масового обслуговування",
+      "cognitive_level": "B",
+      "source_page": 10,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.4.1",
+      "section_code": "6",
+      "title": "Основні означення теорії диференціальних рівнянь і задача Коші",
+      "cognitive_level": "B",
+      "source_page": 10,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.4.2",
+      "section_code": "6",
+      "title": "Диференціальні рівняння другого порядку та їх класифікація",
+      "cognitive_level": "B",
+      "source_page": 11,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "6.4.3",
+      "section_code": "6",
+      "title": "Чисельні методи розв’язання диференціальних рівнянь",
+      "cognitive_level": "B",
+      "source_page": 11,
+      "section": "Прикладна математика",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "7.1",
+      "section_code": "7",
+      "title": "Класифікація, функції, комутація й топології комп’ютерних мереж",
+      "cognitive_level": "B",
+      "source_page": 11,
+      "section": "Комп’ютерні мережі та обмін даними",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "7.2",
+      "section_code": "7",
+      "title": "Протоколи, інтерфейси, OSI, TCP/IP, IPv4, IPv6, маски, префікси та порти",
+      "cognitive_level": "B",
+      "source_page": 11,
+      "section": "Комп’ютерні мережі та обмін даними",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "7.3",
+      "section_code": "7",
+      "title": "Інтернет речей",
+      "cognitive_level": "B",
+      "source_page": 11,
+      "section": "Комп’ютерні мережі та обмін даними",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "8.1.1",
+      "section_code": "8",
+      "title": "Однокористувацькі, багатокористувацькі та операційні системи реального часу",
+      "cognitive_level": "B",
+      "source_page": 11,
+      "section": "Операційні системи",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "8.1.2",
+      "section_code": "8",
+      "title": "Основні функції операційних систем",
+      "cognitive_level": "A",
+      "source_page": 11,
+      "section": "Операційні системи",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "8.1.3",
+      "section_code": "8",
+      "title": "Вимоги до операційних систем і відмовостійкість",
+      "cognitive_level": "B",
+      "source_page": 11,
+      "section": "Операційні системи",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "8.2.1",
+      "section_code": "8",
+      "title": "Файли та файлові системи",
+      "cognitive_level": "B",
+      "source_page": 11,
+      "section": "Операційні системи",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "8.2.2",
+      "section_code": "8",
+      "title": "Логічна й фізична організація файлів",
+      "cognitive_level": "B",
+      "source_page": 11,
+      "section": "Операційні системи",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "9.1.1",
+      "section_code": "9",
+      "title": "Клас, об’єкт, конструктор, деструктор, інтерфейс і реалізація",
+      "cognitive_level": "B",
+      "source_page": 11,
+      "section": "Основи мов програмування",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "9.1.2",
+      "section_code": "9",
+      "title": "Абстракція, інкапсуляція, спадкування та поліморфізм",
+      "cognitive_level": "B",
+      "source_page": 11,
+      "section": "Основи мов програмування",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "9.1.3",
+      "section_code": "9",
+      "title": "Асоціація, агрегація, композиція, спадкування, залежність і реалізація",
+      "cognitive_level": "C",
+      "source_page": 11,
+      "section": "Основи мов програмування",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "9.1.4",
+      "section_code": "9",
+      "title": "Порівняння процедурного та об’єктно-орієнтованого програмування",
+      "cognitive_level": "B",
+      "source_page": 11,
+      "section": "Основи мов програмування",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "9.2",
+      "section_code": "9",
+      "title": "Функціональне, логічне, подійно-орієнтоване, реактивне й узагальнене програмування",
+      "cognitive_level": "B",
+      "source_page": 12,
+      "section": "Основи мов програмування",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "9.3",
+      "section_code": "9",
+      "title": "Класифікація паралельних обчислень Флінна",
+      "cognitive_level": "B",
+      "source_page": 12,
+      "section": "Основи мов програмування",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "9.4",
+      "section_code": "9",
+      "title": "Компілятор, інтерпретатор і компонувальник",
+      "cognitive_level": "B",
+      "source_page": 12,
+      "section": "Основи мов програмування",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "10.1",
+      "section_code": "10",
+      "title": "Інтелектуальна система, агент, середовище, задачі та сильний і слабкий ШІ",
+      "cognitive_level": "B",
+      "source_page": 12,
+      "section": "Штучний інтелект",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "10.2.1",
+      "section_code": "10",
+      "title": "Пошук у просторі станів: BFS, DFS, прямий, зворотний і двонаправлений",
+      "cognitive_level": "B",
+      "source_page": 12,
+      "section": "Штучний інтелект",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "10.2.2",
+      "section_code": "10",
+      "title": "Семантичні мережі та продукційні моделі",
+      "cognitive_level": "B",
+      "source_page": 12,
+      "section": "Штучний інтелект",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "10.3.1",
+      "section_code": "10",
+      "title": "Класифікація та навчання з учителем і без учителя",
+      "cognitive_level": "B",
+      "source_page": 12,
+      "section": "Штучний інтелект",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "10.3.2",
+      "section_code": "10",
+      "title": "Тренувальні й валідаційні дані",
+      "cognitive_level": "B",
+      "source_page": 12,
+      "section": "Штучний інтелект",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    },
+    {
+      "code": "10.3.3",
+      "section_code": "10",
+      "title": "Штучний нейрон, нейронна мережа та функції активації",
+      "cognitive_level": "B",
+      "source_page": 12,
+      "section": "Штучний інтелект",
+      "source_file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf"
+    }
+  ]
+}

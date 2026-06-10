@@ -1,0 +1,977 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/yefvv-it-question-dataset.schema.json",
+  "title": "ЄФВВ IT question dataset",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "dataset",
+    "extraction",
+    "questions",
+    "enrichment",
+    "normalization"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "dataset": {
+      "$ref": "#/$defs/datasetMetadata"
+    },
+    "extraction": {
+      "type": "object"
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 140,
+      "maxItems": 140,
+      "items": {
+        "$ref": "#/$defs/question"
+      }
+    },
+    "enrichment": {
+      "type": "object"
+    },
+    "normalization": {
+      "type": "object"
+    },
+    "classification": {
+      "$ref": "#/$defs/classificationMetadata"
+    },
+    "explanations": {
+      "$ref": "#/$defs/explanationMetadata"
+    },
+    "release": {
+      "$ref": "#/$defs/releaseMetadata"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "datasetMetadata": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "exam",
+        "subject",
+        "year",
+        "language",
+        "status",
+        "question_count",
+        "source"
+      ],
+      "properties": {
+        "id": {
+          "const": "yefvv-it-2024"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exam": {
+          "const": "ЄФВВ"
+        },
+        "subject": {
+          "const": "Інформаційні технології"
+        },
+        "year": {
+          "const": 2024
+        },
+        "language": {
+          "const": "uk"
+        },
+        "status": {
+          "enum": [
+            "normalized",
+            "classified",
+            "explained",
+            "ready"
+          ]
+        },
+        "question_count": {
+          "const": 140
+        },
+        "source": {
+          "type": "object",
+          "required": [
+            "file",
+            "checksum"
+          ],
+          "properties": {
+            "file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "checksum": {
+              "type": "object",
+              "required": [
+                "algorithm",
+                "value"
+              ],
+              "properties": {
+                "algorithm": {
+                  "const": "sha256"
+                },
+                "value": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "question": {
+      "type": "object",
+      "required": [
+        "id",
+        "number",
+        "type",
+        "prompt",
+        "options",
+        "answer",
+        "explanation",
+        "classification",
+        "source",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^yefvv-it-2024-[0-9]{3}$"
+        },
+        "number": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 140
+        },
+        "type": {
+          "const": "single_choice"
+        },
+        "prompt": {
+          "$ref": "#/$defs/content"
+        },
+        "options": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/option"
+          }
+        },
+        "answer": {
+          "type": "object",
+          "required": [
+            "correct_option",
+            "source"
+          ],
+          "properties": {
+            "correct_option": {
+              "enum": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ]
+            },
+            "source": {
+              "const": "official_marker"
+            }
+          },
+          "additionalProperties": false
+        },
+        "explanation": {
+          "$ref": "#/$defs/questionExplanation"
+        },
+        "classification": {
+          "$ref": "#/$defs/questionClassification"
+        },
+        "source": {
+          "$ref": "#/$defs/questionSource"
+        },
+        "review": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "option": {
+      "type": "object",
+      "required": [
+        "id",
+        "content"
+      ],
+      "properties": {
+        "id": {
+          "enum": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        "content": {
+          "$ref": "#/$defs/content"
+        }
+      },
+      "additionalProperties": false
+    },
+    "questionSource": {
+      "type": "object",
+      "required": [
+        "question_number",
+        "page_start",
+        "page_end"
+      ],
+      "properties": {
+        "question_number": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 140
+        },
+        "page_start": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 29
+        },
+        "page_end": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 29
+        }
+      },
+      "additionalProperties": false
+    },
+    "content": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/markdownBlock"
+          },
+          {
+            "$ref": "#/$defs/mathBlock"
+          },
+          {
+            "$ref": "#/$defs/codeBlock"
+          },
+          {
+            "$ref": "#/$defs/tableBlock"
+          },
+          {
+            "$ref": "#/$defs/imageBlock"
+          }
+        ]
+      }
+    },
+    "markdownBlock": {
+      "type": "object",
+      "required": [
+        "type",
+        "text"
+      ],
+      "properties": {
+        "type": {
+          "const": "markdown"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "mathBlock": {
+      "type": "object",
+      "required": [
+        "type",
+        "latex",
+        "display",
+        "source_images"
+      ],
+      "properties": {
+        "type": {
+          "const": "math"
+        },
+        "latex": {
+          "type": "string",
+          "minLength": 1
+        },
+        "display": {
+          "enum": [
+            "inline",
+            "block"
+          ]
+        },
+        "source_images": {
+          "$ref": "#/$defs/pathList"
+        }
+      },
+      "additionalProperties": false
+    },
+    "codeBlock": {
+      "type": "object",
+      "required": [
+        "type",
+        "language",
+        "text",
+        "source_images"
+      ],
+      "properties": {
+        "type": {
+          "const": "code"
+        },
+        "language": {
+          "enum": [
+            "cpp",
+            "sql",
+            "text"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_images": {
+          "$ref": "#/$defs/pathList"
+        }
+      },
+      "additionalProperties": false
+    },
+    "tableBlock": {
+      "type": "object",
+      "required": [
+        "type",
+        "columns",
+        "rows",
+        "source_images"
+      ],
+      "properties": {
+        "type": {
+          "const": "table"
+        },
+        "columns": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "source_images": {
+          "$ref": "#/$defs/pathList"
+        }
+      },
+      "additionalProperties": false
+    },
+    "imageBlock": {
+      "type": "object",
+      "required": [
+        "type",
+        "path",
+        "alt",
+        "role",
+        "source_images"
+      ],
+      "properties": {
+        "type": {
+          "const": "image"
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "prompt",
+            "option"
+          ]
+        },
+        "source_images": {
+          "$ref": "#/$defs/pathList"
+        }
+      },
+      "additionalProperties": false
+    },
+    "classificationMetadata": {
+      "type": "object",
+      "required": [
+        "status",
+        "method",
+        "taxonomy_id",
+        "taxonomy_file",
+        "input",
+        "report",
+        "completed_on"
+      ],
+      "properties": {
+        "status": {
+          "const": "completed"
+        },
+        "method": {
+          "const": "manual_question_by_question_alignment"
+        },
+        "taxonomy_id": {
+          "const": "yefvv-it-program-2025"
+        },
+        "taxonomy_file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input": {
+          "type": "string",
+          "minLength": 1
+        },
+        "report": {
+          "type": "string",
+          "minLength": 1
+        },
+        "completed_on": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "additionalProperties": false
+    },
+    "explanationMetadata": {
+      "type": "object",
+      "required": [
+        "status",
+        "method",
+        "input",
+        "report",
+        "completed_on",
+        "language"
+      ],
+      "properties": {
+        "status": {
+          "const": "completed"
+        },
+        "method": {
+          "const": "manual_editorial_explanations_with_per_option_feedback"
+        },
+        "input": {
+          "type": "string",
+          "minLength": 1
+        },
+        "report": {
+          "type": "string",
+          "minLength": 1
+        },
+        "completed_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "language": {
+          "const": "uk"
+        }
+      },
+      "additionalProperties": false
+    },
+    "releaseMetadata": {
+      "type": "object",
+      "required": [
+        "status",
+        "version",
+        "assembled_on",
+        "canonical_file",
+        "json_mirror",
+        "manifest",
+        "schema",
+        "validation_report",
+        "input",
+        "assets",
+        "provenance"
+      ],
+      "properties": {
+        "status": {
+          "const": "ready_for_application"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "assembled_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "canonical_file": {
+          "const": "data/yefvv-it-2024.yaml"
+        },
+        "json_mirror": {
+          "const": "data/yefvv-it-2024.json"
+        },
+        "manifest": {
+          "const": "data/yefvv-it-2024.manifest.json"
+        },
+        "schema": {
+          "const": "schemas/yefvv-it-question-dataset.schema.json"
+        },
+        "validation_report": {
+          "const": "reports/yefvv-it-2024-release-validation.json"
+        },
+        "input": {
+          "type": "object",
+          "required": [
+            "file",
+            "sha256"
+          ],
+          "properties": {
+            "file": {
+              "const": "data/explained/yefvv-it-2024.json"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "assets": {
+          "type": "object",
+          "required": [
+            "web_directory",
+            "source_image_directory"
+          ],
+          "properties": {
+            "web_directory": {
+              "const": "assets/yefvv-it-2024"
+            },
+            "source_image_directory": {
+              "const": "sources/yefvv-it-2024/embedded-images"
+            }
+          },
+          "additionalProperties": false
+        },
+        "provenance": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "required": [
+              "stage",
+              "name",
+              "artifact"
+            ],
+            "properties": {
+              "stage": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "artifact": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "questionExplanation": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "status",
+            "blocks"
+          ],
+          "properties": {
+            "status": {
+              "const": "missing"
+            },
+            "blocks": {
+              "type": "array",
+              "maxItems": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "status",
+            "summary",
+            "option_feedback",
+            "answer_review",
+            "sources",
+            "review"
+          ],
+          "properties": {
+            "status": {
+              "const": "completed"
+            },
+            "summary": {
+              "$ref": "#/$defs/explanationBlocks"
+            },
+            "option_feedback": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {
+                "type": "object",
+                "required": [
+                  "option_id",
+                  "verdict",
+                  "blocks"
+                ],
+                "properties": {
+                  "option_id": {
+                    "enum": [
+                      "a",
+                      "b",
+                      "c",
+                      "d"
+                    ]
+                  },
+                  "verdict": {
+                    "enum": [
+                      "correct",
+                      "incorrect",
+                      "official_key_disputed"
+                    ]
+                  },
+                  "blocks": {
+                    "$ref": "#/$defs/explanationBlocks"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "answer_review": {
+              "type": "object",
+              "required": [
+                "status",
+                "official_option",
+                "note"
+              ],
+              "properties": {
+                "status": {
+                  "enum": [
+                    "verified",
+                    "verified_with_caveat",
+                    "disputed"
+                  ]
+                },
+                "official_option": {
+                  "enum": [
+                    "a",
+                    "b",
+                    "c",
+                    "d"
+                  ]
+                },
+                "note": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "additionalProperties": false
+            },
+            "sources": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/explanationSource"
+              }
+            },
+            "review": {
+              "type": "object",
+              "required": [
+                "status",
+                "reviewed_on",
+                "confidence"
+              ],
+              "properties": {
+                "status": {
+                  "const": "editorial_review_completed"
+                },
+                "reviewed_on": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "confidence": {
+                  "enum": [
+                    "high",
+                    "medium",
+                    "low"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "explanationBlocks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/markdownBlock"
+      }
+    },
+    "explanationSource": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "reference",
+            "title"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "official_answer",
+                "program_topic"
+              ]
+            },
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "id",
+            "title",
+            "url",
+            "accessed_on"
+          ],
+          "properties": {
+            "type": {
+              "const": "external"
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "accessed_on": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "questionClassification": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "const": "pending"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "status",
+            "taxonomy_id",
+            "alignment",
+            "primary_topic",
+            "secondary_topics",
+            "cognitive_level",
+            "tags",
+            "format_compliance",
+            "rationale",
+            "review"
+          ],
+          "properties": {
+            "status": {
+              "const": "classified"
+            },
+            "taxonomy_id": {
+              "const": "yefvv-it-program-2025"
+            },
+            "alignment": {
+              "enum": [
+                "aligned",
+                "partial",
+                "legacy",
+                "unmapped"
+              ]
+            },
+            "primary_topic": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/topicReference"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "secondary_topics": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/topicReference"
+              }
+            },
+            "cognitive_level": {
+              "enum": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ]
+            },
+            "tags": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "format_compliance": {
+              "type": "object",
+              "required": [
+                "status",
+                "violations"
+              ],
+              "properties": {
+                "status": {
+                  "enum": [
+                    "compliant",
+                    "non_compliant"
+                  ]
+                },
+                "violations": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "enum": [
+                      "concrete_programming_language",
+                      "pseudocode",
+                      "program_fragment"
+                    ]
+                  }
+                }
+              },
+              "additionalProperties": false
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1
+            },
+            "review": {
+              "type": "object",
+              "required": [
+                "status",
+                "reviewed_on"
+              ],
+              "properties": {
+                "status": {
+                  "const": "manually_reviewed"
+                },
+                "reviewed_on": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "topicReference": {
+      "type": "object",
+      "required": [
+        "code",
+        "section_code",
+        "section",
+        "topic",
+        "expected_cognitive_level"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[0-9]+(\\.[0-9]+){0,2}$"
+        },
+        "section_code": {
+          "type": "string",
+          "pattern": "^(10|[1-9])$"
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "topic": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_cognitive_level": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "pathList": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

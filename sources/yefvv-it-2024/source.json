@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "source_id": "yefvv-it-2024",
+  "status": "fixed",
+  "document": {
+    "title": "ЄФВВ 2024 — Інформаційні технології",
+    "exam": "ЄФВВ",
+    "subject": "Інформаційні технології",
+    "year": 2024,
+    "language": "uk",
+    "origin": "official",
+    "question_count": 140
+  },
+  "source": {
+    "file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/YEFVV_2024-Informatsijni-tehnologiyi-na_sajt__.pdf",
+    "size_bytes": 751306,
+    "checksum": {
+      "algorithm": "sha256",
+      "value": "9f07d30a5c71ac087c9e11b6b2e5794a3f5ccc15ead05f69474c2f59312bef81"
+    },
+    "pdf": {
+      "pages": 29,
+      "width_points": 595.22,
+      "height_points": 842,
+      "rotation_degrees": 0,
+      "version": "1.5",
+      "encrypted": false,
+      "tagged": false,
+      "optimized": true,
+      "creation_date": "Mon Apr 14 14:06:31 2025 EEST",
+      "modification_date": "Mon Apr 14 14:06:31 2025 EEST",
+      "author": "v.boyko",
+      "creator": "PScript5.dll Version 5.2.2",
+      "producer": "Acrobat Distiller 11.0 (Windows)"
+    }
+  },
+  "rendering": {
+    "purpose": "visual verification during extraction and normalization",
+    "command": "pdftoppm",
+    "tool_version": "pdftoppm version 26.04.0",
+    "dpi": 180,
+    "format": "png",
+    "color_mode": "source",
+    "directory": "sources/yefvv-it-2024/pages",
+    "page_count": 29,
+    "pages": [
+      {
+        "number": 1,
+        "file": "sources/yefvv-it-2024/pages/page-001.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 385512,
+        "sha256": "1f0f131d28218303ad01e8c657852f93f561966414e17ea48c98429e39740039"
+      },
+      {
+        "number": 2,
+        "file": "sources/yefvv-it-2024/pages/page-002.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 412666,
+        "sha256": "ae84e19eb2ec8debca9365bd32a71b8cee36a0af9656be696329eba8defe4089"
+      },
+      {
+        "number": 3,
+        "file": "sources/yefvv-it-2024/pages/page-003.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 276812,
+        "sha256": "6a078933c176d1029daf91222764dc315f851532a5c4de89ce808faa9bff25ed"
+      },
+      {
+        "number": 4,
+        "file": "sources/yefvv-it-2024/pages/page-004.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 321488,
+        "sha256": "53b32f96519a3eeed30efdd330f1d20cab5601f1a0fc4f6de93a38b3bf1526bd"
+      },
+      {
+        "number": 5,
+        "file": "sources/yefvv-it-2024/pages/page-005.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 415393,
+        "sha256": "78379dad25f4daea195924b86695825d89ca35c5a26e17833945ad548fb861ed"
+      },
+      {
+        "number": 6,
+        "file": "sources/yefvv-it-2024/pages/page-006.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 379994,
+        "sha256": "004a5e11d773c57a9eb58db858f80efd77026c7ec3bc1ca510a68fbf61942210"
+      },
+      {
+        "number": 7,
+        "file": "sources/yefvv-it-2024/pages/page-007.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 429091,
+        "sha256": "6b7a2104a6124a144a9c96e2af03ab6f6dfd7a947e2e37d352c23df1ca21d9d9"
+      },
+      {
+        "number": 8,
+        "file": "sources/yefvv-it-2024/pages/page-008.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 380089,
+        "sha256": "173a02f132b1f8a164983b8d0d962b71f5c3d3e6ee076812c0a8b07376c64cf4"
+      },
+      {
+        "number": 9,
+        "file": "sources/yefvv-it-2024/pages/page-009.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 374003,
+        "sha256": "2b47e1b877f291f31c0728cfa8fde80a7e7c787fe9b14440b7d6a787bf9b7dec"
+      },
+      {
+        "number": 10,
+        "file": "sources/yefvv-it-2024/pages/page-010.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 466130,
+        "sha256": "5fc3d3205537cb8c5fbd94be278c40244e9655b9015159f0beefaa0681d7fc07"
+      },
+      {
+        "number": 11,
+        "file": "sources/yefvv-it-2024/pages/page-011.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 334669,
+        "sha256": "8e078179bcd45f2e01bee87636ef739aaef5c168409aab4083ac11fe4606d5d2"
+      },
+      {
+        "number": 12,
+        "file": "sources/yefvv-it-2024/pages/page-012.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 411005,
+        "sha256": "929fd8a83725948f5a56b97619732eedb96b0409cc8e30bbd5f2a7832c55fba6"
+      },
+      {
+        "number": 13,
+        "file": "sources/yefvv-it-2024/pages/page-013.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 388906,
+        "sha256": "397fcba7ab918b1f1acc65d0d85689d1f3c80a48630b6e00c44a3608871cc701"
+      },
+      {
+        "number": 14,
+        "file": "sources/yefvv-it-2024/pages/page-014.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 362971,
+        "sha256": "b34af73d4bc3465b11a542528cc1a43ab0892114fa4c13839b01dad7ed01566d"
+      },
+      {
+        "number": 15,
+        "file": "sources/yefvv-it-2024/pages/page-015.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 585759,
+        "sha256": "94a0b68b44921d4f234be58124572cf060a733ce7ef1adba409c9e7e15d5c1f8"
+      },
+      {
+        "number": 16,
+        "file": "sources/yefvv-it-2024/pages/page-016.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 263275,
+        "sha256": "b8f361b6bb76966585fef6ae03221a4dad863a118366c6b614727dd9533d4091"
+      },
+      {
+        "number": 17,
+        "file": "sources/yefvv-it-2024/pages/page-017.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 480472,
+        "sha256": "9767c320a1da9143dc097bf82af1e911e7dfac1953776baa7d0a3920d3a9672c"
+      },
+      {
+        "number": 18,
+        "file": "sources/yefvv-it-2024/pages/page-018.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 406776,
+        "sha256": "85e25f93e99584aabf9f9301ad2b2cb428278e57eb5e978ca2d960e4317cae8c"
+      },
+      {
+        "number": 19,
+        "file": "sources/yefvv-it-2024/pages/page-019.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 358176,
+        "sha256": "ba7911ced649e1fa82bd49b487875e400c264059308559e4d8d3f266bb6e3c0e"
+      },
+      {
+        "number": 20,
+        "file": "sources/yefvv-it-2024/pages/page-020.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 385888,
+        "sha256": "897c8824bddda714983a597eaa29b15512603b0e22e678e34b6d5e156f48abf2"
+      },
+      {
+        "number": 21,
+        "file": "sources/yefvv-it-2024/pages/page-021.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 442983,
+        "sha256": "8d47a3eaf21e7403e0b90de677a013586c917dc9495369e7f5739dd25e4af025"
+      },
+      {
+        "number": 22,
+        "file": "sources/yefvv-it-2024/pages/page-022.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 436428,
+        "sha256": "b78d8d541bb5bfefaae7ef5df463133e03d7b462ab61aeec7aab0224b55176c0"
+      },
+      {
+        "number": 23,
+        "file": "sources/yefvv-it-2024/pages/page-023.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 380561,
+        "sha256": "9ab40b7dd83b6077ef844ed06d2dd08725dc6cc3e48004e94d690344429d0fb8"
+      },
+      {
+        "number": 24,
+        "file": "sources/yefvv-it-2024/pages/page-024.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 351493,
+        "sha256": "439f2bd984c2c3385b3cb1be16508dde9ddcafd9faf109dd577551a2ac46ed6c"
+      },
+      {
+        "number": 25,
+        "file": "sources/yefvv-it-2024/pages/page-025.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 249814,
+        "sha256": "89472655d5862fe7f87229d3a47d36669fe339e1daf4e6a840b554ad90f7000e"
+      },
+      {
+        "number": 26,
+        "file": "sources/yefvv-it-2024/pages/page-026.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 334075,
+        "sha256": "e9fc3d1b033790b7024f1763d65bbd345f65afd40342da8f9c5d3e6f0bf8f310"
+      },
+      {
+        "number": 27,
+        "file": "sources/yefvv-it-2024/pages/page-027.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 449107,
+        "sha256": "6678b487d24237b06b93d76ca7af7a603a84c1e57d5cf50da3ad4b98261e3474"
+      },
+      {
+        "number": 28,
+        "file": "sources/yefvv-it-2024/pages/page-028.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 344145,
+        "sha256": "f5abaeb47fc5bca8ff3d25ad8a7f86c83c14b3d47b5b8268d11b2e5acb5b40e9"
+      },
+      {
+        "number": 29,
+        "file": "sources/yefvv-it-2024/pages/page-029.png",
+        "width_px": 1489,
+        "height_px": 2105,
+        "size_bytes": 306228,
+        "sha256": "de87f7eb9317f819487feb705140b3678cedd8efa8a974ae6e2a55a31458e5da"
+      }
+    ]
+  }
+}

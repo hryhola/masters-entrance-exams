@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "source_id": "yefvv-it-2024",
+  "status": "validation_passed",
+  "inputs": {
+    "classified_json": "data/classified/yefvv-it-2024.json",
+    "explained_json": "data/explained/yefvv-it-2024.json",
+    "explained_yaml": "data/explained/yefvv-it-2024.yaml",
+    "explanation_report": "reports/yefvv-it-2024-explanations.json",
+    "schema": "schemas/yefvv-it-question-dataset.schema.json",
+    "explained_json_sha256": "e70bd834cf114e34c96554f3f9bc2d514493df2da97740e4b5c82d1ab402cf48",
+    "explained_yaml_sha256": "40827fb50769a138683ece9835534544b820df4230a74b4086bbed34da061abc",
+    "explanation_report_sha256": "dc24fd6326412866c07df20c166ae9e5394fd23daa9710170ff7ac1a9e14d249"
+  },
+  "tools": {
+    "node": "v24.14.0",
+    "ruby": "ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin25]"
+  },
+  "summary": {
+    "passed": true,
+    "check_count": 11,
+    "passed_check_count": 11,
+    "failed_check_count": 0,
+    "question_count": 140,
+    "option_feedback_count": 560
+  },
+  "checks": [
+    {
+      "id": "classified_json_syntax",
+      "description": "Classified source JSON parses successfully.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "explained_json_syntax",
+      "description": "Explained JSON parses successfully.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "explained_yaml_syntax",
+      "description": "Explained YAML parses safely.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "explanation_report_syntax",
+      "description": "Explanation report JSON parses successfully.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "schema_syntax",
+      "description": "Dataset JSON Schema parses successfully.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "yaml_json_equivalence",
+      "description": "Explained YAML and JSON represent identical data.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "schema_contract",
+      "description": "Schema documents explained datasets and completed explanation objects.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "pre_explanation_content_preservation",
+      "description": "Prompts, options, answers, sources, reviews, and classifications are unchanged.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "explanation_completeness",
+      "description": "All 140 questions have reviewed summaries, four option feedback entries, and sources.",
+      "passed": true,
+      "details": {
+        "question_count": 140,
+        "feedback_count": 560,
+        "error_count": 0,
+        "errors": []
+      }
+    },
+    {
+      "id": "answer_review_inventory",
+      "description": "Answer-review statuses and disputed keys match the editorial decisions.",
+      "passed": true,
+      "details": {
+        "answer_review_counts": {
+          "verified": 97,
+          "verified_with_caveat": 41,
+          "disputed": 2
+        },
+        "disputed_question_numbers": [
+          82,
+          102
+        ],
+        "external_source_question_numbers": [
+          42,
+          54,
+          82,
+          102
+        ]
+      }
+    },
+    {
+      "id": "explanation_report_consistency",
+      "description": "Explanation report matches the explained dataset.",
+      "passed": true,
+      "details": {
+        "report_answer_review_counts": {
+          "verified": 97,
+          "verified_with_caveat": 41,
+          "disputed": 2
+        },
+        "dataset_answer_review_counts": {
+          "verified": 97,
+          "verified_with_caveat": 41,
+          "disputed": 2
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,583 @@
+{
+  "schema_version": 1,
+  "source_id": "yefvv-it-2024",
+  "taxonomy_id": "yefvv-it-program-2025",
+  "status": "classification_completed",
+  "completed_on": "2026-06-10",
+  "inputs": {
+    "normalized_dataset": "data/normalized/yefvv-it-2024.json",
+    "normalized_dataset_sha256": "f44192d3a2877765e8285e008383e238447c2d5437b5db04650da1d8d954a16b",
+    "program": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf",
+    "program_sha256": "41cde7339e94ac7a1aae6ca5e7003fefe0148ae60923eb9b607bc34a2a16f8f4"
+  },
+  "tools": {
+    "node": "v24.14.0",
+    "ruby": "ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin25]"
+  },
+  "method": {
+    "classification": "Manual semantic alignment of every question with the official 2025 program taxonomy.",
+    "alignment_statuses": {
+      "aligned": "Directly covered by an official program topic.",
+      "partial": "Related to a program topic but narrower, more specific, or not explicitly listed.",
+      "legacy": "Related content presented using a format explicitly prohibited by the 2025 program.",
+      "unmapped": "No defensible topic match in the 2025 program."
+    },
+    "cognitive_levels": {
+      "A": "Knowledge and recall.",
+      "B": "Understanding, comparison, and recognition.",
+      "C": "Application to a concrete situation or calculation.",
+      "D": "Analysis, synthesis, or evaluation."
+    }
+  },
+  "summary": {
+    "question_count": 140,
+    "classified_question_count": 140,
+    "mapped_question_count": 137,
+    "covered_topic_count": 72,
+    "program_topic_count": 127,
+    "alignment_counts": {
+      "aligned": 104,
+      "legacy": 5,
+      "partial": 28,
+      "unmapped": 3
+    },
+    "cognitive_level_counts": {
+      "B": 78,
+      "A": 25,
+      "C": 37
+    },
+    "format_non_compliant_count": 5,
+    "official_content_preserved": true
+  },
+  "section_coverage": [
+    {
+      "section_code": "1",
+      "section": "Алгоритми та обчислювальна складність",
+      "official_weight": {
+        "min": 8,
+        "max": 12
+      },
+      "official_weight_midpoint": 10,
+      "question_count": 13,
+      "question_share_percent": 9.29,
+      "difference_from_midpoint_percentage_points": -0.71,
+      "question_numbers": [
+        28,
+        47,
+        53,
+        55,
+        66,
+        74,
+        82,
+        91,
+        104,
+        123,
+        126,
+        134,
+        140
+      ],
+      "alignment_counts": {
+        "aligned": 11,
+        "legacy": 2
+      }
+    },
+    {
+      "section_code": "2",
+      "section": "Архітектура комп’ютера",
+      "official_weight": {
+        "min": 8,
+        "max": 10
+      },
+      "official_weight_midpoint": 9,
+      "question_count": 14,
+      "question_share_percent": 10,
+      "difference_from_midpoint_percentage_points": 1,
+      "question_numbers": [
+        12,
+        15,
+        32,
+        40,
+        58,
+        62,
+        67,
+        92,
+        106,
+        107,
+        114,
+        121,
+        125,
+        131
+      ],
+      "alignment_counts": {
+        "partial": 5,
+        "aligned": 9
+      }
+    },
+    {
+      "section_code": "3",
+      "section": "Бази та сховища даних",
+      "official_weight": {
+        "min": 10,
+        "max": 14
+      },
+      "official_weight_midpoint": 12,
+      "question_count": 17,
+      "question_share_percent": 12.14,
+      "difference_from_midpoint_percentage_points": 0.14,
+      "question_numbers": [
+        9,
+        23,
+        33,
+        37,
+        41,
+        50,
+        60,
+        72,
+        79,
+        83,
+        84,
+        86,
+        101,
+        102,
+        110,
+        112,
+        133
+      ],
+      "alignment_counts": {
+        "aligned": 16,
+        "partial": 1
+      }
+    },
+    {
+      "section_code": "4",
+      "section": "Інженерія систем і програмного забезпечення",
+      "official_weight": {
+        "min": 10,
+        "max": 14
+      },
+      "official_weight_midpoint": 12,
+      "question_count": 14,
+      "question_share_percent": 10,
+      "difference_from_midpoint_percentage_points": -2,
+      "question_numbers": [
+        5,
+        6,
+        21,
+        24,
+        34,
+        36,
+        44,
+        68,
+        69,
+        70,
+        71,
+        81,
+        89,
+        99
+      ],
+      "alignment_counts": {
+        "aligned": 9,
+        "partial": 5
+      }
+    },
+    {
+      "section_code": "5",
+      "section": "Кібербезпека та захист інформації",
+      "official_weight": {
+        "min": 8,
+        "max": 10
+      },
+      "official_weight_midpoint": 9,
+      "question_count": 12,
+      "question_share_percent": 8.57,
+      "difference_from_midpoint_percentage_points": -0.43,
+      "question_numbers": [
+        10,
+        26,
+        42,
+        48,
+        49,
+        87,
+        100,
+        109,
+        124,
+        132,
+        137,
+        138
+      ],
+      "alignment_counts": {
+        "partial": 6,
+        "aligned": 6
+      }
+    },
+    {
+      "section_code": "6",
+      "section": "Прикладна математика",
+      "official_weight": {
+        "min": 16,
+        "max": 18
+      },
+      "official_weight_midpoint": 17,
+      "question_count": 17,
+      "question_share_percent": 12.14,
+      "difference_from_midpoint_percentage_points": -4.86,
+      "question_numbers": [
+        13,
+        18,
+        19,
+        20,
+        38,
+        56,
+        57,
+        61,
+        75,
+        76,
+        97,
+        103,
+        111,
+        116,
+        119,
+        120,
+        122
+      ],
+      "alignment_counts": {
+        "aligned": 15,
+        "partial": 2
+      }
+    },
+    {
+      "section_code": "7",
+      "section": "Комп’ютерні мережі та обмін даними",
+      "official_weight": {
+        "min": 5,
+        "max": 7
+      },
+      "official_weight_midpoint": 6,
+      "question_count": 13,
+      "question_share_percent": 9.29,
+      "difference_from_midpoint_percentage_points": 3.29,
+      "question_numbers": [
+        8,
+        25,
+        27,
+        35,
+        43,
+        65,
+        77,
+        78,
+        94,
+        95,
+        113,
+        117,
+        127
+      ],
+      "alignment_counts": {
+        "partial": 3,
+        "aligned": 10
+      }
+    },
+    {
+      "section_code": "8",
+      "section": "Операційні системи",
+      "official_weight": {
+        "min": 8,
+        "max": 10
+      },
+      "official_weight_midpoint": 9,
+      "question_count": 12,
+      "question_share_percent": 8.57,
+      "difference_from_midpoint_percentage_points": -0.43,
+      "question_numbers": [
+        1,
+        3,
+        7,
+        11,
+        14,
+        29,
+        63,
+        90,
+        108,
+        130,
+        135,
+        139
+      ],
+      "alignment_counts": {
+        "aligned": 6,
+        "partial": 6
+      }
+    },
+    {
+      "section_code": "9",
+      "section": "Основи мов програмування",
+      "official_weight": {
+        "min": 8,
+        "max": 10
+      },
+      "official_weight_midpoint": 9,
+      "question_count": 13,
+      "question_share_percent": 9.29,
+      "difference_from_midpoint_percentage_points": 0.29,
+      "question_numbers": [
+        2,
+        4,
+        22,
+        51,
+        52,
+        59,
+        64,
+        73,
+        80,
+        115,
+        118,
+        128,
+        136
+      ],
+      "alignment_counts": {
+        "legacy": 3,
+        "aligned": 10
+      }
+    },
+    {
+      "section_code": "10",
+      "section": "Штучний інтелект",
+      "official_weight": {
+        "min": 6,
+        "max": 8
+      },
+      "official_weight_midpoint": 7,
+      "question_count": 12,
+      "question_share_percent": 8.57,
+      "difference_from_midpoint_percentage_points": 1.57,
+      "question_numbers": [
+        16,
+        17,
+        30,
+        31,
+        39,
+        45,
+        46,
+        85,
+        93,
+        98,
+        105,
+        129
+      ],
+      "alignment_counts": {
+        "aligned": 12
+      }
+    }
+  ],
+  "topic_coverage": {
+    "covered_topic_codes": [
+      "1.1.1",
+      "1.1.2",
+      "1.1.3",
+      "1.1.4",
+      "1.1.5",
+      "1.2.1",
+      "1.2.2",
+      "1.3.2",
+      "2.1",
+      "2.2.1",
+      "2.2.2",
+      "2.4.1",
+      "2.4.2",
+      "2.4.3",
+      "3.1",
+      "3.2",
+      "3.3",
+      "3.5",
+      "3.6",
+      "4.1.1",
+      "4.1.3",
+      "4.2.2",
+      "4.2.3",
+      "4.4.2",
+      "4.5.1",
+      "4.5.3",
+      "4.5.5",
+      "4.7.3",
+      "4.8.1",
+      "4.8.2",
+      "4.8.4",
+      "5.1.1",
+      "5.1.4",
+      "5.1.5",
+      "5.1.6",
+      "5.2.2",
+      "5.2.4",
+      "5.3.1",
+      "5.3.2",
+      "5.3.3",
+      "6.1.1",
+      "6.1.2",
+      "6.1.4",
+      "6.1.8",
+      "6.1.9",
+      "6.2.1",
+      "6.2.3",
+      "6.2.5",
+      "6.2.6",
+      "6.3.1",
+      "6.3.8",
+      "7.1",
+      "7.2",
+      "7.3",
+      "8.1.1",
+      "8.1.2",
+      "8.1.3",
+      "8.2.1",
+      "8.2.2",
+      "9.1.1",
+      "9.1.2",
+      "9.1.3",
+      "9.1.4",
+      "9.2",
+      "9.3",
+      "9.4",
+      "10.1",
+      "10.2.1",
+      "10.2.2",
+      "10.3.1",
+      "10.3.2",
+      "10.3.3"
+    ],
+    "uncovered_topic_codes": [
+      "1.2.3",
+      "1.2.4",
+      "1.3.1",
+      "2.3",
+      "3.4",
+      "4.1.2",
+      "4.2.1",
+      "4.3.1",
+      "4.3.2",
+      "4.4.1",
+      "4.4.3",
+      "4.5.2",
+      "4.5.4",
+      "4.6.1",
+      "4.6.2",
+      "4.6.3",
+      "4.6.4",
+      "4.6.5",
+      "4.7.1",
+      "4.7.2",
+      "4.7.4",
+      "4.8.3",
+      "5.1.2",
+      "5.1.3",
+      "5.2.1",
+      "5.2.3",
+      "5.2.5",
+      "5.2.6",
+      "6.1.3",
+      "6.1.5",
+      "6.1.6",
+      "6.1.7",
+      "6.1.10",
+      "6.1.11",
+      "6.1.12",
+      "6.1.13",
+      "6.2.2",
+      "6.2.4",
+      "6.2.7",
+      "6.2.8",
+      "6.2.9",
+      "6.3",
+      "6.3.2",
+      "6.3.3",
+      "6.3.4",
+      "6.3.5",
+      "6.3.6",
+      "6.3.7",
+      "6.3.9",
+      "6.3.10",
+      "6.3.11",
+      "6.3.12",
+      "6.4.1",
+      "6.4.2",
+      "6.4.3"
+    ]
+  },
+  "review_queues": {
+    "partial_question_numbers": [
+      3,
+      8,
+      10,
+      11,
+      12,
+      18,
+      24,
+      29,
+      32,
+      36,
+      42,
+      56,
+      68,
+      72,
+      78,
+      81,
+      87,
+      89,
+      90,
+      95,
+      106,
+      107,
+      108,
+      109,
+      114,
+      124,
+      135,
+      138
+    ],
+    "legacy_questions": [
+      {
+        "question": 2,
+        "violations": [
+          "concrete_programming_language"
+        ]
+      },
+      {
+        "question": 51,
+        "violations": [
+          "concrete_programming_language",
+          "program_fragment"
+        ]
+      },
+      {
+        "question": 59,
+        "violations": [
+          "pseudocode",
+          "program_fragment"
+        ]
+      },
+      {
+        "question": 91,
+        "violations": [
+          "pseudocode",
+          "program_fragment"
+        ]
+      },
+      {
+        "question": 126,
+        "violations": [
+          "pseudocode",
+          "program_fragment"
+        ]
+      }
+    ],
+    "unmapped_question_numbers": [
+      54,
+      88,
+      96
+    ]
+  },
+  "outputs": {
+    "classified_yaml": "data/classified/yefvv-it-2024.yaml",
+    "classified_json": "data/classified/yefvv-it-2024.json",
+    "taxonomy_yaml": "data/taxonomies/yefvv-it-program-2025.yaml",
+    "taxonomy_json": "data/taxonomies/yefvv-it-program-2025.json",
+    "report": "reports/yefvv-it-2024-program-2025-alignment.json"
+  }
+}

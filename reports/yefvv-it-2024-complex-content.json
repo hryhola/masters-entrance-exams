@@ -1,0 +1,1031 @@
+{
+  "schema_version": 1,
+  "source_id": "yefvv-it-2024",
+  "status": "complex_content_enriched",
+  "source": {
+    "file": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/YEFVV_2024-Informatsijni-tehnologiyi-na_sajt__.pdf",
+    "sha256": "9f07d30a5c71ac087c9e11b6b2e5794a3f5ccc15ead05f69474c2f59312bef81"
+  },
+  "tools": {
+    "pdfimages": "pdfimages version 26.04.0",
+    "ruby": "ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin25]"
+  },
+  "inventory": {
+    "embedded_image_count": 45,
+    "representation_counts": {
+      "code": 6,
+      "image_asset": 9,
+      "math": 29,
+      "table": 1
+    },
+    "web_asset_count": 9,
+    "images": [
+      {
+        "number": 0,
+        "question": 9,
+        "page": 2,
+        "placement": "option_a",
+        "representation": "image_asset",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-000.png",
+        "asset_file": "assets/yefvv-it-2024/q009/option-a.png",
+        "width_px": 676,
+        "height_px": 67,
+        "size_bytes": 11582,
+        "sha256": "f17f08f03860376556ee0b68ee3b1e2c3a1a63c90a878198fd203fe86a049269",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 6,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 151
+        }
+      },
+      {
+        "number": 1,
+        "question": 9,
+        "page": 2,
+        "placement": "option_b",
+        "representation": "image_asset",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-001.png",
+        "asset_file": "assets/yefvv-it-2024/q009/option-b.png",
+        "width_px": 676,
+        "height_px": 67,
+        "size_bytes": 15821,
+        "sha256": "fc3b85fb7b0a7098331d83defe9c78e7ce84dec94af74e358ad4d1c823ac1242",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "jpeg",
+          "object_id": 7,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 2,
+        "question": 9,
+        "page": 2,
+        "placement": "option_c",
+        "representation": "image_asset",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-002.png",
+        "asset_file": "assets/yefvv-it-2024/q009/option-c.png",
+        "width_px": 676,
+        "height_px": 67,
+        "size_bytes": 10887,
+        "sha256": "0653284b2b2963056587d6b7603cbc6d9eea4db07e4553fb8e83bc7582d0b233",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 8,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 151
+        }
+      },
+      {
+        "number": 3,
+        "question": 9,
+        "page": 2,
+        "placement": "option_d",
+        "representation": "image_asset",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-003.png",
+        "asset_file": "assets/yefvv-it-2024/q009/option-d.png",
+        "width_px": 676,
+        "height_px": 67,
+        "size_bytes": 10893,
+        "sha256": "9c52ddbd3d9cc77e3028fb55a1b305ea10c6b7c27dc81c192c7099cd4597d07a",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 9,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 4,
+        "question": 13,
+        "page": 3,
+        "placement": "prompt",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-004.png",
+        "asset_file": null,
+        "width_px": 50,
+        "height_px": 54,
+        "size_bytes": 1917,
+        "sha256": "c4012e95c5eecfca26aa0405749292df033cc3206bf31f02a489336d7a36b0e2",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 16,
+          "object_generation": 0,
+          "x_ppi": 96,
+          "y_ppi": 96
+        }
+      },
+      {
+        "number": 5,
+        "question": 13,
+        "page": 3,
+        "placement": "option_a",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-005.png",
+        "asset_file": null,
+        "width_px": 26,
+        "height_px": 21,
+        "size_bytes": 769,
+        "sha256": "57d9c0d3a8845be90d4aef2b10de915ee59b44de2c708029231ec51e90b4509c",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 17,
+          "object_generation": 0,
+          "x_ppi": 95,
+          "y_ppi": 96
+        }
+      },
+      {
+        "number": 6,
+        "question": 16,
+        "page": 3,
+        "placement": "option_a",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-006.png",
+        "asset_file": null,
+        "width_px": 287,
+        "height_px": 114,
+        "size_bytes": 6843,
+        "sha256": "d0cd8b3810d377b3677eba60710e68b8e598230f0c050f548005f8edc187dd12",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 18,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 151
+        }
+      },
+      {
+        "number": 7,
+        "question": 16,
+        "page": 4,
+        "placement": "option_b",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-007.png",
+        "asset_file": null,
+        "width_px": 295,
+        "height_px": 96,
+        "size_bytes": 11784,
+        "sha256": "d03ae9f0518b7c58445a02f491f4d9132149d9904cb3ff25fd553ff399d6583d",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 26,
+          "object_generation": 0,
+          "x_ppi": 174,
+          "y_ppi": 174
+        }
+      },
+      {
+        "number": 8,
+        "question": 16,
+        "page": 4,
+        "placement": "option_c",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-008.png",
+        "asset_file": null,
+        "width_px": 470,
+        "height_px": 75,
+        "size_bytes": 10688,
+        "sha256": "ff9a13a0ff50e881292105bd7b92c216420d2abc090a4b9595b3752c307f97a3",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 27,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 151
+        }
+      },
+      {
+        "number": 9,
+        "question": 16,
+        "page": 4,
+        "placement": "option_d",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-009.png",
+        "asset_file": null,
+        "width_px": 260,
+        "height_px": 86,
+        "size_bytes": 6295,
+        "sha256": "f6e6321d7ed2c20cf1661b79ce7ced9520a65c0906d3f0c69657057c088fe8c0",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 25,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 151
+        }
+      },
+      {
+        "number": 10,
+        "question": 31,
+        "page": 6,
+        "placement": "prompt",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-010.png",
+        "asset_file": null,
+        "width_px": 1271,
+        "height_px": 137,
+        "size_bytes": 9597,
+        "sha256": "adbb80539e1a6765296f0d76b805d869de07ad6b9d9a5da9e0e37576e2739d22",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 35,
+          "object_generation": 0,
+          "x_ppi": 209,
+          "y_ppi": 209
+        }
+      },
+      {
+        "number": 11,
+        "question": 38,
+        "page": 8,
+        "placement": "prompt",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-011.png",
+        "asset_file": null,
+        "width_px": 266,
+        "height_px": 72,
+        "size_bytes": 5470,
+        "sha256": "f7a85e85e400a30c4f39d26970cb67059c635ea2df46820c8f2b988f64d74e11",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 44,
+          "object_generation": 0,
+          "x_ppi": 167,
+          "y_ppi": 166
+        }
+      },
+      {
+        "number": 12,
+        "question": 38,
+        "page": 8,
+        "placement": "option_c",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-012.png",
+        "asset_file": null,
+        "width_px": 59,
+        "height_px": 42,
+        "size_bytes": 1681,
+        "sha256": "fa81c6d96da554dd1ff5beab31c5ea382d2998a2a156decb412eff75dd87267a",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 45,
+          "object_generation": 0,
+          "x_ppi": 211,
+          "y_ppi": 208
+        }
+      },
+      {
+        "number": 13,
+        "question": 51,
+        "page": 11,
+        "placement": "option_a",
+        "representation": "code",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-013.png",
+        "asset_file": null,
+        "width_px": 281,
+        "height_px": 195,
+        "size_bytes": 24778,
+        "sha256": "e2208052b078469a4b1bb9acb37ff33071fc76c50981008bc4cd0fa8ed06d321",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "jpeg",
+          "object_id": 57,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 14,
+        "question": 51,
+        "page": 11,
+        "placement": "option_c",
+        "representation": "code",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-014.png",
+        "asset_file": null,
+        "width_px": 692,
+        "height_px": 241,
+        "size_bytes": 63212,
+        "sha256": "8db9008db7d5184d7b7d3cf17beb54e85307761c166e61db4aabec170cfd3174",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "jpeg",
+          "object_id": 58,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 15,
+        "question": 51,
+        "page": 11,
+        "placement": "option_d",
+        "representation": "code",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-015.png",
+        "asset_file": null,
+        "width_px": 245,
+        "height_px": 148,
+        "size_bytes": 24359,
+        "sha256": "4ca3e3d832ba4759ded9b757adf8c383b9354f276db33726d4f04fd2644f017d",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "jpeg",
+          "object_id": 59,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 16,
+        "question": 51,
+        "page": 11,
+        "placement": "option_b",
+        "representation": "code",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-016.png",
+        "asset_file": null,
+        "width_px": 248,
+        "height_px": 102,
+        "size_bytes": 3314,
+        "sha256": "abe780eadcbd74f77fa32b1e2509260223204cb533bf22ce6c96ca02482f4c8b",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 60,
+          "object_generation": 0,
+          "x_ppi": 109,
+          "y_ppi": 109
+        }
+      },
+      {
+        "number": 17,
+        "question": 51,
+        "page": 11,
+        "placement": "prompt",
+        "representation": "code",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-017.png",
+        "asset_file": null,
+        "width_px": 264,
+        "height_px": 392,
+        "size_bytes": 35296,
+        "sha256": "d4f407ab11c489735f371aa168e5be282f16744c932b45c113d751a1ab21f624",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 61,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 18,
+        "question": 57,
+        "page": 12,
+        "placement": "option_a",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-018.png",
+        "asset_file": null,
+        "width_px": 163,
+        "height_px": 34,
+        "size_bytes": 2794,
+        "sha256": "7b6f4a7d15613ba8c20044119bf2cc3d0e6753789c86e27495e0daba2a570115",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 68,
+          "object_generation": 0,
+          "x_ppi": 125,
+          "y_ppi": 124
+        }
+      },
+      {
+        "number": 19,
+        "question": 57,
+        "page": 12,
+        "placement": "option_b",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-019.png",
+        "asset_file": null,
+        "width_px": 184,
+        "height_px": 34,
+        "size_bytes": 2996,
+        "sha256": "63796d0a83d112d8cb89bf642861b2aa533e6311a19fca6279808aadf7d6ddc9",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 69,
+          "object_generation": 0,
+          "x_ppi": 126,
+          "y_ppi": 125
+        }
+      },
+      {
+        "number": 20,
+        "question": 57,
+        "page": 12,
+        "placement": "prompt",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-020.png",
+        "asset_file": null,
+        "width_px": 254,
+        "height_px": 35,
+        "size_bytes": 4225,
+        "sha256": "854b00b3c230935af63d5e438be98730c866a6e1bf8b91a606461f3fb1ca8e20",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 70,
+          "object_generation": 0,
+          "x_ppi": 131,
+          "y_ppi": 131
+        }
+      },
+      {
+        "number": 21,
+        "question": 57,
+        "page": 13,
+        "placement": "option_c",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-021.png",
+        "asset_file": null,
+        "width_px": 185,
+        "height_px": 34,
+        "size_bytes": 2923,
+        "sha256": "f220147eb55b1f748ddfe9574352cad50528fc4e9f40ca82fef4f7b49531a018",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 76,
+          "object_generation": 0,
+          "x_ppi": 128,
+          "y_ppi": 127
+        }
+      },
+      {
+        "number": 22,
+        "question": 57,
+        "page": 13,
+        "placement": "option_d",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-022.png",
+        "asset_file": null,
+        "width_px": 163,
+        "height_px": 36,
+        "size_bytes": 2612,
+        "sha256": "de8eb6520cf1e572f62145b9b37352dfc18602b6163635dd9dcf596438ce81df",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 77,
+          "object_generation": 0,
+          "x_ppi": 126,
+          "y_ppi": 124
+        }
+      },
+      {
+        "number": 23,
+        "question": 71,
+        "page": 15,
+        "placement": "prompt",
+        "representation": "image_asset",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-023.png",
+        "asset_file": "assets/yefvv-it-2024/q071/prompt.png",
+        "width_px": 532,
+        "height_px": 418,
+        "size_bytes": 158993,
+        "sha256": "e18252d14ebf797e0c60a7b53dc3ed32a493770596eb48ae5d5bbc8b9c1a9965",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 84,
+          "object_generation": 0,
+          "x_ppi": 113,
+          "y_ppi": 112
+        }
+      },
+      {
+        "number": 24,
+        "question": 75,
+        "page": 16,
+        "placement": "prompt",
+        "representation": "image_asset",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-024.png",
+        "asset_file": "assets/yefvv-it-2024/q075/prompt.png",
+        "width_px": 487,
+        "height_px": 502,
+        "size_bytes": 47033,
+        "sha256": "146c975ad6adaa9276c12f517ebe946fef886cb6318dfacc4972ca560df4b992",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 93,
+          "object_generation": 0,
+          "x_ppi": 222,
+          "y_ppi": 222
+        }
+      },
+      {
+        "number": 25,
+        "question": 76,
+        "page": 16,
+        "placement": "prompt",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-025.png",
+        "asset_file": null,
+        "width_px": 320,
+        "height_px": 31,
+        "size_bytes": 4016,
+        "sha256": "78fa6db69cc41c874b8853772b9f18cab65f161eb0d988bb40c6f5716c67a1fb",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 94,
+          "object_generation": 0,
+          "x_ppi": 124,
+          "y_ppi": 124
+        }
+      },
+      {
+        "number": 26,
+        "question": 76,
+        "page": 16,
+        "placement": "option_a",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-026.png",
+        "asset_file": null,
+        "width_px": 53,
+        "height_px": 30,
+        "size_bytes": 820,
+        "sha256": "41efd0101a213d8a516517e1f042b185e4422725bf7a140b54964b2eb99b4c8a",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 95,
+          "object_generation": 0,
+          "x_ppi": 124,
+          "y_ppi": 126
+        }
+      },
+      {
+        "number": 27,
+        "question": 76,
+        "page": 16,
+        "placement": "option_b",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-027.png",
+        "asset_file": null,
+        "width_px": 148,
+        "height_px": 39,
+        "size_bytes": 2992,
+        "sha256": "04c30757fa4158249a9693f39db4b54235b6f62eaab3363c7ef089b80f2a434b",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 96,
+          "object_generation": 0,
+          "x_ppi": 115,
+          "y_ppi": 114
+        }
+      },
+      {
+        "number": 28,
+        "question": 76,
+        "page": 16,
+        "placement": "option_c",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-028.png",
+        "asset_file": null,
+        "width_px": 57,
+        "height_px": 35,
+        "size_bytes": 1570,
+        "sha256": "3ef4a4c5efbcd24ab544b1d2ac582d96faecf0b7e37633a0a3295011c93eee20",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 97,
+          "object_generation": 0,
+          "x_ppi": 93,
+          "y_ppi": 93
+        }
+      },
+      {
+        "number": 29,
+        "question": 76,
+        "page": 16,
+        "placement": "option_d",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-029.png",
+        "asset_file": null,
+        "width_px": 142,
+        "height_px": 31,
+        "size_bytes": 2062,
+        "sha256": "8f7fffe6f5b5da38367bc3fe61b2cf7fb2e253fd048f3519fd05f5794e0e4a70",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 98,
+          "object_generation": 0,
+          "x_ppi": 125,
+          "y_ppi": 123
+        }
+      },
+      {
+        "number": 30,
+        "question": 86,
+        "page": 19,
+        "placement": "prompt",
+        "representation": "table",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-030.png",
+        "asset_file": null,
+        "width_px": 818,
+        "height_px": 164,
+        "size_bytes": 35239,
+        "sha256": "b38c875afb7f7d68e062a7de82a47cebff6ae0b08e272c3e47fb79e6884c08b8",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 108,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 31,
+        "question": 97,
+        "page": 21,
+        "placement": "prompt",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-031.png",
+        "asset_file": null,
+        "width_px": 58,
+        "height_px": 49,
+        "size_bytes": 2363,
+        "sha256": "a5b031f7a371b0884c8abc34e3b5b156ddbff8b3909a68a67cb70d9b9ba270f7",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 122,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 32,
+        "question": 97,
+        "page": 21,
+        "placement": "prompt",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-032.png",
+        "asset_file": null,
+        "width_px": 266,
+        "height_px": 50,
+        "size_bytes": 5457,
+        "sha256": "5dde83af1462ee106599d002c1dfdb3c2e5282807b11147c1af37937a519f8ae",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 123,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 33,
+        "question": 97,
+        "page": 21,
+        "placement": "prompt",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-033.png",
+        "asset_file": null,
+        "width_px": 119,
+        "height_px": 19,
+        "size_bytes": 2546,
+        "sha256": "37e30562cd1d3611ce857c5ed01ebadc8d48a59e75560b6b041a65fa9e02d5dd",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 124,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 34,
+        "question": 97,
+        "page": 21,
+        "placement": "option_a",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-034.png",
+        "asset_file": null,
+        "width_px": 324,
+        "height_px": 59,
+        "size_bytes": 7707,
+        "sha256": "b5d6b240f8d87551dae47e97ee9e9f198e13f063abf114810d1c278c21ae1bcb",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 125,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 35,
+        "question": 97,
+        "page": 21,
+        "placement": "option_b",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-035.png",
+        "asset_file": null,
+        "width_px": 339,
+        "height_px": 76,
+        "size_bytes": 9128,
+        "sha256": "b05bafa1adf15c08513bb023741a77fc512e208a1442efb78e1d452c87e3d884",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 126,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 36,
+        "question": 97,
+        "page": 21,
+        "placement": "option_c",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-036.png",
+        "asset_file": null,
+        "width_px": 308,
+        "height_px": 74,
+        "size_bytes": 8714,
+        "sha256": "067d0bf22e456afbe52587731519635d52fed0edc58374653a9af884892a1c89",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 127,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 37,
+        "question": 97,
+        "page": 21,
+        "placement": "option_d",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-037.png",
+        "asset_file": null,
+        "width_px": 294,
+        "height_px": 63,
+        "size_bytes": 7699,
+        "sha256": "41c040780a16f484aa172f32ed85c0bbd669bea2865c38e15a9b749bedfca57e",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 128,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 151
+        }
+      },
+      {
+        "number": 38,
+        "question": 103,
+        "page": 22,
+        "placement": "prompt",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-038.png",
+        "asset_file": null,
+        "width_px": 65,
+        "height_px": 81,
+        "size_bytes": 2751,
+        "sha256": "9119632c4928bf79f738c52ee5a2ad92ad20ea49c769b06d291e105f763ac4ad",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 134,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 39,
+        "question": 103,
+        "page": 22,
+        "placement": "prompt",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-039.png",
+        "asset_file": null,
+        "width_px": 197,
+        "height_px": 81,
+        "size_bytes": 6247,
+        "sha256": "8e1377eb4ed296f58fbf43c36ace2adb343214dfc9ced7e6dfafc3cbb7fe47a7",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 135,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 151
+        }
+      },
+      {
+        "number": 40,
+        "question": 103,
+        "page": 22,
+        "placement": "prompt",
+        "representation": "math",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-040.png",
+        "asset_file": null,
+        "width_px": 147,
+        "height_px": 46,
+        "size_bytes": 3360,
+        "sha256": "db86c6250effa0a02684a0d975546122f9275e3ab436c89afd69b9f77a4008fb",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 136,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 41,
+        "question": 113,
+        "page": 24,
+        "placement": "prompt",
+        "representation": "image_asset",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-041.png",
+        "asset_file": "assets/yefvv-it-2024/q113/prompt.png",
+        "width_px": 303,
+        "height_px": 249,
+        "size_bytes": 20995,
+        "sha256": "490baad9caf055f9e44e5d41bd6003858bf583049c5258ee8f7ad931b801cd7a",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 143,
+          "object_generation": 0,
+          "x_ppi": 96,
+          "y_ppi": 96
+        }
+      },
+      {
+        "number": 42,
+        "question": 119,
+        "page": 25,
+        "placement": "prompt",
+        "representation": "image_asset",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-042.png",
+        "asset_file": "assets/yefvv-it-2024/q119/prompt.png",
+        "width_px": 551,
+        "height_px": 589,
+        "size_bytes": 42403,
+        "sha256": "34be0cd83590a43e7e1a812ce2d1f40f0b53807962754e11261357ed030cc109",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "image",
+          "object_id": 147,
+          "object_generation": 0,
+          "x_ppi": 208,
+          "y_ppi": 221
+        }
+      },
+      {
+        "number": 43,
+        "question": 126,
+        "page": 27,
+        "placement": "prompt",
+        "representation": "code",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-043.png",
+        "asset_file": null,
+        "width_px": 529,
+        "height_px": 208,
+        "size_bytes": 65926,
+        "sha256": "88d099bfc920bc51af2a785c7d48b86dcc32a34833f1848852f3b5f375cd3d51",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "jpeg",
+          "object_id": 154,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      },
+      {
+        "number": 44,
+        "question": 140,
+        "page": 29,
+        "placement": "prompt",
+        "representation": "image_asset",
+        "extracted_file": "sources/yefvv-it-2024/embedded-images/image-044.png",
+        "asset_file": "assets/yefvv-it-2024/q140/prompt.png",
+        "width_px": 275,
+        "height_px": 235,
+        "size_bytes": 27228,
+        "sha256": "0f663d4ff2d5f336765e2978d89465758e0351612cf94a9113a612a8be14354b",
+        "pdf_object": {
+          "type": "image",
+          "encoding": "jpeg",
+          "object_id": 161,
+          "object_generation": 0,
+          "x_ppi": 150,
+          "y_ppi": 150
+        }
+      }
+    ]
+  },
+  "questions": {
+    "enriched_count": 17,
+    "enriched_numbers": [
+      9,
+      13,
+      16,
+      31,
+      38,
+      51,
+      57,
+      71,
+      75,
+      76,
+      86,
+      97,
+      103,
+      113,
+      119,
+      126,
+      140
+    ],
+    "formulas_transcribed": [
+      13,
+      16,
+      31,
+      38,
+      57,
+      76,
+      97,
+      103
+    ],
+    "code_transcribed": [
+      51,
+      126
+    ],
+    "tables_structured": [
+      86
+    ],
+    "visual_assets_attached": [
+      9,
+      71,
+      75,
+      113,
+      119,
+      140
+    ]
+  },
+  "validation": {
+    "passed": true,
+    "all_embedded_images_mapped": true,
+    "all_complex_questions_enriched": true,
+    "empty_options_in_complex_questions": 0,
+    "questions_requiring_visual_review_after_enrichment": 0
+  },
+  "outputs": {
+    "enriched_yaml": "data/enriched/yefvv-it-2024.yaml",
+    "enriched_json": "data/enriched/yefvv-it-2024.json",
+    "embedded_images": "sources/yefvv-it-2024/embedded-images",
+    "web_assets": "assets/yefvv-it-2024",
+    "report": "reports/yefvv-it-2024-complex-content.json"
+  }
+}

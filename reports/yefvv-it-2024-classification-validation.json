@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "source_id": "yefvv-it-2024",
+  "taxonomy_id": "yefvv-it-program-2025",
+  "status": "validation_passed",
+  "inputs": {
+    "normalized_json": "data/normalized/yefvv-it-2024.json",
+    "classified_json": "data/classified/yefvv-it-2024.json",
+    "classified_yaml": "data/classified/yefvv-it-2024.yaml",
+    "taxonomy_json": "data/taxonomies/yefvv-it-program-2025.json",
+    "taxonomy_yaml": "data/taxonomies/yefvv-it-program-2025.yaml",
+    "alignment_report": "reports/yefvv-it-2024-program-2025-alignment.json",
+    "classified_json_sha256": "bfe530dc0d09905fd41aa4c9832df889a014879bae2eaad79a1e9f500c2f28ae",
+    "classified_yaml_sha256": "74ec8e2bac0805d11a2a80345a7504fbb5576697777020c6f06bcb53c869a961",
+    "taxonomy_json_sha256": "b18bb3d2e669eeafe058326cb6e59c907f9b1134a2b362e1d8c53b313af55c95",
+    "taxonomy_yaml_sha256": "024e6eb62acf85d59704b1b859718f8636401e1836169e60e3d46e2e2e57fa60"
+  },
+  "tools": {
+    "node": "v24.14.0",
+    "ruby": "ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin25]"
+  },
+  "summary": {
+    "passed": true,
+    "check_count": 13,
+    "passed_check_count": 13,
+    "failed_check_count": 0,
+    "question_count": 140,
+    "topic_count": 127
+  },
+  "checks": [
+    {
+      "id": "normalized_json_syntax",
+      "description": "Normalized source JSON parses successfully.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "classified_json_syntax",
+      "description": "Classified JSON parses successfully.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "classified_yaml_syntax",
+      "description": "Classified YAML parses safely.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "taxonomy_json_syntax",
+      "description": "Program taxonomy JSON parses successfully.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "taxonomy_yaml_syntax",
+      "description": "Program taxonomy YAML parses safely.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "alignment_report_syntax",
+      "description": "Alignment report JSON parses successfully.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "classified_yaml_json_equivalence",
+      "description": "Classified YAML and JSON represent identical data.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "taxonomy_yaml_json_equivalence",
+      "description": "Taxonomy YAML and JSON represent identical data.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "taxonomy_integrity",
+      "description": "Taxonomy preserves all sections, 127 cognitive positions, weights, discrepancy, and source checksum.",
+      "passed": true,
+      "details": {
+        "section_count": 10,
+        "topic_count": 127,
+        "cognitive_level_counts": {
+          "B": 110,
+          "A": 9,
+          "C": 8
+        },
+        "weight_midpoint_sum": 100,
+        "program_sha256": "41cde7339e94ac7a1aae6ca5e7003fefe0148ae60923eb9b607bc34a2a16f8f4"
+      }
+    },
+    {
+      "id": "classification_completeness",
+      "description": "All 140 questions have complete reviewed classifications with valid topic references.",
+      "passed": true,
+      "details": {
+        "error_count": 0,
+        "errors": []
+      }
+    },
+    {
+      "id": "classification_inventory",
+      "description": "Alignment and cognitive-level inventories are complete and internally consistent.",
+      "passed": true,
+      "details": {
+        "alignment_counts": {
+          "aligned": 104,
+          "legacy": 5,
+          "partial": 28,
+          "unmapped": 3
+        },
+        "cognitive_level_counts": {
+          "B": 78,
+          "A": 25,
+          "C": 37
+        },
+        "legacy_question_numbers": [
+          2,
+          51,
+          59,
+          91,
+          126
+        ],
+        "unmapped_question_numbers": [
+          54,
+          88,
+          96
+        ]
+      }
+    },
+    {
+      "id": "official_content_preservation",
+      "description": "Classification does not change official prompts, options, answers, sources, or review data.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "alignment_report_consistency",
+      "description": "Alignment report matches the classified dataset and taxonomy.",
+      "passed": true,
+      "details": {
+        "report_alignment_counts": {
+          "aligned": 104,
+          "legacy": 5,
+          "partial": 28,
+          "unmapped": 3
+        },
+        "dataset_alignment_counts": {
+          "aligned": 104,
+          "legacy": 5,
+          "partial": 28,
+          "unmapped": 3
+        },
+        "covered_topic_count": 72
+      }
+    }
+  ]
+}

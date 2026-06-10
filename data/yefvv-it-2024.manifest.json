@@ -1,0 +1,738 @@
+{
+  "schema_version": 1,
+  "release": {
+    "id": "yefvv-it-2024",
+    "version": "1.0.0",
+    "status": "ready_for_application",
+    "assembled_on": "2026-06-10",
+    "canonical_file": "data/yefvv-it-2024.yaml"
+  },
+  "outputs": {
+    "yaml": {
+      "path": "data/yefvv-it-2024.yaml",
+      "bytes": 562710,
+      "sha256": "6480e97f0a8ae729b3d4fe41628c83e575f4d840e1ebd0ad1d99783f736a326e"
+    },
+    "json": {
+      "path": "data/yefvv-it-2024.json",
+      "bytes": 822645,
+      "sha256": "d62c6d0ff5eae78ed96fb71a0fac928502dedb0777e31faa94e464c8f1e319d3"
+    }
+  },
+  "official_sources": {
+    "test_pdf": {
+      "path": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/YEFVV_2024-Informatsijni-tehnologiyi-na_sajt__.pdf",
+      "bytes": 751306,
+      "sha256": "9f07d30a5c71ac087c9e11b6b2e5794a3f5ccc15ead05f69474c2f59312bef81"
+    },
+    "program_pdf": {
+      "path": "raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/programa-jefvv-informtexnologiyi-2025.pdf",
+      "bytes": 489833,
+      "sha256": "41cde7339e94ac7a1aae6ca5e7003fefe0148ae60923eb9b607bc34a2a16f8f4"
+    }
+  },
+  "key_artifacts": [
+    {
+      "path": "data/explained/yefvv-it-2024.json",
+      "bytes": 820845,
+      "sha256": "e70bd834cf114e34c96554f3f9bc2d514493df2da97740e4b5c82d1ab402cf48"
+    },
+    {
+      "path": "data/taxonomies/yefvv-it-program-2025.yaml",
+      "bytes": 49103,
+      "sha256": "024e6eb62acf85d59704b1b859718f8636401e1836169e60e3d46e2e2e57fa60"
+    },
+    {
+      "path": "schemas/yefvv-it-question-dataset.schema.json",
+      "bytes": 22263,
+      "sha256": "13f0522766b0611cba21d134fa1fe1d9b6da078d14aed3487b1ad4db1e3bd147"
+    },
+    {
+      "path": "reports/yefvv-it-2024-validation.json",
+      "bytes": 4503,
+      "sha256": "67300f5a55a7194c2b3ecc0caec5d2926d8e22add74b4cd60fb9b9d7bd7da3f9"
+    },
+    {
+      "path": "reports/yefvv-it-2024-classification-validation.json",
+      "bytes": 4700,
+      "sha256": "0d47edfe4552246fe5b58af2923084b418e849c5b7424f95049cceba63c057f1"
+    },
+    {
+      "path": "reports/yefvv-it-2024-explanations-validation.json",
+      "bytes": 3677,
+      "sha256": "6c74d78d27b593717cfcaff17d8a3cb95c87b0ce1143220bfbf5ffa1858e6f32"
+    }
+  ],
+  "media": {
+    "web_asset_count": 9,
+    "source_image_count": 45,
+    "reference_count": 54,
+    "unique_reference_count": 54,
+    "web_assets": [
+      {
+        "path": "assets/yefvv-it-2024/q009/option-a.png",
+        "bytes": 11582,
+        "sha256": "f17f08f03860376556ee0b68ee3b1e2c3a1a63c90a878198fd203fe86a049269",
+        "referenced_by": [
+          {
+            "question": 9,
+            "placement": "option_a",
+            "role": "web_asset"
+          }
+        ]
+      },
+      {
+        "path": "assets/yefvv-it-2024/q009/option-b.png",
+        "bytes": 15821,
+        "sha256": "fc3b85fb7b0a7098331d83defe9c78e7ce84dec94af74e358ad4d1c823ac1242",
+        "referenced_by": [
+          {
+            "question": 9,
+            "placement": "option_b",
+            "role": "web_asset"
+          }
+        ]
+      },
+      {
+        "path": "assets/yefvv-it-2024/q009/option-c.png",
+        "bytes": 10887,
+        "sha256": "0653284b2b2963056587d6b7603cbc6d9eea4db07e4553fb8e83bc7582d0b233",
+        "referenced_by": [
+          {
+            "question": 9,
+            "placement": "option_c",
+            "role": "web_asset"
+          }
+        ]
+      },
+      {
+        "path": "assets/yefvv-it-2024/q009/option-d.png",
+        "bytes": 10893,
+        "sha256": "9c52ddbd3d9cc77e3028fb55a1b305ea10c6b7c27dc81c192c7099cd4597d07a",
+        "referenced_by": [
+          {
+            "question": 9,
+            "placement": "option_d",
+            "role": "web_asset"
+          }
+        ]
+      },
+      {
+        "path": "assets/yefvv-it-2024/q071/prompt.png",
+        "bytes": 158993,
+        "sha256": "e18252d14ebf797e0c60a7b53dc3ed32a493770596eb48ae5d5bbc8b9c1a9965",
+        "referenced_by": [
+          {
+            "question": 71,
+            "placement": "prompt",
+            "role": "web_asset"
+          }
+        ]
+      },
+      {
+        "path": "assets/yefvv-it-2024/q075/prompt.png",
+        "bytes": 47033,
+        "sha256": "146c975ad6adaa9276c12f517ebe946fef886cb6318dfacc4972ca560df4b992",
+        "referenced_by": [
+          {
+            "question": 75,
+            "placement": "prompt",
+            "role": "web_asset"
+          }
+        ]
+      },
+      {
+        "path": "assets/yefvv-it-2024/q113/prompt.png",
+        "bytes": 20995,
+        "sha256": "490baad9caf055f9e44e5d41bd6003858bf583049c5258ee8f7ad931b801cd7a",
+        "referenced_by": [
+          {
+            "question": 113,
+            "placement": "prompt",
+            "role": "web_asset"
+          }
+        ]
+      },
+      {
+        "path": "assets/yefvv-it-2024/q119/prompt.png",
+        "bytes": 42403,
+        "sha256": "34be0cd83590a43e7e1a812ce2d1f40f0b53807962754e11261357ed030cc109",
+        "referenced_by": [
+          {
+            "question": 119,
+            "placement": "prompt",
+            "role": "web_asset"
+          }
+        ]
+      },
+      {
+        "path": "assets/yefvv-it-2024/q140/prompt.png",
+        "bytes": 27228,
+        "sha256": "0f663d4ff2d5f336765e2978d89465758e0351612cf94a9113a612a8be14354b",
+        "referenced_by": [
+          {
+            "question": 140,
+            "placement": "prompt",
+            "role": "web_asset"
+          }
+        ]
+      }
+    ],
+    "source_images": [
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-000.png",
+        "bytes": 11582,
+        "sha256": "f17f08f03860376556ee0b68ee3b1e2c3a1a63c90a878198fd203fe86a049269",
+        "referenced_by": [
+          {
+            "question": 9,
+            "placement": "option_a",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-001.png",
+        "bytes": 15821,
+        "sha256": "fc3b85fb7b0a7098331d83defe9c78e7ce84dec94af74e358ad4d1c823ac1242",
+        "referenced_by": [
+          {
+            "question": 9,
+            "placement": "option_b",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-002.png",
+        "bytes": 10887,
+        "sha256": "0653284b2b2963056587d6b7603cbc6d9eea4db07e4553fb8e83bc7582d0b233",
+        "referenced_by": [
+          {
+            "question": 9,
+            "placement": "option_c",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-003.png",
+        "bytes": 10893,
+        "sha256": "9c52ddbd3d9cc77e3028fb55a1b305ea10c6b7c27dc81c192c7099cd4597d07a",
+        "referenced_by": [
+          {
+            "question": 9,
+            "placement": "option_d",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-004.png",
+        "bytes": 1917,
+        "sha256": "c4012e95c5eecfca26aa0405749292df033cc3206bf31f02a489336d7a36b0e2",
+        "referenced_by": [
+          {
+            "question": 13,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-005.png",
+        "bytes": 769,
+        "sha256": "57d9c0d3a8845be90d4aef2b10de915ee59b44de2c708029231ec51e90b4509c",
+        "referenced_by": [
+          {
+            "question": 13,
+            "placement": "option_a",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-006.png",
+        "bytes": 6843,
+        "sha256": "d0cd8b3810d377b3677eba60710e68b8e598230f0c050f548005f8edc187dd12",
+        "referenced_by": [
+          {
+            "question": 16,
+            "placement": "option_a",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-007.png",
+        "bytes": 11784,
+        "sha256": "d03ae9f0518b7c58445a02f491f4d9132149d9904cb3ff25fd553ff399d6583d",
+        "referenced_by": [
+          {
+            "question": 16,
+            "placement": "option_b",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-008.png",
+        "bytes": 10688,
+        "sha256": "ff9a13a0ff50e881292105bd7b92c216420d2abc090a4b9595b3752c307f97a3",
+        "referenced_by": [
+          {
+            "question": 16,
+            "placement": "option_c",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-009.png",
+        "bytes": 6295,
+        "sha256": "f6e6321d7ed2c20cf1661b79ce7ced9520a65c0906d3f0c69657057c088fe8c0",
+        "referenced_by": [
+          {
+            "question": 16,
+            "placement": "option_d",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-010.png",
+        "bytes": 9597,
+        "sha256": "adbb80539e1a6765296f0d76b805d869de07ad6b9d9a5da9e0e37576e2739d22",
+        "referenced_by": [
+          {
+            "question": 31,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-011.png",
+        "bytes": 5470,
+        "sha256": "f7a85e85e400a30c4f39d26970cb67059c635ea2df46820c8f2b988f64d74e11",
+        "referenced_by": [
+          {
+            "question": 38,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-012.png",
+        "bytes": 1681,
+        "sha256": "fa81c6d96da554dd1ff5beab31c5ea382d2998a2a156decb412eff75dd87267a",
+        "referenced_by": [
+          {
+            "question": 38,
+            "placement": "option_c",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-013.png",
+        "bytes": 24778,
+        "sha256": "e2208052b078469a4b1bb9acb37ff33071fc76c50981008bc4cd0fa8ed06d321",
+        "referenced_by": [
+          {
+            "question": 51,
+            "placement": "option_a",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-014.png",
+        "bytes": 63212,
+        "sha256": "8db9008db7d5184d7b7d3cf17beb54e85307761c166e61db4aabec170cfd3174",
+        "referenced_by": [
+          {
+            "question": 51,
+            "placement": "option_c",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-015.png",
+        "bytes": 24359,
+        "sha256": "4ca3e3d832ba4759ded9b757adf8c383b9354f276db33726d4f04fd2644f017d",
+        "referenced_by": [
+          {
+            "question": 51,
+            "placement": "option_d",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-016.png",
+        "bytes": 3314,
+        "sha256": "abe780eadcbd74f77fa32b1e2509260223204cb533bf22ce6c96ca02482f4c8b",
+        "referenced_by": [
+          {
+            "question": 51,
+            "placement": "option_b",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-017.png",
+        "bytes": 35296,
+        "sha256": "d4f407ab11c489735f371aa168e5be282f16744c932b45c113d751a1ab21f624",
+        "referenced_by": [
+          {
+            "question": 51,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-018.png",
+        "bytes": 2794,
+        "sha256": "7b6f4a7d15613ba8c20044119bf2cc3d0e6753789c86e27495e0daba2a570115",
+        "referenced_by": [
+          {
+            "question": 57,
+            "placement": "option_a",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-019.png",
+        "bytes": 2996,
+        "sha256": "63796d0a83d112d8cb89bf642861b2aa533e6311a19fca6279808aadf7d6ddc9",
+        "referenced_by": [
+          {
+            "question": 57,
+            "placement": "option_b",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-020.png",
+        "bytes": 4225,
+        "sha256": "854b00b3c230935af63d5e438be98730c866a6e1bf8b91a606461f3fb1ca8e20",
+        "referenced_by": [
+          {
+            "question": 57,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-021.png",
+        "bytes": 2923,
+        "sha256": "f220147eb55b1f748ddfe9574352cad50528fc4e9f40ca82fef4f7b49531a018",
+        "referenced_by": [
+          {
+            "question": 57,
+            "placement": "option_c",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-022.png",
+        "bytes": 2612,
+        "sha256": "de8eb6520cf1e572f62145b9b37352dfc18602b6163635dd9dcf596438ce81df",
+        "referenced_by": [
+          {
+            "question": 57,
+            "placement": "option_d",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-023.png",
+        "bytes": 158993,
+        "sha256": "e18252d14ebf797e0c60a7b53dc3ed32a493770596eb48ae5d5bbc8b9c1a9965",
+        "referenced_by": [
+          {
+            "question": 71,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-024.png",
+        "bytes": 47033,
+        "sha256": "146c975ad6adaa9276c12f517ebe946fef886cb6318dfacc4972ca560df4b992",
+        "referenced_by": [
+          {
+            "question": 75,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-025.png",
+        "bytes": 4016,
+        "sha256": "78fa6db69cc41c874b8853772b9f18cab65f161eb0d988bb40c6f5716c67a1fb",
+        "referenced_by": [
+          {
+            "question": 76,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-026.png",
+        "bytes": 820,
+        "sha256": "41efd0101a213d8a516517e1f042b185e4422725bf7a140b54964b2eb99b4c8a",
+        "referenced_by": [
+          {
+            "question": 76,
+            "placement": "option_a",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-027.png",
+        "bytes": 2992,
+        "sha256": "04c30757fa4158249a9693f39db4b54235b6f62eaab3363c7ef089b80f2a434b",
+        "referenced_by": [
+          {
+            "question": 76,
+            "placement": "option_b",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-028.png",
+        "bytes": 1570,
+        "sha256": "3ef4a4c5efbcd24ab544b1d2ac582d96faecf0b7e37633a0a3295011c93eee20",
+        "referenced_by": [
+          {
+            "question": 76,
+            "placement": "option_c",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-029.png",
+        "bytes": 2062,
+        "sha256": "8f7fffe6f5b5da38367bc3fe61b2cf7fb2e253fd048f3519fd05f5794e0e4a70",
+        "referenced_by": [
+          {
+            "question": 76,
+            "placement": "option_d",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-030.png",
+        "bytes": 35239,
+        "sha256": "b38c875afb7f7d68e062a7de82a47cebff6ae0b08e272c3e47fb79e6884c08b8",
+        "referenced_by": [
+          {
+            "question": 86,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-031.png",
+        "bytes": 2363,
+        "sha256": "a5b031f7a371b0884c8abc34e3b5b156ddbff8b3909a68a67cb70d9b9ba270f7",
+        "referenced_by": [
+          {
+            "question": 97,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-032.png",
+        "bytes": 5457,
+        "sha256": "5dde83af1462ee106599d002c1dfdb3c2e5282807b11147c1af37937a519f8ae",
+        "referenced_by": [
+          {
+            "question": 97,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-033.png",
+        "bytes": 2546,
+        "sha256": "37e30562cd1d3611ce857c5ed01ebadc8d48a59e75560b6b041a65fa9e02d5dd",
+        "referenced_by": [
+          {
+            "question": 97,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-034.png",
+        "bytes": 7707,
+        "sha256": "b5d6b240f8d87551dae47e97ee9e9f198e13f063abf114810d1c278c21ae1bcb",
+        "referenced_by": [
+          {
+            "question": 97,
+            "placement": "option_a",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-035.png",
+        "bytes": 9128,
+        "sha256": "b05bafa1adf15c08513bb023741a77fc512e208a1442efb78e1d452c87e3d884",
+        "referenced_by": [
+          {
+            "question": 97,
+            "placement": "option_b",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-036.png",
+        "bytes": 8714,
+        "sha256": "067d0bf22e456afbe52587731519635d52fed0edc58374653a9af884892a1c89",
+        "referenced_by": [
+          {
+            "question": 97,
+            "placement": "option_c",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-037.png",
+        "bytes": 7699,
+        "sha256": "41c040780a16f484aa172f32ed85c0bbd669bea2865c38e15a9b749bedfca57e",
+        "referenced_by": [
+          {
+            "question": 97,
+            "placement": "option_d",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-038.png",
+        "bytes": 2751,
+        "sha256": "9119632c4928bf79f738c52ee5a2ad92ad20ea49c769b06d291e105f763ac4ad",
+        "referenced_by": [
+          {
+            "question": 103,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-039.png",
+        "bytes": 6247,
+        "sha256": "8e1377eb4ed296f58fbf43c36ace2adb343214dfc9ced7e6dfafc3cbb7fe47a7",
+        "referenced_by": [
+          {
+            "question": 103,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-040.png",
+        "bytes": 3360,
+        "sha256": "db86c6250effa0a02684a0d975546122f9275e3ab436c89afd69b9f77a4008fb",
+        "referenced_by": [
+          {
+            "question": 103,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-041.png",
+        "bytes": 20995,
+        "sha256": "490baad9caf055f9e44e5d41bd6003858bf583049c5258ee8f7ad931b801cd7a",
+        "referenced_by": [
+          {
+            "question": 113,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-042.png",
+        "bytes": 42403,
+        "sha256": "34be0cd83590a43e7e1a812ce2d1f40f0b53807962754e11261357ed030cc109",
+        "referenced_by": [
+          {
+            "question": 119,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-043.png",
+        "bytes": 65926,
+        "sha256": "88d099bfc920bc51af2a785c7d48b86dcc32a34833f1848852f3b5f375cd3d51",
+        "referenced_by": [
+          {
+            "question": 126,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      },
+      {
+        "path": "sources/yefvv-it-2024/embedded-images/image-044.png",
+        "bytes": 27228,
+        "sha256": "0f663d4ff2d5f336765e2978d89465758e0351612cf94a9113a612a8be14354b",
+        "referenced_by": [
+          {
+            "question": 140,
+            "placement": "prompt",
+            "role": "source_image"
+          }
+        ]
+      }
+    ]
+  },
+  "dataset_summary": {
+    "question_count": 140,
+    "option_count": 560,
+    "classified_question_count": 140,
+    "explained_question_count": 140,
+    "disputed_answer_question_numbers": [
+      82,
+      102
+    ]
+  },
+  "tools": {
+    "node": "v24.14.0",
+    "ruby": "ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin25]"
+  }
+}

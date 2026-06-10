@@ -1,0 +1,266 @@
+schema_version: 1
+
+dataset:
+  id: yefvv-it-2024
+  title: ЄФВВ 2024 — Інформаційні технології
+  exam: ЄФВВ
+  subject: Інформаційні технології
+  year: 2024
+  language: uk
+  question_count_in_source: 140
+  sample_question_count: 4
+  source:
+    file: raw/ЄФВВ - ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ/YEFVV_2024-Informatsijni-tehnologiyi-na_sajt__.pdf
+    pages: 29
+    origin: official
+
+questions:
+  - id: yefvv-it-2024-001
+    number: 1
+    type: single_choice
+    prompt:
+      - type: markdown
+        text: >-
+          Які головні фактори слід враховувати під час вибору операційної
+          системи для вбудованих систем реального часу?
+    options:
+      - id: a
+        content:
+          - type: markdown
+            text: Відмінності у структурі файлової системи.
+      - id: b
+        content:
+          - type: markdown
+            text: Тип планування завдань та обробки переривань.
+      - id: c
+        content:
+          - type: markdown
+            text: Методи оптимізації швидкодії апаратного забезпечення.
+      - id: d
+        content:
+          - type: markdown
+            text: Можливості віддаленого адміністрування через мережу.
+    answer:
+      correct_option: b
+      source: official_marker
+    explanation:
+      status: missing
+      blocks: []
+    classification:
+      program_2025:
+        section: "8"
+        topic_codes:
+          - "8.1.1"
+          - "8.1.3"
+        alignment: likely
+      tags:
+        - operating-systems
+        - real-time-systems
+    source:
+      question_number: 1
+      page_start: 1
+      page_end: 1
+    review:
+      transcription: verified_for_sample
+      visual: not_required
+      notes: []
+
+  - id: yefvv-it-2024-009
+    number: 9
+    type: single_choice
+    prompt:
+      - type: markdown
+        text: >-
+          У базі планується зберігати дані про студентів, дисципліни, які
+          вивчають студенти, та оцінки студентів з дисциплін. З кожної
+          дисципліни студент може мати одну оцінку або не мати жодної. Яка із
+          запропонованих ER-діаграм у нотації crow’s foot є коректною і
+          найповнішою моделлю описаних даних?
+    options:
+      - id: a
+        content:
+          - type: image
+            path: assets/yefvv-it-2024/q009/option-a.png
+            alt: >-
+              Варіант A ER-діаграми із сутностями «Студент», «Оцінка» та
+              «Дисципліна».
+            role: option
+      - id: b
+        content:
+          - type: image
+            path: assets/yefvv-it-2024/q009/option-b.png
+            alt: >-
+              Варіант B ER-діаграми із сутностями «Студент», «Оцінка» та
+              «Дисципліна».
+            role: option
+      - id: c
+        content:
+          - type: image
+            path: assets/yefvv-it-2024/q009/option-c.png
+            alt: >-
+              Варіант C ER-діаграми із сутностями «Студент», «Дисципліна» та
+              «Оцінка».
+            role: option
+      - id: d
+        content:
+          - type: image
+            path: assets/yefvv-it-2024/q009/option-d.png
+            alt: >-
+              Варіант D ER-діаграми із сутностями «Студент», «Дисципліна» та
+              «Оцінка».
+            role: option
+    answer:
+      correct_option: a
+      source: official_marker
+    explanation:
+      status: missing
+      blocks: []
+    classification:
+      program_2025:
+        section: "3"
+        topic_codes:
+          - "3.3"
+        cognitive_level: C
+        alignment: aligned
+      tags:
+        - databases
+        - er-model
+        - crows-foot
+    source:
+      question_number: 9
+      page_start: 2
+      page_end: 2
+    review:
+      transcription: verified_for_sample
+      visual: verified
+      notes:
+        - Alt-тексти потребують детальнішого опису кардинальностей.
+
+  - id: yefvv-it-2024-016
+    number: 16
+    type: single_choice
+    prompt:
+      - type: markdown
+        text: >-
+          Вкажіть формулу логістичної (сигмоїдної) функції активації, яка
+          визначає вихідний сигнал нейрона.
+    options:
+      - id: a
+        content:
+          - type: math
+            latex: '\frac{1}{1 + e^{-x}}'
+            display: block
+      - id: b
+        content:
+          - type: math
+            latex: '\theta(x) = \begin{cases} 0, & x < 0 \\ 1, & x \ge 0 \end{cases}'
+            display: block
+      - id: c
+        content:
+          - type: math
+            latex: '\tanh(x) = 2 \cdot \operatorname{sigmoid}(2x) - 1'
+            display: block
+      - id: d
+        content:
+          - type: math
+            latex: 'f(x) = \max(0, x)'
+            display: block
+    answer:
+      correct_option: a
+      source: official_marker
+    explanation:
+      status: missing
+      blocks: []
+    classification:
+      program_2025:
+        section: "10"
+        topic_codes:
+          - "10.3.3"
+        cognitive_level: B
+        alignment: aligned
+      tags:
+        - artificial-intelligence
+        - neural-networks
+        - activation-functions
+    source:
+      question_number: 16
+      page_start: 3
+      page_end: 4
+    review:
+      transcription: verified_for_sample
+      visual: verified
+      notes:
+        - Формули перетворено з растрових зображень у LaTeX.
+
+  - id: yefvv-it-2024-086
+    number: 86
+    type: single_choice
+    prompt:
+      - type: markdown
+        text: >-
+          Дано таблицю «Студент» реляційної бази вказаної структури та змісту.
+      - type: table
+        columns:
+          - Ідентифікатор (число)
+          - Рейтинг (число)
+          - На бюджеті (логічне значення)
+        rows:
+          - ["1", "70", "ні"]
+          - ["2", "65", "так"]
+          - ["3", "93", "ні"]
+          - ["4", "85", "так"]
+      - type: markdown
+        text: "До цієї таблиці зробили запит:"
+      - type: code
+        language: sql
+        text: |-
+          SELECT Ідентифікатор
+          FROM Студент
+          WHERE (Рейтинг > 70 AND Рейтинг < 90) OR [На бюджеті]=true;
+      - type: markdown
+        text: >-
+          Який перелік значень буде повернуто як результат виконання цього
+          запиту?
+    options:
+      - id: a
+        content:
+          - type: markdown
+            text: 2, 4.
+      - id: b
+        content:
+          - type: markdown
+            text: 1, 3, 4.
+      - id: c
+        content:
+          - type: markdown
+            text: 1, 4.
+      - id: d
+        content:
+          - type: markdown
+            text: 2, 3, 4.
+    answer:
+      correct_option: a
+      source: official_marker
+    explanation:
+      status: missing
+      blocks: []
+    classification:
+      program_2025:
+        section: "3"
+        topic_codes:
+          - "3.5"
+        cognitive_level: C
+        alignment: aligned
+      tags:
+        - databases
+        - sql
+        - boolean-expressions
+    source:
+      question_number: 86
+      page_start: 19
+      page_end: 19
+    review:
+      transcription: verified_for_sample
+      visual: verified
+      notes:
+        - Таблицю перетворено із зображення на структуровані дані.

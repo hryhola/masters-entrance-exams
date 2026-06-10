@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "source_id": "yefvv-it-2024",
+  "release_version": "1.0.0",
+  "status": "release_validated",
+  "inputs": {
+    "final_yaml": "data/yefvv-it-2024.yaml",
+    "final_json": "data/yefvv-it-2024.json",
+    "manifest": "data/yefvv-it-2024.manifest.json",
+    "schema": "schemas/yefvv-it-question-dataset.schema.json",
+    "final_yaml_sha256": "6480e97f0a8ae729b3d4fe41628c83e575f4d840e1ebd0ad1d99783f736a326e",
+    "final_json_sha256": "d62c6d0ff5eae78ed96fb71a0fac928502dedb0777e31faa94e464c8f1e319d3",
+    "manifest_sha256": "60ba6d6505bd3c73ef6bf6519b1bec1ad5aa9b9b94ae5cdb5a042129ee25496e"
+  },
+  "tools": {
+    "node": "v24.14.0",
+    "ruby": "ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin25]"
+  },
+  "summary": {
+    "passed": true,
+    "check_count": 15,
+    "passed_check_count": 15,
+    "failed_check_count": 0,
+    "question_count": 140,
+    "option_count": 560,
+    "web_asset_count": 9,
+    "source_image_count": 45
+  },
+  "checks": [
+    {
+      "id": "explained_json_syntax",
+      "description": "Explained input JSON parses successfully.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "final_json_syntax",
+      "description": "Final JSON parses successfully.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "final_yaml_syntax",
+      "description": "Final YAML parses safely.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "manifest_syntax",
+      "description": "Release manifest parses successfully.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "schema_syntax",
+      "description": "Dataset schema parses successfully.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "yaml_json_equivalence",
+      "description": "Final YAML and JSON represent identical data.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "release_content_preservation",
+      "description": "Final assembly changes only release status and release metadata.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "release_metadata",
+      "description": "Release metadata identifies version 1.0.0, canonical files, schema, and eight provenance stages.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "application_readiness",
+      "description": "Final dataset contains all questions, options, classifications, explanations, and explicit disputed keys.",
+      "passed": true,
+      "details": {
+        "question_count": 140,
+        "option_count": 560,
+        "alignment_counts": {
+          "aligned": 104,
+          "legacy": 5,
+          "partial": 28,
+          "unmapped": 3
+        },
+        "answer_review_counts": {
+          "verified": 97,
+          "verified_with_caveat": 41,
+          "disputed": 2
+        }
+      }
+    },
+    {
+      "id": "schema_release_contract",
+      "description": "Schema documents ready datasets and release metadata.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "media_inventory",
+      "description": "Manifest covers every referenced web asset and source image with size, checksum, and usage.",
+      "passed": true,
+      "details": {
+        "web_asset_count": 9,
+        "source_image_count": 45,
+        "unique_reference_count": 54,
+        "errors": []
+      }
+    },
+    {
+      "id": "output_checksums",
+      "description": "Manifest checksums and byte sizes match the final YAML and JSON.",
+      "passed": true,
+      "details": {
+        "yaml_sha256": "6480e97f0a8ae729b3d4fe41628c83e575f4d840e1ebd0ad1d99783f736a326e",
+        "json_sha256": "d62c6d0ff5eae78ed96fb71a0fac928502dedb0777e31faa94e464c8f1e319d3"
+      }
+    },
+    {
+      "id": "official_source_checksums",
+      "description": "Official test and program PDFs match their pinned SHA-256 values.",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "id": "key_artifact_checksums",
+      "description": "Manifest checksums match the explained input, taxonomy, schema, and prerequisite validation reports.",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "id": "prerequisite_validations",
+      "description": "Normalization, classification, and explanation validations all pass.",
+      "passed": true,
+      "details": {
+        "reports": [
+          {
+            "path": "reports/yefvv-it-2024-validation.json",
+            "passed": true,
+            "check_count": 12
+          },
+          {
+            "path": "reports/yefvv-it-2024-classification-validation.json",
+            "passed": true,
+            "check_count": 13
+          },
+          {
+            "path": "reports/yefvv-it-2024-explanations-validation.json",
+            "passed": true,
+            "check_count": 11
+          }
+        ]
+      }
+    }
+  ]
+}
