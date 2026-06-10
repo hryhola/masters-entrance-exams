@@ -12,6 +12,7 @@
   --color-primary-soft: #dcece5;
   --color-accent: #e3aa4d;
   --color-accent-soft: #faedcf;
+  --color-on-accent: #2f260f;
   --color-info: #36546b;
   --color-info-soft: #e1ebf1;
   --color-danger: #9a3f42;
@@ -57,6 +58,7 @@
   --color-primary-soft: #203b32;
   --color-accent: #efbd68;
   --color-accent-soft: #44351d;
+  --color-on-accent: #241b09;
   --color-info: #9bc3dc;
   --color-info-soft: #203541;
   --color-danger: #ef9b9d;
@@ -88,6 +90,7 @@
     --color-primary-soft: #203b32;
     --color-accent: #efbd68;
     --color-accent-soft: #44351d;
+    --color-on-accent: #241b09;
     --color-info: #9bc3dc;
     --color-info-soft: #203541;
     --color-danger: #ef9b9d;

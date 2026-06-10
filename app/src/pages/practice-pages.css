@@ -207,7 +207,7 @@
 }
 
 .setup-summary .button {
-  color: var(--color-primary-strong);
+  color: var(--color-on-accent);
   background: var(--color-accent);
   box-shadow: none;
 }
