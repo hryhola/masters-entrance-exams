@@ -4,7 +4,7 @@ import type {
 } from '../features/progress/types'
 import type { PracticeSession } from '../features/practice/session'
 
-export const STORAGE_VERSION = 2
+export const STORAGE_VERSION = 3
 
 export interface StorageEnvelope<T> {
   version: typeof STORAGE_VERSION
@@ -18,10 +18,13 @@ export interface LocalProfile {
   completedAttempts: number
 }
 
+export type ThemePreference = 'system' | 'light' | 'dark'
+
 export interface LocalSettings {
   reducedMotion: boolean
   targetExamDate: string | null
   dailyQuestionCount: number
+  theme: ThemePreference
 }
 
 export interface PersistedAppState {

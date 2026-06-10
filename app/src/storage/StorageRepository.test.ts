@@ -11,6 +11,7 @@ import {
 import { createTestQuestion } from '../test/fixtures'
 import {
   LEGACY_STORAGE_KEYS,
+  PREVIOUS_STORAGE_KEYS,
   STORAGE_KEYS,
   StorageRepository,
 } from './StorageRepository'
@@ -78,6 +79,7 @@ function createState(): PersistedAppState {
       reducedMotion: false,
       targetExamDate: null,
       dailyQuestionCount: 10,
+      theme: 'system',
     },
   }
 }
@@ -92,7 +94,7 @@ describe('StorageRepository', () => {
     expect(repository.load()).toEqual({ state, issues: [] })
 
     const envelope = JSON.parse(storage.getItem(STORAGE_KEYS.attempts) ?? '')
-    expect(envelope).toMatchObject({ version: 2, data: state.attempts })
+    expect(envelope).toMatchObject({ version: 3, data: state.attempts })
   })
 
   it('migrates a legacy session collection and restores its deadline', () => {
@@ -127,10 +129,10 @@ describe('StorageRepository', () => {
     expect(result.state.sessions['legacy-session'].deadlineAt).toBe(130_000)
     expect(
       JSON.parse(storage.getItem(STORAGE_KEYS.sessions) ?? '').version,
-    ).toBe(2)
+    ).toBe(3)
   })
 
-  it('migrates v1 keys to v2 learning models', () => {
+  it('migrates v1 keys to current learning models', () => {
     const storage = new MemoryStorage()
     const state = createState()
     const legacySession = structuredClone(
@@ -184,8 +186,42 @@ describe('StorageRepository', () => {
       reducedMotion: false,
       targetExamDate: null,
       dailyQuestionCount: 10,
+      theme: 'system',
     })
     expect(storage.getItem(STORAGE_KEYS.questionProgress)).not.toBeNull()
+  })
+
+  it('migrates v2 settings and preserves progress', () => {
+    const storage = new MemoryStorage()
+    const state = createState()
+    const previousSettings = { ...state.settings } as Partial<
+      PersistedAppState['settings']
+    >
+    delete previousSettings.theme
+
+    storage.setItem(
+      PREVIOUS_STORAGE_KEYS.attempts,
+      JSON.stringify({ version: 2, data: state.attempts }),
+    )
+    storage.setItem(
+      PREVIOUS_STORAGE_KEYS.settings,
+      JSON.stringify({ version: 2, data: previousSettings }),
+    )
+
+    const result = new StorageRepository(storage).load()
+
+    expect(result.issues).toEqual([])
+    expect(result.state.attempts).toEqual(state.attempts)
+    expect(result.state.settings).toEqual({
+      ...state.settings,
+      theme: 'system',
+    })
+    expect(
+      JSON.parse(storage.getItem(STORAGE_KEYS.settings) ?? ''),
+    ).toMatchObject({
+      version: 3,
+      data: { theme: 'system' },
+    })
   })
 
   it('exports and imports a complete profile into clean storage', () => {
@@ -198,6 +234,7 @@ describe('StorageRepository', () => {
         reducedMotion: false,
         targetExamDate: '2026-07-25',
         dailyQuestionCount: 5,
+        theme: 'dark' as const,
       },
     }
 

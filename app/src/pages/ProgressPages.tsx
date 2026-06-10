@@ -488,6 +488,31 @@ export function SettingsPage() {
         title="Локальні дані"
       />
 
+      <section className="appearance-settings">
+        <div>
+          <p className="eyebrow">Вигляд</p>
+          <h2>Тема інтерфейсу</h2>
+          <p>
+            Системна тема автоматично повторює налаштування вашого пристрою.
+          </p>
+        </div>
+        <label>
+          <span>Колірна тема</span>
+          <select
+            onChange={(event) =>
+              updateSettings({
+                theme: event.target.value as 'system' | 'light' | 'dark',
+              })
+            }
+            value={settings.theme}
+          >
+            <option value="system">Як у системі</option>
+            <option value="light">Світла</option>
+            <option value="dark">Темна</option>
+          </select>
+        </label>
+      </section>
+
       <section className="learning-settings">
         <div>
           <p className="eyebrow">Навчальний ритм</p>

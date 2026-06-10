@@ -5,6 +5,7 @@ import { BrandMark } from '../components/BrandMark'
 import { Icon } from '../components/Icon'
 import { StorageNotice } from '../components/StorageNotice'
 import { PracticeSessionProvider } from '../features/practice/PracticeSessionContext'
+import { usePracticeSessions } from '../features/practice/usePracticeSessions'
 import '../app.css'
 import { getPageTitle, primaryNavigation } from './navigation'
 
@@ -12,7 +13,45 @@ function navClassName({ isActive }: { isActive: boolean }) {
   return isActive ? 'nav-link nav-link--active' : 'nav-link'
 }
 
-export function AppShell() {
+function ThemeController() {
+  const { settings } = usePracticeSessions()
+
+  useEffect(() => {
+    const root = document.documentElement
+    const media =
+      typeof window.matchMedia === 'function'
+        ? window.matchMedia('(prefers-color-scheme: dark)')
+        : null
+    const themeColor = document.querySelector<HTMLMetaElement>(
+      'meta[name="theme-color"]',
+    )
+
+    if (settings.theme === 'system') {
+      root.removeAttribute('data-theme')
+    } else {
+      root.dataset.theme = settings.theme
+    }
+
+    const updateThemeColor = () => {
+      const dark =
+        settings.theme === 'dark' ||
+        (settings.theme === 'system' && media?.matches === true)
+      themeColor?.setAttribute('content', dark ? '#101512' : '#f4f3ed')
+    }
+
+    updateThemeColor()
+    media?.addEventListener('change', updateThemeColor)
+
+    return () => {
+      media?.removeEventListener('change', updateThemeColor)
+      root.removeAttribute('data-theme')
+    }
+  }, [settings.theme])
+
+  return null
+}
+
+function AppLayout() {
   const location = useLocation()
 
   function focusMainContent(event: MouseEvent<HTMLAnchorElement>) {
@@ -25,7 +64,8 @@ export function AppShell() {
   }, [location.pathname])
 
   return (
-    <PracticeSessionProvider>
+    <>
+      <ThemeController />
       <div className="app-shell">
         <a
           className="skip-link"
@@ -88,6 +128,14 @@ export function AppShell() {
           ))}
         </nav>
       </div>
+    </>
+  )
+}
+
+export function AppShell() {
+  return (
+    <PracticeSessionProvider>
+      <AppLayout />
     </PracticeSessionProvider>
   )
 }

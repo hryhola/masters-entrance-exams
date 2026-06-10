@@ -10,7 +10,7 @@
   padding: 10px 14px;
   border-radius: var(--radius-small);
   color: #fff;
-  background: var(--color-primary-strong);
+  background: var(--color-primary-panel);
   transform: translateY(-150%);
   transition: transform 160ms ease;
 }
@@ -23,8 +23,8 @@
   position: sticky;
   z-index: 20;
   top: 0;
-  border-bottom: 1px solid rgb(217 221 214 / 85%);
-  background: rgb(244 243 237 / 92%);
+  border-bottom: 1px solid var(--color-header-border);
+  background: var(--color-header);
   backdrop-filter: blur(18px);
 }
 
@@ -34,7 +34,7 @@
   justify-content: space-between;
   gap: 24px;
   padding: 13px max(24px, calc((100% - var(--content-width)) / 2));
-  color: #6f2828;
+  color: var(--color-danger);
   background: var(--color-danger-soft);
 }
 
@@ -50,7 +50,7 @@
 
 .storage-notice button {
   padding: 7px 10px;
-  border: 1px solid #c98284;
+  border: 1px solid var(--color-danger);
   border-radius: 8px;
   color: inherit;
   background: transparent;
@@ -144,7 +144,7 @@
   padding: 5px;
   border: 1px solid var(--color-border);
   border-radius: 14px;
-  background: rgb(255 255 255 / 70%);
+  background: var(--color-glass);
 }
 
 .nav-link {
@@ -308,12 +308,12 @@ h3 {
 
 .button--primary {
   color: #fff;
-  background: var(--color-primary);
+  background: var(--color-primary-action);
   box-shadow: 0 10px 25px rgb(33 95 80 / 18%);
 }
 
 .button--primary:hover {
-  background: var(--color-primary-strong);
+  background: var(--color-primary-panel);
   box-shadow: 0 14px 30px rgb(33 95 80 / 24%);
 }
 
@@ -326,10 +326,10 @@ h3 {
 .hero-summary {
   position: relative;
   padding: 28px;
-  border: 1px solid rgb(255 255 255 / 70%);
+  border: 1px solid var(--color-glass);
   border-radius: 22px;
   color: #fff;
-  background: var(--color-primary-strong);
+  background: var(--color-primary-panel);
   box-shadow: var(--shadow-float);
   transform: rotate(1.5deg);
 }
@@ -453,7 +453,7 @@ h3 {
 }
 
 .icon-tile--accent {
-  color: #8a5c14;
+  color: var(--color-warning);
   background: var(--color-accent-soft);
 }
 
@@ -568,7 +568,7 @@ h3 {
   padding: 25px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-medium);
-  background: rgb(255 255 255 / 55%);
+  background: color-mix(in srgb, var(--color-surface) 72%, transparent);
 }
 
 .feature-card .icon-tile {
@@ -625,7 +625,7 @@ h3 {
   min-height: 520px;
   border-color: transparent;
   color: #fff;
-  background: var(--color-primary-strong);
+  background: var(--color-primary-panel);
   box-shadow: var(--shadow-card);
 }
 
@@ -651,7 +651,7 @@ h3 {
 
 .exam-card--future {
   min-height: 250px;
-  background: rgb(255 255 255 / 55%);
+  background: color-mix(in srgb, var(--color-surface) 72%, transparent);
 }
 
 .exam-card--future p {
@@ -702,7 +702,7 @@ h3 {
   flex-direction: column;
   justify-content: center;
   padding: 14px;
-  background: var(--color-primary-strong);
+  background: var(--color-primary-panel);
 }
 
 .exam-metrics dt {
@@ -735,10 +735,10 @@ h3 {
   align-items: center;
   justify-content: center;
   padding: 54px 28px;
-  border: 1px dashed #bdc5bc;
+  border: 1px dashed var(--color-border);
   border-radius: var(--radius-large);
   text-align: center;
-  background: rgb(255 255 255 / 48%);
+  background: color-mix(in srgb, var(--color-surface) 72%, transparent);
 }
 
 .empty-state .icon-tile {
@@ -819,9 +819,9 @@ h3 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding: 7px;
-    border: 1px solid rgb(217 221 214 / 85%);
+    border: 1px solid var(--color-header-border);
     border-radius: 18px;
-    background: rgb(255 255 255 / 94%);
+    background: var(--color-header);
     box-shadow: var(--shadow-float);
     backdrop-filter: blur(18px);
   }

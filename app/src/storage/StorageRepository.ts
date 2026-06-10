@@ -23,6 +23,15 @@ import {
 } from './types'
 
 const STORAGE_KEYS = {
+  profile: 'masters-exams:v3:profile',
+  sessions: 'masters-exams:v3:sessions',
+  attempts: 'masters-exams:v3:attempts',
+  questionProgress: 'masters-exams:v3:question-progress',
+  bookmarks: 'masters-exams:v3:bookmarks',
+  settings: 'masters-exams:v3:settings',
+} as const
+
+const PREVIOUS_STORAGE_KEYS = {
   profile: 'masters-exams:v2:profile',
   sessions: 'masters-exams:v2:sessions',
   attempts: 'masters-exams:v2:attempts',
@@ -44,6 +53,7 @@ const defaultSettings: LocalSettings = {
   reducedMotion: false,
   targetExamDate: null,
   dailyQuestionCount: 10,
+  theme: 'system',
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -203,7 +213,10 @@ function isSettings(value: unknown): value is LocalSettings {
       typeof value.targetExamDate === 'string') &&
     typeof value.dailyQuestionCount === 'number' &&
     value.dailyQuestionCount >= 1 &&
-    value.dailyQuestionCount <= 50
+    value.dailyQuestionCount <= 50 &&
+    (value.theme === 'system' ||
+      value.theme === 'light' ||
+      value.theme === 'dark')
   )
 }
 
@@ -342,6 +355,10 @@ function migrateSettings(value: unknown): LocalSettings {
       typeof value.dailyQuestionCount === 'number'
         ? value.dailyQuestionCount
         : 10,
+    theme:
+      value.theme === 'light' || value.theme === 'dark'
+        ? value.theme
+        : 'system',
   }
 
   return isSettings(migrated) ? migrated : defaultSettings
@@ -431,7 +448,7 @@ export class StorageRepository {
 
     state.profile = this.read(
       STORAGE_KEYS.profile,
-      LEGACY_STORAGE_KEYS.profile,
+      [PREVIOUS_STORAGE_KEYS.profile, LEGACY_STORAGE_KEYS.profile],
       null,
       isNullableProfile,
       (value) => (isProfile(value) ? value : null),
@@ -439,7 +456,7 @@ export class StorageRepository {
     )
     state.sessions = this.read(
       STORAGE_KEYS.sessions,
-      LEGACY_STORAGE_KEYS.sessions,
+      [PREVIOUS_STORAGE_KEYS.sessions, LEGACY_STORAGE_KEYS.sessions],
       {},
       isSessions,
       migrateSessions,
@@ -447,7 +464,7 @@ export class StorageRepository {
     )
     state.attempts = this.read(
       STORAGE_KEYS.attempts,
-      LEGACY_STORAGE_KEYS.attempts,
+      [PREVIOUS_STORAGE_KEYS.attempts, LEGACY_STORAGE_KEYS.attempts],
       [],
       isAttempts,
       migrateAttempts,
@@ -455,7 +472,10 @@ export class StorageRepository {
     )
     state.questionProgress = this.read(
       STORAGE_KEYS.questionProgress,
-      LEGACY_STORAGE_KEYS.questionProgress,
+      [
+        PREVIOUS_STORAGE_KEYS.questionProgress,
+        LEGACY_STORAGE_KEYS.questionProgress,
+      ],
       {},
       isProgress,
       migrateProgress,
@@ -463,7 +483,7 @@ export class StorageRepository {
     )
     state.bookmarks = this.read(
       STORAGE_KEYS.bookmarks,
-      null,
+      [PREVIOUS_STORAGE_KEYS.bookmarks],
       [],
       isStringArray,
       (value) => (isStringArray(value) ? value : []),
@@ -471,7 +491,7 @@ export class StorageRepository {
     )
     state.settings = this.read(
       STORAGE_KEYS.settings,
-      LEGACY_STORAGE_KEYS.settings,
+      [PREVIOUS_STORAGE_KEYS.settings, LEGACY_STORAGE_KEYS.settings],
       defaultSettings,
       isSettings,
       migrateSettings,
@@ -539,6 +559,9 @@ export class StorageRepository {
       Object.values(LEGACY_STORAGE_KEYS).forEach((key) =>
         this.storage?.removeItem(key),
       )
+      Object.values(PREVIOUS_STORAGE_KEYS).forEach((key) =>
+        this.storage?.removeItem(key),
+      )
       return { ok: true }
     } catch {
       return {
@@ -553,15 +576,17 @@ export class StorageRepository {
 
   private read<T>(
     key: string,
-    legacyKey: string | null,
+    fallbackKeys: readonly string[],
     fallback: T,
     validate: (value: unknown) => value is T,
     migrate: (value: unknown) => T,
     issues: StorageIssue[],
   ): T {
     const currentRaw = this.storage?.getItem(key)
-    const legacyRaw = legacyKey ? this.storage?.getItem(legacyKey) : null
-    const raw = currentRaw ?? legacyRaw
+    const fallbackRaw = fallbackKeys
+      .map((fallbackKey) => this.storage?.getItem(fallbackKey))
+      .find((value) => value !== null && value !== undefined)
+    const raw = currentRaw ?? fallbackRaw
     if (!raw) return fallback
 
     try {
@@ -666,4 +691,4 @@ export function createBrowserStorageRepository() {
   }
 }
 
-export { LEGACY_STORAGE_KEYS, STORAGE_KEYS }
+export { LEGACY_STORAGE_KEYS, PREVIOUS_STORAGE_KEYS, STORAGE_KEYS }

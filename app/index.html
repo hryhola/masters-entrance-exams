@@ -9,6 +9,19 @@
       content="Персональний тренажер підготовки до вступних іспитів у магістратуру 2026 року."
     />
     <meta name="theme-color" content="#f4f3ed" />
+    <script>
+      try {
+        const keys = ['masters-exams:v3:settings', 'masters-exams:v2:settings']
+        const raw = keys.map((key) => localStorage.getItem(key)).find(Boolean)
+        const theme = raw ? JSON.parse(raw).data?.theme : 'system'
+
+        if (theme === 'light' || theme === 'dark') {
+          document.documentElement.dataset.theme = theme
+        }
+      } catch {
+        // The application will fall back to the system theme.
+      }
+    </script>
     <title>Вступ 2026</title>
   </head>
   <body>

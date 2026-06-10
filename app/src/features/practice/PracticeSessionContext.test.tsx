@@ -35,6 +35,7 @@ function SessionHarness() {
       </span>
       <span data-testid="bookmark-count">{bookmarks.length}</span>
       <span data-testid="daily-count">{settings.dailyQuestionCount}</span>
+      <span data-testid="theme">{settings.theme}</span>
       <span data-testid="session-state">
         {session
           ? `${session.currentIndex}:${session.answers.q1 ?? '-'}:${
@@ -96,7 +97,7 @@ function SessionHarness() {
         Закладка
       </button>
       <button
-        onClick={() => updateSettings({ dailyQuestionCount: 5 })}
+        onClick={() => updateSettings({ dailyQuestionCount: 5, theme: 'dark' })}
         type="button"
       >
         Налаштувати
@@ -170,6 +171,7 @@ describe('PracticeSessionProvider persistence', () => {
 
     expect(screen.getByTestId('bookmark-count')).toHaveTextContent('1')
     expect(screen.getByTestId('daily-count')).toHaveTextContent('5')
+    expect(screen.getByTestId('theme')).toHaveTextContent('dark')
 
     await waitFor(() => {
       expect(localStorage.getItem(STORAGE_KEYS.bookmarks)).toContain(
@@ -182,5 +184,6 @@ describe('PracticeSessionProvider persistence', () => {
 
     expect(screen.getByTestId('bookmark-count')).toHaveTextContent('1')
     expect(screen.getByTestId('daily-count')).toHaveTextContent('5')
+    expect(screen.getByTestId('theme')).toHaveTextContent('dark')
   })
 })

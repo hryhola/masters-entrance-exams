@@ -137,6 +137,7 @@ function storeReducer(
         reducedMotion: false,
         targetExamDate: null,
         dailyQuestionCount: 10,
+        theme: 'system',
       },
       storageIssue: null,
     })

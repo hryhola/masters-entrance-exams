@@ -4,6 +4,7 @@
 .learning-overview,
 .period-progress,
 .bookmarks-section,
+.appearance-settings,
 .learning-settings,
 .storage-overview,
 .data-transfer,
@@ -29,7 +30,7 @@
   padding: 17px;
   border: 1px solid var(--color-border);
   border-radius: 13px;
-  background: #fcfcf9;
+  background: var(--color-surface-subtle);
 }
 
 .learning-metrics span,
@@ -74,7 +75,7 @@
   gap: 28px;
   align-items: start;
   color: #fff;
-  background: var(--color-primary-strong);
+  background: var(--color-primary-panel);
 }
 
 .resume-sessions h2 {
@@ -129,7 +130,7 @@
 
 .progress-metric--primary {
   color: #fff;
-  background: var(--color-primary-strong);
+  background: var(--color-primary-panel);
 }
 
 .progress-metric > span,
@@ -164,7 +165,7 @@
   padding: 15px;
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  background: #fcfcf9;
+  background: var(--color-surface-subtle);
 }
 
 .topic-progress__copy {
@@ -268,7 +269,7 @@
 }
 
 .review-question--unanswered .review-question__number {
-  color: #745114;
+  color: var(--color-warning);
   background: var(--color-accent-soft);
 }
 
@@ -346,6 +347,7 @@
   font-weight: 700;
 }
 
+.appearance-settings,
 .learning-settings,
 .data-transfer {
   display: grid;
@@ -354,12 +356,28 @@
   align-items: center;
 }
 
+.appearance-settings p:not(.eyebrow),
 .learning-settings p:not(.eyebrow),
 .data-transfer p:not(.eyebrow) {
   max-width: 650px;
   margin-bottom: 0;
   color: var(--color-muted);
   line-height: 1.55;
+}
+
+.appearance-settings {
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.35fr);
+}
+
+.appearance-settings label {
+  display: grid;
+  gap: 7px;
+}
+
+.appearance-settings label span {
+  color: var(--color-muted);
+  font-size: 0.72rem;
+  font-weight: 750;
 }
 
 .learning-settings__fields {
@@ -379,6 +397,7 @@
   font-weight: 750;
 }
 
+.appearance-settings select,
 .learning-settings__fields input,
 .learning-settings__fields select {
   width: 100%;
@@ -415,7 +434,7 @@
   gap: 8px;
   padding: 16px;
   border-radius: 12px;
-  color: #745114;
+  color: var(--color-warning);
   background: var(--color-accent-soft);
 }
 
@@ -480,7 +499,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  border-color: #e4c5c4;
+  border-color: var(--color-danger);
 }
 
 .danger-zone > div:first-child p:not(.eyebrow) {
@@ -516,6 +535,7 @@
     grid-template-columns: 1fr;
   }
 
+  .appearance-settings,
   .learning-settings,
   .data-transfer {
     grid-template-columns: 1fr;
