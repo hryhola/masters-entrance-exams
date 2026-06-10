@@ -10,6 +10,7 @@ import {
   LazyQuestionPage,
 } from './LazyDatasetRoutes'
 import {
+  LazyDailyPracticePage,
   LazyPracticeSetupPage,
   LazyResultsPage,
   LazySessionPage,
@@ -49,6 +50,10 @@ export const router = createHashRouter([
       {
         path: 'practice/setup',
         element: <LazyPracticeSetupPage />,
+      },
+      {
+        path: 'practice/daily',
+        element: <LazyDailyPracticePage />,
       },
       {
         path: 'practice/:sessionId',

@@ -4,7 +4,7 @@ import type {
 } from '../features/progress/types'
 import type { PracticeSession } from '../features/practice/session'
 
-export const STORAGE_VERSION = 1
+export const STORAGE_VERSION = 2
 
 export interface StorageEnvelope<T> {
   version: typeof STORAGE_VERSION
@@ -20,6 +20,8 @@ export interface LocalProfile {
 
 export interface LocalSettings {
   reducedMotion: boolean
+  targetExamDate: string | null
+  dailyQuestionCount: number
 }
 
 export interface PersistedAppState {
@@ -27,6 +29,7 @@ export interface PersistedAppState {
   sessions: Record<string, PracticeSession>
   attempts: PracticeAttempt[]
   questionProgress: QuestionProgressMap
+  bookmarks: string[]
   settings: LocalSettings
 }
 
@@ -50,6 +53,10 @@ export interface StorageLoadResult {
 export interface StorageSaveResult {
   ok: boolean
   issue?: StorageIssue
+}
+
+export interface StorageImportResult extends StorageSaveResult {
+  state?: PersistedAppState
 }
 
 export interface StorageLike {

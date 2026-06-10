@@ -9,8 +9,10 @@ import type {
   SessionCompletionReason,
   SessionScore,
 } from '../practice/session'
+import { calculateReviewSchedule } from '../learning/scheduler'
 
 export type QuestionResultStatus = 'correct' | 'incorrect' | 'unanswered'
+export type MasteryLevel = 'learning' | 'reviewing' | 'mastered'
 
 export interface AttemptQuestionResult {
   questionId: string
@@ -30,6 +32,7 @@ export interface PracticeAttempt {
   sessionId: string
   config: PracticeSessionConfig
   questionIds: string[]
+  questionReasons: Record<string, string[]>
   answers: Record<string, OptionId>
   flaggedQuestionIds: string[]
   startedAt: number
@@ -50,12 +53,17 @@ export interface QuestionProgress {
   topicCode: string | null
   topicTitle: string
   attempts: number
+  firstAttemptAt: number
+  firstResult: QuestionResultStatus
   answered: number
   correct: number
   incorrect: number
   skipped: number
   lastResult: QuestionResultStatus
   lastAttemptAt: number
+  correctStreak: number
+  masteryLevel: MasteryLevel
+  nextReviewAt: number
 }
 
 export type QuestionProgressMap = Record<string, QuestionProgress>
@@ -112,6 +120,12 @@ export function createPracticeAttempt(
     sessionId: session.id,
     config: session.config,
     questionIds: [...session.questionIds],
+    questionReasons: Object.fromEntries(
+      Object.entries(session.questionReasons).map(([questionId, reasons]) => [
+        questionId,
+        [...reasons],
+      ]),
+    ),
     answers: { ...session.answers },
     flaggedQuestionIds: [...session.flaggedQuestionIds],
     startedAt: session.startedAt,
@@ -143,6 +157,11 @@ export function updateQuestionProgress(
     const key = `${attempt.config.datasetId}:${result.questionId}`
     const previous = next[key]
     const answered = result.status !== 'unanswered'
+    const schedule = calculateReviewSchedule(
+      previous,
+      result.status,
+      attempt.completedAt,
+    )
 
     next[key] = {
       key,
@@ -154,6 +173,8 @@ export function updateQuestionProgress(
       topicCode: result.topicCode,
       topicTitle: result.topicTitle,
       attempts: (previous?.attempts ?? 0) + 1,
+      firstAttemptAt: previous?.firstAttemptAt ?? attempt.completedAt,
+      firstResult: previous?.firstResult ?? result.status,
       answered: (previous?.answered ?? 0) + (answered ? 1 : 0),
       correct: (previous?.correct ?? 0) + (result.status === 'correct' ? 1 : 0),
       incorrect:
@@ -162,6 +183,7 @@ export function updateQuestionProgress(
         (previous?.skipped ?? 0) + (result.status === 'unanswered' ? 1 : 0),
       lastResult: result.status,
       lastAttemptAt: attempt.completedAt,
+      ...schedule,
     }
   }
 

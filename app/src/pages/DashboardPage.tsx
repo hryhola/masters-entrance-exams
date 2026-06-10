@@ -1,23 +1,70 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Icon } from '../components/Icon'
-import { summarizeAttempts } from '../features/progress/analytics'
+import { useDataset } from '../content/useDataset'
+import { buildDailyPlan } from '../features/learning/scheduler'
+import { summarizeLearning } from '../features/progress/analytics'
 import { usePracticeSessions } from '../features/practice/usePracticeSessions'
+import { examRegistry } from '../exams/registry'
 
 export function DashboardPage() {
-  const { attempts, sessions } = usePracticeSessions()
-  const summary = useMemo(() => summarizeAttempts(attempts), [attempts])
+  const [now] = useState(Date.now)
+  const { attempts, bookmarks, questionProgress, sessions, settings } =
+    usePracticeSessions()
+  const exam = examRegistry.find((item) => item.status === 'available')
+  const datasetState = useDataset(exam?.datasetId)
+  const learning = useMemo(
+    () => summarizeLearning(questionProgress, now),
+    [now, questionProgress],
+  )
+  const dailyPlan = useMemo(
+    () =>
+      datasetState.status === 'ready' && exam?.datasetId
+        ? buildDailyPlan({
+            questions: datasetState.dataset.questions,
+            datasetId: exam.datasetId,
+            progress: questionProgress,
+            bookmarks,
+            now,
+            count: settings.dailyQuestionCount,
+          })
+        : null,
+    [
+      bookmarks,
+      datasetState,
+      exam?.datasetId,
+      now,
+      questionProgress,
+      settings.dailyQuestionCount,
+    ],
+  )
   const activeSession = Object.values(sessions).sort(
     (left, right) => right.startedAt - left.startedAt,
   )[0]
   const hasHistory = attempts.length > 0
-  const todayItems = hasHistory
-    ? [
-        'Переглянути останні помилки',
-        'Опрацювати тему з найнижчою точністю',
-        'Закріпити результат короткою сесією',
-      ]
+  const masteryPercentage =
+    datasetState.status === 'ready'
+      ? Math.round(
+          (learning.mastered / datasetState.dataset.questions.length) * 100,
+        )
+      : 0
+  const daysUntilExam = settings.targetExamDate
+    ? Math.ceil(
+        (new Date(`${settings.targetExamDate}T23:59:59`).getTime() - now) /
+          (24 * 60 * 60 * 1000),
+      )
+    : null
+  const todayItems = dailyPlan
+    ? dailyPlan.items.slice(0, 3).map((item) => {
+        const question =
+          datasetState.status === 'ready'
+            ? datasetState.dataset.questions.find(
+                (candidate) => candidate.id === item.questionId,
+              )
+            : undefined
+        return `${question?.classification.topic?.topic ?? `Питання ${item.questionNumber}`}: ${item.reasons[0]}`
+      })
     : [
         'Пройти коротку діагностику',
         'Визначити перші слабкі теми',
@@ -29,8 +76,8 @@ export function DashboardPage() {
         label: 'Продовжити сесію',
       }
     : {
-        to: '/practice/setup',
-        label: hasHistory ? 'Нова сесія' : 'Почати тренування',
+        to: hasHistory ? '/practice/daily' : '/practice/setup',
+        label: hasHistory ? 'План на сьогодні' : 'Почати тренування',
       }
 
   return (
@@ -59,30 +106,36 @@ export function DashboardPage() {
             <span className="status-dot" />
             <span>{hasHistory ? 'Локальний прогрес' : 'Стартова позиція'}</span>
           </div>
-          <strong>{summary.accuracy}%</strong>
+          <strong>{masteryPercentage}%</strong>
           <p>
             {hasHistory
-              ? `Завершено сесій: ${summary.attemptCount}. Правильних відповідей: ${summary.correct}.`
+              ? `Засвоєно ${learning.mastered} із ${datasetState.status === 'ready' ? datasetState.dataset.questions.length : 140} питань. На повторення сьогодні: ${learning.dueNow}.`
               : 'Почніть першу сесію, щоб побачити персональний прогрес.'}
           </p>
           <div
-            aria-label={`Прогрес підготовки: ${summary.accuracy} відсотків`}
+            aria-label={`Прогрес підготовки: ${masteryPercentage} відсотків`}
             aria-valuemax={100}
             aria-valuemin={0}
-            aria-valuenow={summary.accuracy}
+            aria-valuenow={masteryPercentage}
             className="progress-bar"
             role="progressbar"
           >
-            <span style={{ width: `${summary.accuracy}%` }} />
+            <span style={{ width: `${masteryPercentage}%` }} />
           </div>
           <div className="hero-summary__stats">
             <div>
               <span>Опрацьовано</span>
-              <strong>{summary.questionCount}</strong>
+              <strong>{learning.coveredQuestions}</strong>
             </div>
             <div>
-              <span>Активні сесії</span>
-              <strong>{Object.keys(sessions).length}</strong>
+              <span>
+                {daysUntilExam === null ? 'Активні сесії' : 'До іспиту'}
+              </span>
+              <strong>
+                {daysUntilExam === null
+                  ? Object.keys(sessions).length
+                  : Math.max(daysUntilExam, 0)}
+              </strong>
             </div>
           </div>
         </div>
@@ -95,7 +148,7 @@ export function DashboardPage() {
               <p className="eyebrow">План на сьогодні</p>
               <h2 id="today-heading">
                 {hasHistory
-                  ? 'Продовжуємо за слабкими темами'
+                  ? 'Персональна добірка готова'
                   : 'Почнімо з діагностики'}
               </h2>
             </div>
@@ -113,9 +166,11 @@ export function DashboardPage() {
           </ul>
           <Link
             className="text-link"
-            to={hasHistory ? '/review' : '/practice/setup'}
+            to={hasHistory ? '/practice/daily' : '/practice/setup'}
           >
-            {hasHistory ? 'Перейти до повторення' : 'Налаштувати першу сесію'}
+            {hasHistory
+              ? 'Відкрити план на сьогодні'
+              : 'Налаштувати першу сесію'}
             <Icon name="arrow" size={17} />
           </Link>
         </article>

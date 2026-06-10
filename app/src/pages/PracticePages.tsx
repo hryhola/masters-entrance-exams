@@ -36,7 +36,7 @@ import {
 import './practice-pages.css'
 
 const modeCopy: Record<
-  PracticeMode,
+  Exclude<PracticeMode, 'daily'>,
   { title: string; description: string; icon: 'exams' | 'target' | 'clock' }
 > = {
   full: {
@@ -95,7 +95,7 @@ function PracticeSetupForm({
 }) {
   const navigate = useNavigate()
   const { createSession } = usePracticeSessions()
-  const [mode, setMode] = useState<PracticeMode>('quick')
+  const [mode, setMode] = useState<Exclude<PracticeMode, 'daily'>>('quick')
   const [experience, setExperience] = useState<PracticeExperience>('learning')
   const [quickCount, setQuickCount] = useState(
     exam.practice?.quickQuestionCounts[1] ?? 10,
@@ -169,29 +169,31 @@ function PracticeSetupForm({
           </div>
         </div>
         <div className="setup-choice-grid setup-choice-grid--three">
-          {(Object.keys(modeCopy) as PracticeMode[]).map((item) => (
-            <label
-              className={
-                mode === item
-                  ? 'setup-choice setup-choice--selected'
-                  : 'setup-choice'
-              }
-              key={item}
-            >
-              <input
-                checked={mode === item}
-                name="practice-mode"
-                onChange={() => setMode(item)}
-                type="radio"
-                value={item}
-              />
-              <span className="icon-tile">
-                <Icon name={modeCopy[item].icon} />
-              </span>
-              <strong>{modeCopy[item].title}</strong>
-              <small>{modeCopy[item].description}</small>
-            </label>
-          ))}
+          {(Object.keys(modeCopy) as Array<Exclude<PracticeMode, 'daily'>>).map(
+            (item) => (
+              <label
+                className={
+                  mode === item
+                    ? 'setup-choice setup-choice--selected'
+                    : 'setup-choice'
+                }
+                key={item}
+              >
+                <input
+                  checked={mode === item}
+                  name="practice-mode"
+                  onChange={() => setMode(item)}
+                  type="radio"
+                  value={item}
+                />
+                <span className="icon-tile">
+                  <Icon name={modeCopy[item].icon} />
+                </span>
+                <strong>{modeCopy[item].title}</strong>
+                <small>{modeCopy[item].description}</small>
+              </label>
+            ),
+          )}
         </div>
 
         {mode === 'topic' ? (
@@ -439,7 +441,8 @@ function SessionNavigator({
 export function SessionPage() {
   const { sessionId } = useParams()
   const navigate = useNavigate()
-  const { sessions, attempts, dispatchSession } = usePracticeSessions()
+  const { sessions, attempts, bookmarks, dispatchSession, toggleBookmark } =
+    usePracticeSessions()
   const session = sessionId ? sessions[sessionId] : undefined
   const completedAttempt = sessionId
     ? attempts.find((attempt) => attempt.id === sessionId)
@@ -522,7 +525,10 @@ export function SessionPage() {
   const activeSession = session
   const selectedOption = activeSession.answers[questionId]
   const flagged = activeSession.flaggedQuestionIds.includes(questionId)
+  const bookmarkKey = `${activeSession.config.datasetId}:${questionId}`
+  const bookmarked = bookmarks.includes(bookmarkKey)
   const revealed = activeSession.revealedQuestionIds.includes(questionId)
+  const recommendationReasons = activeSession.questionReasons[questionId] ?? []
   const answeredCount = Object.keys(activeSession.answers).length
   const progress = Math.round(
     ((session.currentIndex + 1) / session.questionIds.length) * 100,
@@ -592,20 +598,44 @@ export function SessionPage() {
               Питання сесії {session.currentIndex + 1} · офіційне №
               {question.number}
             </span>
-            <button
-              aria-pressed={flagged}
-              className={
-                flagged ? 'flag-button flag-button--active' : 'flag-button'
-              }
-              onClick={() =>
-                dispatch({ type: 'toggle_flag', questionId: question.id })
-              }
-              type="button"
-            >
-              <Icon name="bookmark" size={17} />
-              {flagged ? 'Позначено' : 'Повернутися пізніше'}
-            </button>
+            <div>
+              <button
+                aria-pressed={bookmarked}
+                className={
+                  bookmarked
+                    ? 'flag-button flag-button--bookmarked'
+                    : 'flag-button'
+                }
+                onClick={() =>
+                  toggleBookmark(activeSession.config.datasetId, question.id)
+                }
+                type="button"
+              >
+                <Icon name="bookmark" size={17} />
+                {bookmarked ? 'У закладках' : 'До закладок'}
+              </button>
+              <button
+                aria-pressed={flagged}
+                className={
+                  flagged ? 'flag-button flag-button--active' : 'flag-button'
+                }
+                onClick={() =>
+                  dispatch({ type: 'toggle_flag', questionId: question.id })
+                }
+                type="button"
+              >
+                <Icon name="bookmark" size={17} />
+                {flagged ? 'Позначено' : 'Повернутися пізніше'}
+              </button>
+            </div>
           </div>
+
+          {recommendationReasons.length > 0 ? (
+            <aside className="recommendation-reasons" role="note">
+              <strong>Чому це питання сьогодні</strong>
+              <span>{recommendationReasons.join(' · ')}</span>
+            </aside>
+          ) : null}
 
           <div
             className="practice-question-anchor"

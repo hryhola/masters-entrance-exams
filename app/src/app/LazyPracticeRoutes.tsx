@@ -17,6 +17,11 @@ const ResultsPage = lazy(() =>
     default: module.ResultsPage,
   })),
 )
+const DailyPracticePage = lazy(() =>
+  import('../pages/LearningPages').then((module) => ({
+    default: module.DailyPracticePage,
+  })),
+)
 
 function LazyPage({ children }: { children: ReactNode }) {
   return <Suspense fallback={<DatasetLoading />}>{children}</Suspense>
@@ -42,6 +47,14 @@ export function LazyResultsPage() {
   return (
     <LazyPage>
       <ResultsPage />
+    </LazyPage>
+  )
+}
+
+export function LazyDailyPracticePage() {
+  return (
+    <LazyPage>
+      <DailyPracticePage />
     </LazyPage>
   )
 }

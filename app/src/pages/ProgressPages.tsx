@@ -1,16 +1,19 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, type ChangeEvent } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Icon } from '../components/Icon'
 import { PageIntro } from '../components/PageIntro'
+import { useDataset } from '../content/useDataset'
 import {
   collectLatestReviewQuestions,
+  summarizeLearning,
   summarizeAttempts,
-  summarizeTopics,
+  summarizePeriods,
+  summarizeTopicsFromAttempts,
 } from '../features/progress/analytics'
 import { formatSessionTime } from '../features/practice/session'
 import { usePracticeSessions } from '../features/practice/usePracticeSessions'
-import { getExamDefinition } from '../exams/registry'
+import { examRegistry, getExamDefinition } from '../exams/registry'
 import './progress-pages.css'
 
 const dateFormatter = new Intl.DateTimeFormat('uk-UA', {
@@ -45,12 +48,22 @@ function EmptyProgress({
 }
 
 export function ProgressPage() {
+  const [now] = useState(Date.now)
   const { attempts, questionProgress, sessions } = usePracticeSessions()
   const summary = useMemo(() => summarizeAttempts(attempts), [attempts])
-  const topics = useMemo(
-    () => summarizeTopics(questionProgress),
-    [questionProgress],
+  const learning = useMemo(
+    () => summarizeLearning(questionProgress, now),
+    [now, questionProgress],
   )
+  const periods = useMemo(
+    () => summarizePeriods(attempts, now),
+    [attempts, now],
+  )
+  const topics = useMemo(
+    () => summarizeTopicsFromAttempts(attempts),
+    [attempts],
+  )
+  const weakTopics = topics.filter((topic) => topic.answered >= 2)
   const completedAttempts = useMemo(
     () =>
       [...attempts].sort((left, right) => right.completedAt - left.completedAt),
@@ -145,6 +158,68 @@ export function ProgressPage() {
         </article>
       </section>
 
+      <section className="learning-overview">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">Засвоєння</p>
+            <h2>Стан навчального циклу</h2>
+          </div>
+          <p>
+            Перша відповідь зберігається окремо, а кожне повторення змінює
+            streak і дату наступного перегляду.
+          </p>
+        </div>
+        <div className="learning-metrics">
+          <article>
+            <span>Вивчаються</span>
+            <strong>{learning.learning}</strong>
+            <small>після помилки або пропуску</small>
+          </article>
+          <article>
+            <span>На повторенні</span>
+            <strong>{learning.reviewing}</strong>
+            <small>1-2 правильні поспіль</small>
+          </article>
+          <article>
+            <span>Засвоєно</span>
+            <strong>{learning.mastered}</strong>
+            <small>щонайменше 3 правильні поспіль</small>
+          </article>
+          <article>
+            <span>Потрібно сьогодні</span>
+            <strong>{learning.dueNow}</strong>
+            <small>прострочені або негайні повторення</small>
+          </article>
+        </div>
+        <p className="learning-first-attempt">
+          Перша спроба: правильно {learning.firstAttemptCorrect} із{' '}
+          {learning.coveredQuestions}. Повторних відповідей:{' '}
+          {learning.repeatedAttempts}.
+        </p>
+      </section>
+
+      <section className="period-progress">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">Динаміка</p>
+            <h2>Практика за періодами</h2>
+          </div>
+          <p>Точність і фактичний час із незмінної історії спроб.</p>
+        </div>
+        <div className="period-progress-grid">
+          {periods.map((period) => (
+            <article key={period.key}>
+              <span>{period.label}</span>
+              <strong>{period.accuracy}%</strong>
+              <small>
+                {period.attemptCount} сесій ·{' '}
+                {formatSessionTime(period.elapsedSeconds)}
+              </small>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="topic-progress">
         <div className="section-heading">
           <div>
@@ -153,18 +228,25 @@ export function ProgressPage() {
           </div>
           <p>
             Список починається з тем із найнижчою точністю, щоб показати
-            пріоритет для наступної практики.
+            пріоритет для наступної практики. Час сесії розподіляється між її
+            питаннями порівну, тому час за темою є орієнтовним.
           </p>
         </div>
         <div className="topic-progress-list">
-          {topics.map((topic) => (
+          {weakTopics.length === 0 ? (
+            <p className="inline-empty">
+              Для визначення слабкої теми потрібно щонайменше дві надані
+              відповіді в ній.
+            </p>
+          ) : null}
+          {weakTopics.map((topic) => (
             <article key={topic.key}>
               <div className="topic-progress__copy">
                 <span>{topic.sectionTitle}</span>
                 <strong>{topic.title}</strong>
                 <small>
-                  Правильно: {topic.correct} · Помилок: {topic.incorrect} ·
-                  Пропущено: {topic.skipped}
+                  Правильно: {topic.correct} · Помилок: {topic.incorrect} · Час:{' '}
+                  {formatSessionTime(topic.elapsedSeconds)}
                 </small>
               </div>
               <div
@@ -225,11 +307,21 @@ export function ProgressPage() {
 }
 
 export function ReviewPage() {
-  const { attempts } = usePracticeSessions()
+  const { attempts, bookmarks, toggleBookmark } = usePracticeSessions()
+  const exam = examRegistry.find((item) => item.status === 'available')
+  const datasetState = useDataset(exam?.datasetId)
   const questions = useMemo(
     () => collectLatestReviewQuestions(attempts),
     [attempts],
   )
+  const bookmarkedQuestions = useMemo(() => {
+    if (datasetState.status !== 'ready' || !exam?.datasetId) return []
+    const bookmarkSet = new Set(bookmarks)
+
+    return datasetState.dataset.questions.filter((question) =>
+      bookmarkSet.has(`${exam.datasetId}:${question.id}`),
+    )
+  }, [bookmarks, datasetState, exam?.datasetId])
 
   return (
     <div className="page-stack review-page">
@@ -245,6 +337,48 @@ export function ReviewPage() {
         eyebrow="Навчання на помилках"
         title="Повторення"
       />
+
+      {bookmarkedQuestions.length > 0 && exam?.datasetId ? (
+        <section className="bookmarks-section">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Закладки</p>
+              <h2>Збережені питання</h2>
+            </div>
+            <p>Ці питання мають пріоритет у персональному плані.</p>
+          </div>
+          <div className="bookmark-list">
+            {bookmarkedQuestions.map((question) => (
+              <article key={question.id}>
+                <span>{question.number}</span>
+                <div>
+                  <small>
+                    {question.classification.topic?.section ??
+                      'Тему не визначено'}
+                  </small>
+                  <strong>
+                    {question.classification.topic?.topic ??
+                      `Питання ${question.number}`}
+                  </strong>
+                </div>
+                <Link
+                  className="text-link"
+                  to={`/exams/${exam.id}/questions/${question.number}`}
+                >
+                  Відкрити
+                </Link>
+                <button
+                  className="bookmark-remove"
+                  onClick={() => toggleBookmark(exam.datasetId!, question.id)}
+                  type="button"
+                >
+                  Прибрати
+                </button>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {questions.length === 0 ? (
         <EmptyProgress
@@ -310,10 +444,41 @@ export function SettingsPage() {
     sessions,
     questionProgress,
     profile,
+    settings,
     clearAllData,
+    exportData,
+    importData,
+    updateSettings,
     storageIssue,
   } = usePracticeSessions()
   const [confirmClear, setConfirmClear] = useState(false)
+  const [pendingImport, setPendingImport] = useState<{
+    name: string
+    raw: string
+  } | null>(null)
+  const [transferMessage, setTransferMessage] = useState<string | null>(null)
+
+  function downloadExport() {
+    const blob = new Blob([exportData()], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const anchor = document.createElement('a')
+    anchor.href = url
+    anchor.download = `vstup-2026-progress-${new Date()
+      .toISOString()
+      .slice(0, 10)}.json`
+    anchor.click()
+    URL.revokeObjectURL(url)
+    setTransferMessage('Файл резервної копії створено.')
+  }
+
+  async function selectImport(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0]
+    event.target.value = ''
+    if (!file) return
+
+    setPendingImport({ name: file.name, raw: await file.text() })
+    setTransferMessage(null)
+  }
 
   return (
     <div className="page-stack settings-page">
@@ -322,6 +487,47 @@ export function SettingsPage() {
         eyebrow="Система"
         title="Локальні дані"
       />
+
+      <section className="learning-settings">
+        <div>
+          <p className="eyebrow">Навчальний ритм</p>
+          <h2>Ціль і щоденна сесія</h2>
+          <p>
+            Дата використовується лише для локального відліку. Розмір визначає,
+            скільки питань потрапляє до персонального плану.
+          </p>
+        </div>
+        <div className="learning-settings__fields">
+          <label>
+            <span>Дата іспиту</span>
+            <input
+              min={new Date().toISOString().slice(0, 10)}
+              onChange={(event) =>
+                updateSettings({
+                  targetExamDate: event.target.value || null,
+                })
+              }
+              type="date"
+              value={settings.targetExamDate ?? ''}
+            />
+          </label>
+          <label>
+            <span>Питань на день</span>
+            <select
+              onChange={(event) =>
+                updateSettings({
+                  dailyQuestionCount: Number(event.target.value),
+                })
+              }
+              value={settings.dailyQuestionCount}
+            >
+              <option value={5}>5 питань</option>
+              <option value={10}>10 питань</option>
+              <option value={20}>20 питань</option>
+            </select>
+          </label>
+        </div>
+      </section>
 
       <section className="storage-overview">
         <div>
@@ -361,6 +567,65 @@ export function SettingsPage() {
             </dd>
           </div>
         </dl>
+      </section>
+
+      <section className="data-transfer">
+        <div>
+          <p className="eyebrow">Резервна копія</p>
+          <h2>Експорт та імпорт прогресу</h2>
+          <p>
+            Експорт містить сесії, незмінну історію, засвоєння, закладки й
+            налаштування. Імпорт повністю замінює поточні локальні дані.
+          </p>
+        </div>
+        <div className="data-transfer__actions">
+          <button
+            className="button button--secondary"
+            onClick={downloadExport}
+            type="button"
+          >
+            Експортувати JSON
+          </button>
+          <label className="button button--secondary">
+            Вибрати файл
+            <input
+              accept="application/json,.json"
+              onChange={selectImport}
+              type="file"
+            />
+          </label>
+        </div>
+        {pendingImport ? (
+          <div className="import-confirm">
+            <strong>Замінити дані файлом «{pendingImport.name}»?</strong>
+            <span>Поточний локальний прогрес буде перезаписано.</span>
+            <div className="button-row">
+              <button
+                className="button button--secondary"
+                onClick={() => setPendingImport(null)}
+                type="button"
+              >
+                Скасувати
+              </button>
+              <button
+                className="button button--primary"
+                onClick={() => {
+                  const result = importData(pendingImport.raw)
+                  setTransferMessage(result.message)
+                  setPendingImport(null)
+                }}
+                type="button"
+              >
+                Імпортувати й замінити
+              </button>
+            </div>
+          </div>
+        ) : null}
+        {transferMessage ? (
+          <p className="transfer-message" role="status">
+            {transferMessage}
+          </p>
+        ) : null}
       </section>
 
       <section className="danger-zone">

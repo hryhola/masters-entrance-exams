@@ -19,6 +19,10 @@ function SessionHarness() {
     createSession,
     dispatchSession,
     questionProgress,
+    bookmarks,
+    settings,
+    toggleBookmark,
+    updateSettings,
   } = usePracticeSessions()
   const session = Object.values(sessions)[0]
 
@@ -29,6 +33,8 @@ function SessionHarness() {
       <span data-testid="progress-count">
         {Object.keys(questionProgress).length}
       </span>
+      <span data-testid="bookmark-count">{bookmarks.length}</span>
+      <span data-testid="daily-count">{settings.dailyQuestionCount}</span>
       <span data-testid="session-state">
         {session
           ? `${session.currentIndex}:${session.answers.q1 ?? '-'}:${
@@ -85,6 +91,15 @@ function SessionHarness() {
         type="button"
       >
         Завершити
+      </button>
+      <button onClick={() => toggleBookmark('dataset', 'q1')} type="button">
+        Закладка
+      </button>
+      <button
+        onClick={() => updateSettings({ dailyQuestionCount: 5 })}
+        type="button"
+      >
+        Налаштувати
       </button>
     </div>
   )
@@ -144,5 +159,28 @@ describe('PracticeSessionProvider persistence', () => {
     expect(screen.getByTestId('session-count')).toHaveTextContent('0')
     expect(screen.getByTestId('attempt-count')).toHaveTextContent('1')
     expect(screen.getByTestId('progress-count')).toHaveTextContent('2')
+  })
+
+  it('persists bookmarks and learning settings', async () => {
+    const user = userEvent.setup()
+    const firstRender = renderHarness()
+
+    await user.click(screen.getByRole('button', { name: 'Закладка' }))
+    await user.click(screen.getByRole('button', { name: 'Налаштувати' }))
+
+    expect(screen.getByTestId('bookmark-count')).toHaveTextContent('1')
+    expect(screen.getByTestId('daily-count')).toHaveTextContent('5')
+
+    await waitFor(() => {
+      expect(localStorage.getItem(STORAGE_KEYS.bookmarks)).toContain(
+        'dataset:q1',
+      )
+    })
+
+    firstRender.unmount()
+    renderHarness()
+
+    expect(screen.getByTestId('bookmark-count')).toHaveTextContent('1')
+    expect(screen.getByTestId('daily-count')).toHaveTextContent('5')
   })
 })

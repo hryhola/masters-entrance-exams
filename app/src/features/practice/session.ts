@@ -1,6 +1,6 @@
 import type { OptionId, Question } from '../../content/types'
 
-export type PracticeMode = 'full' | 'topic' | 'quick'
+export type PracticeMode = 'full' | 'topic' | 'quick' | 'daily'
 export type PracticeExperience = 'learning' | 'exam'
 export type SessionStatus = 'active' | 'completed'
 export type SessionCompletionReason = 'submitted' | 'timer'
@@ -20,6 +20,7 @@ export interface PracticeSession {
   config: PracticeSessionConfig
   status: SessionStatus
   questionIds: string[]
+  questionReasons: Record<string, string[]>
   currentIndex: number
   answers: Record<string, OptionId>
   flaggedQuestionIds: string[]
@@ -48,6 +49,8 @@ interface CreatePracticeSessionInput {
   id: string
   config: PracticeSessionConfig
   questions: Question[]
+  questionIds?: string[]
+  questionReasons?: Record<string, string[]>
   now: number
 }
 
@@ -99,7 +102,23 @@ export function selectSessionQuestionIds(
   questions: Question[],
   config: PracticeSessionConfig,
   seed: string,
+  requestedQuestionIds?: string[],
 ) {
+  if (config.mode === 'daily') {
+    if (!requestedQuestionIds?.length) {
+      throw new Error('Щоденна сесія повинна містити рекомендовані питання.')
+    }
+
+    const availableIds = new Set(questions.map((question) => question.id))
+    if (
+      requestedQuestionIds.some((questionId) => !availableIds.has(questionId))
+    ) {
+      throw new Error('Щоденна сесія містить недоступне питання.')
+    }
+
+    return [...requestedQuestionIds]
+  }
+
   if (config.mode === 'topic') {
     if (!config.sectionCode) {
       throw new Error('Для тематичної сесії потрібно вибрати розділ.')
@@ -138,9 +157,16 @@ export function createPracticeSession({
   id,
   config,
   questions,
+  questionIds: requestedQuestionIds,
+  questionReasons = {},
   now,
 }: CreatePracticeSessionInput): PracticeSession {
-  const questionIds = selectSessionQuestionIds(questions, config, id)
+  const questionIds = selectSessionQuestionIds(
+    questions,
+    config,
+    id,
+    requestedQuestionIds,
+  )
 
   if (questionIds.length === 0) {
     throw new Error('Сесія повинна містити хоча б одне питання.')
@@ -154,6 +180,12 @@ export function createPracticeSession({
     config,
     status: 'active',
     questionIds,
+    questionReasons: Object.fromEntries(
+      questionIds.map((questionId) => [
+        questionId,
+        [...(questionReasons[questionId] ?? [])],
+      ]),
+    ),
     currentIndex: 0,
     answers: {},
     flaggedQuestionIds: [],

@@ -98,6 +98,23 @@ describe('selectSessionQuestionIds', () => {
     expect(ids).toHaveLength(7)
     expect(ids).toEqual(questions.slice(0, 7).map((item) => item.id))
   })
+
+  it('keeps the exact order and reasons of a daily plan', () => {
+    const session = createPracticeSession({
+      id: 'daily',
+      config: config({ mode: 'daily', questionCount: 2 }),
+      questions,
+      questionIds: ['q3', 'q1'],
+      questionReasons: {
+        q3: ['Настав час повторення'],
+        q1: ['Остання відповідь була неправильною'],
+      },
+      now: 100,
+    })
+
+    expect(session.questionIds).toEqual(['q3', 'q1'])
+    expect(session.questionReasons.q3).toEqual(['Настав час повторення'])
+  })
 })
 
 describe('practiceSessionReducer', () => {

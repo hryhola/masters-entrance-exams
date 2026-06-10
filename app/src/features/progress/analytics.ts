@@ -26,6 +26,22 @@ export interface TopicSummary {
   incorrect: number
   skipped: number
   accuracy: number
+  elapsedSeconds: number
+}
+
+export interface LearningSummary {
+  coveredQuestions: number
+  firstAttemptCorrect: number
+  repeatedAttempts: number
+  learning: number
+  reviewing: number
+  mastered: number
+  dueNow: number
+}
+
+export interface PeriodSummary extends ProgressSummary {
+  key: 'week' | 'month' | 'all'
+  label: string
 }
 
 export interface SectionSummary {
@@ -128,6 +144,7 @@ export function summarizeTopics(progress: QuestionProgressMap): TopicSummary[] {
       correct: 0,
       incorrect: 0,
       skipped: 0,
+      elapsedSeconds: 0,
     }
 
     current.attempts += item.attempts
@@ -145,10 +162,114 @@ export function summarizeTopics(progress: QuestionProgressMap): TopicSummary[] {
         group.answered === 0
           ? 0
           : Math.round((group.correct / group.answered) * 100),
+      elapsedSeconds: 0,
     }))
     .sort(
       (left, right) =>
         left.accuracy - right.accuracy || right.attempts - left.attempts,
+    )
+}
+
+export function summarizeLearning(
+  progress: QuestionProgressMap,
+  now: number,
+): LearningSummary {
+  return Object.values(progress).reduce(
+    (summary, item) => ({
+      coveredQuestions: summary.coveredQuestions + 1,
+      firstAttemptCorrect:
+        summary.firstAttemptCorrect + (item.firstResult === 'correct' ? 1 : 0),
+      repeatedAttempts:
+        summary.repeatedAttempts + Math.max(item.attempts - 1, 0),
+      learning: summary.learning + (item.masteryLevel === 'learning' ? 1 : 0),
+      reviewing:
+        summary.reviewing + (item.masteryLevel === 'reviewing' ? 1 : 0),
+      mastered: summary.mastered + (item.masteryLevel === 'mastered' ? 1 : 0),
+      dueNow: summary.dueNow + (item.nextReviewAt <= now ? 1 : 0),
+    }),
+    {
+      coveredQuestions: 0,
+      firstAttemptCorrect: 0,
+      repeatedAttempts: 0,
+      learning: 0,
+      reviewing: 0,
+      mastered: 0,
+      dueNow: 0,
+    },
+  )
+}
+
+export function summarizePeriods(
+  attempts: PracticeAttempt[],
+  now: number,
+): PeriodSummary[] {
+  const day = 24 * 60 * 60 * 1000
+  const periods = [
+    { key: 'week' as const, label: '7 днів', since: now - 7 * day },
+    { key: 'month' as const, label: '30 днів', since: now - 30 * day },
+    { key: 'all' as const, label: 'Увесь час', since: 0 },
+  ]
+
+  return periods.map((period) => ({
+    key: period.key,
+    label: period.label,
+    ...summarizeAttempts(
+      attempts.filter((attempt) => attempt.completedAt >= period.since),
+    ),
+  }))
+}
+
+export function summarizeTopicsFromAttempts(
+  attempts: PracticeAttempt[],
+): TopicSummary[] {
+  const groups = new Map<
+    string,
+    Omit<TopicSummary, 'accuracy'> & { accuracy?: number }
+  >()
+
+  for (const attempt of attempts) {
+    const secondsPerQuestion =
+      attempt.score.total === 0
+        ? 0
+        : attempt.elapsedSeconds / attempt.score.total
+
+    for (const result of attempt.questionResults) {
+      const key =
+        result.topicCode ?? `section:${result.sectionCode ?? 'unmapped'}`
+      const current = groups.get(key) ?? {
+        key,
+        title: result.topicTitle,
+        sectionTitle: result.sectionTitle,
+        attempts: 0,
+        answered: 0,
+        correct: 0,
+        incorrect: 0,
+        skipped: 0,
+        elapsedSeconds: 0,
+      }
+
+      current.attempts += 1
+      current.answered += result.status === 'unanswered' ? 0 : 1
+      current.correct += result.status === 'correct' ? 1 : 0
+      current.incorrect += result.status === 'incorrect' ? 1 : 0
+      current.skipped += result.status === 'unanswered' ? 1 : 0
+      current.elapsedSeconds += secondsPerQuestion
+      groups.set(key, current)
+    }
+  }
+
+  return [...groups.values()]
+    .map((group) => ({
+      ...group,
+      elapsedSeconds: Math.round(group.elapsedSeconds),
+      accuracy:
+        group.answered === 0
+          ? 0
+          : Math.round((group.correct / group.answered) * 100),
+    }))
+    .sort(
+      (left, right) =>
+        left.accuracy - right.accuracy || left.attempts - right.attempts,
     )
 }
 

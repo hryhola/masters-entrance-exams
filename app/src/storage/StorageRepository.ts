@@ -16,12 +16,22 @@ import {
   type PersistedAppState,
   type StorageEnvelope,
   type StorageIssue,
+  type StorageImportResult,
   type StorageLike,
   type StorageLoadResult,
   type StorageSaveResult,
 } from './types'
 
 const STORAGE_KEYS = {
+  profile: 'masters-exams:v2:profile',
+  sessions: 'masters-exams:v2:sessions',
+  attempts: 'masters-exams:v2:attempts',
+  questionProgress: 'masters-exams:v2:question-progress',
+  bookmarks: 'masters-exams:v2:bookmarks',
+  settings: 'masters-exams:v2:settings',
+} as const
+
+const LEGACY_STORAGE_KEYS = {
   profile: 'masters-exams:v1:profile',
   sessions: 'masters-exams:v1:sessions',
   attempts: 'masters-exams:v1:attempts',
@@ -30,7 +40,11 @@ const STORAGE_KEYS = {
 } as const
 
 const optionIds = new Set<OptionId>(['a', 'b', 'c', 'd'])
-const defaultSettings: LocalSettings = { reducedMotion: false }
+const defaultSettings: LocalSettings = {
+  reducedMotion: false,
+  targetExamDate: null,
+  dailyQuestionCount: 10,
+}
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value)
@@ -51,6 +65,13 @@ function isAnswers(value: unknown): value is Record<string, OptionId> {
   )
 }
 
+function isQuestionReasons(value: unknown): value is Record<string, string[]> {
+  return (
+    isRecord(value) &&
+    Object.values(value).every((reasons) => isStringArray(reasons))
+  )
+}
+
 function isSessionConfig(value: unknown): value is PracticeSessionConfig {
   return (
     isRecord(value) &&
@@ -58,7 +79,8 @@ function isSessionConfig(value: unknown): value is PracticeSessionConfig {
     typeof value.datasetId === 'string' &&
     (value.mode === 'full' ||
       value.mode === 'topic' ||
-      value.mode === 'quick') &&
+      value.mode === 'quick' ||
+      value.mode === 'daily') &&
     (value.experience === 'learning' || value.experience === 'exam')
   )
 }
@@ -71,6 +93,7 @@ function isPracticeSession(value: unknown): value is PracticeSession {
     value.status === 'active' &&
     isStringArray(value.questionIds) &&
     value.questionIds.length > 0 &&
+    isQuestionReasons(value.questionReasons) &&
     typeof value.currentIndex === 'number' &&
     isAnswers(value.answers) &&
     isStringArray(value.flaggedQuestionIds) &&
@@ -109,6 +132,7 @@ function isPracticeAttempt(value: unknown): value is PracticeAttempt {
     typeof value.sessionId === 'string' &&
     isSessionConfig(value.config) &&
     isStringArray(value.questionIds) &&
+    isQuestionReasons(value.questionReasons) &&
     isAnswers(value.answers) &&
     isStringArray(value.flaggedQuestionIds) &&
     typeof value.startedAt === 'number' &&
@@ -138,6 +162,10 @@ function isQuestionProgress(value: unknown): value is QuestionProgress {
     typeof value.sectionTitle === 'string' &&
     typeof value.topicTitle === 'string' &&
     typeof value.attempts === 'number' &&
+    typeof value.firstAttemptAt === 'number' &&
+    (value.firstResult === 'correct' ||
+      value.firstResult === 'incorrect' ||
+      value.firstResult === 'unanswered') &&
     typeof value.answered === 'number' &&
     typeof value.correct === 'number' &&
     typeof value.incorrect === 'number' &&
@@ -145,7 +173,12 @@ function isQuestionProgress(value: unknown): value is QuestionProgress {
     (value.lastResult === 'correct' ||
       value.lastResult === 'incorrect' ||
       value.lastResult === 'unanswered') &&
-    typeof value.lastAttemptAt === 'number'
+    typeof value.lastAttemptAt === 'number' &&
+    typeof value.correctStreak === 'number' &&
+    (value.masteryLevel === 'learning' ||
+      value.masteryLevel === 'reviewing' ||
+      value.masteryLevel === 'mastered') &&
+    typeof value.nextReviewAt === 'number'
   )
 }
 
@@ -163,7 +196,15 @@ function isNullableProfile(value: unknown): value is LocalProfile | null {
 }
 
 function isSettings(value: unknown): value is LocalSettings {
-  return isRecord(value) && typeof value.reducedMotion === 'boolean'
+  return (
+    isRecord(value) &&
+    typeof value.reducedMotion === 'boolean' &&
+    (value.targetExamDate === null ||
+      typeof value.targetExamDate === 'string') &&
+    typeof value.dailyQuestionCount === 'number' &&
+    value.dailyQuestionCount >= 1 &&
+    value.dailyQuestionCount <= 50
+  )
 }
 
 function isSessions(value: unknown): value is Record<string, PracticeSession> {
@@ -194,6 +235,9 @@ function migrateLegacySession(value: unknown): PracticeSession | null {
   const startedAt = typeof value.startedAt === 'number' ? value.startedAt : 0
   const migrated = {
     ...value,
+    questionReasons: isQuestionReasons(value.questionReasons)
+      ? value.questionReasons
+      : {},
     deadlineAt:
       typeof value.deadlineAt === 'number'
         ? value.deadlineAt
@@ -203,6 +247,104 @@ function migrateLegacySession(value: unknown): PracticeSession | null {
   }
 
   return isPracticeSession(migrated) ? migrated : null
+}
+
+function migrateAttempt(value: unknown): PracticeAttempt | null {
+  if (!isRecord(value)) return null
+
+  const migrated = {
+    ...value,
+    questionReasons: isQuestionReasons(value.questionReasons)
+      ? value.questionReasons
+      : {},
+  }
+
+  return isPracticeAttempt(migrated) ? migrated : null
+}
+
+function migrateAttempts(value: unknown) {
+  if (!Array.isArray(value)) return []
+
+  return value
+    .map(migrateAttempt)
+    .filter((attempt): attempt is PracticeAttempt => attempt !== null)
+}
+
+function inferCorrectStreak(value: Record<string, unknown>) {
+  if (value.lastResult !== 'correct') return 0
+  const correct = typeof value.correct === 'number' ? value.correct : 1
+  return Math.min(Math.max(correct, 1), 3)
+}
+
+function migrateProgressItem(value: unknown): QuestionProgress | null {
+  if (!isRecord(value)) return null
+
+  const correctStreak =
+    typeof value.correctStreak === 'number'
+      ? value.correctStreak
+      : inferCorrectStreak(value)
+  const lastAttemptAt =
+    typeof value.lastAttemptAt === 'number' ? value.lastAttemptAt : 0
+  const migrated = {
+    ...value,
+    firstAttemptAt:
+      typeof value.firstAttemptAt === 'number'
+        ? value.firstAttemptAt
+        : lastAttemptAt,
+    firstResult:
+      value.firstResult === 'correct' ||
+      value.firstResult === 'incorrect' ||
+      value.firstResult === 'unanswered'
+        ? value.firstResult
+        : value.lastResult,
+    correctStreak,
+    masteryLevel:
+      value.masteryLevel === 'learning' ||
+      value.masteryLevel === 'reviewing' ||
+      value.masteryLevel === 'mastered'
+        ? value.masteryLevel
+        : correctStreak >= 3
+          ? 'mastered'
+          : correctStreak > 0
+            ? 'reviewing'
+            : 'learning',
+    nextReviewAt:
+      typeof value.nextReviewAt === 'number'
+        ? value.nextReviewAt
+        : lastAttemptAt,
+  }
+
+  return isQuestionProgress(migrated) ? migrated : null
+}
+
+function migrateProgress(value: unknown): QuestionProgressMap {
+  if (!isRecord(value)) return {}
+
+  return Object.fromEntries(
+    Object.values(value)
+      .map(migrateProgressItem)
+      .filter((item): item is QuestionProgress => item !== null)
+      .map((item) => [item.key, item]),
+  )
+}
+
+function migrateSettings(value: unknown): LocalSettings {
+  if (!isRecord(value)) return defaultSettings
+
+  const migrated = {
+    reducedMotion:
+      typeof value.reducedMotion === 'boolean' ? value.reducedMotion : false,
+    targetExamDate:
+      value.targetExamDate === null || typeof value.targetExamDate === 'string'
+        ? value.targetExamDate
+        : null,
+    dailyQuestionCount:
+      typeof value.dailyQuestionCount === 'number'
+        ? value.dailyQuestionCount
+        : 10,
+  }
+
+  return isSettings(migrated) ? migrated : defaultSettings
 }
 
 function migrateSessions(value: unknown) {
@@ -259,6 +401,7 @@ function emptyState(): PersistedAppState {
     sessions: {},
     attempts: [],
     questionProgress: {},
+    bookmarks: [],
     settings: defaultSettings,
   }
 }
@@ -288,6 +431,7 @@ export class StorageRepository {
 
     state.profile = this.read(
       STORAGE_KEYS.profile,
+      LEGACY_STORAGE_KEYS.profile,
       null,
       isNullableProfile,
       (value) => (isProfile(value) ? value : null),
@@ -295,6 +439,7 @@ export class StorageRepository {
     )
     state.sessions = this.read(
       STORAGE_KEYS.sessions,
+      LEGACY_STORAGE_KEYS.sessions,
       {},
       isSessions,
       migrateSessions,
@@ -302,23 +447,34 @@ export class StorageRepository {
     )
     state.attempts = this.read(
       STORAGE_KEYS.attempts,
+      LEGACY_STORAGE_KEYS.attempts,
       [],
       isAttempts,
-      (value) => (isAttempts(value) ? value : []),
+      migrateAttempts,
       issues,
     )
     state.questionProgress = this.read(
       STORAGE_KEYS.questionProgress,
+      LEGACY_STORAGE_KEYS.questionProgress,
       {},
       isProgress,
-      (value) => (isProgress(value) ? value : {}),
+      migrateProgress,
+      issues,
+    )
+    state.bookmarks = this.read(
+      STORAGE_KEYS.bookmarks,
+      null,
+      [],
+      isStringArray,
+      (value) => (isStringArray(value) ? value : []),
       issues,
     )
     state.settings = this.read(
       STORAGE_KEYS.settings,
+      LEGACY_STORAGE_KEYS.settings,
       defaultSettings,
       isSettings,
-      (value) => (isSettings(value) ? value : defaultSettings),
+      migrateSettings,
       issues,
     )
 
@@ -347,6 +503,7 @@ export class StorageRepository {
       [STORAGE_KEYS.attempts, state.attempts],
       [STORAGE_KEYS.questionProgress, state.questionProgress],
       [STORAGE_KEYS.sessions, state.sessions],
+      [STORAGE_KEYS.bookmarks, state.bookmarks],
       [STORAGE_KEYS.profile, state.profile],
       [STORAGE_KEYS.settings, state.settings],
     ]
@@ -379,6 +536,9 @@ export class StorageRepository {
       Object.values(STORAGE_KEYS).forEach((key) =>
         this.storage?.removeItem(key),
       )
+      Object.values(LEGACY_STORAGE_KEYS).forEach((key) =>
+        this.storage?.removeItem(key),
+      )
       return { ok: true }
     } catch {
       return {
@@ -393,12 +553,15 @@ export class StorageRepository {
 
   private read<T>(
     key: string,
+    legacyKey: string | null,
     fallback: T,
     validate: (value: unknown) => value is T,
     migrate: (value: unknown) => T,
     issues: StorageIssue[],
   ): T {
-    const raw = this.storage?.getItem(key)
+    const currentRaw = this.storage?.getItem(key)
+    const legacyRaw = legacyKey ? this.storage?.getItem(legacyKey) : null
+    const raw = currentRaw ?? legacyRaw
     if (!raw) return fallback
 
     try {
@@ -406,6 +569,7 @@ export class StorageRepository {
 
       if (
         isRecord(parsed) &&
+        currentRaw !== null &&
         parsed.version === STORAGE_VERSION &&
         validate(parsed.data)
       ) {
@@ -443,6 +607,53 @@ export class StorageRepository {
       return fallback
     }
   }
+
+  export(state: PersistedAppState) {
+    return JSON.stringify(createEnvelope(state), null, 2)
+  }
+
+  import(raw: string): StorageImportResult {
+    try {
+      const parsed: unknown = JSON.parse(raw)
+      const source = isRecord(parsed) && 'data' in parsed ? parsed.data : parsed
+
+      if (!isRecord(source)) throw new Error('invalid import')
+      if (
+        !Array.isArray(source.attempts) ||
+        !isRecord(source.sessions) ||
+        !isRecord(source.questionProgress) ||
+        !isRecord(source.settings)
+      ) {
+        throw new Error('incomplete import')
+      }
+
+      const state: PersistedAppState = {
+        profile: isProfile(source.profile) ? source.profile : null,
+        sessions: migrateSessions(source.sessions),
+        attempts: migrateAttempts(source.attempts),
+        questionProgress: migrateProgress(source.questionProgress),
+        bookmarks: isStringArray(source.bookmarks) ? source.bookmarks : [],
+        settings: migrateSettings(source.settings),
+      }
+      const attemptIds = new Set(state.attempts.map((attempt) => attempt.id))
+      state.sessions = Object.fromEntries(
+        Object.entries(state.sessions).filter(
+          ([sessionId]) => !attemptIds.has(sessionId),
+        ),
+      )
+      const result = this.save(state)
+
+      return result.ok ? { ok: true, state } : result
+    } catch {
+      return {
+        ok: false,
+        issue: {
+          code: 'corrupted',
+          message: 'Файл прогресу має некоректний або пошкоджений формат.',
+        },
+      }
+    }
+  }
 }
 
 export function createBrowserStorageRepository() {
@@ -455,4 +666,4 @@ export function createBrowserStorageRepository() {
   }
 }
 
-export { STORAGE_KEYS }
+export { LEGACY_STORAGE_KEYS, STORAGE_KEYS }

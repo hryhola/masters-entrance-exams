@@ -36,6 +36,7 @@ interface PracticeSessionState {
   sessions: Record<string, PracticeSession>
   attempts: PracticeAttempt[]
   questionProgress: QuestionProgressMap
+  bookmarks: string[]
   profile: LocalProfile | null
   settings: LocalSettings
   storageIssue: StorageIssue | null
@@ -53,6 +54,9 @@ type StoreAction =
     }
   | { type: 'storage_result'; issue: StorageIssue | null }
   | { type: 'clear' }
+  | { type: 'toggle_bookmark'; key: string }
+  | { type: 'update_settings'; settings: Partial<LocalSettings> }
+  | { type: 'replace'; state: PersistedAppState }
   | { type: 'dismiss_storage_issue' }
 
 function toPersistedState(state: PracticeSessionState): PersistedAppState {
@@ -61,6 +65,7 @@ function toPersistedState(state: PracticeSessionState): PersistedAppState {
     sessions: state.sessions,
     attempts: state.attempts,
     questionProgress: state.questionProgress,
+    bookmarks: state.bookmarks,
     settings: state.settings,
   }
 }
@@ -126,10 +131,39 @@ function storeReducer(
       sessions: {},
       attempts: [],
       questionProgress: {},
+      bookmarks: [],
       profile: null,
-      settings: { reducedMotion: false },
+      settings: {
+        reducedMotion: false,
+        targetExamDate: null,
+        dailyQuestionCount: 10,
+      },
       storageIssue: null,
     })
+  }
+
+  if (action.type === 'toggle_bookmark') {
+    return withPersistence(state, {
+      bookmarks: state.bookmarks.includes(action.key)
+        ? state.bookmarks.filter((key) => key !== action.key)
+        : [...state.bookmarks, action.key],
+    })
+  }
+
+  if (action.type === 'update_settings') {
+    return withPersistence(state, {
+      settings: { ...state.settings, ...action.settings },
+    })
+  }
+
+  if (action.type === 'replace') {
+    return {
+      ...state,
+      ...action.state,
+      storageIssue: null,
+      persistenceRevision: state.persistenceRevision + 1,
+      persistedState: action.state,
+    }
   }
 
   const session = state.sessions[action.sessionId]
@@ -207,11 +241,18 @@ export function PracticeSessionProvider({ children }: { children: ReactNode }) {
   }, [repository, state.persistedState, state.persistenceRevision])
 
   const createSession = useCallback(
-    ({ config, questions }: CreateSessionInput) => {
+    ({
+      config,
+      questions,
+      questionIds,
+      questionReasons,
+    }: CreateSessionInput) => {
       const session = createPracticeSession({
         id: createSessionId(),
         config,
         questions,
+        questionIds,
+        questionReasons,
         now: Date.now(),
       })
       dispatch({ type: 'create', session })
@@ -252,17 +293,57 @@ export function PracticeSessionProvider({ children }: { children: ReactNode }) {
     dispatch({ type: 'dismiss_storage_issue' })
   }, [])
 
+  const toggleBookmark = useCallback(
+    (datasetId: string, questionId: string) => {
+      dispatch({ type: 'toggle_bookmark', key: `${datasetId}:${questionId}` })
+    },
+    [],
+  )
+
+  const updateSettings = useCallback((settings: Partial<LocalSettings>) => {
+    dispatch({ type: 'update_settings', settings })
+  }, [])
+
+  const exportData = useCallback(
+    () => repository.export(toPersistedState(state)),
+    [repository, state],
+  )
+
+  const importData = useCallback(
+    (raw: string) => {
+      const result = repository.import(raw)
+
+      if (result.ok && result.state) {
+        dispatch({ type: 'replace', state: result.state })
+        return { ok: true, message: 'Прогрес успішно імпортовано.' }
+      }
+
+      const issue = result.issue ?? {
+        code: 'write_failed' as const,
+        message: 'Не вдалося імпортувати прогрес.',
+      }
+      dispatch({ type: 'storage_result', issue })
+      return { ok: false, message: issue.message }
+    },
+    [repository],
+  )
+
   const value = useMemo(
     () => ({
       sessions: state.sessions,
       attempts: state.attempts,
       questionProgress: state.questionProgress,
+      bookmarks: state.bookmarks,
       profile: state.profile,
       settings: state.settings,
       storageIssue: state.storageIssue,
       createSession,
       dispatchSession,
       clearAllData,
+      toggleBookmark,
+      updateSettings,
+      exportData,
+      importData,
       dismissStorageIssue,
     }),
     [
@@ -270,7 +351,12 @@ export function PracticeSessionProvider({ children }: { children: ReactNode }) {
       createSession,
       dismissStorageIssue,
       dispatchSession,
+      exportData,
+      importData,
+      toggleBookmark,
+      updateSettings,
       state.attempts,
+      state.bookmarks,
       state.profile,
       state.questionProgress,
       state.sessions,
