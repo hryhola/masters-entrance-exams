@@ -41,4 +41,15 @@
 
 ## Статус
 
-Реалізацію розпочато 10 червня 2026 року.
+**Завершено 10 червня 2026 року.**
+
+- production-сайт:
+  `https://hryhola.github.io/masters-entrance-exams/`;
+- репозиторій:
+  `https://github.com/hryhola/masters-entrance-exams`;
+- автоматичні перевірки: форматування, ESLint, TypeScript і 9 unit та
+  component тестів;
+- GitHub Actions збирає застосунок із repository base path і публікує
+  його в GitHub Pages після успішних перевірок;
+- desktop і mobile layout, hash-маршрути, оновлення вкладених сторінок та
+  404-стан перевірено у браузері.
