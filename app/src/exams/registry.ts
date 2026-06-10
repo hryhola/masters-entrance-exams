@@ -12,6 +12,11 @@ export interface ExamDefinition {
   year: number
   status: 'available' | 'planned'
   datasetId?: string
+  practice?: {
+    examDurationMinutes: number
+    estimatedSecondsPerQuestion: number
+    quickQuestionCounts: number[]
+  }
 }
 
 export const datasetRegistry: Record<string, DatasetDefinition> = {
@@ -31,6 +36,11 @@ export const examRegistry: ExamDefinition[] = [
     year: 2024,
     status: 'available',
     datasetId: 'yefvv-it-2024',
+    practice: {
+      examDurationMinutes: 180,
+      estimatedSecondsPerQuestion: 90,
+      quickQuestionCounts: [5, 10, 20],
+    },
   },
   {
     id: 'yevi-tzhnk',

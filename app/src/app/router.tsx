@@ -4,11 +4,8 @@ import { DashboardPage } from '../pages/DashboardPage'
 import { NotFoundPage, RouteErrorPage } from '../pages/ErrorPages'
 import { ExamsPage } from '../pages/ExamsPage'
 import {
-  PracticeSetupPage,
   ProgressPage,
-  ResultsPage,
   ReviewPage,
-  SessionPage,
   SettingsPage,
 } from '../pages/PlaceholderPages'
 import { AppShell } from './AppShell'
@@ -17,6 +14,11 @@ import {
   LazyExamDetailPage,
   LazyQuestionPage,
 } from './LazyDatasetRoutes'
+import {
+  LazyPracticeSetupPage,
+  LazyResultsPage,
+  LazySessionPage,
+} from './LazyPracticeRoutes'
 
 export const router = createHashRouter([
   {
@@ -46,15 +48,15 @@ export const router = createHashRouter([
       },
       {
         path: 'practice/setup',
-        element: <PracticeSetupPage />,
+        element: <LazyPracticeSetupPage />,
       },
       {
         path: 'practice/:sessionId',
-        element: <SessionPage />,
+        element: <LazySessionPage />,
       },
       {
         path: 'results/:sessionId',
-        element: <ResultsPage />,
+        element: <LazyResultsPage />,
       },
       {
         path: 'review',

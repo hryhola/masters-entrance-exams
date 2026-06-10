@@ -37,47 +37,6 @@ function EmptyState({
   )
 }
 
-export function PracticeSetupPage() {
-  return (
-    <div className="page-stack">
-      <PageIntro
-        description="Повний тест, окрема тема або швидка сесія з'являться після підключення контенту й тестового рушія."
-        eyebrow="Нова сесія"
-        title="Налаштування практики"
-      />
-      <EmptyState
-        description="На Етапі 3 тут можна буде вибрати іспит, режим, кількість питань і таймер."
-        icon="practice"
-        title="Тестовий рушій ще попереду"
-      />
-    </div>
-  )
-}
-
-export function SessionPage() {
-  return (
-    <EmptyState
-      actionLabel="До налаштувань"
-      actionTo="/practice/setup"
-      description="Інтерфейс одного питання буде реалізовано разом із навігацією, таймером і станом сесії."
-      icon="practice"
-      title="Сесію ще не створено"
-    />
-  )
-}
-
-export function ResultsPage() {
-  return (
-    <EmptyState
-      actionLabel="На головну"
-      actionTo="/"
-      description="Після першої завершеної сесії тут будуть бал, час, слабкі теми й детальний розбір."
-      icon="check"
-      title="Результатів поки немає"
-    />
-  )
-}
-
 export function ReviewPage() {
   return (
     <div className="page-stack">

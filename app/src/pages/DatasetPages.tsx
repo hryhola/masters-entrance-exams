@@ -87,20 +87,19 @@ export function ExamDetailPage() {
 
       <section className="dataset-actions">
         <div>
-          <p className="eyebrow">Доступний контент</p>
-          <h2>Набір готовий до тренувань</h2>
+          <p className="eyebrow">Практика доступна</p>
+          <h2>Почніть повний тест або коротку сесію</h2>
           <p>
-            На наступному етапі тут з’являться налаштування повного тесту,
-            тематичної та швидкої сесії. Зараз можна перевірити кожне питання та
-            його пояснення.
+            Оберіть навчальний режим із миттєвими поясненнями або симуляцію
+            іспиту з таймером і відкладеним результатом.
           </p>
         </div>
         <div className="button-row">
           <Link
             className="button button--primary"
-            to={`/exams/${exam.id}/questions/1`}
+            to={`/practice/setup?exam=${exam.id}`}
           >
-            Переглянути питання
+            Почати тренування
             <Icon name="arrow" size={18} />
           </Link>
           <Link
