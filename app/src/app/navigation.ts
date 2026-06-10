@@ -51,6 +51,7 @@ export function getPageTitle(pathname: string): string {
   if (pathname === '/') return 'Головна'
   if (pathname.startsWith('/exams/')) return 'Іспит'
   if (pathname === '/exams') return 'Іспити'
+  if (pathname.startsWith('/dev/datasets/')) return 'Перевірка контенту'
   if (pathname.startsWith('/practice/')) return 'Практика'
   if (pathname.startsWith('/results/')) return 'Результат'
   if (pathname === '/review') return 'Повторення'

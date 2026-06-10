@@ -58,6 +58,10 @@ app/
 Файли з `data/` та `assets/` не копіюються вручну. Build-скрипт формує
 `app/public/content/` із канонічного JSON і потрібних медіаресурсів.
 
+Реалізований `app/scripts/prepare-content.mjs` також перевіряє контрольні
+суми за release manifest. Каталог `app/public/content/` є генерованим і
+не зберігається в Git.
+
 ## Завантаження контенту
 
 1. Реєстр іспитів містить метадані й URL набору.
@@ -80,6 +84,10 @@ app/
 
 Кожен тип реалізується окремим компонентом. Невідомий тип не ламає всю
 сторінку, а показує діагностичний placeholder.
+
+Markdown рендериться через `react-markdown` і GFM, формули через KaTeX.
+Контентні сторінки завантажуються окремим lazy chunk, тому ці бібліотеки
+не входять до початкового bundle.
 
 ## Стан застосунку
 
@@ -146,4 +154,3 @@ Vite `base` налаштовується відповідно до імені Gi
 - [Vite: Deploying a Static Site](https://vite.dev/guide/static-deploy)
 - [GitHub Pages: Custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
 - [React Router: createHashRouter](https://reactrouter.com/api/data-routers/createHashRouter)
-

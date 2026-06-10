@@ -1,0 +1,435 @@
+.content-sequence {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  color: var(--color-ink);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.content-sequence + .content-sequence {
+  margin-top: 14px;
+}
+
+.content-block {
+  min-width: 0;
+}
+
+.content-block--markdown {
+  flex: 1 1 100%;
+}
+
+.content-block--markdown > :first-child {
+  margin-top: 0;
+}
+
+.content-block--markdown > :last-child {
+  margin-bottom: 0;
+}
+
+.content-block--markdown p {
+  margin-bottom: 12px;
+  white-space: pre-line;
+}
+
+.content-block--markdown ol,
+.content-block--markdown ul {
+  margin: 8px 0 12px;
+  padding-left: 1.5rem;
+}
+
+.content-sequence--inline .content-block--markdown {
+  flex: 0 1 auto;
+}
+
+.content-sequence--inline .content-block--markdown p {
+  display: inline;
+  margin: 0;
+}
+
+.content-block--math {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 3px 2px;
+}
+
+.content-block--math-block {
+  flex: 1 1 100%;
+  padding: 12px 0;
+  text-align: center;
+}
+
+.content-block--code {
+  position: relative;
+  flex: 1 1 100%;
+  max-width: 100%;
+  margin: 4px 0;
+  overflow: hidden;
+  border: 1px solid #263e37;
+  border-radius: 14px;
+  color: #e9f2ee;
+  background: #172a24;
+}
+
+.content-block--code figcaption {
+  padding: 8px 14px;
+  border-bottom: 1px solid rgb(255 255 255 / 11%);
+  color: #a9c5ba;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.content-block--code pre {
+  max-width: 100%;
+  margin: 0;
+  overflow-x: auto;
+  padding: 18px;
+}
+
+.content-block--code code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  white-space: pre;
+}
+
+.content-block--table {
+  width: 100%;
+  flex: 1 1 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+}
+
+.content-block--table table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+}
+
+.content-block--table th,
+.content-block--table td {
+  padding: 13px 16px;
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.content-block--table th {
+  color: var(--color-primary-strong);
+  background: var(--color-primary-soft);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.content-block--table td {
+  font-size: 0.9rem;
+}
+
+.content-block--table tr:last-child td {
+  border-bottom: 0;
+}
+
+.content-block--table th:last-child,
+.content-block--table td:last-child {
+  border-right: 0;
+}
+
+.content-block--image {
+  flex: 1 1 100%;
+  margin: 8px 0;
+}
+
+.content-block--image img {
+  width: auto;
+  max-width: 100%;
+  max-height: 560px;
+  margin: 0 auto;
+  object-fit: contain;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.content-block--image figcaption {
+  max-width: 720px;
+  margin: 10px auto 0;
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.content-block--image-compact img {
+  max-height: 300px;
+}
+
+.content-block--unknown {
+  flex: 1 1 100%;
+  padding: 14px;
+  border: 1px dashed var(--color-danger);
+  border-radius: 10px;
+  color: var(--color-danger);
+  background: var(--color-danger-soft);
+}
+
+.content-sequence--compact {
+  gap: 8px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.question-view {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  padding: clamp(24px, 4vw, 46px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.question-view > section {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.question-view__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.question-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tag--official {
+  color: var(--color-primary-strong);
+  background: var(--color-primary-soft);
+}
+
+.tag--disputed {
+  color: var(--color-danger);
+  background: var(--color-danger-soft);
+}
+
+.tag--alignment-legacy,
+.tag--alignment-unmapped {
+  color: #745114;
+  background: var(--color-accent-soft);
+}
+
+.tag--alignment-partial {
+  color: var(--color-info);
+  background: var(--color-info-soft);
+}
+
+.source-link {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+  border-radius: 6px;
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.answer-warning {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 26px;
+  padding: 16px 18px;
+  border-left: 4px solid var(--color-danger);
+  border-radius: 0 12px 12px 0;
+  color: var(--color-danger);
+  background: var(--color-danger-soft);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.question-options {
+  display: grid;
+  gap: 12px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.question-option {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: #fcfcf9;
+}
+
+.question-option--correct {
+  border-color: #8eb8a8;
+  background: #f0f7f3;
+}
+
+.question-option__letter {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  color: var(--color-primary-strong);
+  background: var(--color-surface);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.question-option__status {
+  grid-column: 2;
+  align-self: end;
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.question-explanation {
+  margin-top: 34px;
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--color-primary-soft);
+}
+
+.question-explanation details {
+  margin-top: 20px;
+  border-top: 1px solid #bdd4ca;
+  padding-top: 18px;
+}
+
+.question-explanation summary {
+  cursor: pointer;
+  color: var(--color-primary-strong);
+  font-weight: 800;
+}
+
+.feedback-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.feedback-list article {
+  padding: 14px;
+  border-radius: 10px;
+  background: rgb(255 255 255 / 55%);
+}
+
+.feedback-list article > strong {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.82rem;
+}
+
+.question-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 32px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-border);
+}
+
+.question-meta div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px;
+  background: var(--color-surface);
+}
+
+.question-meta span {
+  color: var(--color-muted);
+  font-size: 0.7rem;
+}
+
+.question-meta strong {
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.dataset-state {
+  display: flex;
+  min-height: 65vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.dataset-state > p:not(.eyebrow) {
+  max-width: 560px;
+  color: var(--color-muted);
+}
+
+.dataset-state .button {
+  margin-top: 18px;
+}
+
+.dataset-spinner {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 22px;
+  border: 4px solid var(--color-primary-soft);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: dataset-spin 800ms linear infinite;
+}
+
+@keyframes dataset-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 700px) {
+  .question-view__header {
+    flex-direction: column;
+  }
+
+  .question-option {
+    padding: 14px;
+  }
+
+  .question-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .content-block--code pre {
+    padding: 14px;
+  }
+
+  .content-block--code code {
+    font-size: 0.76rem;
+  }
+}

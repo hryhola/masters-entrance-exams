@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import type { IconName } from '../app/navigation'
 import { Icon } from '../components/Icon'
@@ -34,29 +34,6 @@ function EmptyState({
         </Link>
       ) : null}
     </section>
-  )
-}
-
-export function ExamDetailPage() {
-  const { examId } = useParams()
-
-  return (
-    <div className="page-stack">
-      <PageIntro
-        description="Тут з'являться режими повного тесту, тематичного тренування та швидкої сесії."
-        eyebrow="ЄФВВ 2024"
-        title={
-          examId === 'yefvv-it' ? 'Інформаційні технології' : 'Невідомий іспит'
-        }
-      />
-      <EmptyState
-        actionLabel="Налаштувати сесію"
-        actionTo="/practice/setup"
-        description="Контентний loader і рендеринг усіх 140 завдань належать до наступного етапу."
-        icon="exams"
-        title="Каркас іспиту готовий"
-      />
-    </div>
   )
 }
 

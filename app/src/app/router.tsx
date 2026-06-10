@@ -4,7 +4,6 @@ import { DashboardPage } from '../pages/DashboardPage'
 import { NotFoundPage, RouteErrorPage } from '../pages/ErrorPages'
 import { ExamsPage } from '../pages/ExamsPage'
 import {
-  ExamDetailPage,
   PracticeSetupPage,
   ProgressPage,
   ResultsPage,
@@ -13,6 +12,11 @@ import {
   SettingsPage,
 } from '../pages/PlaceholderPages'
 import { AppShell } from './AppShell'
+import {
+  LazyDatasetInspectorPage,
+  LazyExamDetailPage,
+  LazyQuestionPage,
+} from './LazyDatasetRoutes'
 
 export const router = createHashRouter([
   {
@@ -30,7 +34,15 @@ export const router = createHashRouter([
       },
       {
         path: 'exams/:examId',
-        element: <ExamDetailPage />,
+        element: <LazyExamDetailPage />,
+      },
+      {
+        path: 'exams/:examId/questions/:questionNumber',
+        element: <LazyQuestionPage />,
+      },
+      {
+        path: 'dev/datasets/:datasetId',
+        element: <LazyDatasetInspectorPage />,
       },
       {
         path: 'practice/setup',

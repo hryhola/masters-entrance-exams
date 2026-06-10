@@ -26,7 +26,9 @@ npm run build
 ```
 
 Команда `npm run check` запускає форматування, lint, перевірку типів і
-unit-тести разом.
+unit-тести разом. Перед перевірками й збіркою скрипт `content:prepare`
+звіряє фінальний JSON і медіаресурси з release manifest та готує
+`app/public/content/`.
 
 ## Деплой
 
