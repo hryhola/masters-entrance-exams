@@ -3,6 +3,7 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom'
 
 import { BrandMark } from '../components/BrandMark'
 import { Icon } from '../components/Icon'
+import { StorageNotice } from '../components/StorageNotice'
 import { PracticeSessionProvider } from '../features/practice/PracticeSessionContext'
 import '../app.css'
 import { getPageTitle, primaryNavigation } from './navigation'
@@ -66,6 +67,8 @@ export function AppShell() {
             </NavLink>
           </div>
         </header>
+
+        <StorageNotice />
 
         <main className="main-content" id="main-content" tabIndex={-1}>
           <Outlet />

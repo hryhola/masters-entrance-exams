@@ -28,6 +28,36 @@
   backdrop-filter: blur(18px);
 }
 
+.storage-notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 13px max(24px, calc((100% - var(--content-width)) / 2));
+  color: #6f2828;
+  background: var(--color-danger-soft);
+}
+
+.storage-notice > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.storage-notice span {
+  font-size: 0.78rem;
+}
+
+.storage-notice button {
+  padding: 7px 10px;
+  border: 1px solid #c98284;
+  border-radius: 8px;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 750;
+}
+
 .site-header__inner {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -812,6 +842,11 @@ h3 {
 }
 
 @media (max-width: 700px) {
+  .storage-notice {
+    align-items: flex-start;
+    padding: 12px;
+  }
+
   .brand__text small {
     display: none;
   }

@@ -19,9 +19,10 @@ import { DatasetError, DatasetLoading } from '../content/DatasetState'
 import type { ExamDataset, Question } from '../content/types'
 import { useDataset } from '../content/useDataset'
 import { PracticeQuestion } from '../features/practice/PracticeQuestion'
+import { AttemptReviewItem } from '../features/progress/AttemptReview'
+import { summarizeAttemptSections } from '../features/progress/analytics'
 import {
   formatSessionTime,
-  scorePracticeSession,
   type PracticeExperience,
   type PracticeMode,
   type PracticeSession,
@@ -357,8 +358,8 @@ function MissingSession() {
       <p className="eyebrow">Сесія недоступна</p>
       <h1>Почніть нове тренування</h1>
       <p>
-        На цьому етапі активна сесія живе лише у відкритій вкладці. Відновлення
-        після перезавантаження з’явиться на Етапі 4.
+        Не вдалося знайти цю сесію або її результат у локальних даних браузера.
+        Можливо, сховище було очищено.
       </p>
       <Link className="button button--primary" to="/practice/setup">
         До налаштувань
@@ -438,11 +439,16 @@ function SessionNavigator({
 export function SessionPage() {
   const { sessionId } = useParams()
   const navigate = useNavigate()
-  const { sessions, dispatchSession } = usePracticeSessions()
+  const { sessions, attempts, dispatchSession } = usePracticeSessions()
   const session = sessionId ? sessions[sessionId] : undefined
+  const completedAttempt = sessionId
+    ? attempts.find((attempt) => attempt.id === sessionId)
+    : undefined
   const state = useDataset(session?.config.datasetId)
   const [showFinishDialog, setShowFinishDialog] = useState(false)
   const questionAnchorRef = useRef<HTMLDivElement>(null)
+  const sessionQuestions =
+    state.status === 'ready' ? state.dataset.questions : undefined
 
   useEffect(() => {
     if (!session || session.status !== 'active') return
@@ -467,14 +473,18 @@ export function SessionPage() {
     }
 
     const timer = window.setInterval(() => {
-      dispatchSession(sessionId, {
-        type: 'tick',
-        now: Date.now(),
-      })
+      dispatchSession(
+        sessionId,
+        {
+          type: 'tick',
+          now: Date.now(),
+        },
+        sessionQuestions,
+      )
     }, 1000)
 
     return () => window.clearInterval(timer)
-  }, [dispatchSession, session, sessionId])
+  }, [dispatchSession, session, sessionId, sessionQuestions])
 
   useEffect(() => {
     if (session?.status !== 'active' || state.status !== 'ready') return
@@ -486,6 +496,9 @@ export function SessionPage() {
     })
   }, [session?.currentIndex, session?.status, state.status])
 
+  if (!session && completedAttempt) {
+    return <Navigate replace to={`/results/${completedAttempt.id}`} />
+  }
   if (!session || !sessionId) return <MissingSession />
   if (session.status === 'completed') {
     return <Navigate replace to={`/results/${session.id}`} />
@@ -493,7 +506,8 @@ export function SessionPage() {
   if (state.status === 'loading') return <DatasetLoading />
   if (state.status === 'error') return <DatasetError error={state.error} />
 
-  const questionsById = getQuestionMap(state.dataset.questions)
+  const questions = state.dataset.questions
+  const questionsById = getQuestionMap(questions)
   const questionId = session.questionIds[session.currentIndex]
   const question = questionsById.get(questionId)
 
@@ -515,7 +529,7 @@ export function SessionPage() {
   )
 
   function dispatch(action: Parameters<typeof dispatchSession>[1]) {
-    dispatchSession(activeSession.id, action)
+    dispatchSession(activeSession.id, action, questions)
   }
 
   function confirmFinish() {
@@ -696,21 +710,23 @@ export function SessionPage() {
 
 export function ResultsPage() {
   const { sessionId } = useParams()
-  const { sessions } = usePracticeSessions()
-  const session = sessionId ? sessions[sessionId] : undefined
-  const state = useDataset(session?.config.datasetId)
+  const { attempts } = usePracticeSessions()
+  const attempt = sessionId
+    ? attempts.find((item) => item.id === sessionId)
+    : undefined
+  const state = useDataset(attempt?.config.datasetId)
 
-  if (!session || session.status !== 'completed') return <MissingSession />
+  if (!attempt) return <MissingSession />
   if (state.status === 'loading') return <DatasetLoading />
   if (state.status === 'error') return <DatasetError error={state.error} />
 
-  const score = scorePracticeSession(session, state.dataset.questions)
-  const completedAt = session.completedAt ?? session.startedAt
+  const score = attempt.score
   const questionsById = getQuestionMap(state.dataset.questions)
-  const elapsedSeconds = Math.max(
-    0,
-    Math.round((completedAt - session.startedAt) / 1000),
-  )
+  const elapsedSeconds = attempt.elapsedSeconds
+  const sectionSummaries = summarizeAttemptSections(attempt)
+  const disputedCount = attempt.questionResults.filter(
+    (result) => result.answerReviewStatus === 'disputed',
+  ).length
 
   return (
     <div className="page-stack results-page">
@@ -718,15 +734,15 @@ export function ResultsPage() {
         action={
           <Link
             className="button button--secondary"
-            to={`/practice/setup?exam=${session.config.examId}`}
+            to={`/practice/setup?exam=${attempt.config.examId}`}
           >
             Нова сесія
           </Link>
         }
         description={
-          session.completionReason === 'timer'
+          attempt.completionReason === 'timer'
             ? 'Час завершився, тому сесію було надіслано автоматично.'
-            : 'Сесію завершено. Нижче наведено базовий результат цієї вкладки.'
+            : 'Збережений результат, тематичний зріз і детальний розбір відповідей.'
         }
         eyebrow="Результат сесії"
         title={`${score.percentage}% правильних відповідей`}
@@ -734,7 +750,7 @@ export function ResultsPage() {
 
       <section aria-label="Показники результату" className="result-metrics">
         <article className="result-metric result-metric--primary">
-          <span>Правильно</span>
+          <span>За офіційним ключем</span>
           <strong>
             {score.correct}/{score.total}
           </strong>
@@ -754,63 +770,75 @@ export function ResultsPage() {
           <span>Час</span>
           <strong>{formatSessionTime(elapsedSeconds)}</strong>
           <small>
-            {session.config.experience === 'exam'
+            {attempt.config.experience === 'exam'
               ? 'симуляція іспиту'
               : 'навчальний режим'}
           </small>
         </article>
       </section>
 
+      {disputedCount > 0 ? (
+        <aside className="result-caveat" role="note">
+          <strong>Спірних офіційних ключів у спробі: {disputedCount}.</strong>
+          <span>
+            Загальний відсоток технічно розраховано за ключем джерела, але в
+            розборі такі відповіді не подаються як безумовна предметна істина.
+          </span>
+        </aside>
+      ) : null}
+
+      <section className="result-sections">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">Тематичний зріз</p>
+            <h2>Результат за розділами</h2>
+          </div>
+          <p>
+            Точність рахується серед питань, на які було надано відповідь.
+            Пропуски показано окремо.
+          </p>
+        </div>
+        <div className="result-section-grid">
+          {sectionSummaries.map((section) => (
+            <article key={section.key}>
+              <div>
+                <span>{section.key === 'unmapped' ? '—' : section.key}</span>
+                <strong>{section.title}</strong>
+              </div>
+              <b>{section.accuracy}%</b>
+              <small>
+                Правильно: {section.correct} · Помилок: {section.incorrect} ·
+                Пропущено: {section.skipped}
+              </small>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="result-review">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">Огляд</p>
-            <h2>Статус кожного питання</h2>
+            <p className="eyebrow">Детальний розбір</p>
+            <h2>Кожна відповідь і пояснення</h2>
           </div>
           <p>
-            Детальний розбір помилок, історія спроб і статистика за темами
-            з’являться на Етапі 4.
+            Помилкові відповіді відкрито автоматично. Інші питання можна
+            розгорнути окремо.
           </p>
         </div>
-        <ol className="result-question-grid">
-          {session.questionIds.map((questionId, index) => {
-            const question = questionsById.get(questionId)
-            const answer = session.answers[questionId]
-            const correct = answer === question?.correctOption
-            const status = !answer
-              ? 'Без відповіді'
-              : correct
-                ? 'Правильно'
-                : 'Неправильно'
-
-            return (
-              <li
-                className={
-                  !answer
-                    ? 'result-question result-question--empty'
-                    : correct
-                      ? 'result-question result-question--correct'
-                      : 'result-question result-question--incorrect'
-                }
-                key={questionId}
-              >
-                <span>{index + 1}</span>
-                <div>
-                  <strong>{status}</strong>
-                  <small>Офіційне №{question?.number ?? '?'}</small>
-                </div>
-                {question ? (
-                  <Link
-                    aria-label={`Відкрити пояснення до питання ${question.number}`}
-                    to={`/exams/${session.config.examId}/questions/${question.number}`}
-                  >
-                    Пояснення
-                  </Link>
-                ) : null}
-              </li>
-            )
+        <div className="attempt-review-list">
+          {attempt.questionResults.map((result, index) => {
+            const question = questionsById.get(result.questionId)
+            return question ? (
+              <AttemptReviewItem
+                key={result.questionId}
+                position={index + 1}
+                question={question}
+                result={result}
+              />
+            ) : null
           })}
-        </ol>
+        </div>
       </section>
     </div>
   )

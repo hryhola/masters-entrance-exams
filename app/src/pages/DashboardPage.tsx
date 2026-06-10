@@ -1,14 +1,38 @@
+import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Icon } from '../components/Icon'
-
-const todayItems = [
-  'Пройти коротку діагностику',
-  'Визначити перші слабкі теми',
-  'Сформувати ритм повторень',
-]
+import { summarizeAttempts } from '../features/progress/analytics'
+import { usePracticeSessions } from '../features/practice/usePracticeSessions'
 
 export function DashboardPage() {
+  const { attempts, sessions } = usePracticeSessions()
+  const summary = useMemo(() => summarizeAttempts(attempts), [attempts])
+  const activeSession = Object.values(sessions).sort(
+    (left, right) => right.startedAt - left.startedAt,
+  )[0]
+  const hasHistory = attempts.length > 0
+  const todayItems = hasHistory
+    ? [
+        'Переглянути останні помилки',
+        'Опрацювати тему з найнижчою точністю',
+        'Закріпити результат короткою сесією',
+      ]
+    : [
+        'Пройти коротку діагностику',
+        'Визначити перші слабкі теми',
+        'Сформувати ритм повторень',
+      ]
+  const primaryAction = activeSession
+    ? {
+        to: `/practice/${activeSession.id}`,
+        label: 'Продовжити сесію',
+      }
+    : {
+        to: '/practice/setup',
+        label: hasHistory ? 'Нова сесія' : 'Почати тренування',
+      }
+
   return (
     <div className="page-stack">
       <section className="hero-panel">
@@ -20,8 +44,8 @@ export function DashboardPage() {
             поступово закривайте слабкі теми.
           </p>
           <div className="button-row">
-            <Link className="button button--primary" to="/practice/setup">
-              Почати тренування
+            <Link className="button button--primary" to={primaryAction.to}>
+              {primaryAction.label}
               <Icon name="arrow" size={18} />
             </Link>
             <Link className="button button--secondary" to="/exams">
@@ -33,28 +57,32 @@ export function DashboardPage() {
         <div aria-label="Стан підготовки" className="hero-summary">
           <div className="hero-summary__heading">
             <span className="status-dot" />
-            <span>Стартова позиція</span>
+            <span>{hasHistory ? 'Локальний прогрес' : 'Стартова позиція'}</span>
           </div>
-          <strong>0%</strong>
-          <p>Почніть першу сесію, щоб побачити персональний прогрес.</p>
+          <strong>{summary.accuracy}%</strong>
+          <p>
+            {hasHistory
+              ? `Завершено сесій: ${summary.attemptCount}. Правильних відповідей: ${summary.correct}.`
+              : 'Почніть першу сесію, щоб побачити персональний прогрес.'}
+          </p>
           <div
-            aria-label="Прогрес підготовки: 0 відсотків"
+            aria-label={`Прогрес підготовки: ${summary.accuracy} відсотків`}
             aria-valuemax={100}
             aria-valuemin={0}
-            aria-valuenow={0}
+            aria-valuenow={summary.accuracy}
             className="progress-bar"
             role="progressbar"
           >
-            <span style={{ width: '0%' }} />
+            <span style={{ width: `${summary.accuracy}%` }} />
           </div>
           <div className="hero-summary__stats">
             <div>
-              <span>Питань готово</span>
-              <strong>140</strong>
+              <span>Опрацьовано</span>
+              <strong>{summary.questionCount}</strong>
             </div>
             <div>
-              <span>Активний іспит</span>
-              <strong>1</strong>
+              <span>Активні сесії</span>
+              <strong>{Object.keys(sessions).length}</strong>
             </div>
           </div>
         </div>
@@ -65,7 +93,11 @@ export function DashboardPage() {
           <div className="panel-heading">
             <div>
               <p className="eyebrow">План на сьогодні</p>
-              <h2 id="today-heading">Почнімо з діагностики</h2>
+              <h2 id="today-heading">
+                {hasHistory
+                  ? 'Продовжуємо за слабкими темами'
+                  : 'Почнімо з діагностики'}
+              </h2>
             </div>
             <span className="icon-tile icon-tile--accent">
               <Icon name="target" />
@@ -79,8 +111,11 @@ export function DashboardPage() {
               </li>
             ))}
           </ul>
-          <Link className="text-link" to="/practice/setup">
-            Налаштувати першу сесію
+          <Link
+            className="text-link"
+            to={hasHistory ? '/review' : '/practice/setup'}
+          >
+            {hasHistory ? 'Перейти до повторення' : 'Налаштувати першу сесію'}
             <Icon name="arrow" size={17} />
           </Link>
         </article>
@@ -118,8 +153,8 @@ export function DashboardPage() {
             <h2 id="features-heading">Не просто правильна літера</h2>
           </div>
           <p>
-            Сайт буде накопичувати історію відповідей і перетворювати її на
-            конкретний навчальний план.
+            Сайт накопичує локальну історію відповідей і перетворює її на
+            конкретні пріоритети для повторення.
           </p>
         </div>
         <div className="feature-grid">

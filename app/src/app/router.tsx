@@ -3,11 +3,6 @@ import { createHashRouter } from 'react-router-dom'
 import { DashboardPage } from '../pages/DashboardPage'
 import { NotFoundPage, RouteErrorPage } from '../pages/ErrorPages'
 import { ExamsPage } from '../pages/ExamsPage'
-import {
-  ProgressPage,
-  ReviewPage,
-  SettingsPage,
-} from '../pages/PlaceholderPages'
 import { AppShell } from './AppShell'
 import {
   LazyDatasetInspectorPage,
@@ -19,6 +14,11 @@ import {
   LazyResultsPage,
   LazySessionPage,
 } from './LazyPracticeRoutes'
+import {
+  LazyProgressPage,
+  LazyReviewPage,
+  LazySettingsPage,
+} from './LazyProgressRoutes'
 
 export const router = createHashRouter([
   {
@@ -60,15 +60,15 @@ export const router = createHashRouter([
       },
       {
         path: 'review',
-        element: <ReviewPage />,
+        element: <LazyReviewPage />,
       },
       {
         path: 'progress',
-        element: <ProgressPage />,
+        element: <LazyProgressPage />,
       },
       {
         path: 'settings',
-        element: <SettingsPage />,
+        element: <LazySettingsPage />,
       },
       {
         path: '*',

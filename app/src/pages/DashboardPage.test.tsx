@@ -2,13 +2,16 @@ import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { describe, expect, it } from 'vitest'
 
+import { PracticeSessionProvider } from '../features/practice/PracticeSessionContext'
 import { DashboardPage } from './DashboardPage'
 
 describe('DashboardPage', () => {
   it('offers a clear starting action and preparation status', () => {
     render(
       <MemoryRouter>
-        <DashboardPage />
+        <PracticeSessionProvider>
+          <DashboardPage />
+        </PracticeSessionProvider>
       </MemoryRouter>,
     )
 
