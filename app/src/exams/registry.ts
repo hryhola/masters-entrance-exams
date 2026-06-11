@@ -4,6 +4,11 @@ export interface DatasetDefinition {
   manifestPath: string
 }
 
+export interface TaskDatasetDefinition {
+  id: string
+  dataPath: string
+}
+
 export interface ExamDefinition {
   id: string
   shortName: string
@@ -24,6 +29,13 @@ export const datasetRegistry: Record<string, DatasetDefinition> = {
     id: 'yefvv-it-2024',
     dataPath: 'content/datasets/yefvv-it-2024/dataset.json',
     manifestPath: 'content/datasets/yefvv-it-2024/manifest.json',
+  },
+}
+
+export const taskDatasetRegistry: Record<string, TaskDatasetDefinition> = {
+  'evi-schema-v2-fixtures': {
+    id: 'evi-schema-v2-fixtures',
+    dataPath: 'content/fixtures/evi-schema-v2.json',
   },
 }
 
@@ -66,4 +78,8 @@ export function getExamDefinition(examId: string | undefined) {
 
 export function getDatasetDefinition(datasetId: string | undefined) {
   return datasetId ? datasetRegistry[datasetId] : undefined
+}
+
+export function getTaskDatasetDefinition(datasetId: string | undefined) {
+  return datasetId ? taskDatasetRegistry[datasetId] : undefined
 }

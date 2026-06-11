@@ -1,0 +1,621 @@
+{
+  "schema_version": 2,
+  "dataset": {
+    "id": "evi-schema-v2-fixtures",
+    "title": "ЄВІ: контрольні приклади схеми v2",
+    "exam": "ЄВІ",
+    "subject": "Англійська мова та ТЗНК",
+    "year": 2024,
+    "languages": ["en", "uk"],
+    "status": "fixture",
+    "task_count": 3,
+    "assessment_item_count": 11,
+    "stimulus_count": 8
+  },
+  "sections": [
+    {
+      "code": "english-reading",
+      "title": "Англійська мова: читання"
+    },
+    {
+      "code": "tznk-verbal",
+      "title": "ТЗНК: вербально-комунікативний компонент"
+    },
+    {
+      "code": "tznk-logical",
+      "title": "ТЗНК: логіко-аналітичний компонент"
+    }
+  ],
+  "stimuli": [
+    {
+      "id": "yevi-en-2023-library-1",
+      "type": "text",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "It would be fun to check a mobile library in rural Colombia. Biblioburro is being operated by Luis Soriano, a primary school teacher, during his spare time. Witnessing kids, wearing a genuine smile each time he visits their villages in rural Colombia, would surely warm anybody’s heart. Using two donkeys, Alfa and Beto, to carry loads of books, Soriano spends four hours on each trip just to reach those remote places."
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-library-2",
+      "type": "text",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "In Norway, many small communities that live on islands in the fjords are virtually isolated from the world in winter. These communities are too small to each have their own library, so, when the inhabitants of the Hordaland County were offered a book boat in 1959, Epos was born. Nowadays, the boat travels to 250 small hamlets across Norway, bringing books, culture and entertainment to the people."
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-library-3",
+      "type": "text",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "Nothing says “summer vacation” like the sun, sea, sand, and a good storybook, which is exactly why Herman Kompernas decided to build a library right on the beach. The library is quite extensive: it offers holiday goers who visit the Bulgarian Black Sea resort of Albena over 2,500 books in ten different languages. Guests can borrow the books at no cost, as long as they also leave their own finished holiday reads behind for others."
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-library-4",
+      "type": "text",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "Built in 1807, the Boston Athenaeum is among the oldest and most distinguished independent libraries and cultural institutions in the United States. It added an art gallery in 1827, began running yearly exhibitions of American and European art, and by the mid-1800s found itself not only at the centre of Boston’s culture scene but also one of the largest libraries in the US. It hosts exhibition programmes and even concerts."
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-library-5",
+      "type": "text",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "Reading Club 2000 started when Hernando “Nanie” Guanlao thought of a way to honour and preserve the memory of his parents who inculcated in him the love for reading. He gathered his old textbooks and set them outside his Manila residence to test if the community would be interested to borrow and read them. They were. Twelve years later Nanie’s library grew to contain 2,500 books. As an additional service, he also runs a “book bike” service, where he delivers books to poor areas in Manila."
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-library-6",
+      "type": "text",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "That is not an alien ship you are staring at. It is not a pink bubble gum candy designed by Hello Kitty, either! That is a house of books providing library services for the people of Perugia, Italy. The public library is named after the poet Sandro Penna. It features rose-coloured glass walls designed to let sunlight in during daytime, and at night, it creates a rare glow. The architect who designed it, Italo Rota, made the three-story disc look like an alien flying saucer."
+        }
+      ]
+    },
+    {
+      "id": "tznk-2024-microtext-2",
+      "type": "cloze_text",
+      "title": "Мікротекст 2",
+      "language": "uk",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "Джудит Батлер уважає, що з огляду на перформативний характер гендер не є чимось чітко визначеним, строгим і постійним. Гендер є флюїдним, **(2) ______**, адже такою є поведінка кожної людини за різних обставин. Певною мірою філософиня навіть виступає проти визначення та класифікації гендерів, оскільки визначеність тягне за собою **(3) ______**."
+        }
+      ]
+    },
+    {
+      "id": "tznk-2024-situation-3",
+      "type": "chart",
+      "title": "Ситуація № 3",
+      "language": "uk",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "До складу виробничої фірми «Вільний шлях» входять підприємства А, В і С. На діаграмах відображено частку, яку вносили підприємства А, В і С в загальну суму прибутків фірми у 2018–2021 роках, та наведено прибутки підприємства А в ці роки."
+        },
+        {
+          "type": "image",
+          "path": "assets/evi-schema-v2/tznk-2024/firm-shares.png",
+          "alt": "Стовпчикова діаграма часток підприємств у прибутку фірми. 2018: А 50%, В 20%, С 30%; 2019: А 50%, В 40%, С 10%; 2020: А 25%, В 50%, С 25%; 2021: А 30%, В 60%, С 10%.",
+          "role": "stimulus",
+          "source_images": ["TZNK_maket_sajt_2024_03_29_merged.pdf#page=12"]
+        },
+        {
+          "type": "image",
+          "path": "assets/evi-schema-v2/tznk-2024/company-a-profits.png",
+          "alt": "Стовпчикова діаграма прибутків підприємства А: 160 млн грн у 2018 році, 180 у 2019, 100 у 2020 та 144 у 2021.",
+          "role": "stimulus",
+          "source_images": ["TZNK_maket_sajt_2024_03_29_merged.pdf#page=12"]
+        },
+        {
+          "type": "table",
+          "columns": ["Рік", "А", "В", "С"],
+          "rows": [
+            ["2018", "50%", "20%", "30%"],
+            ["2019", "50%", "40%", "10%"],
+            ["2020", "25%", "50%", "25%"],
+            ["2021", "30%", "60%", "10%"]
+          ],
+          "source_images": ["assets/evi-schema-v2/tznk-2024/firm-shares.png"]
+        },
+        {
+          "type": "table",
+          "columns": ["Рік", "Прибуток підприємства А, млн грн"],
+          "rows": [
+            ["2018", "160"],
+            ["2019", "180"],
+            ["2020", "100"],
+            ["2021", "144"]
+          ],
+          "source_images": [
+            "assets/evi-schema-v2/tznk-2024/company-a-profits.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "yevi-en-2023-task-1",
+      "number": 1,
+      "type": "matching",
+      "language": "en",
+      "section_code": "english-reading",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Read the texts below. Match choices (A–H) to texts (1–6). There are two choices you do not need to use."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [
+        {
+          "id": "library-features",
+          "unique": true,
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "contains the founder’s book collection"
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "is named after its designer"
+                }
+              ]
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "bears some similarity to a UFO"
+                }
+              ]
+            },
+            {
+              "id": "d",
+              "label": "D",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "is transported by a vessel"
+                }
+              ]
+            },
+            {
+              "id": "e",
+              "label": "E",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "encourages sharing books"
+                }
+              ]
+            },
+            {
+              "id": "f",
+              "label": "F",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "is delivered by animals"
+                }
+              ]
+            },
+            {
+              "id": "g",
+              "label": "G",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "holds annual exhibitions in winter"
+                }
+              ]
+            },
+            {
+              "id": "h",
+              "label": "H",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "offers live performances"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "yevi-en-2023-001",
+          "number": 1,
+          "display_label": "1",
+          "prompt": [{ "type": "markdown", "text": "Biblioburro" }],
+          "stimulus_ids": ["yevi-en-2023-library-1"],
+          "response": {
+            "type": "matching_choice",
+            "choice_set_id": "library-features"
+          },
+          "answer": { "correct_choice": "f", "source": "official_key" },
+          "explanation": { "status": "editorial_pending", "summary": [] },
+          "source": { "page_start": 2, "page_end": 2 }
+        },
+        {
+          "id": "yevi-en-2023-002",
+          "number": 2,
+          "display_label": "2",
+          "prompt": [{ "type": "markdown", "text": "Epos" }],
+          "stimulus_ids": ["yevi-en-2023-library-2"],
+          "response": {
+            "type": "matching_choice",
+            "choice_set_id": "library-features"
+          },
+          "answer": { "correct_choice": "d", "source": "official_key" },
+          "explanation": { "status": "editorial_pending", "summary": [] },
+          "source": { "page_start": 2, "page_end": 2 }
+        },
+        {
+          "id": "yevi-en-2023-003",
+          "number": 3,
+          "display_label": "3",
+          "prompt": [{ "type": "markdown", "text": "Albena Beach Library" }],
+          "stimulus_ids": ["yevi-en-2023-library-3"],
+          "response": {
+            "type": "matching_choice",
+            "choice_set_id": "library-features"
+          },
+          "answer": { "correct_choice": "e", "source": "official_key" },
+          "explanation": { "status": "editorial_pending", "summary": [] },
+          "source": { "page_start": 2, "page_end": 2 }
+        },
+        {
+          "id": "yevi-en-2023-004",
+          "number": 4,
+          "display_label": "4",
+          "prompt": [{ "type": "markdown", "text": "The Boston Athenaeum" }],
+          "stimulus_ids": ["yevi-en-2023-library-4"],
+          "response": {
+            "type": "matching_choice",
+            "choice_set_id": "library-features"
+          },
+          "answer": { "correct_choice": "h", "source": "official_key" },
+          "explanation": { "status": "editorial_pending", "summary": [] },
+          "source": { "page_start": 2, "page_end": 2 }
+        },
+        {
+          "id": "yevi-en-2023-005",
+          "number": 5,
+          "display_label": "5",
+          "prompt": [{ "type": "markdown", "text": "Reading Club 2000" }],
+          "stimulus_ids": ["yevi-en-2023-library-5"],
+          "response": {
+            "type": "matching_choice",
+            "choice_set_id": "library-features"
+          },
+          "answer": { "correct_choice": "a", "source": "official_key" },
+          "explanation": { "status": "editorial_pending", "summary": [] },
+          "source": { "page_start": 2, "page_end": 2 }
+        },
+        {
+          "id": "yevi-en-2023-006",
+          "number": 6,
+          "display_label": "6",
+          "prompt": [{ "type": "markdown", "text": "Sandro Penna Library" }],
+          "stimulus_ids": ["yevi-en-2023-library-6"],
+          "response": {
+            "type": "matching_choice",
+            "choice_set_id": "library-features"
+          },
+          "answer": { "correct_choice": "c", "source": "official_key" },
+          "explanation": { "status": "editorial_pending", "summary": [] },
+          "source": { "page_start": 2, "page_end": 2 }
+        }
+      ]
+    },
+    {
+      "id": "tznk-2024-task-2",
+      "number": 2,
+      "type": "cloze",
+      "language": "uk",
+      "section_code": "tznk-verbal",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Відновіть цілісність мікротексту, добираючи для кожного пропуску правильний варіант."
+        }
+      ],
+      "stimulus_ids": ["tznk-2024-microtext-2"],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "tznk-2024-002",
+          "number": 2,
+          "display_label": "2.(2)",
+          "prompt": [{ "type": "markdown", "text": "Пропуск (2)" }],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "2",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [{ "type": "markdown", "text": "перманентним" }]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [{ "type": "markdown", "text": "мінливим" }]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [{ "type": "markdown", "text": "випадковим" }]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [{ "type": "markdown", "text": "передбачуваним" }]
+              }
+            ]
+          },
+          "answer": { "correct_choice": "b", "source": "official_key" },
+          "explanation": {
+            "status": "official",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Прикметник «мінливим» узгоджується з характеристикою гендеру як флюїдного та залежного від обставин."
+              }
+            ]
+          },
+          "source": { "page_start": 2, "page_end": 2 }
+        },
+        {
+          "id": "tznk-2024-003",
+          "number": 3,
+          "display_label": "2.(3)",
+          "prompt": [{ "type": "markdown", "text": "Пропуск (3)" }],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "3",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [{ "type": "markdown", "text": "варіативність" }]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  { "type": "markdown", "text": "диверсифікованість" }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [{ "type": "markdown", "text": "нормативність" }]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [{ "type": "markdown", "text": "гомогенність" }]
+              }
+            ]
+          },
+          "answer": { "correct_choice": "c", "source": "official_key" },
+          "explanation": {
+            "status": "official",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У контексті йдеться про небезпеку норми, яку створює жорстке визначення та класифікація."
+              }
+            ]
+          },
+          "source": { "page_start": 2, "page_end": 2 }
+        }
+      ]
+    },
+    {
+      "id": "tznk-2024-task-25-27",
+      "number": 25,
+      "type": "question_group",
+      "language": "uk",
+      "section_code": "tznk-logical",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Прочитайте опис ситуації 3. Виконайте завдання 25–27, що стосуються цієї ситуації."
+        }
+      ],
+      "stimulus_ids": ["tznk-2024-situation-3"],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "tznk-2024-025",
+          "number": 25,
+          "display_label": "25",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У якому році прибуток підприємства А був найбільшим?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [{ "type": "markdown", "text": "у 2018 році" }]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [{ "type": "markdown", "text": "у 2019 році" }]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [{ "type": "markdown", "text": "у 2020 році" }]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [{ "type": "markdown", "text": "у 2021 році" }]
+              }
+            ]
+          },
+          "answer": { "correct_choice": "b", "source": "official_key" },
+          "explanation": {
+            "status": "official",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "На діаграмі підприємства А найбільше значення становить 180 млн грн у 2019 році."
+              }
+            ]
+          },
+          "source": { "page_start": 12, "page_end": 12 }
+        },
+        {
+          "id": "tznk-2024-026",
+          "number": 26,
+          "display_label": "26",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Який прибуток отримало підприємство С у 2018 році?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [{ "type": "markdown", "text": "48 млн грн" }]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [{ "type": "markdown", "text": "69 млн грн" }]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [{ "type": "markdown", "text": "84 млн грн" }]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [{ "type": "markdown", "text": "96 млн грн" }]
+              }
+            ]
+          },
+          "answer": { "correct_choice": "d", "source": "official_key" },
+          "explanation": {
+            "status": "official",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У 2018 році частки А і С становили 50% та 30%. Якщо 50% дорівнюють 160 млн грн, то 30% дорівнюють 96 млн грн."
+              }
+            ]
+          },
+          "source": { "page_start": 12, "page_end": 12 }
+        },
+        {
+          "id": "tznk-2024-027",
+          "number": 27,
+          "display_label": "27",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Ознайомтеся з твердженнями:\n\nІ. Сумарний прибуток підприємств В і С у 2019 році більший, ніж у 2018 році.\n\nІІ. Прибуток підприємства С у 2021 році більший, ніж у 2019 році.\n\nЯке або які твердження істинні?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [{ "type": "markdown", "text": "лише І" }]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [{ "type": "markdown", "text": "лише ІІ" }]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [{ "type": "markdown", "text": "І та ІІ" }]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [{ "type": "markdown", "text": "немає істинних" }]
+              }
+            ]
+          },
+          "answer": { "correct_choice": "c", "source": "official_key" },
+          "explanation": {
+            "status": "official",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У 2019 році В і С разом отримали 180 млн грн проти 160 млн грн у 2018. Прибуток С у 2021 році становив 48 млн грн, а у 2019 році — 36 млн грн. Обидва твердження істинні."
+              }
+            ]
+          },
+          "source": { "page_start": 12, "page_end": 12 }
+        }
+      ]
+    }
+  ],
+  "release": {
+    "status": "fixture",
+    "version": "2.0.0-fixture.1"
+  }
+}

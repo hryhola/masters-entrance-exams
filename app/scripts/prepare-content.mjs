@@ -19,6 +19,16 @@ const outputRoot = join(appRoot, 'public', 'content')
 const datasetId = 'yefvv-it-2024'
 const datasetSource = join(projectRoot, 'data', `${datasetId}.json`)
 const manifestSource = join(projectRoot, 'data', `${datasetId}.manifest.json`)
+const eviFixtureSource = join(
+  projectRoot,
+  'data',
+  'fixtures',
+  'evi-schema-v2.json',
+)
+const eviFixtureAssets = [
+  'assets/evi-schema-v2/tznk-2024/firm-shares.png',
+  'assets/evi-schema-v2/tznk-2024/company-a-profits.png',
+]
 
 function sha256(path) {
   return createHash('sha256').update(readFileSync(path)).digest('hex')
@@ -44,9 +54,12 @@ function copyVerified(source, destination, expectedHash) {
 
 ensureFile(datasetSource)
 ensureFile(manifestSource)
+ensureFile(eviFixtureSource)
+eviFixtureAssets.forEach((path) => ensureFile(join(projectRoot, path)))
 
 const dataset = JSON.parse(readFileSync(datasetSource, 'utf8'))
 const manifest = JSON.parse(readFileSync(manifestSource, 'utf8'))
+const eviFixture = JSON.parse(readFileSync(eviFixtureSource, 'utf8'))
 const optionCount = dataset.questions.reduce(
   (total, question) => total + question.options.length,
   0,
@@ -68,6 +81,14 @@ if (manifest.media.web_assets.length !== 9) {
     `Expected 9 web assets, got ${manifest.media.web_assets.length}`,
   )
 }
+if (
+  eviFixture.schema_version !== 2 ||
+  eviFixture.dataset.id !== 'evi-schema-v2-fixtures' ||
+  eviFixture.tasks.length !== 3 ||
+  eviFixture.dataset.assessment_item_count !== 11
+) {
+  throw new Error('Unexpected EVI schema v2 fixture shape.')
+}
 
 rmSync(outputRoot, { recursive: true, force: true })
 
@@ -82,6 +103,18 @@ for (const asset of manifest.media.web_assets) {
     join(outputRoot, asset.path),
     asset.sha256,
   )
+}
+
+const fixtureOutputDirectory = join(outputRoot, 'fixtures')
+mkdirSync(fixtureOutputDirectory, { recursive: true })
+copyFileSync(
+  eviFixtureSource,
+  join(fixtureOutputDirectory, 'evi-schema-v2.json'),
+)
+for (const asset of eviFixtureAssets) {
+  const destination = join(outputRoot, asset)
+  mkdirSync(dirname(destination), { recursive: true })
+  copyFileSync(join(projectRoot, asset), destination)
 }
 
 const catalog = {
@@ -100,6 +133,19 @@ const catalog = {
       path: `datasets/${datasetId}/dataset.json`,
     },
   ],
+  fixtures: [
+    {
+      id: eviFixture.dataset.id,
+      schema_version: eviFixture.schema_version,
+      task_count: eviFixture.tasks.length,
+      assessment_item_count: eviFixture.dataset.assessment_item_count,
+      path: 'fixtures/evi-schema-v2.json',
+      assets: eviFixtureAssets.map((path) => ({
+        path,
+        sha256: sha256(join(projectRoot, path)),
+      })),
+    },
+  ],
 }
 writeFileSync(
   join(outputRoot, 'catalog.json'),
@@ -110,4 +156,7 @@ console.log(`Prepared dataset: ${datasetId}`)
 console.log(`Questions: ${dataset.questions.length}`)
 console.log(`Options: ${optionCount}`)
 console.log(`Web assets: ${manifest.media.web_assets.length}`)
+console.log(
+  `EVI fixture: ${eviFixture.tasks.length} tasks, ${eviFixture.dataset.assessment_item_count} assessment items`,
+)
 console.log(`Output: ${outputRoot}`)

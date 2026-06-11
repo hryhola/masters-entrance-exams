@@ -24,6 +24,7 @@ describe('getPageTitle', () => {
     ['/practice/setup', 'Практика'],
     ['/results/demo', 'Результат'],
     ['/dev/datasets/yefvv-it-2024', 'Перевірка контенту'],
+    ['/dev/evi-fixtures', 'Прототип ЄВІ'],
     ['/unknown', 'Сторінку не знайдено'],
   ])('maps %s to %s', (pathname, title) => {
     expect(getPageTitle(pathname)).toBe(title)

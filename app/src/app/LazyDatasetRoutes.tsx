@@ -15,6 +15,11 @@ const DatasetInspectorPage = lazy(() =>
     default: module.DatasetInspectorPage,
   })),
 )
+const EviFixturePage = lazy(() =>
+  import('../pages/EviFixturePage').then((module) => ({
+    default: module.EviFixturePage,
+  })),
+)
 
 function LazyPage({ children }: { children: ReactNode }) {
   return (
@@ -51,6 +56,14 @@ export function LazyDatasetInspectorPage() {
   return (
     <LazyPage>
       <DatasetInspectorPage />
+    </LazyPage>
+  )
+}
+
+export function LazyEviFixturePage() {
+  return (
+    <LazyPage>
+      <EviFixturePage />
     </LazyPage>
   )
 }

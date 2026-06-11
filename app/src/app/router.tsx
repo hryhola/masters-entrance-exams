@@ -6,6 +6,7 @@ import { ExamsPage } from '../pages/ExamsPage'
 import { AppShell } from './AppShell'
 import {
   LazyDatasetInspectorPage,
+  LazyEviFixturePage,
   LazyExamDetailPage,
   LazyQuestionPage,
 } from './LazyDatasetRoutes'
@@ -46,6 +47,10 @@ export const router = createHashRouter([
       {
         path: 'dev/datasets/:datasetId',
         element: <LazyDatasetInspectorPage />,
+      },
+      {
+        path: 'dev/evi-fixtures',
+        element: <LazyEviFixturePage />,
       },
       {
         path: 'practice/setup',

@@ -70,6 +70,32 @@
   background: var(--color-surface);
 }
 
+.fixture-toolbar {
+  position: sticky;
+  z-index: 12;
+  top: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-header);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(14px);
+}
+
+.fixture-toolbar > div:first-child {
+  display: grid;
+  gap: 4px;
+}
+
+.fixture-toolbar span {
+  color: var(--color-muted);
+  font-size: 0.76rem;
+}
+
 .section-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -313,6 +339,11 @@
     flex-direction: column;
   }
 
+  .fixture-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .section-list {
     grid-template-columns: 1fr;
   }
@@ -352,7 +383,9 @@
   }
 
   .dataset-actions .button-row,
-  .dataset-actions .button {
+  .dataset-actions .button,
+  .fixture-toolbar .button-row,
+  .fixture-toolbar .button {
     width: 100%;
   }
 

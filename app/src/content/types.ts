@@ -38,7 +38,7 @@ export interface ImageBlock {
   type: 'image'
   path: string
   alt: string
-  role: 'prompt' | 'option'
+  role: 'prompt' | 'option' | 'stimulus'
   sourceImages: string[]
 }
 
@@ -177,7 +177,7 @@ export interface RawImageBlock {
   type: 'image'
   path: string
   alt: string
-  role: 'prompt' | 'option'
+  role: 'prompt' | 'option' | 'stimulus'
   source_images: string[]
 }
 

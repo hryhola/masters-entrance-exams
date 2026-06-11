@@ -10,7 +10,7 @@ import type {
   RawDatasetDocument,
 } from './types'
 
-function adaptBlock(block: RawContentBlock): ContentBlock {
+export function adaptBlock(block: RawContentBlock): ContentBlock {
   switch (block.type) {
     case 'markdown':
       return { type: 'markdown', text: block.text }
@@ -46,7 +46,7 @@ function adaptBlock(block: RawContentBlock): ContentBlock {
   }
 }
 
-function adaptBlocks(blocks: RawContentBlock[]): ContentBlock[] {
+export function adaptBlocks(blocks: RawContentBlock[]): ContentBlock[] {
   return blocks.map(adaptBlock)
 }
 

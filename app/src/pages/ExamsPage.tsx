@@ -69,6 +69,10 @@ export function ExamsPage() {
             <div className="future-note">
               Матеріали будуть додані після нормалізації офіційних PDF.
             </div>
+            <Link className="button button--secondary" to="/dev/evi-fixtures">
+              Переглянути прототип
+              <Icon name="arrow" size={18} />
+            </Link>
           </article>
         ))}
       </section>
