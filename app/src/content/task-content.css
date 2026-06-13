@@ -40,6 +40,24 @@
   margin-bottom: 16px;
 }
 
+.task-stimulus--paired_text > .content-sequence {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.task-stimulus--paired_text .content-block--markdown {
+  min-width: 0;
+}
+
+.task-stimulus--paired_text
+  .content-block--markdown
+  + .content-block--markdown {
+  padding-left: 24px;
+  border-left: 1px solid var(--color-border);
+}
+
 .task-stimulus--chart .content-block--image {
   display: inline-block;
   width: calc(50% - 9px);
@@ -230,6 +248,19 @@
   .assessment-task__header,
   .matching-task {
     grid-template-columns: 1fr;
+  }
+
+  .task-stimulus--paired_text > .content-sequence {
+    grid-template-columns: 1fr;
+  }
+
+  .task-stimulus--paired_text
+    .content-block--markdown
+    + .content-block--markdown {
+    padding-top: 24px;
+    padding-left: 0;
+    border-top: 1px solid var(--color-border);
+    border-left: 0;
   }
 
   .matching-choice-bank {

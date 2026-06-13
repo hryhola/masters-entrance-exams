@@ -78,7 +78,7 @@ describe('TaskRenderer', () => {
 
   it('renders shared chart stimuli once for a question group', () => {
     const dataset = readDataset()
-    const task = dataset.tasks[5]
+    const task = dataset.tasks[6]
 
     render(
       <TaskRenderer
@@ -93,6 +93,27 @@ describe('TaskRenderer', () => {
     expect(screen.getAllByRole('table')).toHaveLength(2)
     expect(
       screen.getByText(/Який прибуток отримало підприємство С/),
+    ).toBeInTheDocument()
+  })
+
+  it('renders two shared texts once for questions 5–12', () => {
+    const dataset = readDataset()
+    const task = dataset.tasks[5]
+
+    render(
+      <TaskRenderer
+        answers={{}}
+        onAnswer={vi.fn()}
+        stimuli={dataset.stimuli}
+        task={task}
+      />,
+    )
+
+    expect(screen.getByRole('heading', { name: 'Текст А' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Текст Б' })).toBeInTheDocument()
+    expect(screen.getAllByRole('button')).toHaveLength(32)
+    expect(
+      screen.getByText(/Частину населення, про яку згадує автор/),
     ).toBeInTheDocument()
   })
 })

@@ -49,7 +49,7 @@ export function EviFixturePage() {
         <article>
           <span>Tasks</span>
           <strong>{dataset.tasks.length}</strong>
-          <small>matching, cloze і група до діаграм</small>
+          <small>matching, cloze, два тексти й діаграми</small>
         </article>
         <article>
           <span>Оцінюваних відповідей</span>

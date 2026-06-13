@@ -19,15 +19,16 @@ describe('validateTaskDatasetDocument', () => {
     const dataset = adaptTaskDataset(validateTaskDatasetDocument(readFixture()))
 
     expect(dataset.schemaVersion).toBe(2)
-    expect(dataset.tasks).toHaveLength(6)
-    expect(dataset.assessmentItemCount).toBe(19)
-    expect(dataset.stimuli).toHaveLength(11)
+    expect(dataset.tasks).toHaveLength(7)
+    expect(dataset.assessmentItemCount).toBe(27)
+    expect(dataset.stimuli).toHaveLength(12)
     expect(dataset.tasks.map((task) => task.type)).toEqual([
       'matching',
       'cloze',
       'cloze',
       'cloze',
       'cloze',
+      'question_group',
       'question_group',
     ])
     expect(dataset.sections).toEqual([
@@ -38,8 +39,8 @@ describe('validateTaskDatasetDocument', () => {
       }),
       expect.objectContaining({
         code: 'tznk-verbal',
-        taskCount: 4,
-        assessmentItemCount: 10,
+        taskCount: 5,
+        assessmentItemCount: 18,
       }),
       expect.objectContaining({
         code: 'tznk-logical',
@@ -130,6 +131,41 @@ describe('validateTaskDatasetDocument', () => {
     ])
     expect(
       clozeItems.every(
+        (item) =>
+          item.explanation.status === 'official' &&
+          item.explanation.summary.length > 0,
+      ),
+    ).toBe(true)
+  })
+
+  it('contains all official keys and explanations for tasks 5–12', () => {
+    const dataset = adaptTaskDataset(validateTaskDatasetDocument(readFixture()))
+    const task = dataset.tasks.find(
+      (candidate) => candidate.id === 'tznk-2024-task-5-12',
+    )
+
+    expect(task?.items.map((item) => item.id)).toEqual([
+      'tznk-2024-011',
+      'tznk-2024-012',
+      'tznk-2024-013',
+      'tznk-2024-014',
+      'tznk-2024-015',
+      'tznk-2024-016',
+      'tznk-2024-017',
+      'tznk-2024-018',
+    ])
+    expect(task?.items.map((item) => item.correctChoice)).toEqual([
+      'b',
+      'b',
+      'd',
+      'c',
+      'b',
+      'd',
+      'd',
+      'b',
+    ])
+    expect(
+      task?.items.every(
         (item) =>
           item.explanation.status === 'official' &&
           item.explanation.summary.length > 0,
