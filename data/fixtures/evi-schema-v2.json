@@ -8,9 +8,9 @@
     "year": 2024,
     "languages": ["en", "uk"],
     "status": "fixture",
-    "task_count": 3,
-    "assessment_item_count": 11,
-    "stimulus_count": 8
+    "task_count": 6,
+    "assessment_item_count": 19,
+    "stimulus_count": 11
   },
   "sections": [
     {
@@ -94,6 +94,18 @@
       ]
     },
     {
+      "id": "tznk-2024-microtext-1",
+      "type": "cloze_text",
+      "title": "Мікротекст 1",
+      "language": "uk",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "Нобелівську премію з літератури 2020 року присудили 77-річній американській поетці Луїзі Ґлюк «за її безпомилковий поетичний голос, який із суворою красою робить індивідуальне існування **(1) ______**»."
+        }
+      ]
+    },
+    {
       "id": "tznk-2024-microtext-2",
       "type": "cloze_text",
       "title": "Мікротекст 2",
@@ -102,6 +114,30 @@
         {
           "type": "markdown",
           "text": "Джудит Батлер уважає, що з огляду на перформативний характер гендер не є чимось чітко визначеним, строгим і постійним. Гендер є флюїдним, **(2) ______**, адже такою є поведінка кожної людини за різних обставин. Певною мірою філософиня навіть виступає проти визначення та класифікації гендерів, оскільки визначеність тягне за собою **(3) ______**."
+        }
+      ]
+    },
+    {
+      "id": "tznk-2024-microtext-3",
+      "type": "cloze_text",
+      "title": "Мікротекст 3",
+      "language": "uk",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "Педагоги зауважують, що **(4) ______** мислення певні труднощі в студентів викликає написання науково-дослідних робіт і виконання навчально-дослідних завдань, що потребують узагальненого **(5) ______** засвоєння та викладення матеріалу або на основі його цілісного, або на підставі **(6) ______** пізнання (від абстрактного до конкретного або від загального до одиничного)."
+        }
+      ]
+    },
+    {
+      "id": "tznk-2024-microtext-4",
+      "type": "cloze_text",
+      "title": "Мікротекст 4",
+      "language": "uk",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "«Похвала глупоті» Еразма Роттердамського написана від імені самої глупоти, яка **(7) ______** вихваляє себе, адже саме вона **(8) ______** всі боки людського життя, усі верстви й фахи і якби не вона, то людство вимерло б. Найщасливіші люди, які духом найближчі до тварин і **(9) ______** розуму. Найкраще щастя — те, що ґрунтується на омані, бо воно коштує **(10) ______**."
         }
       ]
     },
@@ -346,6 +382,67 @@
       ]
     },
     {
+      "id": "tznk-2024-task-1",
+      "number": 1,
+      "type": "cloze",
+      "language": "uk",
+      "section_code": "tznk-verbal",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Відновіть цілісність мікротексту, добираючи для кожного пропуску правильний варіант."
+        }
+      ],
+      "stimulus_ids": ["tznk-2024-microtext-1"],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "tznk-2024-001",
+          "number": 1,
+          "display_label": "1.(1)",
+          "prompt": [{ "type": "markdown", "text": "Пропуск (1)" }],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "1",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [{ "type": "markdown", "text": "банальним" }]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [{ "type": "markdown", "text": "екзальтованим" }]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [{ "type": "markdown", "text": "універсальним" }]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [{ "type": "markdown", "text": "ірреальним" }]
+              }
+            ]
+          },
+          "answer": { "correct_choice": "c", "source": "official_key" },
+          "explanation": {
+            "status": "official",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У висловлюванні протиставлено індивідуальне й загальнолюдське. «Універсальним» означає всеосяжним і таким, що стосується всіх, тому саме це слово відповідає контексту."
+              }
+            ]
+          },
+          "source": { "page_start": 2, "page_end": 2 }
+        }
+      ]
+    },
+    {
       "id": "tznk-2024-task-2",
       "number": 2,
       "type": "cloze",
@@ -398,7 +495,7 @@
             "summary": [
               {
                 "type": "markdown",
-                "text": "Прикметник «мінливим» узгоджується з характеристикою гендеру як флюїдного та залежного від обставин."
+                "text": "Слово «мінливим» уточнює метафору «флюїдним» і продовжує думку, що гендер не є чітко визначеним, строгим і постійним."
               }
             ]
           },
@@ -444,7 +541,361 @@
             "summary": [
               {
                 "type": "markdown",
-                "text": "У контексті йдеться про небезпеку норми, яку створює жорстке визначення та класифікація."
+                "text": "Визначення й класифікація створюють усталений набір ознак і можуть призвести до формування та нав’язування норм. Тому правильним є слово «нормативність»."
+              }
+            ]
+          },
+          "source": { "page_start": 2, "page_end": 2 }
+        }
+      ]
+    },
+    {
+      "id": "tznk-2024-task-3",
+      "number": 3,
+      "type": "cloze",
+      "language": "uk",
+      "section_code": "tznk-verbal",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Відновіть цілісність мікротексту, добираючи для кожного пропуску правильний варіант."
+        }
+      ],
+      "stimulus_ids": ["tznk-2024-microtext-3"],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "tznk-2024-004",
+          "number": 4,
+          "display_label": "3.(4)",
+          "prompt": [{ "type": "markdown", "text": "Пропуск (4)" }],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "4",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [{ "type": "markdown", "text": "через кліповість" }]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  { "type": "markdown", "text": "завдяки кліповості" }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [{ "type": "markdown", "text": "із-за кліповості" }]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  { "type": "markdown", "text": "зважаючи на кліповість" }
+                ]
+              }
+            ]
+          },
+          "answer": { "correct_choice": "a", "source": "official_key" },
+          "explanation": {
+            "status": "official",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Конструкція має позначати причину негативного явища. «Завдяки» вказує на позитивний чинник, «із-за» не відповідає літературній нормі, а нормативним варіантом є «через кліповість»."
+              }
+            ]
+          },
+          "source": { "page_start": 2, "page_end": 2 }
+        },
+        {
+          "id": "tznk-2024-005",
+          "number": 5,
+          "display_label": "3.(5)",
+          "prompt": [{ "type": "markdown", "text": "Пропуск (5)" }],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "5",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  { "type": "markdown", "text": "логіко-формалізованого" }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  { "type": "markdown", "text": "логіко-формального" }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  { "type": "markdown", "text": "логічно формального" }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  { "type": "markdown", "text": "логічного й формального" }
+                ]
+              }
+            ]
+          },
+          "answer": { "correct_choice": "a", "source": "official_key" },
+          "explanation": {
+            "status": "official",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Ідеться про метод узагальненого викладу матеріалу із заміною змістових термінів символами чи одиницями вищого рівня абстрагування. Цьому відповідає термін «логіко-формалізованого»."
+              }
+            ]
+          },
+          "source": { "page_start": 2, "page_end": 2 }
+        },
+        {
+          "id": "tznk-2024-006",
+          "number": 6,
+          "display_label": "3.(6)",
+          "prompt": [{ "type": "markdown", "text": "Пропуск (6)" }],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "6",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [{ "type": "markdown", "text": "часткового" }]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [{ "type": "markdown", "text": "елементарного" }]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [{ "type": "markdown", "text": "узагальненого" }]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [{ "type": "markdown", "text": "послідовного" }]
+              }
+            ]
+          },
+          "answer": { "correct_choice": "d", "source": "official_key" },
+          "explanation": {
+            "status": "official",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Повторюваний сполучник «або… або» протиставляє цілісне, умовно одноактне пізнання багатоетапному. Тому контекст потребує слова «послідовного»."
+              }
+            ]
+          },
+          "source": { "page_start": 2, "page_end": 2 }
+        }
+      ]
+    },
+    {
+      "id": "tznk-2024-task-4",
+      "number": 4,
+      "type": "cloze",
+      "language": "uk",
+      "section_code": "tznk-verbal",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Відновіть цілісність мікротексту, добираючи для кожного пропуску правильний варіант."
+        }
+      ],
+      "stimulus_ids": ["tznk-2024-microtext-4"],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "tznk-2024-007",
+          "number": 7,
+          "display_label": "4.(7)",
+          "prompt": [{ "type": "markdown", "text": "Пропуск (7)" }],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "7",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [{ "type": "markdown", "text": "шляхетно" }]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [{ "type": "markdown", "text": "голослівно" }]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [{ "type": "markdown", "text": "завзято" }]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [{ "type": "markdown", "text": "справедливо" }]
+              }
+            ]
+          },
+          "answer": { "correct_choice": "c", "source": "official_key" },
+          "explanation": {
+            "status": "official",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Подальший контекст містить енергійне самовихваляння й широкий перелік переваг, які глупота приписує собі. Цей відтінок найточніше передає слово «завзято»."
+              }
+            ]
+          },
+          "source": { "page_start": 2, "page_end": 2 }
+        },
+        {
+          "id": "tznk-2024-008",
+          "number": 8,
+          "display_label": "4.(8)",
+          "prompt": [{ "type": "markdown", "text": "Пропуск (8)" }],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "8",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [{ "type": "markdown", "text": "охоплює" }]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [{ "type": "markdown", "text": "пронизує" }]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [{ "type": "markdown", "text": "оточує" }]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [{ "type": "markdown", "text": "переплітає" }]
+              }
+            ]
+          },
+          "answer": { "correct_choice": "a", "source": "official_key" },
+          "explanation": {
+            "status": "official",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Дієслово має поєднуватися зі словами «всі боки» та передавати поширення на всі верстви й фахи. Таке значення має слово «охоплює»."
+              }
+            ]
+          },
+          "source": { "page_start": 2, "page_end": 2 }
+        },
+        {
+          "id": "tznk-2024-009",
+          "number": 9,
+          "display_label": "4.(9)",
+          "prompt": [{ "type": "markdown", "text": "Пропуск (9)" }],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "9",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [{ "type": "markdown", "text": "відкриваються" }]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [{ "type": "markdown", "text": "уникають" }]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [{ "type": "markdown", "text": "цураються" }]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [{ "type": "markdown", "text": "віддаються" }]
+              }
+            ]
+          },
+          "answer": { "correct_choice": "c", "source": "official_key" },
+          "explanation": {
+            "status": "official",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У контексті самовихваляння глупоти йдеться про зневажливе ставлення до розуму. Саме цей відтінок передає сполука «цураються розуму»."
+              }
+            ]
+          },
+          "source": { "page_start": 2, "page_end": 2 }
+        },
+        {
+          "id": "tznk-2024-010",
+          "number": 10,
+          "display_label": "4.(10)",
+          "prompt": [{ "type": "markdown", "text": "Пропуск (10)" }],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "10",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [{ "type": "markdown", "text": "найдорожче" }]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [{ "type": "markdown", "text": "найдешевше" }]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [{ "type": "markdown", "text": "найцінніше" }]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [{ "type": "markdown", "text": "найдрібніше" }]
+              }
+            ]
+          },
+          "answer": { "correct_choice": "b", "source": "official_key" },
+          "explanation": {
+            "status": "official",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Варіант має природно поєднуватися з дієсловом «коштує» і підтримувати вихваляння глупоти. Цим умовам відповідає слово «найдешевше»."
               }
             ]
           },
@@ -616,6 +1067,6 @@
   ],
   "release": {
     "status": "fixture",
-    "version": "2.0.0-fixture.1"
+    "version": "2.0.0-fixture.2"
   }
 }

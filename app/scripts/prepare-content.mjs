@@ -84,8 +84,8 @@ if (manifest.media.web_assets.length !== 9) {
 if (
   eviFixture.schema_version !== 2 ||
   eviFixture.dataset.id !== 'evi-schema-v2-fixtures' ||
-  eviFixture.tasks.length !== 3 ||
-  eviFixture.dataset.assessment_item_count !== 11
+  eviFixture.tasks.length !== 6 ||
+  eviFixture.dataset.assessment_item_count !== 19
 ) {
   throw new Error('Unexpected EVI schema v2 fixture shape.')
 }

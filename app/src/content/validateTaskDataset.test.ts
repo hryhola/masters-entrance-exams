@@ -15,15 +15,18 @@ function readFixture() {
 }
 
 describe('validateTaskDatasetDocument', () => {
-  it('validates and adapts the three EVI schema v2 fixtures', () => {
+  it('validates and adapts the EVI schema v2 fixtures', () => {
     const dataset = adaptTaskDataset(validateTaskDatasetDocument(readFixture()))
 
     expect(dataset.schemaVersion).toBe(2)
-    expect(dataset.tasks).toHaveLength(3)
-    expect(dataset.assessmentItemCount).toBe(11)
-    expect(dataset.stimuli).toHaveLength(8)
+    expect(dataset.tasks).toHaveLength(6)
+    expect(dataset.assessmentItemCount).toBe(19)
+    expect(dataset.stimuli).toHaveLength(11)
     expect(dataset.tasks.map((task) => task.type)).toEqual([
       'matching',
+      'cloze',
+      'cloze',
+      'cloze',
       'cloze',
       'question_group',
     ])
@@ -35,8 +38,8 @@ describe('validateTaskDatasetDocument', () => {
       }),
       expect.objectContaining({
         code: 'tznk-verbal',
-        taskCount: 1,
-        assessmentItemCount: 2,
+        taskCount: 4,
+        assessmentItemCount: 10,
       }),
       expect.objectContaining({
         code: 'tznk-logical',
@@ -93,5 +96,44 @@ describe('validateTaskDatasetDocument', () => {
     expect(() => validateTaskDatasetDocument(fixture)).toThrow(
       'tasks[1].items[0].response.type: очікується cloze_choice',
     )
+  })
+
+  it('contains all ten official cloze keys for tasks 1–4', () => {
+    const dataset = adaptTaskDataset(validateTaskDatasetDocument(readFixture()))
+    const clozeItems = dataset.tasks
+      .filter((task) => task.type === 'cloze')
+      .flatMap((task) => task.items)
+
+    expect(clozeItems.map((item) => item.id)).toEqual([
+      'tznk-2024-001',
+      'tznk-2024-002',
+      'tznk-2024-003',
+      'tznk-2024-004',
+      'tznk-2024-005',
+      'tznk-2024-006',
+      'tznk-2024-007',
+      'tznk-2024-008',
+      'tznk-2024-009',
+      'tznk-2024-010',
+    ])
+    expect(clozeItems.map((item) => item.correctChoice)).toEqual([
+      'c',
+      'b',
+      'c',
+      'a',
+      'a',
+      'd',
+      'c',
+      'a',
+      'c',
+      'b',
+    ])
+    expect(
+      clozeItems.every(
+        (item) =>
+          item.explanation.status === 'official' &&
+          item.explanation.summary.length > 0,
+      ),
+    ).toBe(true)
   })
 })

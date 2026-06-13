@@ -59,7 +59,7 @@ describe('TaskRenderer', () => {
   it('renders cloze items as separate answers', async () => {
     const user = userEvent.setup()
     const dataset = readDataset()
-    const task = dataset.tasks[1]
+    const task = dataset.tasks[2]
     const onAnswer = vi.fn()
 
     render(
@@ -78,7 +78,7 @@ describe('TaskRenderer', () => {
 
   it('renders shared chart stimuli once for a question group', () => {
     const dataset = readDataset()
-    const task = dataset.tasks[2]
+    const task = dataset.tasks[5]
 
     render(
       <TaskRenderer

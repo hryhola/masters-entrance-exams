@@ -30,8 +30,8 @@ describe('loadTaskDataset', () => {
     const second = await loadTaskDataset('evi-schema-v2-fixtures')
 
     expect(first).toBe(second)
-    expect(first.tasks).toHaveLength(3)
-    expect(first.assessmentItemCount).toBe(11)
+    expect(first.tasks).toHaveLength(6)
+    expect(first.assessmentItemCount).toBe(19)
     expect(fetchMock).toHaveBeenCalledTimes(1)
     expect(fetchMock).toHaveBeenCalledWith(
       '/content/fixtures/evi-schema-v2.json',
