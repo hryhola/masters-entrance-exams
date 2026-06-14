@@ -94,7 +94,7 @@ describe('TaskRenderer', () => {
     expect(screen.getAllByRole('img')).toHaveLength(2)
     expect(screen.getAllByRole('table')).toHaveLength(2)
     expect(
-      screen.getByText(/Який прибуток отримало підприємство С/),
+      screen.getByText(/Який прибуток отримало підприємство C/),
     ).toBeInTheDocument()
   })
 

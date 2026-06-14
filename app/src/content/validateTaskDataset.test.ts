@@ -274,4 +274,59 @@ describe('validateTaskDatasetDocument', () => {
       'tznk-2024-033',
     ])
   })
+
+  it('keeps TZNK source pages aligned with the physical PDF pages', () => {
+    const dataset = adaptTaskDataset(validateTaskDatasetDocument(readFixture()))
+    const items = dataset.tasks
+      .filter((task) => task.sectionCode.startsWith('tznk-'))
+      .flatMap((task) => task.items)
+
+    expect(items.map((item) => item.source.pageStart)).toEqual([
+      2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 5, 5, 5, 5, 5, 6, 6, 6, 7, 7, 8, 8, 9, 9,
+      10, 10, 10, 11, 11, 11, 12, 12, 12,
+    ])
+
+    const probabilityItem = items.find((item) => item.id === 'tznk-2024-028')
+    const probabilityOptions =
+      probabilityItem?.response.type === 'single_choice'
+        ? probabilityItem.response.options
+        : []
+
+    expect(
+      probabilityOptions.flatMap((option) =>
+        option.content.flatMap((block) =>
+          block.type === 'math' ? block.sourceImages : [],
+        ),
+      ),
+    ).toEqual(Array(4).fill('TZNK_maket_sajt_2024_03_29_merged.pdf#page=11'))
+  })
+
+  it('preserves the Latin company identifiers from situation 3', () => {
+    const dataset = adaptTaskDataset(validateTaskDatasetDocument(readFixture()))
+    const stimulus = dataset.stimuli.find(
+      (candidate) => candidate.id === 'tznk-2024-situation-3',
+    )
+    const task = dataset.tasks.find(
+      (candidate) => candidate.id === 'tznk-2024-task-25-27',
+    )
+    const renderedText = [
+      ...(stimulus?.content ?? []),
+      ...(task?.items.flatMap((item) => [
+        ...item.prompt,
+        ...item.explanation.summary,
+      ]) ?? []),
+    ]
+      .flatMap((block) => {
+        if (block.type === 'markdown') return [block.text]
+        if (block.type === 'image') return [block.alt]
+        if (block.type === 'table')
+          return [...block.columns, ...block.rows.flat()]
+        return []
+      })
+      .join(' ')
+
+    expect(renderedText).toContain('підприємства A, B і C')
+    expect(renderedText).toContain('підприємств B і C')
+    expect(renderedText).not.toMatch(/підприємств[а]? [АВС]/)
+  })
 })
