@@ -19,9 +19,9 @@ describe('validateTaskDatasetDocument', () => {
     const dataset = adaptTaskDataset(validateTaskDatasetDocument(readFixture()))
 
     expect(dataset.schemaVersion).toBe(2)
-    expect(dataset.tasks).toHaveLength(14)
-    expect(dataset.assessmentItemCount).toBe(36)
-    expect(dataset.stimuli).toHaveLength(19)
+    expect(dataset.tasks).toHaveLength(15)
+    expect(dataset.assessmentItemCount).toBe(39)
+    expect(dataset.stimuli).toHaveLength(20)
     expect(dataset.tasks.map((task) => task.type)).toEqual([
       'matching',
       'cloze',
@@ -35,6 +35,7 @@ describe('validateTaskDatasetDocument', () => {
       'single_choice',
       'single_choice',
       'single_choice',
+      'question_group',
       'question_group',
       'question_group',
     ])
@@ -51,8 +52,8 @@ describe('validateTaskDatasetDocument', () => {
       }),
       expect.objectContaining({
         code: 'tznk-logical',
-        taskCount: 8,
-        assessmentItemCount: 12,
+        taskCount: 9,
+        assessmentItemCount: 15,
       }),
     ])
   })
@@ -226,6 +227,31 @@ describe('validateTaskDatasetDocument', () => {
       'b',
       'd',
       'c',
+    ])
+    expect(
+      task?.items.every(
+        (item) =>
+          item.explanation.status === 'official' &&
+          item.explanation.summary.length > 0,
+      ),
+    ).toBe(true)
+  })
+
+  it('contains all official keys and explanations for tasks 22–24', () => {
+    const dataset = adaptTaskDataset(validateTaskDatasetDocument(readFixture()))
+    const task = dataset.tasks.find(
+      (candidate) => candidate.id === 'tznk-2024-task-22-24',
+    )
+
+    expect(task?.items.map((item) => item.id)).toEqual([
+      'tznk-2024-028',
+      'tznk-2024-029',
+      'tznk-2024-030',
+    ])
+    expect(task?.items.map((item) => item.correctChoice)).toEqual([
+      'a',
+      'c',
+      'd',
     ])
     expect(
       task?.items.every(

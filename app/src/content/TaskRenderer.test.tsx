@@ -174,4 +174,29 @@ describe('TaskRenderer', () => {
       screen.getByText(/Якщо прибиранням у ванній кімнаті/),
     ).toBeInTheDocument()
   })
+
+  it('renders situation 2 with mathematical probability choices', () => {
+    const dataset = readDataset()
+    const task = dataset.tasks.find(
+      (candidate) => candidate.id === 'tznk-2024-task-22-24',
+    )!
+
+    const { container } = render(
+      <TaskRenderer
+        answers={{}}
+        onAnswer={vi.fn()}
+        stimuli={dataset.stimuli}
+        task={task}
+      />,
+    )
+
+    expect(
+      screen.getByRole('heading', { name: 'Ситуація № 2' }),
+    ).toBeInTheDocument()
+    expect(screen.getAllByRole('button')).toHaveLength(12)
+    expect(container.querySelectorAll('.katex')).toHaveLength(4)
+    expect(
+      screen.getAllByText(/Яку найменшу кількість пакетів потрібно взяти/),
+    ).toHaveLength(2)
+  })
 })
