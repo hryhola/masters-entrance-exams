@@ -147,4 +147,31 @@ describe('TaskRenderer', () => {
       }),
     ).toBeInTheDocument()
   })
+
+  it('renders situation 1 once for questions 19–21', () => {
+    const dataset = readDataset()
+    const task = dataset.tasks.find(
+      (candidate) => candidate.id === 'tznk-2024-task-19-21',
+    )!
+
+    render(
+      <TaskRenderer
+        answers={{}}
+        onAnswer={vi.fn()}
+        stimuli={dataset.stimuli}
+        task={task}
+      />,
+    )
+
+    expect(
+      screen.getByRole('heading', { name: 'Ситуація № 1' }),
+    ).toBeInTheDocument()
+    expect(screen.getAllByRole('button')).toHaveLength(12)
+    expect(
+      screen.getByText(/Якщо сезонний одяг Марко складатиме в неділю/),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByText(/Якщо прибиранням у ванній кімнаті/),
+    ).toBeInTheDocument()
+  })
 })

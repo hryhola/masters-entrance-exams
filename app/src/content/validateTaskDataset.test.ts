@@ -19,9 +19,9 @@ describe('validateTaskDatasetDocument', () => {
     const dataset = adaptTaskDataset(validateTaskDatasetDocument(readFixture()))
 
     expect(dataset.schemaVersion).toBe(2)
-    expect(dataset.tasks).toHaveLength(13)
-    expect(dataset.assessmentItemCount).toBe(33)
-    expect(dataset.stimuli).toHaveLength(18)
+    expect(dataset.tasks).toHaveLength(14)
+    expect(dataset.assessmentItemCount).toBe(36)
+    expect(dataset.stimuli).toHaveLength(19)
     expect(dataset.tasks.map((task) => task.type)).toEqual([
       'matching',
       'cloze',
@@ -35,6 +35,7 @@ describe('validateTaskDatasetDocument', () => {
       'single_choice',
       'single_choice',
       'single_choice',
+      'question_group',
       'question_group',
     ])
     expect(dataset.sections).toEqual([
@@ -50,8 +51,8 @@ describe('validateTaskDatasetDocument', () => {
       }),
       expect.objectContaining({
         code: 'tznk-logical',
-        taskCount: 7,
-        assessmentItemCount: 9,
+        taskCount: 8,
+        assessmentItemCount: 12,
       }),
     ])
   })
@@ -208,5 +209,43 @@ describe('validateTaskDatasetDocument', () => {
           item.explanation.summary.length > 0,
       ),
     ).toBe(true)
+  })
+
+  it('contains all official keys and explanations for tasks 19–21', () => {
+    const dataset = adaptTaskDataset(validateTaskDatasetDocument(readFixture()))
+    const task = dataset.tasks.find(
+      (candidate) => candidate.id === 'tznk-2024-task-19-21',
+    )
+
+    expect(task?.items.map((item) => item.id)).toEqual([
+      'tznk-2024-025',
+      'tznk-2024-026',
+      'tznk-2024-027',
+    ])
+    expect(task?.items.map((item) => item.correctChoice)).toEqual([
+      'b',
+      'd',
+      'c',
+    ])
+    expect(
+      task?.items.every(
+        (item) =>
+          item.explanation.status === 'official' &&
+          item.explanation.summary.length > 0,
+      ),
+    ).toBe(true)
+  })
+
+  it('keeps assessment item ids sequential for the chart situation', () => {
+    const dataset = adaptTaskDataset(validateTaskDatasetDocument(readFixture()))
+    const task = dataset.tasks.find(
+      (candidate) => candidate.id === 'tznk-2024-task-25-27',
+    )
+
+    expect(task?.items.map((item) => item.id)).toEqual([
+      'tznk-2024-031',
+      'tznk-2024-032',
+      'tznk-2024-033',
+    ])
   })
 })
