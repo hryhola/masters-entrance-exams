@@ -96,6 +96,12 @@
   font-size: 0.76rem;
 }
 
+.fixture-toolbar ~ .assessment-task .matching-choice-bank {
+  top: 196px;
+  max-height: calc(100vh - 216px);
+  overflow-y: auto;
+}
+
 .section-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -342,6 +348,12 @@
   .fixture-toolbar {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .fixture-toolbar ~ .assessment-task .matching-choice-bank {
+    position: static;
+    max-height: none;
+    overflow-y: visible;
   }
 
   .section-list {
