@@ -19,9 +19,9 @@ describe('validateTaskDatasetDocument', () => {
     const dataset = adaptTaskDataset(validateTaskDatasetDocument(readFixture()))
 
     expect(dataset.schemaVersion).toBe(2)
-    expect(dataset.tasks).toHaveLength(7)
-    expect(dataset.assessmentItemCount).toBe(27)
-    expect(dataset.stimuli).toHaveLength(12)
+    expect(dataset.tasks).toHaveLength(13)
+    expect(dataset.assessmentItemCount).toBe(33)
+    expect(dataset.stimuli).toHaveLength(18)
     expect(dataset.tasks.map((task) => task.type)).toEqual([
       'matching',
       'cloze',
@@ -29,6 +29,12 @@ describe('validateTaskDatasetDocument', () => {
       'cloze',
       'cloze',
       'question_group',
+      'single_choice',
+      'single_choice',
+      'single_choice',
+      'single_choice',
+      'single_choice',
+      'single_choice',
       'question_group',
     ])
     expect(dataset.sections).toEqual([
@@ -44,8 +50,8 @@ describe('validateTaskDatasetDocument', () => {
       }),
       expect.objectContaining({
         code: 'tznk-logical',
-        taskCount: 1,
-        assessmentItemCount: 3,
+        taskCount: 7,
+        assessmentItemCount: 9,
       }),
     ])
   })
@@ -166,6 +172,37 @@ describe('validateTaskDatasetDocument', () => {
     ])
     expect(
       task?.items.every(
+        (item) =>
+          item.explanation.status === 'official' &&
+          item.explanation.summary.length > 0,
+      ),
+    ).toBe(true)
+  })
+
+  it('contains all official keys and explanations for tasks 13–18', () => {
+    const dataset = adaptTaskDataset(validateTaskDatasetDocument(readFixture()))
+    const items = dataset.tasks
+      .filter((task) => task.number >= 13 && task.number <= 18)
+      .flatMap((task) => task.items)
+
+    expect(items.map((item) => item.id)).toEqual([
+      'tznk-2024-019',
+      'tznk-2024-020',
+      'tznk-2024-021',
+      'tznk-2024-022',
+      'tznk-2024-023',
+      'tznk-2024-024',
+    ])
+    expect(items.map((item) => item.correctChoice)).toEqual([
+      'b',
+      'b',
+      'c',
+      'c',
+      'a',
+      'a',
+    ])
+    expect(
+      items.every(
         (item) =>
           item.explanation.status === 'official' &&
           item.explanation.summary.length > 0,

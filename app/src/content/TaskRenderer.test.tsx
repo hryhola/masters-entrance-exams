@@ -78,7 +78,9 @@ describe('TaskRenderer', () => {
 
   it('renders shared chart stimuli once for a question group', () => {
     const dataset = readDataset()
-    const task = dataset.tasks[6]
+    const task = dataset.tasks.find(
+      (candidate) => candidate.id === 'tznk-2024-task-25-27',
+    )!
 
     render(
       <TaskRenderer
@@ -98,7 +100,9 @@ describe('TaskRenderer', () => {
 
   it('renders two shared texts once for questions 5–12', () => {
     const dataset = readDataset()
-    const task = dataset.tasks[5]
+    const task = dataset.tasks.find(
+      (candidate) => candidate.id === 'tznk-2024-task-5-12',
+    )!
 
     render(
       <TaskRenderer
@@ -114,6 +118,33 @@ describe('TaskRenderer', () => {
     expect(screen.getAllByRole('button')).toHaveLength(32)
     expect(
       screen.getByText(/Частину населення, про яку згадує автор/),
+    ).toBeInTheDocument()
+  })
+
+  it('renders a logical microtext and its single-choice question', () => {
+    const dataset = readDataset()
+    const task = dataset.tasks.find(
+      (candidate) => candidate.id === 'tznk-2024-task-17',
+    )!
+
+    render(
+      <TaskRenderer
+        answers={{}}
+        onAnswer={vi.fn()}
+        stimuli={dataset.stimuli}
+        task={task}
+      />,
+    )
+
+    expect(
+      screen.getByRole('heading', {
+        name: 'Міркування Симпліціо та Сальваті',
+      }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', {
+        name: /Продемонструвати хибність міркувань/,
+      }),
     ).toBeInTheDocument()
   })
 })
