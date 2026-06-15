@@ -16,6 +16,7 @@ export function createTestQuestion({
     number,
     type: 'single_choice',
     origin: 'official',
+    verification: { method: 'official_source' },
     prompt: [{ type: 'markdown', text: `Умова питання ${number}` }],
     options: [
       {
@@ -86,7 +87,12 @@ export function createTestQuestion({
       tags: ['test'],
       formatCompliance: 'compliant',
     },
-    source: { pageStart: 1, pageEnd: 1, questionNumber: number },
+    source: {
+      type: 'official_pdf',
+      pageStart: 1,
+      pageEnd: 1,
+      questionNumber: number,
+    },
     features: { blockTypes: ['markdown'], hasComplexContent: false },
   }
 }

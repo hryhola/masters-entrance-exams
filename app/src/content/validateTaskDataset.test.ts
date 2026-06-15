@@ -14,6 +14,72 @@ function readFixture() {
   ) as Record<string, unknown>
 }
 
+function generatedFixture() {
+  const fixture = readFixture()
+  const metadata = fixture.dataset as Record<string, unknown>
+  const release = fixture.release as Record<string, unknown>
+  const batchId = 'generated-yefvv-it-os-medium-001'
+
+  metadata.origin = 'generated'
+  metadata.status = 'ready'
+  metadata.generation = {
+    batch_id: batchId,
+    model: 'generation-model',
+    prompt: {
+      id: 'yefvv-it-single-choice',
+      version: '1.0.0',
+      sha256: 'a'.repeat(64),
+    },
+    generated_at: '2026-06-15T10:00:00.000Z',
+    generator_version: '1.0.0',
+    parameters: {
+      topic: 'Операційні системи',
+      difficulty: 'medium',
+      task_type: 'mixed',
+    },
+  }
+  release.status = 'ready_for_application'
+  release.verification = {
+    method: 'automated_validation',
+    status: 'passed',
+    validator_version: '1.0.0',
+    validated_at: '2026-06-15T10:01:00.000Z',
+    checks: [
+      'schema',
+      'answer_integrity',
+      'explanation_integrity',
+      'duplicate_detection',
+      'official_similarity',
+    ],
+    similarity: {
+      maximum_score: 0.41,
+      threshold: 0.72,
+    },
+  }
+
+  const tasks = fixture.tasks as Array<Record<string, unknown>>
+  tasks.forEach((task) => {
+    const items = task.items as Array<Record<string, unknown>>
+    items.forEach((item) => {
+      const answer = item.answer as Record<string, unknown>
+      const explanation = item.explanation as Record<string, unknown>
+      answer.source = 'generated_key'
+      explanation.status = 'generated'
+      if ((explanation.summary as unknown[]).length === 0) {
+        explanation.summary = [
+          {
+            type: 'markdown',
+            text: 'Автоматично перевірене пояснення.',
+          },
+        ]
+      }
+      item.source = { generation_batch_id: batchId }
+    })
+  })
+
+  return fixture
+}
+
 describe('validateTaskDatasetDocument', () => {
   it('validates and adapts the EVI schema v2 fixtures', () => {
     const dataset = adaptTaskDataset(validateTaskDatasetDocument(readFixture()))
@@ -65,6 +131,77 @@ describe('validateTaskDatasetDocument', () => {
 
     expect(() => validateTaskDatasetDocument(fixture)).toThrow(
       'tasks[0].stimulus_ids[0]: очікується id наявного stimulus',
+    )
+  })
+
+  it('accepts a generated dataset after every automated quality gate passes', () => {
+    const dataset = adaptTaskDataset(
+      validateTaskDatasetDocument(generatedFixture()),
+    )
+
+    expect(dataset.origin).toBe('generated')
+    expect(dataset.generation).toEqual(
+      expect.objectContaining({
+        batchId: 'generated-yefvv-it-os-medium-001',
+        model: 'generation-model',
+      }),
+    )
+    expect(dataset.verification).toEqual(
+      expect.objectContaining({
+        method: 'automated_validation',
+        status: 'passed',
+      }),
+    )
+    expect(
+      dataset.tasks
+        .flatMap((task) => task.items)
+        .every(
+          (item) =>
+            item.source.type === 'generated' &&
+            item.explanation.status === 'generated',
+        ),
+    ).toBe(true)
+  })
+
+  it('rejects a generated dataset with an incomplete automated report', () => {
+    const fixture = generatedFixture()
+    const release = fixture.release as Record<string, unknown>
+    const verification = release.verification as Record<string, unknown>
+    verification.checks = [
+      'schema',
+      'answer_integrity',
+      'explanation_integrity',
+      'duplicate_detection',
+    ]
+
+    expect(() => validateTaskDatasetDocument(fixture)).toThrow(
+      "release.verification.checks: очікується усі обов'язкові перевірки",
+    )
+  })
+
+  it('rejects generated content that exceeds the official similarity threshold', () => {
+    const fixture = generatedFixture()
+    const release = fixture.release as Record<string, unknown>
+    const verification = release.verification as Record<string, unknown>
+    const similarity = verification.similarity as Record<string, unknown>
+    similarity.maximum_score = 0.8
+
+    expect(() => validateTaskDatasetDocument(fixture)).toThrow(
+      'release.verification.similarity.maximum_score: очікується значення, що не перевищує threshold',
+    )
+  })
+
+  it('rejects an official answer source inside generated content', () => {
+    const fixture = generatedFixture()
+    const tasks = fixture.tasks as Array<Record<string, unknown>>
+    const items = tasks[0].items as Array<Record<string, unknown>>
+    items[0].answer = {
+      correct_choice: 'f',
+      source: 'official_key',
+    }
+
+    expect(() => validateTaskDatasetDocument(fixture)).toThrow(
+      'tasks[0].items[0].answer.source: очікується generated_key',
     )
   })
 
@@ -281,7 +418,11 @@ describe('validateTaskDatasetDocument', () => {
       .filter((task) => task.sectionCode.startsWith('tznk-'))
       .flatMap((task) => task.items)
 
-    expect(items.map((item) => item.source.pageStart)).toEqual([
+    expect(
+      items.map((item) =>
+        item.source.type === 'official_pdf' ? item.source.pageStart : null,
+      ),
+    ).toEqual([
       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 5, 5, 5, 5, 5, 6, 6, 6, 7, 7, 8, 8, 9, 9,
       10, 10, 10, 11, 11, 11, 12, 12, 12,
     ])

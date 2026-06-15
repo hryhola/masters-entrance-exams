@@ -1,4 +1,10 @@
-import type { ContentBlock, RawContentBlock } from './types'
+import type {
+  ContentBlock,
+  ContentOrigin,
+  ContentVerification,
+  GenerationProvenance,
+  RawContentBlock,
+} from './types'
 
 export type ChoiceId = string
 export type TaskType = 'single_choice' | 'matching' | 'cloze' | 'question_group'
@@ -53,13 +59,19 @@ export interface AssessmentItem {
   response: AssessmentResponse
   correctChoice: ChoiceId
   explanation: {
-    status: 'official' | 'editorial_pending'
+    status: 'official' | 'editorial_pending' | 'generated'
     summary: ContentBlock[]
   }
-  source: {
-    pageStart: number
-    pageEnd: number
-  }
+  source:
+    | {
+        type: 'official_pdf'
+        pageStart: number
+        pageEnd: number
+      }
+    | {
+        type: 'generated'
+        batchId: string
+      }
 }
 
 export interface AssessmentTask {
@@ -91,6 +103,9 @@ export interface TaskDataset {
   languages: string[]
   version: string
   status: 'fixture' | 'ready_for_application'
+  origin: ContentOrigin
+  verification: ContentVerification
+  generation?: GenerationProvenance
   sections: TaskDatasetSection[]
   stimuli: Stimulus[]
   tasks: AssessmentTask[]
@@ -141,16 +156,20 @@ export interface RawAssessmentItem {
   response: RawAssessmentResponse
   answer: {
     correct_choice: ChoiceId
-    source: 'official_key'
+    source: 'official_key' | 'generated_key'
   }
   explanation: {
-    status: 'official' | 'editorial_pending'
+    status: 'official' | 'editorial_pending' | 'generated'
     summary: RawContentBlock[]
   }
-  source: {
-    page_start: number
-    page_end: number
-  }
+  source:
+    | {
+        page_start: number
+        page_end: number
+      }
+    | {
+        generation_batch_id: string
+      }
 }
 
 export interface RawAssessmentTask {
@@ -175,6 +194,23 @@ export interface RawTaskDatasetDocument {
     year: number
     languages: string[]
     status: 'fixture' | 'ready'
+    origin?: ContentOrigin
+    generation?: {
+      batch_id: string
+      model: string
+      prompt: {
+        id: string
+        version: string
+        sha256: string
+      }
+      generated_at: string
+      generator_version: string
+      parameters: {
+        topic: string
+        difficulty: 'easy' | 'medium' | 'hard'
+        task_type: string
+      }
+    }
     task_count: number
     assessment_item_count: number
     stimulus_count: number
@@ -188,5 +224,16 @@ export interface RawTaskDatasetDocument {
   release: {
     status: 'fixture' | 'ready_for_application'
     version: string
+    verification?: {
+      method: 'automated_validation'
+      status: 'passed'
+      validator_version: string
+      validated_at: string
+      checks: string[]
+      similarity: {
+        maximum_score: number
+        threshold: number
+      }
+    }
   }
 }

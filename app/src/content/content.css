@@ -224,6 +224,16 @@
   background: var(--color-primary-soft);
 }
 
+.tag--generated {
+  color: var(--color-warning);
+  background: var(--color-accent-soft);
+}
+
+.tag--automated {
+  color: var(--color-info);
+  background: var(--color-info-soft);
+}
+
 .tag--disputed {
   color: var(--color-danger);
   background: var(--color-danger-soft);

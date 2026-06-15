@@ -11,6 +11,7 @@ const question: Question = {
   number: 1,
   type: 'single_choice',
   origin: 'official',
+  verification: { method: 'official_source' },
   prompt: [{ type: 'markdown', text: 'Оберіть правильну відповідь.' }],
   options: [
     {
@@ -57,7 +58,12 @@ const question: Question = {
     tags: [],
     formatCompliance: 'compliant',
   },
-  source: { pageStart: 1, pageEnd: 1, questionNumber: 1 },
+  source: {
+    type: 'official_pdf',
+    pageStart: 1,
+    pageEnd: 1,
+    questionNumber: 1,
+  },
   features: { blockTypes: ['markdown'], hasComplexContent: false },
 }
 
@@ -114,7 +120,7 @@ describe('PracticeQuestion', () => {
     expect(
       screen.getByText('Пояснення правильної відповіді.'),
     ).toBeInTheDocument()
-    expect(screen.getByText('Офіційний варіант: Б')).toBeInTheDocument()
+    expect(screen.getByText('Правильний варіант: Б')).toBeInTheDocument()
   })
 
   it('disables a matching choice already used by another item', () => {

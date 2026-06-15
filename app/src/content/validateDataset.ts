@@ -218,6 +218,9 @@ export function validateDatasetDocument(value: unknown): RawDatasetDocument {
   number(metadata.year, 'dataset.year')
   string(metadata.language, 'dataset.language')
   if (metadata.status !== 'ready') fail('dataset.status', 'ready')
+  if (metadata.origin !== undefined && metadata.origin !== 'official') {
+    fail('dataset.origin', 'official; generated content uses schema_version 2')
+  }
 
   const questions = array(document.questions, 'questions')
   const expectedCount = number(

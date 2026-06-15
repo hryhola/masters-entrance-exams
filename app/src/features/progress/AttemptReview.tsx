@@ -108,7 +108,9 @@ export function AttemptReviewItem({
                     <small>
                       {result.answerReviewStatus === 'disputed'
                         ? 'Офіційний ключ, спірний'
-                        : 'Офіційний ключ'}
+                        : question.origin === 'official'
+                          ? 'Офіційний ключ'
+                          : 'Правильна відповідь'}
                     </small>
                   ) : null}
                 </span>

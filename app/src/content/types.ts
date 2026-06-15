@@ -1,5 +1,13 @@
 export type QuestionType = 'single_choice'
 export type OptionId = string
+export type ContentOrigin = 'official' | 'generated'
+export type GeneratedDifficulty = 'easy' | 'medium' | 'hard'
+export type AutomatedValidationCheck =
+  | 'schema'
+  | 'answer_integrity'
+  | 'explanation_integrity'
+  | 'duplicate_detection'
+  | 'official_similarity'
 export type ContentBlockType =
   | 'markdown'
   | 'math'
@@ -74,6 +82,39 @@ export type AnswerReviewStatus =
 
 export type ProgramAlignment = 'aligned' | 'partial' | 'legacy' | 'unmapped'
 
+export interface GenerationProvenance {
+  batchId: string
+  model: string
+  prompt: {
+    id: string
+    version: string
+    sha256: string
+  }
+  generatedAt: string
+  generatorVersion: string
+  parameters: {
+    topic: string
+    difficulty: GeneratedDifficulty
+    taskType: string
+  }
+}
+
+export type ContentVerification =
+  | {
+      method: 'official_source'
+    }
+  | {
+      method: 'automated_validation'
+      status: 'passed'
+      validatorVersion: string
+      validatedAt: string
+      checks: AutomatedValidationCheck[]
+      similarity: {
+        maximumScore: number
+        threshold: number
+      }
+    }
+
 export interface QuestionTopic {
   code: string
   sectionCode: string
@@ -88,7 +129,8 @@ export interface Question {
   displayLabel?: string
   language?: string
   type: QuestionType
-  origin: 'official'
+  origin: ContentOrigin
+  verification: ContentVerification
   answerConstraint?: {
     groupId: string
     unique: boolean
@@ -97,7 +139,7 @@ export interface Question {
   options: QuestionOption[]
   correctOption: OptionId
   explanation: {
-    status?: 'official' | 'editorial_pending'
+    status?: 'official' | 'editorial_pending' | 'generated'
     summary: ContentBlock[]
     optionFeedback: OptionFeedback[]
     answerReview: {
@@ -113,11 +155,17 @@ export interface Question {
     tags: string[]
     formatCompliance: 'compliant' | 'non_compliant'
   }
-  source: {
-    pageStart: number
-    pageEnd: number
-    questionNumber: number
-  }
+  source:
+    | {
+        type: 'official_pdf'
+        pageStart: number
+        pageEnd: number
+        questionNumber: number
+      }
+    | {
+        type: 'generated'
+        batchId: string
+      }
   features: {
     blockTypes: ContentBlockType[]
     hasComplexContent: boolean
@@ -148,7 +196,9 @@ export interface ExamDataset {
   language: string
   version: string
   status: 'ready_for_application'
-  origin: 'official'
+  origin: ContentOrigin
+  verification: ContentVerification
+  generation?: GenerationProvenance
   questions: Question[]
   sections: DatasetSection[]
   contentStats: DatasetContentStats
@@ -257,6 +307,7 @@ export interface RawDatasetDocument {
     language: string
     status: 'ready'
     question_count: number
+    origin?: 'official'
   }
   questions: RawQuestion[]
   release: {

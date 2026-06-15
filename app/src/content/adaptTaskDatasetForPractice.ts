@@ -90,6 +90,7 @@ function adaptItem(
   position: number,
   stimuliById: Map<string, Stimulus>,
   sectionTitle: string,
+  dataset: TaskDataset,
 ): Question {
   const choices = resolveChoices(task, item)
   const correctOption = item.correctChoice
@@ -100,7 +101,8 @@ function adaptItem(
     displayLabel: item.displayLabel,
     language: task.language,
     type: 'single_choice',
-    origin: 'official',
+    origin: dataset.origin,
+    verification: dataset.verification,
     answerConstraint:
       task.type === 'matching' && task.choiceSets[0]
         ? {
@@ -143,11 +145,15 @@ function adaptItem(
       tags: ['tznk', task.type, `task-${task.number}`],
       formatCompliance: 'compliant',
     },
-    source: {
-      pageStart: item.source.pageStart,
-      pageEnd: item.source.pageEnd,
-      questionNumber: item.number,
-    },
+    source:
+      item.source.type === 'generated'
+        ? item.source
+        : {
+            type: 'official_pdf',
+            pageStart: item.source.pageStart,
+            pageEnd: item.source.pageEnd,
+            questionNumber: item.number,
+          },
     features: {
       blockTypes: [],
       hasComplexContent: false,
@@ -211,6 +217,7 @@ export function adaptTaskDatasetForPractice(
           .findIndex((candidate) => candidate.id === item.id) + 1,
         stimuliById,
         section.title,
+        dataset,
       ),
     )
   })
@@ -229,7 +236,9 @@ export function adaptTaskDatasetForPractice(
     language: projection.language,
     version: dataset.version,
     status: 'ready_for_application',
-    origin: 'official',
+    origin: dataset.origin,
+    verification: dataset.verification,
+    generation: dataset.generation,
     questions,
     sections: projection.sectionCodes.map((code) => {
       const section = sectionsByCode.get(code)

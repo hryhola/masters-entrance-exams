@@ -47,6 +47,7 @@
 
 - [Вимоги до продукту](PRODUCT_REQUIREMENTS.md)
 - [Архітектура](ARCHITECTURE.md)
+- [Модель згенерованого контенту](GENERATED_CONTENT_MODEL.md)
 - [Загальний скоуп проєкту](../../PROJECT_SCOPE.md)
 
 ## Спільне визначення готовності

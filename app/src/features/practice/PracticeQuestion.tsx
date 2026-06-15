@@ -126,7 +126,7 @@ export function PracticeQuestion({
                 : 'Варто розібрати'}
             </strong>
             <span>
-              Офіційний варіант:{' '}
+              Правильний варіант:{' '}
               {getQuestionOptionLabel(question, question.correctOption)}
             </span>
           </div>

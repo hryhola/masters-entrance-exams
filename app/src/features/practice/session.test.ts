@@ -15,6 +15,7 @@ function question(id: string, sectionCode = '1'): Question {
     number: Number(id.replace(/\D/g, '')),
     type: 'single_choice',
     origin: 'official',
+    verification: { method: 'official_source' },
     prompt: [],
     options: [
       { id: 'a', label: 'A', content: [] },
@@ -45,7 +46,12 @@ function question(id: string, sectionCode = '1'): Question {
       tags: [],
       formatCompliance: 'compliant',
     },
-    source: { pageStart: 1, pageEnd: 1, questionNumber: 1 },
+    source: {
+      type: 'official_pdf',
+      pageStart: 1,
+      pageEnd: 1,
+      questionNumber: 1,
+    },
     features: { blockTypes: ['markdown'], hasComplexContent: false },
   }
 }

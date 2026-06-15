@@ -21,7 +21,18 @@ interface QuestionContentProps {
 export function QuestionBadges({ question }: { question: Question }) {
   return (
     <div className="question-badges">
-      <span className="tag tag--official">Офіційне</span>
+      <span
+        className={
+          question.origin === 'official'
+            ? 'tag tag--official'
+            : 'tag tag--generated'
+        }
+      >
+        {question.origin === 'official' ? 'Офіційне' : 'Згенероване'}
+      </span>
+      {question.verification.method === 'automated_validation' ? (
+        <span className="tag tag--automated">Автоматично перевірено</span>
+      ) : null}
       <span
         className={`tag tag--alignment-${question.classification.alignment}`}
       >
@@ -103,7 +114,9 @@ export function QuestionContent({
             <ContentRenderer blocks={option.content} compact />
             {showExplanation && option.id === question.correctOption ? (
               <span className="question-option__status">
-                Офіційна відповідь
+                {question.origin === 'official'
+                  ? 'Офіційна відповідь'
+                  : 'Правильна відповідь'}
               </span>
             ) : null}
           </li>
@@ -153,12 +166,23 @@ export function QuestionContent({
         <div>
           <span>Джерело</span>
           <strong>
-            PDF,{' '}
-            {question.source.pageStart === question.source.pageEnd
-              ? `сторінка ${question.source.pageStart}`
-              : `сторінки ${question.source.pageStart}–${question.source.pageEnd}`}
+            {question.source.type === 'generated'
+              ? `Генерація ${question.source.batchId}`
+              : `PDF, ${
+                  question.source.pageStart === question.source.pageEnd
+                    ? `сторінка ${question.source.pageStart}`
+                    : `сторінки ${question.source.pageStart}–${question.source.pageEnd}`
+                }`}
           </strong>
         </div>
+        {question.verification.method === 'automated_validation' ? (
+          <div>
+            <span>Перевірка</span>
+            <strong>
+              Автоматична, валідатор {question.verification.validatorVersion}
+            </strong>
+          </div>
+        ) : null}
       </footer>
     </article>
   )

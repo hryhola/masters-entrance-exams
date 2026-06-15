@@ -86,6 +86,7 @@ function adaptQuestion(
     language,
     type: raw.type,
     origin: 'official',
+    verification: { method: 'official_source' },
     prompt: adaptBlocks(raw.prompt),
     options: raw.options.map((option) => ({
       id: option.id,
@@ -115,6 +116,7 @@ function adaptQuestion(
       formatCompliance: raw.classification.format_compliance.status,
     },
     source: {
+      type: 'official_pdf',
       pageStart: raw.source.page_start,
       pageEnd: raw.source.page_end,
       questionNumber: raw.source.question_number,
@@ -212,6 +214,7 @@ export function adaptDataset(raw: RawDatasetDocument): ExamDataset {
     version: raw.release.version,
     status: raw.release.status,
     origin: 'official',
+    verification: { method: 'official_source' },
     questions,
     sections: buildSections(questions),
     contentStats: countContent(questions),

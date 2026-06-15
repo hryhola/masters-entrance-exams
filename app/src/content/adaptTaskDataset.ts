@@ -1,4 +1,5 @@
 import { adaptBlocks } from './adaptDataset'
+import type { AutomatedValidationCheck } from './types'
 import type {
   AssessmentItem,
   AssessmentTask,
@@ -46,10 +47,17 @@ function adaptItem(raw: RawAssessmentItem): AssessmentItem {
       status: raw.explanation.status,
       summary: adaptBlocks(raw.explanation.summary),
     },
-    source: {
-      pageStart: raw.source.page_start,
-      pageEnd: raw.source.page_end,
-    },
+    source:
+      'generation_batch_id' in raw.source
+        ? {
+            type: 'generated',
+            batchId: raw.source.generation_batch_id,
+          }
+        : {
+            type: 'official_pdf',
+            pageStart: raw.source.page_start,
+            pageEnd: raw.source.page_end,
+          },
   }
 }
 
@@ -77,6 +85,39 @@ function adaptTask(raw: RawAssessmentTask): AssessmentTask {
 
 export function adaptTaskDataset(raw: RawTaskDatasetDocument): TaskDataset {
   const tasks = raw.tasks.map(adaptTask)
+  const origin = raw.dataset.origin ?? 'official'
+  const verification =
+    origin === 'generated' && raw.release.verification
+      ? {
+          method: 'automated_validation' as const,
+          status: 'passed' as const,
+          validatorVersion: raw.release.verification.validator_version,
+          validatedAt: raw.release.verification.validated_at,
+          checks: raw.release.verification.checks as AutomatedValidationCheck[],
+          similarity: {
+            maximumScore: raw.release.verification.similarity.maximum_score,
+            threshold: raw.release.verification.similarity.threshold,
+          },
+        }
+      : { method: 'official_source' as const }
+  const generation = raw.dataset.generation
+    ? {
+        batchId: raw.dataset.generation.batch_id,
+        model: raw.dataset.generation.model,
+        prompt: {
+          id: raw.dataset.generation.prompt.id,
+          version: raw.dataset.generation.prompt.version,
+          sha256: raw.dataset.generation.prompt.sha256,
+        },
+        generatedAt: raw.dataset.generation.generated_at,
+        generatorVersion: raw.dataset.generation.generator_version,
+        parameters: {
+          topic: raw.dataset.generation.parameters.topic,
+          difficulty: raw.dataset.generation.parameters.difficulty,
+          taskType: raw.dataset.generation.parameters.task_type,
+        },
+      }
+    : undefined
 
   return {
     schemaVersion: 2,
@@ -91,6 +132,9 @@ export function adaptTaskDataset(raw: RawTaskDatasetDocument): TaskDataset {
       raw.release.status === 'ready_for_application'
         ? 'ready_for_application'
         : 'fixture',
+    origin,
+    verification,
+    generation,
     sections: raw.sections.map((section) => {
       const sectionTasks = tasks.filter(
         (task) => task.sectionCode === section.code,

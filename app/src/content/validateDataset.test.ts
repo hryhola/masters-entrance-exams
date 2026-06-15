@@ -42,4 +42,14 @@ describe('validateDatasetDocument', () => {
       'questions[0].options: очікується чотири варіанти',
     )
   })
+
+  it('keeps generated content on the multi-exam schema v2', () => {
+    const document = readReleaseDataset()
+    const metadata = document.dataset as Record<string, unknown>
+    metadata.origin = 'generated'
+
+    expect(() => validateDatasetDocument(document)).toThrow(
+      'dataset.origin: очікується official; generated content uses schema_version 2',
+    )
+  })
 })

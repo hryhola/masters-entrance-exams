@@ -8,7 +8,16 @@ import type {
   TaskType,
 } from './taskTypes'
 import type { RawContentBlock } from './types'
+import type { AutomatedValidationCheck, ContentOrigin } from './types'
 import { DatasetValidationError } from './validateDataset'
+
+const requiredAutomatedChecks: AutomatedValidationCheck[] = [
+  'schema',
+  'answer_integrity',
+  'explanation_integrity',
+  'duplicate_detection',
+  'official_similarity',
+]
 
 function fail(path: string, expectation: string): never {
   throw new DatasetValidationError(`${path}: очікується ${expectation}`)
@@ -34,6 +43,18 @@ function number(value: unknown, path: string): number {
     : fail(path, 'число')
 }
 
+function numberInRange(
+  value: unknown,
+  path: string,
+  minimum: number,
+  maximum: number,
+): number {
+  const parsed = number(value, path)
+  return parsed >= minimum && parsed <= maximum
+    ? parsed
+    : fail(path, `число від ${minimum} до ${maximum}`)
+}
+
 function array(value: unknown, path: string): unknown[] {
   return Array.isArray(value) ? value : fail(path, 'масив')
 }
@@ -42,6 +63,113 @@ function stringArray(value: unknown, path: string): string[] {
   return array(value, path).map((item, index) =>
     string(item, `${path}[${index}]`),
   )
+}
+
+function isoDate(value: unknown, path: string): string {
+  const parsed = string(value, path)
+  return Number.isNaN(Date.parse(parsed))
+    ? fail(path, 'дату й час у форматі ISO 8601')
+    : parsed
+}
+
+function sha256(value: unknown, path: string): string {
+  const parsed = string(value, path)
+  return /^[a-f0-9]{64}$/.test(parsed)
+    ? parsed
+    : fail(path, 'SHA-256 у нижньому регістрі')
+}
+
+function validateGeneratedPublication(
+  metadata: Record<string, unknown>,
+  release: Record<string, unknown>,
+): string {
+  const generation = record(metadata.generation, 'dataset.generation')
+  const batchId = string(generation.batch_id, 'dataset.generation.batch_id')
+  string(generation.model, 'dataset.generation.model')
+  const prompt = record(generation.prompt, 'dataset.generation.prompt')
+  string(prompt.id, 'dataset.generation.prompt.id')
+  string(prompt.version, 'dataset.generation.prompt.version')
+  sha256(prompt.sha256, 'dataset.generation.prompt.sha256')
+  isoDate(generation.generated_at, 'dataset.generation.generated_at')
+  string(generation.generator_version, 'dataset.generation.generator_version')
+  const parameters = record(
+    generation.parameters,
+    'dataset.generation.parameters',
+  )
+  string(parameters.topic, 'dataset.generation.parameters.topic')
+  if (
+    parameters.difficulty !== 'easy' &&
+    parameters.difficulty !== 'medium' &&
+    parameters.difficulty !== 'hard'
+  ) {
+    fail('dataset.generation.parameters.difficulty', 'easy, medium або hard')
+  }
+  string(parameters.task_type, 'dataset.generation.parameters.task_type')
+
+  if (release.status !== 'ready_for_application') {
+    fail(
+      'release.status',
+      'ready_for_application для згенерованого production dataset',
+    )
+  }
+  const verification = record(release.verification, 'release.verification')
+  if (verification.method !== 'automated_validation') {
+    fail('release.verification.method', 'automated_validation')
+  }
+  if (verification.status !== 'passed') {
+    fail('release.verification.status', 'passed')
+  }
+  string(
+    verification.validator_version,
+    'release.verification.validator_version',
+  )
+  isoDate(verification.validated_at, 'release.verification.validated_at')
+  const checks = stringArray(verification.checks, 'release.verification.checks')
+  const uniqueChecks = new Set(checks)
+  for (const check of checks) {
+    if (!requiredAutomatedChecks.includes(check as AutomatedValidationCheck)) {
+      fail(
+        'release.verification.checks',
+        `підтримувані перевірки (${requiredAutomatedChecks.join(', ')})`,
+      )
+    }
+  }
+  for (const check of requiredAutomatedChecks) {
+    if (!uniqueChecks.has(check)) {
+      fail(
+        'release.verification.checks',
+        `усі обов'язкові перевірки (${requiredAutomatedChecks.join(', ')})`,
+      )
+    }
+  }
+  if (uniqueChecks.size !== checks.length) {
+    fail('release.verification.checks', 'унікальні назви перевірок')
+  }
+
+  const similarity = record(
+    verification.similarity,
+    'release.verification.similarity',
+  )
+  const maximumScore = numberInRange(
+    similarity.maximum_score,
+    'release.verification.similarity.maximum_score',
+    0,
+    1,
+  )
+  const threshold = numberInRange(
+    similarity.threshold,
+    'release.verification.similarity.threshold',
+    0,
+    1,
+  )
+  if (maximumScore > threshold) {
+    fail(
+      'release.verification.similarity.maximum_score',
+      'значення, що не перевищує threshold',
+    )
+  }
+
+  return batchId
 }
 
 function validateBlock(value: unknown, path: string): RawContentBlock {
@@ -173,6 +301,8 @@ function validateTask(
   sectionCodes: Set<string>,
   stimulusIds: Set<string>,
   itemIds: Set<string>,
+  origin: ContentOrigin,
+  generationBatchId?: string,
 ): RawAssessmentTask {
   const path = `tasks[${index}]`
   const task = record(value, path)
@@ -277,8 +407,10 @@ function validateTask(
       answer.correct_choice,
       `${itemPath}.answer.correct_choice`,
     )
-    if (answer.source !== 'official_key') {
-      fail(`${itemPath}.answer.source`, 'official_key')
+    const expectedAnswerSource =
+      origin === 'generated' ? 'generated_key' : 'official_key'
+    if (answer.source !== expectedAnswerSource) {
+      fail(`${itemPath}.answer.source`, expectedAnswerSource)
     }
 
     if (response.type === 'matching_choice') {
@@ -307,8 +439,18 @@ function validateTask(
     const explanation = record(item.explanation, `${itemPath}.explanation`)
     if (
       explanation.status !== 'official' &&
-      explanation.status !== 'editorial_pending'
+      explanation.status !== 'editorial_pending' &&
+      explanation.status !== 'generated'
     ) {
+      fail(
+        `${itemPath}.explanation.status`,
+        'official, editorial_pending або generated',
+      )
+    }
+    if (origin === 'generated' && explanation.status !== 'generated') {
+      fail(`${itemPath}.explanation.status`, 'generated')
+    }
+    if (origin === 'official' && explanation.status === 'generated') {
       fail(`${itemPath}.explanation.status`, 'official або editorial_pending')
     }
     validateContent(
@@ -318,10 +460,26 @@ function validateTask(
     )
 
     const source = record(item.source, `${itemPath}.source`)
-    const pageStart = number(source.page_start, `${itemPath}.source.page_start`)
-    const pageEnd = number(source.page_end, `${itemPath}.source.page_end`)
-    if (pageEnd < pageStart) {
-      fail(`${itemPath}.source.page_end`, 'сторінку не раніше page_start')
+    if (origin === 'generated') {
+      const sourceBatchId = string(
+        source.generation_batch_id,
+        `${itemPath}.source.generation_batch_id`,
+      )
+      if (sourceBatchId !== generationBatchId) {
+        fail(
+          `${itemPath}.source.generation_batch_id`,
+          'batch_id поточного dataset',
+        )
+      }
+    } else {
+      const pageStart = number(
+        source.page_start,
+        `${itemPath}.source.page_start`,
+      )
+      const pageEnd = number(source.page_end, `${itemPath}.source.page_end`)
+      if (pageEnd < pageStart) {
+        fail(`${itemPath}.source.page_end`, 'сторінку не раніше page_start')
+      }
     }
   })
 
@@ -343,6 +501,10 @@ export function validateTaskDatasetDocument(
   stringArray(metadata.languages, 'dataset.languages')
   if (metadata.status !== 'fixture' && metadata.status !== 'ready') {
     fail('dataset.status', 'fixture або ready')
+  }
+  const origin = (metadata.origin ?? 'official') as ContentOrigin
+  if (origin !== 'official' && origin !== 'generated') {
+    fail('dataset.origin', 'official або generated')
   }
 
   const sections = array(document.sections, 'sections')
@@ -381,11 +543,40 @@ export function validateTaskDatasetDocument(
     validateContent(stimulus.content, `${path}.content`)
   })
 
+  const release = record(document.release, 'release')
+  if (
+    release.status !== 'fixture' &&
+    release.status !== 'ready_for_application'
+  ) {
+    fail('release.status', 'fixture або ready_for_application')
+  }
+  string(release.version, 'release.version')
+
+  let generationBatchId: string | undefined
+  if (origin === 'generated') {
+    generationBatchId = validateGeneratedPublication(metadata, release)
+  } else {
+    if (metadata.generation !== undefined) {
+      fail('dataset.generation', 'відсутнє для official dataset')
+    }
+    if (release.verification !== undefined) {
+      fail('release.verification', 'відсутнє для official dataset')
+    }
+  }
+
   const tasks = array(document.tasks, 'tasks')
   const taskIds = new Set<string>()
   const itemIds = new Set<string>()
   tasks.forEach((value, index) => {
-    const task = validateTask(value, index, sectionCodes, stimulusIds, itemIds)
+    const task = validateTask(
+      value,
+      index,
+      sectionCodes,
+      stimulusIds,
+      itemIds,
+      origin,
+      generationBatchId,
+    )
     if (taskIds.has(task.id)) fail(`tasks[${index}].id`, 'унікальний id')
     taskIds.add(task.id)
   })
@@ -408,15 +599,6 @@ export function validateTaskDatasetDocument(
   if (stimuli.length !== expectedStimulusCount) {
     fail('stimuli', `${expectedStimulusCount} stimuli`)
   }
-
-  const release = record(document.release, 'release')
-  if (
-    release.status !== 'fixture' &&
-    release.status !== 'ready_for_application'
-  ) {
-    fail('release.status', 'fixture або ready_for_application')
-  }
-  string(release.version, 'release.version')
 
   return document as unknown as RawTaskDatasetDocument
 }
