@@ -1,5 +1,7 @@
 import { getDatasetDefinition } from '../exams/registry'
 import { adaptDataset } from './adaptDataset'
+import { adaptTaskDatasetForPractice } from './adaptTaskDatasetForPractice'
+import { loadTaskDataset } from './loadTaskDataset'
 import type { ExamDataset } from './types'
 import {
   DatasetValidationError,
@@ -34,6 +36,11 @@ async function fetchDataset(datasetId: string): Promise<ExamDataset> {
   const definition = getDatasetDefinition(datasetId)
   if (!definition) {
     throw new DatasetLoadError(`Набір "${datasetId}" не зареєстровано.`)
+  }
+
+  if (definition.kind === 'task_projection') {
+    const taskDataset = await loadTaskDataset(definition.sourceDatasetId)
+    return adaptTaskDatasetForPractice(taskDataset, definition)
   }
 
   const url = resolvePublicUrl(definition.dataPath)

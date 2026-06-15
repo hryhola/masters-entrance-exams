@@ -596,7 +596,7 @@ export function SessionPage() {
           <div className="session-question-actions">
             <span>
               Питання сесії {session.currentIndex + 1} · офіційне №
-              {question.number}
+              {question.displayLabel ?? question.number}
             </span>
             <div>
               <button

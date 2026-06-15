@@ -1,4 +1,5 @@
 .resume-sessions,
+.progress-exam-filter,
 .topic-progress,
 .attempt-history,
 .learning-overview,
@@ -13,6 +14,29 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-large);
   background: var(--color-surface);
+}
+
+.progress-exam-filter {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.55fr);
+  gap: 28px;
+  align-items: end;
+}
+
+.progress-exam-filter h2 {
+  margin-bottom: 8px;
+}
+
+.progress-exam-filter p:not(.eyebrow) {
+  max-width: 680px;
+  margin-bottom: 0;
+  color: var(--color-muted);
+  line-height: 1.55;
+}
+
+.progress-exam-filter .setup-select {
+  width: 100%;
+  max-width: none;
 }
 
 .learning-metrics,
@@ -531,7 +555,8 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .resume-sessions {
+  .resume-sessions,
+  .progress-exam-filter {
     grid-template-columns: 1fr;
   }
 

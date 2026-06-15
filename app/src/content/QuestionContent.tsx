@@ -12,7 +12,7 @@ const optionLabels = {
 }
 
 const alignmentLabels = {
-  aligned: 'Відповідає програмі 2025',
+  aligned: 'Відповідає програмі та структурі',
   partial: 'Часткова відповідність',
   legacy: 'Застарілий формат',
   unmapped: 'Поза програмою',
@@ -56,7 +56,9 @@ export function QuestionContent({
     <article className="question-view">
       <header className="question-view__header">
         <div>
-          <p className="eyebrow">Питання {question.number}</p>
+          <p className="eyebrow">
+            Питання {question.displayLabel ?? question.number}
+          </p>
           <QuestionBadges question={question} />
         </div>
         <Link

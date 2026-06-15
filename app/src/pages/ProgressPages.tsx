@@ -50,28 +50,35 @@ function EmptyProgress({
 export function ProgressPage() {
   const [now] = useState(Date.now)
   const { attempts, questionProgress, sessions } = usePracticeSessions()
-  const summary = useMemo(() => summarizeAttempts(attempts), [attempts])
-  const learning = useMemo(
-    () => summarizeLearning(questionProgress, now),
-    [now, questionProgress],
+  const availableExams = examRegistry.filter(
+    (exam) => exam.status === 'available' && exam.datasetId,
   )
-  const periods = useMemo(
-    () => summarizePeriods(attempts, now),
-    [attempts, now],
+  const [examId, setExamId] = useState(
+    attempts.at(-1)?.config.examId ??
+      Object.values(sessions).at(-1)?.config.examId ??
+      availableExams[0]?.id ??
+      '',
   )
-  const topics = useMemo(
-    () => summarizeTopicsFromAttempts(attempts),
-    [attempts],
+  const activeExam = getExamDefinition(examId) ?? availableExams[0] ?? undefined
+  const filteredAttempts = attempts.filter(
+    (attempt) => attempt.config.examId === activeExam?.id,
   )
+  const filteredProgress = Object.fromEntries(
+    Object.entries(questionProgress).filter(
+      ([, item]) => item.datasetId === activeExam?.datasetId,
+    ),
+  )
+  const summary = summarizeAttempts(filteredAttempts)
+  const learning = summarizeLearning(filteredProgress, now)
+  const periods = summarizePeriods(filteredAttempts, now)
+  const topics = summarizeTopicsFromAttempts(filteredAttempts)
   const weakTopics = topics.filter((topic) => topic.answered >= 2)
-  const completedAttempts = useMemo(
-    () =>
-      [...attempts].sort((left, right) => right.completedAt - left.completedAt),
-    [attempts],
+  const completedAttempts = [...filteredAttempts].sort(
+    (left, right) => right.completedAt - left.completedAt,
   )
-  const activeSessions = Object.values(sessions).sort(
-    (left, right) => right.startedAt - left.startedAt,
-  )
+  const activeSessions = Object.values(sessions)
+    .filter((session) => session.config.examId === activeExam?.id)
+    .sort((left, right) => right.startedAt - left.startedAt)
 
   if (attempts.length === 0 && activeSessions.length === 0) {
     return (
@@ -102,6 +109,32 @@ export function ProgressPage() {
         eyebrow="Аналітика"
         title="Ваш прогрес"
       />
+
+      <section className="progress-exam-filter">
+        <div>
+          <p className="eyebrow">Окрема статистика</p>
+          <h2>{activeExam?.title ?? 'Іспит'}</h2>
+          <p>
+            Результати різних іспитів не змішуються, оскільки вони мають різні
+            структури та шкали.
+          </p>
+        </div>
+        <label className="setup-select">
+          <span>Показати прогрес</span>
+          <select
+            onChange={(event: ChangeEvent<HTMLSelectElement>) =>
+              setExamId(event.target.value)
+            }
+            value={activeExam?.id ?? ''}
+          >
+            {availableExams.map((exam) => (
+              <option key={exam.id} value={exam.id}>
+                {exam.shortName}: {exam.title}
+              </option>
+            ))}
+          </select>
+        </label>
+      </section>
 
       {activeSessions.length > 0 ? (
         <section className="resume-sessions">

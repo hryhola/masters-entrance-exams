@@ -14,7 +14,15 @@ import {
 } from '../exams/registry'
 import './dataset-pages.css'
 
-const featuredQuestionNumbers = [9, 13, 51, 71, 82, 86, 102, 140]
+const yefvvFeaturedQuestionNumbers = [9, 13, 51, 71, 82, 86, 102, 140]
+
+function getFeaturedQuestionNumbers(datasetId: string, questionCount: number) {
+  if (datasetId === 'yefvv-it-2024') return yefvvFeaturedQuestionNumbers
+  return [1, 5, 11, 19, 25, questionCount].filter(
+    (number, index, values) =>
+      number <= questionCount && values.indexOf(number) === index,
+  )
+}
 
 function findQuestion(
   questions: Question[],
@@ -45,6 +53,10 @@ export function ExamDetailPage() {
   const complexQuestionCount = dataset.questions.filter(
     (question) => question.features.hasComplexContent,
   ).length
+  const featuredQuestionNumbers = getFeaturedQuestionNumbers(
+    dataset.id,
+    dataset.questions.length,
+  )
 
   return (
     <div className="page-stack">
@@ -57,7 +69,7 @@ export function ExamDetailPage() {
             Перевірити всі питання
           </Link>
         }
-        description={`Офіційний набір ${dataset.year} року, нормалізований для вебзастосунку та доповнений поясненнями до кожного варіанта.`}
+        description={`Офіційний набір ${dataset.year} року, нормалізований для вебзастосунку та ручно перевірений за першоджерелом.`}
         eyebrow={`${dataset.exam} · версія ${dataset.version}`}
         title={dataset.subject}
       />
@@ -71,7 +83,7 @@ export function ExamDetailPage() {
         <article>
           <span>Розділів</span>
           <strong>{dataset.sections.length}</strong>
-          <small>за програмою 2025 року</small>
+          <small>за структурою офіційного тесту</small>
         </article>
         <article>
           <span>Складний контент</span>
@@ -106,7 +118,7 @@ export function ExamDetailPage() {
             className="button button--secondary"
             to={`/dev/datasets/${dataset.id}`}
           >
-            Каталог 140 питань
+            Каталог {dataset.questions.length} питань
           </Link>
         </div>
       </section>
@@ -121,8 +133,8 @@ export function ExamDetailPage() {
             <h2 id="sections-title">Розділи програми</h2>
           </div>
           <p>
-            Кількість показує фактичний розподіл завдань тесту 2024 року, а не
-            рекомендовані ваги програми.
+            Кількість показує фактичний розподіл одиниць оцінювання в офіційному
+            тесті {dataset.year} року.
           </p>
         </div>
         <ol className="section-list">
@@ -143,16 +155,19 @@ export function ExamDetailPage() {
             <h2 id="featured-title">Різні типи контенту</h2>
           </div>
           <p>
-            Добірка охоплює зображення, формули, код, таблицю та обидва питання
-            зі спірним офіційним ключем.
+            Добірка дає змогу швидко перевірити різні частини нормалізованого
+            набору та роботу рендерера.
           </p>
         </div>
         <div className="question-link-grid">
           {featuredQuestionNumbers.map((number) => {
-            const question = dataset.questions[number - 1]
+            const question = dataset.questions.find(
+              (item) => item.number === number,
+            )
+            if (!question) return null
             return (
               <Link key={number} to={`/exams/${exam.id}/questions/${number}`}>
-                <span>№ {number}</span>
+                <span>№ {question.displayLabel ?? number}</span>
                 <strong>
                   {question.classification.topic?.section ?? 'Поза програмою'}
                 </strong>

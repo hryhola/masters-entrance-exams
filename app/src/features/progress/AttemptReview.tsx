@@ -68,7 +68,8 @@ export function AttemptReviewItem({
         <span className="attempt-review-item__title">
           <strong>{getStatusLabel(result)}</strong>
           <small>
-            Офіційне №{question.number} · {result.topicTitle}
+            Офіційне №{question.displayLabel ?? question.number} ·{' '}
+            {result.topicTitle}
           </small>
         </span>
         <span className="attempt-review-item__answer">

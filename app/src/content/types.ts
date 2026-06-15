@@ -84,6 +84,7 @@ export interface QuestionTopic {
 export interface Question {
   id: string
   number: number
+  displayLabel?: string
   type: QuestionType
   origin: 'official'
   prompt: ContentBlock[]

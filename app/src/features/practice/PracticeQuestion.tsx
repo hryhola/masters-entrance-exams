@@ -56,7 +56,9 @@ export function PracticeQuestion({
     <article className="practice-question">
       <header className="practice-question__header">
         <div>
-          <p className="eyebrow">Офіційне питання {question.number}</p>
+          <p className="eyebrow">
+            Офіційне питання {question.displayLabel ?? question.number}
+          </p>
           <QuestionBadges question={question} />
         </div>
         <span className="practice-question__topic">

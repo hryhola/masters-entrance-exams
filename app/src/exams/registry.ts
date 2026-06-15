@@ -1,8 +1,23 @@
-export interface DatasetDefinition {
+export interface QuestionDatasetDefinition {
   id: string
+  kind: 'questions'
   dataPath: string
   manifestPath: string
 }
+
+export interface TaskProjectionDatasetDefinition {
+  id: string
+  kind: 'task_projection'
+  sourceDatasetId: string
+  title: string
+  subject: string
+  language: string
+  sectionCodes: string[]
+}
+
+export type DatasetDefinition =
+  | QuestionDatasetDefinition
+  | TaskProjectionDatasetDefinition
 
 export interface TaskDatasetDefinition {
   id: string
@@ -27,8 +42,18 @@ export interface ExamDefinition {
 export const datasetRegistry: Record<string, DatasetDefinition> = {
   'yefvv-it-2024': {
     id: 'yefvv-it-2024',
+    kind: 'questions',
     dataPath: 'content/datasets/yefvv-it-2024/dataset.json',
     manifestPath: 'content/datasets/yefvv-it-2024/manifest.json',
+  },
+  'tznk-2024': {
+    id: 'tznk-2024',
+    kind: 'task_projection',
+    sourceDatasetId: 'evi-schema-v2-fixtures',
+    title: 'ЄВІ: ТЗНК 2024',
+    subject: 'Тест загальної навчальної компетентності',
+    language: 'uk',
+    sectionCodes: ['tznk-verbal', 'tznk-logical'],
   },
 }
 
@@ -60,7 +85,13 @@ export const examRegistry: ExamDefinition[] = [
     title: 'ТЗНК',
     subject: 'Тест загальної навчальної компетентності',
     year: 2024,
-    status: 'planned',
+    status: 'available',
+    datasetId: 'tznk-2024',
+    practice: {
+      examDurationMinutes: 75,
+      estimatedSecondsPerQuestion: 135,
+      quickQuestionCounts: [5, 10, 20],
+    },
   },
   {
     id: 'yevi-english',
