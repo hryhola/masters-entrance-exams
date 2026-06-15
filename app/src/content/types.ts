@@ -1,5 +1,5 @@
 export type QuestionType = 'single_choice'
-export type OptionId = 'a' | 'b' | 'c' | 'd'
+export type OptionId = string
 export type ContentBlockType =
   | 'markdown'
   | 'math'
@@ -57,6 +57,7 @@ export type ContentBlock =
 
 export interface QuestionOption {
   id: OptionId
+  label: string
   content: ContentBlock[]
 }
 
@@ -85,12 +86,18 @@ export interface Question {
   id: string
   number: number
   displayLabel?: string
+  language?: string
   type: QuestionType
   origin: 'official'
+  answerConstraint?: {
+    groupId: string
+    unique: boolean
+  }
   prompt: ContentBlock[]
   options: QuestionOption[]
   correctOption: OptionId
   explanation: {
+    status?: 'official' | 'editorial_pending'
     summary: ContentBlock[]
     optionFeedback: OptionFeedback[]
     answerReview: {

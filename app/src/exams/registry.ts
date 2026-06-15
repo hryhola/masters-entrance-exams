@@ -55,12 +55,25 @@ export const datasetRegistry: Record<string, DatasetDefinition> = {
     language: 'uk',
     sectionCodes: ['tznk-verbal', 'tznk-logical'],
   },
+  'evi-english-2023': {
+    id: 'evi-english-2023',
+    kind: 'task_projection',
+    sourceDatasetId: 'evi-english-2023-source',
+    title: 'ЄВІ: Англійська мова 2023',
+    subject: 'Англійська мова',
+    language: 'en',
+    sectionCodes: ['english-reading', 'english-use-of-language'],
+  },
 }
 
 export const taskDatasetRegistry: Record<string, TaskDatasetDefinition> = {
   'evi-schema-v2-fixtures': {
     id: 'evi-schema-v2-fixtures',
     dataPath: 'content/fixtures/evi-schema-v2.json',
+  },
+  'evi-english-2023-source': {
+    id: 'evi-english-2023-source',
+    dataPath: 'content/datasets/evi-english-2023-source/dataset.json',
   },
 }
 
@@ -99,7 +112,13 @@ export const examRegistry: ExamDefinition[] = [
     title: 'Англійська мова',
     subject: 'Англійська мова',
     year: 2023,
-    status: 'planned',
+    status: 'available',
+    datasetId: 'evi-english-2023',
+    practice: {
+      examDurationMinutes: 45,
+      estimatedSecondsPerQuestion: 90,
+      quickQuestionCounts: [5, 10, 20],
+    },
   },
 ]
 

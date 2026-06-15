@@ -10,6 +10,13 @@ import type {
   RawDatasetDocument,
 } from './types'
 
+const optionLabels: Record<string, string> = {
+  a: 'A',
+  b: 'Б',
+  c: 'В',
+  d: 'Г',
+}
+
 export function adaptBlock(block: RawContentBlock): ContentBlock {
   switch (block.type) {
     case 'markdown':
@@ -58,7 +65,10 @@ function collectQuestionBlockTypes(question: Question): ContentBlockType[] {
   return [...new Set(blocks.map((block) => block.type))]
 }
 
-function adaptQuestion(raw: RawDatasetDocument['questions'][number]): Question {
+function adaptQuestion(
+  raw: RawDatasetDocument['questions'][number],
+  language: string,
+): Question {
   const topic = raw.classification.primary_topic
     ? {
         code: raw.classification.primary_topic.code,
@@ -73,15 +83,18 @@ function adaptQuestion(raw: RawDatasetDocument['questions'][number]): Question {
   const question: Question = {
     id: raw.id,
     number: raw.number,
+    language,
     type: raw.type,
     origin: 'official',
     prompt: adaptBlocks(raw.prompt),
     options: raw.options.map((option) => ({
       id: option.id,
+      label: optionLabels[option.id] ?? option.id.toUpperCase(),
       content: adaptBlocks(option.content),
     })),
     correctOption: raw.answer.correct_option,
     explanation: {
+      status: 'official',
       summary: adaptBlocks(raw.explanation.summary),
       optionFeedback: raw.explanation.option_feedback.map((feedback) => ({
         optionId: feedback.option_id,
@@ -185,7 +198,9 @@ function countAnswerReviews(
 }
 
 export function adaptDataset(raw: RawDatasetDocument): ExamDataset {
-  const questions = raw.questions.map(adaptQuestion)
+  const questions = raw.questions.map((question) =>
+    adaptQuestion(question, raw.dataset.language),
+  )
 
   return {
     id: raw.dataset.id,

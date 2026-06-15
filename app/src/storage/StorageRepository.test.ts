@@ -97,6 +97,19 @@ describe('StorageRepository', () => {
     expect(envelope).toMatchObject({ version: 3, data: state.attempts })
   })
 
+  it('preserves arbitrary choice ids used by matching tasks', () => {
+    const storage = new MemoryStorage()
+    const repository = new StorageRepository(storage)
+    const state = createState()
+    state.sessions['active-session'].answers = { q1: 'h' }
+    state.attempts[0].answers = { q1: 'h' }
+    state.attempts[0].questionResults[0].selectedOption = 'h'
+    state.attempts[0].questionResults[0].officialOption = 'h'
+
+    expect(repository.save(state)).toEqual({ ok: true })
+    expect(repository.load()).toEqual({ state, issues: [] })
+  })
+
   it('migrates a legacy session collection and restores its deadline', () => {
     const storage = new MemoryStorage()
     const session = createPracticeSession({

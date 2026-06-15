@@ -13,10 +13,26 @@ const question: Question = {
   origin: 'official',
   prompt: [{ type: 'markdown', text: 'Оберіть правильну відповідь.' }],
   options: [
-    { id: 'a', content: [{ type: 'markdown', text: 'Перша' }] },
-    { id: 'b', content: [{ type: 'markdown', text: 'Друга' }] },
-    { id: 'c', content: [{ type: 'markdown', text: 'Третя' }] },
-    { id: 'd', content: [{ type: 'markdown', text: 'Четверта' }] },
+    {
+      id: 'a',
+      label: 'A',
+      content: [{ type: 'markdown', text: 'Перша' }],
+    },
+    {
+      id: 'b',
+      label: 'Б',
+      content: [{ type: 'markdown', text: 'Друга' }],
+    },
+    {
+      id: 'c',
+      label: 'В',
+      content: [{ type: 'markdown', text: 'Третя' }],
+    },
+    {
+      id: 'd',
+      label: 'Г',
+      content: [{ type: 'markdown', text: 'Четверта' }],
+    },
   ],
   correctOption: 'b',
   explanation: {
@@ -99,5 +115,23 @@ describe('PracticeQuestion', () => {
       screen.getByText('Пояснення правильної відповіді.'),
     ).toBeInTheDocument()
     expect(screen.getByText('Офіційний варіант: Б')).toBeInTheDocument()
+  })
+
+  it('disables a matching choice already used by another item', () => {
+    render(
+      <MemoryRouter>
+        <PracticeQuestion
+          disabledOptionIds={['a']}
+          experience="learning"
+          onAnswer={vi.fn()}
+          question={question}
+          revealed={false}
+          selectedOption={undefined}
+        />
+      </MemoryRouter>,
+    )
+
+    expect(screen.getByRole('button', { name: /Перша/ })).toBeDisabled()
+    expect(screen.getByText('Уже використано')).toBeInTheDocument()
   })
 })

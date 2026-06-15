@@ -18,10 +18,26 @@ export function createTestQuestion({
     origin: 'official',
     prompt: [{ type: 'markdown', text: `Умова питання ${number}` }],
     options: [
-      { id: 'a', content: [{ type: 'markdown', text: 'Варіант A' }] },
-      { id: 'b', content: [{ type: 'markdown', text: 'Варіант Б' }] },
-      { id: 'c', content: [{ type: 'markdown', text: 'Варіант В' }] },
-      { id: 'd', content: [{ type: 'markdown', text: 'Варіант Г' }] },
+      {
+        id: 'a',
+        label: 'A',
+        content: [{ type: 'markdown', text: 'Варіант A' }],
+      },
+      {
+        id: 'b',
+        label: 'Б',
+        content: [{ type: 'markdown', text: 'Варіант Б' }],
+      },
+      {
+        id: 'c',
+        label: 'В',
+        content: [{ type: 'markdown', text: 'Варіант В' }],
+      },
+      {
+        id: 'd',
+        label: 'Г',
+        content: [{ type: 'markdown', text: 'Варіант Г' }],
+      },
     ],
     correctOption,
     explanation: {

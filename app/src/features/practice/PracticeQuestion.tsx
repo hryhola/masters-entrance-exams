@@ -1,19 +1,14 @@
 import { ContentRenderer } from '../../content/ContentRenderer'
 import { QuestionBadges } from '../../content/QuestionContent'
+import { getQuestionOptionLabel } from '../../content/questionOptions'
 import type { OptionId, Question } from '../../content/types'
 import type { PracticeExperience } from './session'
-
-const optionLabels: Record<OptionId, string> = {
-  a: 'A',
-  b: 'Б',
-  c: 'В',
-  d: 'Г',
-}
 
 interface PracticeQuestionProps {
   experience: PracticeExperience
   question: Question
   selectedOption: OptionId | undefined
+  disabledOptionIds?: OptionId[]
   revealed: boolean
   onAnswer: (optionId: OptionId) => void
 }
@@ -45,6 +40,7 @@ export function PracticeQuestion({
   experience,
   question,
   selectedOption,
+  disabledOptionIds = [],
   revealed,
   onAnswer,
 }: PracticeQuestionProps) {
@@ -53,7 +49,7 @@ export function PracticeQuestion({
   )
 
   return (
-    <article className="practice-question">
+    <article className="practice-question" lang={question.language}>
       <header className="practice-question__header">
         <div>
           <p className="eyebrow">
@@ -74,6 +70,7 @@ export function PracticeQuestion({
         {question.options.map((option) => {
           const isSelected = selectedOption === option.id
           const isCorrect = question.correctOption === option.id
+          const isDisabled = disabledOptionIds.includes(option.id)
 
           return (
             <li key={option.id}>
@@ -85,11 +82,12 @@ export function PracticeQuestion({
                   question.correctOption,
                   revealed,
                 )}
+                disabled={isDisabled}
                 onClick={() => onAnswer(option.id)}
                 type="button"
               >
                 <span className="practice-option__letter">
-                  {optionLabels[option.id]}
+                  {getQuestionOptionLabel(question, option.id)}
                 </span>
                 <span className="practice-option__content">
                   <ContentRenderer blocks={option.content} compact />
@@ -100,6 +98,11 @@ export function PracticeQuestion({
                 {revealed && isSelected && !isCorrect ? (
                   <span className="practice-option__status">
                     Ваша відповідь
+                  </span>
+                ) : null}
+                {isDisabled ? (
+                  <span className="practice-option__status">
+                    Уже використано
                   </span>
                 ) : null}
               </button>
@@ -123,7 +126,8 @@ export function PracticeQuestion({
                 : 'Варто розібрати'}
             </strong>
             <span>
-              Офіційний варіант: {optionLabels[question.correctOption]}
+              Офіційний варіант:{' '}
+              {getQuestionOptionLabel(question, question.correctOption)}
             </span>
           </div>
           {question.explanation.answerReview.status === 'disputed' ? (
@@ -132,11 +136,16 @@ export function PracticeQuestion({
               <span>{question.explanation.answerReview.note}</span>
             </aside>
           ) : null}
-          <ContentRenderer blocks={question.explanation.summary} />
+          {question.explanation.summary.length > 0 ? (
+            <ContentRenderer blocks={question.explanation.summary} />
+          ) : (
+            <p>Редакційне пояснення ще не підготовлено.</p>
+          )}
           {selectedFeedback ? (
             <details>
               <summary>
-                Чому варіант {optionLabels[selectedFeedback.optionId]}{' '}
+                Чому варіант{' '}
+                {getQuestionOptionLabel(question, selectedFeedback.optionId)}{' '}
                 {selectedFeedback.verdict === 'correct'
                   ? 'правильний'
                   : 'неправильний'}

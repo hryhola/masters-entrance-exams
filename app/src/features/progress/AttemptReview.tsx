@@ -2,15 +2,9 @@ import { useState } from 'react'
 
 import { ContentRenderer } from '../../content/ContentRenderer'
 import { QuestionBadges } from '../../content/QuestionContent'
+import { getQuestionOptionLabel } from '../../content/questionOptions'
 import type { OptionId, Question } from '../../content/types'
 import type { AttemptQuestionResult } from './types'
-
-const optionLabels: Record<OptionId, string> = {
-  a: 'A',
-  b: 'Б',
-  c: 'В',
-  d: 'Г',
-}
 
 function getStatusLabel(result: AttemptQuestionResult) {
   if (result.status === 'unanswered') return 'Без відповіді'
@@ -74,13 +68,13 @@ export function AttemptReviewItem({
         </span>
         <span className="attempt-review-item__answer">
           {result.selectedOption
-            ? `Ваша: ${optionLabels[result.selectedOption]}`
+            ? `Ваша: ${getQuestionOptionLabel(question, result.selectedOption)}`
             : 'Пропущено'}
         </span>
       </summary>
 
       {open ? (
-        <article className="attempt-review-item__body">
+        <article className="attempt-review-item__body" lang={question.language}>
           <header>
             <QuestionBadges question={question} />
           </header>
@@ -103,7 +97,7 @@ export function AttemptReviewItem({
                 key={option.id}
               >
                 <span className="attempt-option__letter">
-                  {optionLabels[option.id]}
+                  {getQuestionOptionLabel(question, option.id)}
                 </span>
                 <ContentRenderer blocks={option.content} compact />
                 <span className="attempt-option__labels">
@@ -124,12 +118,16 @@ export function AttemptReviewItem({
 
           <section className="attempt-explanation">
             <p className="eyebrow">Пояснення</p>
-            <ContentRenderer blocks={question.explanation.summary} />
+            {question.explanation.summary.length > 0 ? (
+              <ContentRenderer blocks={question.explanation.summary} />
+            ) : (
+              <p>Редакційне пояснення ще не підготовлено.</p>
+            )}
             {selectedFeedback ? (
               <div className="attempt-selected-feedback">
                 <strong>
                   Коментар до вашого варіанта{' '}
-                  {optionLabels[selectedFeedback.optionId]}
+                  {getQuestionOptionLabel(question, selectedFeedback.optionId)}
                 </strong>
                 <ContentRenderer blocks={selectedFeedback.blocks} compact />
               </div>

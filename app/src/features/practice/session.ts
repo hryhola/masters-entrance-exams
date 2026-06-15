@@ -222,17 +222,43 @@ function finishSession(
 export function practiceSessionReducer(
   session: PracticeSession,
   action: PracticeSessionAction,
+  questions: Question[] = [],
 ): PracticeSession {
   if (session.status === 'completed') return session
 
   switch (action.type) {
     case 'answer': {
       if (!session.questionIds.includes(action.questionId)) return session
+      const question = questions.find(
+        (candidate) => candidate.id === action.questionId,
+      )
+      const constrainedQuestionIds =
+        question?.answerConstraint?.unique === true
+          ? new Set(
+              questions
+                .filter(
+                  (candidate) =>
+                    candidate.answerConstraint?.groupId ===
+                    question.answerConstraint?.groupId,
+                )
+                .map((candidate) => candidate.id),
+            )
+          : null
+      const answers = Object.fromEntries(
+        Object.entries(session.answers).filter(
+          ([questionId, optionId]) =>
+            !(
+              questionId !== action.questionId &&
+              constrainedQuestionIds?.has(questionId) &&
+              optionId === action.optionId
+            ),
+        ),
+      )
 
       return {
         ...session,
         answers: {
-          ...session.answers,
+          ...answers,
           [action.questionId]: action.optionId,
         },
         revealedQuestionIds:

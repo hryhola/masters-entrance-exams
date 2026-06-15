@@ -2,14 +2,8 @@ import { Link } from 'react-router-dom'
 
 import { Icon } from '../components/Icon'
 import { ContentRenderer } from './ContentRenderer'
+import { getQuestionOptionLabel } from './questionOptions'
 import type { Question } from './types'
-
-const optionLabels = {
-  a: 'A',
-  b: 'Б',
-  c: 'В',
-  d: 'Г',
-}
 
 const alignmentLabels = {
   aligned: 'Відповідає програмі та структурі',
@@ -76,8 +70,20 @@ export function QuestionContent({
           <span>{question.explanation.answerReview.note}</span>
         </aside>
       ) : null}
+      {question.explanation.status === 'editorial_pending' ? (
+        <aside className="answer-warning" role="note">
+          <strong>Офіційне пояснення відсутнє в джерелі.</strong>
+          <span>
+            Правильну відповідь перевірено за офіційним ключем. Редакційне
+            пояснення ще готується.
+          </span>
+        </aside>
+      ) : null}
 
-      <section aria-label={`Умова питання ${question.number}`}>
+      <section
+        aria-label={`Умова питання ${question.number}`}
+        lang={question.language}
+      >
         <ContentRenderer blocks={question.prompt} />
       </section>
 
@@ -92,7 +98,7 @@ export function QuestionContent({
             key={option.id}
           >
             <span className="question-option__letter">
-              {optionLabels[option.id]}
+              {getQuestionOptionLabel(question, option.id)}
             </span>
             <ContentRenderer blocks={option.content} compact />
             {showExplanation && option.id === question.correctOption ? (
@@ -107,14 +113,18 @@ export function QuestionContent({
       {showExplanation ? (
         <section className="question-explanation">
           <p className="eyebrow">Пояснення</p>
-          <ContentRenderer blocks={question.explanation.summary} />
+          {question.explanation.summary.length > 0 ? (
+            <ContentRenderer blocks={question.explanation.summary} />
+          ) : (
+            <p>Редакційне пояснення ще не підготовлено.</p>
+          )}
           <details>
             <summary>Коментарі до всіх варіантів</summary>
             <div className="feedback-list">
               {question.explanation.optionFeedback.map((feedback) => (
                 <article key={feedback.optionId}>
                   <strong>
-                    {optionLabels[feedback.optionId]}:{' '}
+                    {getQuestionOptionLabel(question, feedback.optionId)}:{' '}
                     {feedback.verdict === 'correct'
                       ? 'правильний варіант'
                       : 'неправильний варіант'}

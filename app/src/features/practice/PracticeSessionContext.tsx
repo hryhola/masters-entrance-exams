@@ -170,7 +170,11 @@ function storeReducer(
   const session = state.sessions[action.sessionId]
   if (!session) return state
 
-  const nextSession = practiceSessionReducer(session, action.action)
+  const nextSession = practiceSessionReducer(
+    session,
+    action.action,
+    action.questions,
+  )
   if (nextSession === session) return state
 
   if (nextSession.status === 'completed') {

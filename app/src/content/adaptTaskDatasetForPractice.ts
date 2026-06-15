@@ -4,7 +4,6 @@ import type {
   ContentBlockType,
   DatasetContentStats,
   ExamDataset,
-  OptionId,
   Question,
 } from './types'
 import type {
@@ -21,15 +20,6 @@ export interface TaskDatasetPracticeProjection {
   subject: string
   language: string
   sectionCodes: string[]
-}
-
-const optionIds = new Set<OptionId>(['a', 'b', 'c', 'd'])
-
-function asOptionId(value: string, context: string): OptionId {
-  if (!optionIds.has(value as OptionId)) {
-    throw new Error(`${context}: непідтримуваний варіант відповіді "${value}".`)
-  }
-  return value as OptionId
 }
 
 function stimulusHeading(stimulus: Stimulus): ContentBlock[] {
@@ -65,6 +55,12 @@ function resolveChoices(task: AssessmentTask, item: AssessmentItem): Choice[] {
 }
 
 function topicFor(task: AssessmentTask) {
+  if (task.sectionCode === 'english-reading') {
+    return { code: 'english-reading', title: 'Reading' }
+  }
+  if (task.sectionCode === 'english-use-of-language') {
+    return { code: 'english-use-of-language', title: 'Use of English' }
+  }
   if (task.sectionCode === 'tznk-verbal') {
     return task.number <= 4
       ? { code: 'tznk-verbal-cloze', title: 'Мікротексти та лексика' }
@@ -96,14 +92,22 @@ function adaptItem(
   sectionTitle: string,
 ): Question {
   const choices = resolveChoices(task, item)
-  const correctOption = asOptionId(item.correctChoice, item.id)
+  const correctOption = item.correctChoice
   const topic = topicFor(task)
   const question: Question = {
     id: item.id,
     number: position,
     displayLabel: item.displayLabel,
+    language: task.language,
     type: 'single_choice',
     origin: 'official',
+    answerConstraint:
+      task.type === 'matching' && task.choiceSets[0]
+        ? {
+            groupId: `${task.id}:${task.choiceSets[0].id}`,
+            unique: task.choiceSets[0].unique,
+          }
+        : undefined,
     prompt: [
       ...task.instruction,
       ...resolveStimuli(task.stimulusIds, stimuliById),
@@ -111,11 +115,13 @@ function adaptItem(
       ...item.prompt,
     ],
     options: choices.map((choice) => ({
-      id: asOptionId(choice.id, item.id),
+      id: choice.id,
+      label: choice.label,
       content: choice.content,
     })),
     correctOption,
     explanation: {
+      status: item.explanation.status,
       summary: item.explanation.summary,
       optionFeedback: [],
       answerReview: {

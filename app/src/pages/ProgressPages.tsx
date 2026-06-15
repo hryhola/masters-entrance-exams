@@ -14,6 +14,7 @@ import {
 import { formatSessionTime } from '../features/practice/session'
 import { usePracticeSessions } from '../features/practice/usePracticeSessions'
 import { examRegistry, getExamDefinition } from '../exams/registry'
+import type { ExamDefinition } from '../exams/registry'
 import './progress-pages.css'
 
 const dateFormatter = new Intl.DateTimeFormat('uk-UA', {
@@ -341,20 +342,13 @@ export function ProgressPage() {
 
 export function ReviewPage() {
   const { attempts, bookmarks, toggleBookmark } = usePracticeSessions()
-  const exam = examRegistry.find((item) => item.status === 'available')
-  const datasetState = useDataset(exam?.datasetId)
   const questions = useMemo(
     () => collectLatestReviewQuestions(attempts),
     [attempts],
   )
-  const bookmarkedQuestions = useMemo(() => {
-    if (datasetState.status !== 'ready' || !exam?.datasetId) return []
-    const bookmarkSet = new Set(bookmarks)
-
-    return datasetState.dataset.questions.filter((question) =>
-      bookmarkSet.has(`${exam.datasetId}:${question.id}`),
-    )
-  }, [bookmarks, datasetState, exam?.datasetId])
+  const availableExams = examRegistry.filter(
+    (exam) => exam.status === 'available' && exam.datasetId,
+  )
 
   return (
     <div className="page-stack review-page">
@@ -371,47 +365,14 @@ export function ReviewPage() {
         title="Повторення"
       />
 
-      {bookmarkedQuestions.length > 0 && exam?.datasetId ? (
-        <section className="bookmarks-section">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">Закладки</p>
-              <h2>Збережені питання</h2>
-            </div>
-            <p>Ці питання мають пріоритет у персональному плані.</p>
-          </div>
-          <div className="bookmark-list">
-            {bookmarkedQuestions.map((question) => (
-              <article key={question.id}>
-                <span>{question.number}</span>
-                <div>
-                  <small>
-                    {question.classification.topic?.section ??
-                      'Тему не визначено'}
-                  </small>
-                  <strong>
-                    {question.classification.topic?.topic ??
-                      `Питання ${question.number}`}
-                  </strong>
-                </div>
-                <Link
-                  className="text-link"
-                  to={`/exams/${exam.id}/questions/${question.number}`}
-                >
-                  Відкрити
-                </Link>
-                <button
-                  className="bookmark-remove"
-                  onClick={() => toggleBookmark(exam.datasetId!, question.id)}
-                  type="button"
-                >
-                  Прибрати
-                </button>
-              </article>
-            ))}
-          </div>
-        </section>
-      ) : null}
+      {availableExams.map((exam) => (
+        <ExamBookmarks
+          bookmarks={bookmarks}
+          exam={exam}
+          key={exam.id}
+          toggleBookmark={toggleBookmark}
+        />
+      ))}
 
       {questions.length === 0 ? (
         <EmptyProgress
@@ -468,6 +429,69 @@ export function ReviewPage() {
         </section>
       )}
     </div>
+  )
+}
+
+function ExamBookmarks({
+  exam,
+  bookmarks,
+  toggleBookmark,
+}: {
+  exam: ExamDefinition
+  bookmarks: string[]
+  toggleBookmark: (datasetId: string, questionId: string) => void
+}) {
+  const datasetState = useDataset(exam.datasetId)
+  const bookmarkedQuestions = useMemo(() => {
+    if (datasetState.status !== 'ready' || !exam.datasetId) return []
+    const bookmarkSet = new Set(bookmarks)
+
+    return datasetState.dataset.questions.filter((question) =>
+      bookmarkSet.has(`${exam.datasetId}:${question.id}`),
+    )
+  }, [bookmarks, datasetState, exam.datasetId])
+
+  if (bookmarkedQuestions.length === 0 || !exam.datasetId) return null
+
+  return (
+    <section className="bookmarks-section">
+      <div className="section-heading">
+        <div>
+          <p className="eyebrow">Закладки · {exam.shortName}</p>
+          <h2>{exam.title}</h2>
+        </div>
+        <p>Ці питання мають пріоритет у персональному плані.</p>
+      </div>
+      <div className="bookmark-list">
+        {bookmarkedQuestions.map((question) => (
+          <article key={question.id}>
+            <span>{question.displayLabel ?? question.number}</span>
+            <div>
+              <small>
+                {question.classification.topic?.section ?? 'Тему не визначено'}
+              </small>
+              <strong>
+                {question.classification.topic?.topic ??
+                  `Питання ${question.displayLabel ?? question.number}`}
+              </strong>
+            </div>
+            <Link
+              className="text-link"
+              to={`/exams/${exam.id}/questions/${question.number}`}
+            >
+              Відкрити
+            </Link>
+            <button
+              className="bookmark-remove"
+              onClick={() => toggleBookmark(exam.datasetId!, question.id)}
+              type="button"
+            >
+              Прибрати
+            </button>
+          </article>
+        ))}
+      </div>
+    </section>
   )
 }
 

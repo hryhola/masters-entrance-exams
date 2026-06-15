@@ -524,6 +524,20 @@ export function SessionPage() {
 
   const activeSession = session
   const selectedOption = activeSession.answers[questionId]
+  const disabledOptionIds =
+    question.answerConstraint?.unique === true
+      ? questions
+          .filter(
+            (candidate) =>
+              candidate.id !== question.id &&
+              candidate.answerConstraint?.groupId ===
+                question.answerConstraint?.groupId,
+          )
+          .flatMap((candidate) => {
+            const answer = activeSession.answers[candidate.id]
+            return answer ? [answer] : []
+          })
+      : []
   const flagged = activeSession.flaggedQuestionIds.includes(questionId)
   const bookmarkKey = `${activeSession.config.datasetId}:${questionId}`
   const bookmarked = bookmarks.includes(bookmarkKey)
@@ -644,6 +658,7 @@ export function SessionPage() {
           >
             <PracticeQuestion
               experience={session.config.experience}
+              disabledOptionIds={disabledOptionIds}
               onAnswer={(optionId) =>
                 dispatch({
                   type: 'answer',

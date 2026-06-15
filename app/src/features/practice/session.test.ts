@@ -17,10 +17,10 @@ function question(id: string, sectionCode = '1'): Question {
     origin: 'official',
     prompt: [],
     options: [
-      { id: 'a', content: [] },
-      { id: 'b', content: [] },
-      { id: 'c', content: [] },
-      { id: 'd', content: [] },
+      { id: 'a', label: 'A', content: [] },
+      { id: 'b', label: 'B', content: [] },
+      { id: 'c', label: 'C', content: [] },
+      { id: 'd', label: 'D', content: [] },
     ],
     correctOption: 'b',
     explanation: {
@@ -174,6 +174,42 @@ describe('practiceSessionReducer', () => {
         optionId: 'a',
       }).revealedQuestionIds,
     ).toEqual([])
+  })
+
+  it('keeps a matching choice unique inside its answer group', () => {
+    const matchingQuestions = ['q1', 'q2'].map((id) => ({
+      ...question(id),
+      answerConstraint: {
+        groupId: 'task-1:shared-options',
+        unique: true,
+      },
+    }))
+    const session = createPracticeSession({
+      id: 'matching',
+      config: config({ mode: 'full' }),
+      questions: matchingQuestions,
+      now: 100,
+    })
+    const first = practiceSessionReducer(
+      session,
+      {
+        type: 'answer',
+        questionId: 'q1',
+        optionId: 'h',
+      },
+      matchingQuestions,
+    )
+    const second = practiceSessionReducer(
+      first,
+      {
+        type: 'answer',
+        questionId: 'q2',
+        optionId: 'h',
+      },
+      matchingQuestions,
+    )
+
+    expect(second.answers).toEqual({ q2: 'h' })
   })
 
   it('finishes an exam when the timer reaches zero', () => {

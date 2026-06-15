@@ -48,7 +48,6 @@ const LEGACY_STORAGE_KEYS = {
   settings: 'masters-exams:v1:settings',
 } as const
 
-const optionIds = new Set<OptionId>(['a', 'b', 'c', 'd'])
 const defaultSettings: LocalSettings = {
   reducedMotion: false,
   targetExamDate: null,
@@ -65,7 +64,7 @@ function isStringArray(value: unknown): value is string[] {
 }
 
 function isOptionId(value: unknown): value is OptionId {
-  return typeof value === 'string' && optionIds.has(value as OptionId)
+  return typeof value === 'string' && value.length > 0 && value.length <= 64
 }
 
 function isAnswers(value: unknown): value is Record<string, OptionId> {

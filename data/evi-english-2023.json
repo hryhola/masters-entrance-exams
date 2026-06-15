@@ -1,0 +1,2148 @@
+{
+  "schema_version": 2,
+  "dataset": {
+    "id": "evi-english-2023-source",
+    "title": "ЄВІ: Англійська мова 2023",
+    "exam": "ЄВІ",
+    "subject": "Англійська мова",
+    "year": 2023,
+    "languages": ["en", "uk"],
+    "status": "ready",
+    "task_count": 4,
+    "assessment_item_count": 30,
+    "stimulus_count": 10
+  },
+  "sections": [
+    {
+      "code": "english-reading",
+      "title": "Reading"
+    },
+    {
+      "code": "english-use-of-language",
+      "title": "Use of English"
+    }
+  ],
+  "stimuli": [
+    {
+      "id": "yevi-en-2023-library-1",
+      "type": "text",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "It would be fun to check a mobile library in rural Colombia. Biblioburro is being operated by Luis Soriano, a primary school teacher, during his spare time. Witnessing kids, wearing a genuine smile each time he visits their villages in rural Colombia, would surely warm anybody’s heart. Using two donkeys, Alfa and Beto, to carry loads of books, Soriano spends four hours on each trip just to reach those remote places."
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-library-2",
+      "type": "text",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "In Norway, many small communities that live on islands in the fjords are virtually isolated from the world in winter. These communities are too small to each have their own library, so, when the inhabitants of the Hordaland County were offered a book boat in 1959, Epos was born. Nowadays, the boat travels to 250 small hamlets across Norway, bringing books, culture and entertainment to the people."
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-library-3",
+      "type": "text",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "Nothing says “summer vacation” like the sun, sea, sand, and a good storybook, which is exactly why Herman Kompernas decided to build a library right on the beach. The library is quite extensive: it offers holiday goers who visit the Bulgarian Black Sea resort of Albena over 2,500 books in ten different languages. Guests can borrow the books at no cost, as long as they also leave their own (finished) holiday reads behind for others."
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-library-4",
+      "type": "text",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "Built in 1807, the Boston Athenaeum is among the oldest and most distinguished independent libraries and cultural institutions in the United States. It has one of the unique library names. It added an art gallery in 1827, began running yearly exhibitions of American and European art, and by the mid-1800s found itself not only at the centre of Boston’s culture scene but also one of the largest libraries in the US. It hosts exhibition programmes and even concerts."
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-library-5",
+      "type": "text",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "Reading Club 2000 started when Hernando “Nanie” Guanlao thought of a way to honour and preserve the memory of his parents who inculcated in him the love for reading. He gathered his old textbooks and set them outside his Manila residence to test if the community would be interested to borrow and read them. They were. 12 years later Nanie’s library grew to contain 2,500 books. As an additional service, he also runs a “book bike” service, where he delivers books to poor areas in Manila."
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-library-6",
+      "type": "text",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "That is not an alien ship you are staring at. It is not a pink bubble gum candy designed by hello kitty, either! That is a house of books providing library services for the people of Perugia, Italy. The public library is named after the poet Sandro Penna. It features rose-coloured glass walls designed to let sunlight in during daytime, and at night, it creates a rare glow. The architect who designed it, Italo Rota, made the three-story disc to exude an appearance of an alien flying saucer."
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-pearls",
+      "type": "text",
+      "title": "A Brief History of Pearls",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "Many thousands of years ago, long before written history, human beings probably discovered the first pearl while searching the seashore for food. Throughout history, the pearl, with its warm inner glow and shimmering, has been one of the most highly prized and desired gems. Countless references to the pearl can be found in the religions and mythology of cultures from the earliest times. Legend has it that the ancient Egyptian Queen Cleopatra dissolved a single pearl in a glass of wine and drank it, simply to prove to Mark Antony, the Roman General visiting her palace, that she could swallow the wealth of an entire nation in just one meal.\n\nIn ancient Rome, pearls were considered a symbol of wealth and social standing. The Greeks valued the pearl for both its extraordinary beauty and association with love and marriage. During the Dark Ages, while ladies from wealthy families adored delicate pearl necklaces, gallant knights often wore pearls into battle. They believed the magic of these glossy gems would keep them unharmed. The Renaissance saw the royal courts of Europe full of pearls. Because pearls were so highly regarded, a number of European countries actually passed laws forbidding anyone but the nobility to decorate themselves with pearls.\n\nDuring the European expansion into the New World, the discovery of pearls in Central American waters added to the wealth of Europe. Unfortunately, wish for the sea-grown gems resulted in the reduction of virtually all the American pearl oyster populations by the 17th century. Until the early 1900s, natural pearls were accessible only to the rich and famous. In 1916, famed French jeweller Jacques Cartier bought his landmark store on New York’s famous Fifth Avenue by trading two pearl necklaces for the valuable property. But today, with the development of pearl cultivating industry, pearls are available and affordable to all."
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-lady-tarzan",
+      "type": "cloze_text",
+      "title": "Lady Tarzan",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "A girl from India knows how to speak to elephants, a skill that comes in **(12) ______** more often than you would think. Here is a language you never got the **(13) ______** to learn in school!\n\nSeveral years ago, a herd of 11 elephants from nearby forests entered a residential area in the city of Rourkela. Before the wild animals could **(14) ______** chaos on the town and its residents, authorities got hold of teenage girl Nirmala Toppo, because **(15) ______**, she seems to have the **(16) ______** to communicate with elephants.\n\nNirmala rushed from her village to a football field in the city where the elephants were temporarily being held.\n\n“First I pray and then talk to the herd,” the teen told the BBC. “They understand what I say. I **(17) ______** them this is not your home. You should return where you belong.”\n\nThe elephants started walking with her. In fact, she walked with them for miles, speaking to them the whole way as she **(18) ______** them back to the forest.\n\nElephants in the area’s nearby forests frequently invade villages and towns, destroying homes and hurting people. The more their **(19) ______** is encroached by humans for activities like mining and cutting down trees, the more likely they are to wander out of the forest.\n\nNirmala, who is **(20) ______** as “Lady Tarzan”, speaks to the animals in her local tribal dialect of Mundaari. She explains that because tribal people and the elephants (among other wild animals) have cohabited in the same area for ages, the elephants understand their language.\n\nNot only does this story show a brave young girl using her skills to help both humans and animals, it **(21) ______** that it is possible for two very different species to share a bond and communicate with each other."
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-brainy-octopuses",
+      "type": "cloze_text",
+      "title": "Brainy Octopuses",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "In **(22) ______**, the US Air Force sponsored scientists to study the way octopuses **(23) ______** their brains. Some octopuses in laboratories seem to play with objects as if they were toys — a sure sign of intelligence. Others could pick up **(24) ______** skills like opening jars.\n\nPerhaps the most striking thing about octopuses **(25) ______** their ability to change their colour and body pattern. They do this to camouflage **(26) ______** and also to communicate with others. They can completely change their appearance in less than a second — a striped octopus can suddenly become spotted."
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-exciting-trip",
+      "type": "cloze_text",
+      "title": "An Exciting Trip",
+      "language": "en",
+      "content": [
+        {
+          "type": "markdown",
+          "text": "Being from a small town, I had **(27) ______** been exposed to a large city such as New York, so my trip there was like **(28) ______** an entirely new way of life. In the morning of the flight I felt excited as we arrived at the airport and made our way to the gate. I watched through the window the airport with the runway **(29) ______** smaller as the plane gained altitude. I felt thrilled as I realised that I would soon be in one of **(30) ______** cities of the United States."
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "yevi-en-2023-task-1",
+      "number": 1,
+      "type": "matching",
+      "language": "en",
+      "section_code": "english-reading",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Read the texts below. Match choices (A–H) to texts (1–6). There are two choices you do not need to use."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [
+        {
+          "id": "library-features",
+          "unique": true,
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "contains the founder’s book collection"
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "is named after its designer"
+                }
+              ]
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "bears some similarity to a UFO"
+                }
+              ]
+            },
+            {
+              "id": "d",
+              "label": "D",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "is transported by a vessel"
+                }
+              ]
+            },
+            {
+              "id": "e",
+              "label": "E",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "encourages sharing books"
+                }
+              ]
+            },
+            {
+              "id": "f",
+              "label": "F",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "is delivered by animals"
+                }
+              ]
+            },
+            {
+              "id": "g",
+              "label": "G",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "holds annual exhibitions in winter"
+                }
+              ]
+            },
+            {
+              "id": "h",
+              "label": "H",
+              "content": [
+                {
+                  "type": "markdown",
+                  "text": "offers live performances"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "yevi-en-2023-001",
+          "number": 1,
+          "display_label": "1",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Biblioburro"
+            }
+          ],
+          "stimulus_ids": ["yevi-en-2023-library-1"],
+          "response": {
+            "type": "matching_choice",
+            "choice_set_id": "library-features"
+          },
+          "answer": {
+            "correct_choice": "f",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "id": "yevi-en-2023-002",
+          "number": 2,
+          "display_label": "2",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Epos"
+            }
+          ],
+          "stimulus_ids": ["yevi-en-2023-library-2"],
+          "response": {
+            "type": "matching_choice",
+            "choice_set_id": "library-features"
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "id": "yevi-en-2023-003",
+          "number": 3,
+          "display_label": "3",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Albena Beach Library"
+            }
+          ],
+          "stimulus_ids": ["yevi-en-2023-library-3"],
+          "response": {
+            "type": "matching_choice",
+            "choice_set_id": "library-features"
+          },
+          "answer": {
+            "correct_choice": "e",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "id": "yevi-en-2023-004",
+          "number": 4,
+          "display_label": "4",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "The Boston Athenaeum"
+            }
+          ],
+          "stimulus_ids": ["yevi-en-2023-library-4"],
+          "response": {
+            "type": "matching_choice",
+            "choice_set_id": "library-features"
+          },
+          "answer": {
+            "correct_choice": "h",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "id": "yevi-en-2023-005",
+          "number": 5,
+          "display_label": "5",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Reading Club 2000"
+            }
+          ],
+          "stimulus_ids": ["yevi-en-2023-library-5"],
+          "response": {
+            "type": "matching_choice",
+            "choice_set_id": "library-features"
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "id": "yevi-en-2023-006",
+          "number": 6,
+          "display_label": "6",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Sandro Penna Library"
+            }
+          ],
+          "stimulus_ids": ["yevi-en-2023-library-6"],
+          "response": {
+            "type": "matching_choice",
+            "choice_set_id": "library-features"
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-task-2",
+      "number": 2,
+      "type": "question_group",
+      "language": "en",
+      "section_code": "english-reading",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Read the text below. For questions 7–11 choose the correct answer (A, B, C or D)."
+        }
+      ],
+      "stimulus_ids": ["yevi-en-2023-pearls"],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "yevi-en-2023-007",
+          "number": 7,
+          "display_label": "7",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "What is mentioned about pearls in paragraph 1?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Pearls were used as currency in the earliest times."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Seamen caught tons of shells to find prized gems."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "The value of a pearl could equal a country’s wealth."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Pearls were used as ingredients in cooking seafood."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "id": "yevi-en-2023-008",
+          "number": 8,
+          "display_label": "8",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Why did Cleopatra drink a glass of wine with a pearl dissolved in it?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "to boost her immunity"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "to preserve her beauty"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "to become famous"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "to impress her guest"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "id": "yevi-en-2023-009",
+          "number": 9,
+          "display_label": "9",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Why did medieval warriors bring pearls to battlefields?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "to prevent their defeat"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "to raise their fighting spirit"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "to show their military rank"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "to protect themselves from wounds"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "id": "yevi-en-2023-010",
+          "number": 10,
+          "display_label": "10",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "How did Renaissance aristocrats ensure that pearls could be worn only by them?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "They set legal limits on wearing pearls."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "They offered commoners man-made pearls."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "They stopped selling family pearls."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "They charged very high prices for pearls."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "id": "yevi-en-2023-011",
+          "number": 11,
+          "display_label": "11",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Which statement is TRUE, according to paragraph 3?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Jacques Cartier became famous due to his pearl necklaces."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Pearls stopped being a status symbol in the 20th century."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Pearl oyster hunting made American population richer."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Europeans introduced pearl fashion into Central America."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-task-3",
+      "number": 3,
+      "type": "cloze",
+      "language": "en",
+      "section_code": "english-use-of-language",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Read the text below. For questions 12–21 choose the correct answer (A, B, C or D)."
+        }
+      ],
+      "stimulus_ids": ["yevi-en-2023-lady-tarzan"],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "yevi-en-2023-12",
+          "number": 12,
+          "display_label": "12",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (12)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "12",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "clean"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "easy"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "clever"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "handy"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "id": "yevi-en-2023-13",
+          "number": 13,
+          "display_label": "13",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (13)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "13",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "variation"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "option"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "selection"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "alteration"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "id": "yevi-en-2023-14",
+          "number": 14,
+          "display_label": "14",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (14)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "14",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "cause"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "do"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "result"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "lead"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "id": "yevi-en-2023-15",
+          "number": 15,
+          "display_label": "15",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (15)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "15",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "intentionally"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "deliberately"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "unbelievably"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "uncertainly"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "id": "yevi-en-2023-16",
+          "number": 16,
+          "display_label": "16",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (16)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "16",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "possibility"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "chance"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "ability"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "case"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "id": "yevi-en-2023-17",
+          "number": 17,
+          "display_label": "17",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (17)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "17",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "speak"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "tell"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "say"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "talk"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "id": "yevi-en-2023-18",
+          "number": 18,
+          "display_label": "18",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (18)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "18",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "guided"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "moved"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "fetched"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "drew"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "id": "yevi-en-2023-19",
+          "number": 19,
+          "display_label": "19",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (19)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "19",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "position"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "system"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "place"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "habitat"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "id": "yevi-en-2023-20",
+          "number": 20,
+          "display_label": "20",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (20)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "20",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "said"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "named"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "called"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "known"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "id": "yevi-en-2023-21",
+          "number": 21,
+          "display_label": "21",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (21)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "21",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "supports"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "proves"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "persuades"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "convinces"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "yevi-en-2023-task-4",
+      "number": 4,
+      "type": "cloze",
+      "language": "en",
+      "section_code": "english-use-of-language",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Read the texts below. For questions 22–30 choose the correct answer (A, B, C or D)."
+        }
+      ],
+      "stimulus_ids": [
+        "yevi-en-2023-brainy-octopuses",
+        "yevi-en-2023-exciting-trip"
+      ],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "yevi-en-2023-22",
+          "number": 22,
+          "display_label": "22",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (22)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "22",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "the 1950th"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "1950th"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "the 1950s"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "1950s"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "id": "yevi-en-2023-23",
+          "number": 23,
+          "display_label": "23",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (23)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "23",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "to use"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "use"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "using"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "have used"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "id": "yevi-en-2023-24",
+          "number": 24,
+          "display_label": "24",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (24)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "24",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "complicate"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "complication"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "complicating"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "complicated"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "id": "yevi-en-2023-25",
+          "number": 25,
+          "display_label": "25",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (25)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "25",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "is"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "are"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "were"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "has been"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "id": "yevi-en-2023-26",
+          "number": 26,
+          "display_label": "26",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (26)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "26",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "them"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "themselves"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "theirs"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "their"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "id": "yevi-en-2023-27",
+          "number": 27,
+          "display_label": "27",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (27)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "27",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "ever"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "just"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "yet"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "never"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "id": "yevi-en-2023-28",
+          "number": 28,
+          "display_label": "28",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (28)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "28",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "to discover"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "discover"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "discovering"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "being discovered"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "id": "yevi-en-2023-29",
+          "number": 29,
+          "display_label": "29",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (29)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "29",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "become"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "to become"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "had become"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "were becoming"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "id": "yevi-en-2023-30",
+          "number": 30,
+          "display_label": "30",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Gap (30)"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "cloze_choice",
+            "blank_id": "30",
+            "options": [
+              {
+                "id": "a",
+                "label": "A",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "most amazing"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "B",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "the most amazing"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "C",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "more amazing"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "D",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "the more amazing"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "official_key"
+          },
+          "explanation": {
+            "status": "editorial_pending",
+            "summary": []
+          },
+          "source": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        }
+      ]
+    }
+  ],
+  "release": {
+    "status": "ready_for_application",
+    "version": "1.0.0"
+  }
+}

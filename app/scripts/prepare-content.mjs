@@ -25,6 +25,8 @@ const eviFixtureSource = join(
   'fixtures',
   'evi-schema-v2.json',
 )
+const eviEnglishDatasetId = 'evi-english-2023-source'
+const eviEnglishSource = join(projectRoot, 'data', 'evi-english-2023.json')
 const eviFixtureAssets = [
   'assets/evi-schema-v2/tznk-2024/firm-shares.png',
   'assets/evi-schema-v2/tznk-2024/company-a-profits.png',
@@ -55,11 +57,13 @@ function copyVerified(source, destination, expectedHash) {
 ensureFile(datasetSource)
 ensureFile(manifestSource)
 ensureFile(eviFixtureSource)
+ensureFile(eviEnglishSource)
 eviFixtureAssets.forEach((path) => ensureFile(join(projectRoot, path)))
 
 const dataset = JSON.parse(readFileSync(datasetSource, 'utf8'))
 const manifest = JSON.parse(readFileSync(manifestSource, 'utf8'))
 const eviFixture = JSON.parse(readFileSync(eviFixtureSource, 'utf8'))
+const eviEnglish = JSON.parse(readFileSync(eviEnglishSource, 'utf8'))
 const optionCount = dataset.questions.reduce(
   (total, question) => total + question.options.length,
   0,
@@ -89,6 +93,14 @@ if (
 ) {
   throw new Error('Unexpected EVI schema v2 fixture shape.')
 }
+if (
+  eviEnglish.schema_version !== 2 ||
+  eviEnglish.dataset.id !== eviEnglishDatasetId ||
+  eviEnglish.tasks.length !== 4 ||
+  eviEnglish.dataset.assessment_item_count !== 30
+) {
+  throw new Error('Unexpected EVI English 2023 dataset shape.')
+}
 
 rmSync(outputRoot, { recursive: true, force: true })
 
@@ -111,6 +123,13 @@ copyFileSync(
   eviFixtureSource,
   join(fixtureOutputDirectory, 'evi-schema-v2.json'),
 )
+const eviEnglishOutputDirectory = join(
+  outputRoot,
+  'datasets',
+  eviEnglishDatasetId,
+)
+mkdirSync(eviEnglishOutputDirectory, { recursive: true })
+copyFileSync(eviEnglishSource, join(eviEnglishOutputDirectory, 'dataset.json'))
 for (const asset of eviFixtureAssets) {
   const destination = join(outputRoot, asset)
   mkdirSync(dirname(destination), { recursive: true })
@@ -131,6 +150,17 @@ const catalog = {
       option_count: optionCount,
       web_asset_count: manifest.media.web_assets.length,
       path: `datasets/${datasetId}/dataset.json`,
+    },
+    {
+      id: eviEnglishDatasetId,
+      title: eviEnglish.dataset.title,
+      exam: eviEnglish.dataset.exam,
+      subject: eviEnglish.dataset.subject,
+      year: eviEnglish.dataset.year,
+      version: eviEnglish.release.version,
+      question_count: eviEnglish.dataset.assessment_item_count,
+      task_count: eviEnglish.dataset.task_count,
+      path: `datasets/${eviEnglishDatasetId}/dataset.json`,
     },
   ],
   fixtures: [
@@ -158,5 +188,8 @@ console.log(`Options: ${optionCount}`)
 console.log(`Web assets: ${manifest.media.web_assets.length}`)
 console.log(
   `EVI fixture: ${eviFixture.tasks.length} tasks, ${eviFixture.dataset.assessment_item_count} assessment items`,
+)
+console.log(
+  `EVI English: ${eviEnglish.tasks.length} tasks, ${eviEnglish.dataset.assessment_item_count} assessment items`,
 )
 console.log(`Output: ${outputRoot}`)
