@@ -24,14 +24,17 @@ function generatedFixture() {
   metadata.status = 'ready'
   metadata.generation = {
     batch_id: batchId,
-    model: 'generation-model',
-    prompt: {
-      id: 'yefvv-it-single-choice',
+    agent: 'codex',
+    model: 'gpt-5',
+    instructions: {
+      id: 'yefvv-it-agent-question-generation',
       version: '1.0.0',
       sha256: 'a'.repeat(64),
     },
     generated_at: '2026-06-15T10:00:00.000Z',
-    generator_version: '1.0.0',
+    workflow_version: '1.0.0',
+    research_report:
+      'reports/generated/generated-yefvv-it-os-medium-001.research.md',
     parameters: {
       topic: 'Операційні системи',
       difficulty: 'medium',
@@ -40,20 +43,24 @@ function generatedFixture() {
   }
   release.status = 'ready_for_application'
   release.verification = {
-    method: 'automated_validation',
+    method: 'agent_validation',
     status: 'passed',
-    validator_version: '1.0.0',
+    workflow_version: '1.0.0',
     validated_at: '2026-06-15T10:01:00.000Z',
+    report:
+      'reports/generated/generated-yefvv-it-os-medium-001.validation.json',
     checks: [
       'schema',
+      'source_grounding',
       'answer_integrity',
       'explanation_integrity',
       'duplicate_detection',
       'official_similarity',
+      'exam_style',
     ],
     similarity: {
-      maximum_score: 0.41,
-      threshold: 0.72,
+      maximum_score: 0.31,
+      threshold: 0.35,
     },
   }
 
@@ -69,7 +76,7 @@ function generatedFixture() {
         explanation.summary = [
           {
             type: 'markdown',
-            text: 'Автоматично перевірене пояснення.',
+            text: 'Пояснення, перевірене агентом.',
           },
         ]
       }
@@ -134,7 +141,7 @@ describe('validateTaskDatasetDocument', () => {
     )
   })
 
-  it('accepts a generated dataset after every automated quality gate passes', () => {
+  it('accepts a generated dataset after every agent quality gate passes', () => {
     const dataset = adaptTaskDataset(
       validateTaskDatasetDocument(generatedFixture()),
     )
@@ -143,12 +150,13 @@ describe('validateTaskDatasetDocument', () => {
     expect(dataset.generation).toEqual(
       expect.objectContaining({
         batchId: 'generated-yefvv-it-os-medium-001',
-        model: 'generation-model',
+        agent: 'codex',
+        model: 'gpt-5',
       }),
     )
     expect(dataset.verification).toEqual(
       expect.objectContaining({
-        method: 'automated_validation',
+        method: 'agent_validation',
         status: 'passed',
       }),
     )
@@ -163,7 +171,7 @@ describe('validateTaskDatasetDocument', () => {
     ).toBe(true)
   })
 
-  it('rejects a generated dataset with an incomplete automated report', () => {
+  it('rejects a generated dataset with an incomplete agent report', () => {
     const fixture = generatedFixture()
     const release = fixture.release as Record<string, unknown>
     const verification = release.verification as Record<string, unknown>
@@ -184,7 +192,7 @@ describe('validateTaskDatasetDocument', () => {
     const release = fixture.release as Record<string, unknown>
     const verification = release.verification as Record<string, unknown>
     const similarity = verification.similarity as Record<string, unknown>
-    similarity.maximum_score = 0.8
+    similarity.maximum_score = 0.4
 
     expect(() => validateTaskDatasetDocument(fixture)).toThrow(
       'release.verification.similarity.maximum_score: очікується значення, що не перевищує threshold',

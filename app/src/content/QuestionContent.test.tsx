@@ -34,23 +34,27 @@ describe('QuestionContent', () => {
     expect(screen.getByText('Спірний ключ')).toBeInTheDocument()
   })
 
-  it('labels generated questions and their automated verification', () => {
+  it('labels generated questions and their agent verification', () => {
     const question: Question = {
       ...getQuestion(1),
       origin: 'generated',
       verification: {
-        method: 'automated_validation',
+        method: 'agent_validation',
         status: 'passed',
-        validatorVersion: '1.0.0',
+        workflowVersion: '1.0.0',
         validatedAt: '2026-06-15T10:01:00.000Z',
+        report:
+          'reports/generated/generated-yefvv-it-os-medium-001.validation.json',
         checks: [
           'schema',
+          'source_grounding',
           'answer_integrity',
           'explanation_integrity',
           'duplicate_detection',
           'official_similarity',
+          'exam_style',
         ],
-        similarity: { maximumScore: 0.41, threshold: 0.72 },
+        similarity: { maximumScore: 0.31, threshold: 0.35 },
       },
       source: {
         type: 'generated',
@@ -65,7 +69,7 @@ describe('QuestionContent', () => {
     )
 
     expect(screen.getByText('Згенероване')).toBeInTheDocument()
-    expect(screen.getByText('Автоматично перевірено')).toBeInTheDocument()
+    expect(screen.getByText('Перевірено агентом')).toBeInTheDocument()
     expect(
       screen.getByText('Генерація generated-yefvv-it-os-medium-001'),
     ).toBeInTheDocument()

@@ -229,7 +229,7 @@
   background: var(--color-accent-soft);
 }
 
-.tag--automated {
+.tag--agent-validated {
   color: var(--color-info);
   background: var(--color-info-soft);
 }

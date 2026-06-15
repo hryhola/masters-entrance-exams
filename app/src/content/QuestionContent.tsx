@@ -30,8 +30,8 @@ export function QuestionBadges({ question }: { question: Question }) {
       >
         {question.origin === 'official' ? 'Офіційне' : 'Згенероване'}
       </span>
-      {question.verification.method === 'automated_validation' ? (
-        <span className="tag tag--automated">Автоматично перевірено</span>
+      {question.verification.method === 'agent_validation' ? (
+        <span className="tag tag--agent-validated">Перевірено агентом</span>
       ) : null}
       <span
         className={`tag tag--alignment-${question.classification.alignment}`}
@@ -175,11 +175,11 @@ export function QuestionContent({
                 }`}
           </strong>
         </div>
-        {question.verification.method === 'automated_validation' ? (
+        {question.verification.method === 'agent_validation' ? (
           <div>
             <span>Перевірка</span>
             <strong>
-              Автоматична, валідатор {question.verification.validatorVersion}
+              Агентська, workflow {question.verification.workflowVersion}
             </strong>
           </div>
         ) : null}

@@ -2,12 +2,14 @@ export type QuestionType = 'single_choice'
 export type OptionId = string
 export type ContentOrigin = 'official' | 'generated'
 export type GeneratedDifficulty = 'easy' | 'medium' | 'hard'
-export type AutomatedValidationCheck =
+export type AgentValidationCheck =
   | 'schema'
+  | 'source_grounding'
   | 'answer_integrity'
   | 'explanation_integrity'
   | 'duplicate_detection'
   | 'official_similarity'
+  | 'exam_style'
 export type ContentBlockType =
   | 'markdown'
   | 'math'
@@ -84,14 +86,16 @@ export type ProgramAlignment = 'aligned' | 'partial' | 'legacy' | 'unmapped'
 
 export interface GenerationProvenance {
   batchId: string
-  model: string
-  prompt: {
+  agent: 'codex' | 'claude_code' | 'other'
+  model?: string
+  instructions: {
     id: string
     version: string
     sha256: string
   }
   generatedAt: string
-  generatorVersion: string
+  workflowVersion: string
+  researchReport: string
   parameters: {
     topic: string
     difficulty: GeneratedDifficulty
@@ -104,11 +108,12 @@ export type ContentVerification =
       method: 'official_source'
     }
   | {
-      method: 'automated_validation'
+      method: 'agent_validation'
       status: 'passed'
-      validatorVersion: string
+      workflowVersion: string
       validatedAt: string
-      checks: AutomatedValidationCheck[]
+      report: string
+      checks: AgentValidationCheck[]
       similarity: {
         maximumScore: number
         threshold: number

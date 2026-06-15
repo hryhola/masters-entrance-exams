@@ -8,15 +8,17 @@ import type {
   TaskType,
 } from './taskTypes'
 import type { RawContentBlock } from './types'
-import type { AutomatedValidationCheck, ContentOrigin } from './types'
+import type { AgentValidationCheck, ContentOrigin } from './types'
 import { DatasetValidationError } from './validateDataset'
 
-const requiredAutomatedChecks: AutomatedValidationCheck[] = [
+const requiredAgentChecks: AgentValidationCheck[] = [
   'schema',
+  'source_grounding',
   'answer_integrity',
   'explanation_integrity',
   'duplicate_detection',
   'official_similarity',
+  'exam_style',
 ]
 
 function fail(path: string, expectation: string): never {
@@ -85,13 +87,35 @@ function validateGeneratedPublication(
 ): string {
   const generation = record(metadata.generation, 'dataset.generation')
   const batchId = string(generation.batch_id, 'dataset.generation.batch_id')
-  string(generation.model, 'dataset.generation.model')
-  const prompt = record(generation.prompt, 'dataset.generation.prompt')
-  string(prompt.id, 'dataset.generation.prompt.id')
-  string(prompt.version, 'dataset.generation.prompt.version')
-  sha256(prompt.sha256, 'dataset.generation.prompt.sha256')
+  if (
+    generation.agent !== 'codex' &&
+    generation.agent !== 'claude_code' &&
+    generation.agent !== 'other'
+  ) {
+    fail('dataset.generation.agent', 'codex, claude_code або other')
+  }
+  if (generation.model !== undefined) {
+    string(generation.model, 'dataset.generation.model')
+  }
+  const instructions = record(
+    generation.instructions,
+    'dataset.generation.instructions',
+  )
+  string(instructions.id, 'dataset.generation.instructions.id')
+  string(instructions.version, 'dataset.generation.instructions.version')
+  sha256(instructions.sha256, 'dataset.generation.instructions.sha256')
   isoDate(generation.generated_at, 'dataset.generation.generated_at')
-  string(generation.generator_version, 'dataset.generation.generator_version')
+  string(generation.workflow_version, 'dataset.generation.workflow_version')
+  const researchReport = string(
+    generation.research_report,
+    'dataset.generation.research_report',
+  )
+  if (researchReport !== `reports/generated/${batchId}.research.md`) {
+    fail(
+      'dataset.generation.research_report',
+      `reports/generated/${batchId}.research.md`,
+    )
+  }
   const parameters = record(
     generation.parameters,
     'dataset.generation.parameters',
@@ -113,32 +137,39 @@ function validateGeneratedPublication(
     )
   }
   const verification = record(release.verification, 'release.verification')
-  if (verification.method !== 'automated_validation') {
-    fail('release.verification.method', 'automated_validation')
+  if (verification.method !== 'agent_validation') {
+    fail('release.verification.method', 'agent_validation')
   }
   if (verification.status !== 'passed') {
     fail('release.verification.status', 'passed')
   }
-  string(
-    verification.validator_version,
-    'release.verification.validator_version',
-  )
+  string(verification.workflow_version, 'release.verification.workflow_version')
   isoDate(verification.validated_at, 'release.verification.validated_at')
+  const verificationReport = string(
+    verification.report,
+    'release.verification.report',
+  )
+  if (verificationReport !== `reports/generated/${batchId}.validation.json`) {
+    fail(
+      'release.verification.report',
+      `reports/generated/${batchId}.validation.json`,
+    )
+  }
   const checks = stringArray(verification.checks, 'release.verification.checks')
   const uniqueChecks = new Set(checks)
   for (const check of checks) {
-    if (!requiredAutomatedChecks.includes(check as AutomatedValidationCheck)) {
+    if (!requiredAgentChecks.includes(check as AgentValidationCheck)) {
       fail(
         'release.verification.checks',
-        `підтримувані перевірки (${requiredAutomatedChecks.join(', ')})`,
+        `підтримувані перевірки (${requiredAgentChecks.join(', ')})`,
       )
     }
   }
-  for (const check of requiredAutomatedChecks) {
+  for (const check of requiredAgentChecks) {
     if (!uniqueChecks.has(check)) {
       fail(
         'release.verification.checks',
-        `усі обов'язкові перевірки (${requiredAutomatedChecks.join(', ')})`,
+        `усі обов'язкові перевірки (${requiredAgentChecks.join(', ')})`,
       )
     }
   }

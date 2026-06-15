@@ -197,14 +197,16 @@ export interface RawTaskDatasetDocument {
     origin?: ContentOrigin
     generation?: {
       batch_id: string
-      model: string
-      prompt: {
+      agent: 'codex' | 'claude_code' | 'other'
+      model?: string
+      instructions: {
         id: string
         version: string
         sha256: string
       }
       generated_at: string
-      generator_version: string
+      workflow_version: string
+      research_report: string
       parameters: {
         topic: string
         difficulty: 'easy' | 'medium' | 'hard'
@@ -225,10 +227,11 @@ export interface RawTaskDatasetDocument {
     status: 'fixture' | 'ready_for_application'
     version: string
     verification?: {
-      method: 'automated_validation'
+      method: 'agent_validation'
       status: 'passed'
-      validator_version: string
+      workflow_version: string
       validated_at: string
+      report: string
       checks: string[]
       similarity: {
         maximum_score: number

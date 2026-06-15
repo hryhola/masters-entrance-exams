@@ -2,12 +2,16 @@
 
 ## Принцип
 
-Згенеровані питання готуються офлайн і публікуються як статичні JSON-набори.
-Ручний редакторський перегляд не є обов'язковим: користувач уперше бачить
-питання під час проходження тесту.
+Згенеровані питання створює coding agent безпосередньо в репозиторії та
+публікує як статичні JSON-набори. Для цього не потрібні окремий
+CLI-генератор, model API або локальний LLM runtime.
 
-Це не робить generated контент офіційним. Сайт завжди показує його
-походження та повідомляє, що перевірка була автоматичною.
+Ручний перегляд питань користувачем не потрібний: агент не показує їх у
+чаті, тому користувач уперше бачить завдання під час проходження тесту.
+
+Це не робить generated контент офіційним або редакторськи перевіреним.
+Сайт завжди показує його походження та повідомляє, що перевірку виконав
+агент.
 
 ## Походження
 
@@ -26,14 +30,16 @@ backward-compatible.
 ```json
 {
   "batch_id": "generated-yefvv-it-os-medium-001",
-  "model": "generation-model",
-  "prompt": {
-    "id": "yefvv-it-single-choice",
+  "agent": "codex",
+  "model": "gpt-5",
+  "instructions": {
+    "id": "yefvv-it-agent-question-generation",
     "version": "1.0.0",
     "sha256": "..."
   },
   "generated_at": "2026-06-15T10:00:00.000Z",
-  "generator_version": "1.0.0",
+  "workflow_version": "1.0.0",
+  "research_report": "reports/generated/generated-yefvv-it-os-medium-001.research.md",
   "parameters": {
     "topic": "Операційні системи",
     "difficulty": "medium",
@@ -42,34 +48,38 @@ backward-compatible.
 }
 ```
 
-Prompt фіксується ідентифікатором, версією та SHA-256. Це дозволяє
-відтворити генерацію, не дублюючи великий текст prompt у кожному dataset.
+Інструкція фіксується ідентифікатором, версією та SHA-256. Назва моделі
+записується, якщо середовище її повідомляє. `research_report` зберігає
+авторитетні джерела та прив'язку предметних тверджень до них.
 
-## Автоматичний publication gate
+## Agent publication gate
 
 Generated dataset дозволено завантажувати як production-контент лише з:
 
 ```json
 {
-  "method": "automated_validation",
+  "method": "agent_validation",
   "status": "passed",
-  "validator_version": "1.0.0",
+  "workflow_version": "1.0.0",
   "validated_at": "2026-06-15T10:01:00.000Z",
+  "report": "reports/generated/generated-yefvv-it-os-medium-001.validation.json",
   "checks": [
     "schema",
+    "source_grounding",
     "answer_integrity",
     "explanation_integrity",
     "duplicate_detection",
-    "official_similarity"
+    "official_similarity",
+    "exam_style"
   ],
   "similarity": {
-    "maximum_score": 0.41,
-    "threshold": 0.72
+    "maximum_score": 0.31,
+    "threshold": 0.35
   }
 }
 ```
 
-Усі п'ять перевірок обов'язкові. `maximum_score` не може перевищувати
+Усі сім перевірок обов'язкові. `maximum_score` не може перевищувати
 `threshold`.
 
 Кожне питання generated batch додатково повинно:
@@ -87,6 +97,6 @@ Runtime-модель зберігає:
 - `generation`;
 - тип джерела кожного питання.
 
-Інтерфейс показує окремі мітки «Згенероване» та «Автоматично перевірено».
+Інтерфейс показує окремі мітки «Згенероване» та «Перевірено агентом».
 Офіційні dataset без нових полів отримують `official_source` під час
 адаптації.

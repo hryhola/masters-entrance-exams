@@ -1,5 +1,5 @@
 import { adaptBlocks } from './adaptDataset'
-import type { AutomatedValidationCheck } from './types'
+import type { AgentValidationCheck } from './types'
 import type {
   AssessmentItem,
   AssessmentTask,
@@ -89,11 +89,12 @@ export function adaptTaskDataset(raw: RawTaskDatasetDocument): TaskDataset {
   const verification =
     origin === 'generated' && raw.release.verification
       ? {
-          method: 'automated_validation' as const,
+          method: 'agent_validation' as const,
           status: 'passed' as const,
-          validatorVersion: raw.release.verification.validator_version,
+          workflowVersion: raw.release.verification.workflow_version,
           validatedAt: raw.release.verification.validated_at,
-          checks: raw.release.verification.checks as AutomatedValidationCheck[],
+          report: raw.release.verification.report,
+          checks: raw.release.verification.checks as AgentValidationCheck[],
           similarity: {
             maximumScore: raw.release.verification.similarity.maximum_score,
             threshold: raw.release.verification.similarity.threshold,
@@ -103,14 +104,16 @@ export function adaptTaskDataset(raw: RawTaskDatasetDocument): TaskDataset {
   const generation = raw.dataset.generation
     ? {
         batchId: raw.dataset.generation.batch_id,
+        agent: raw.dataset.generation.agent,
         model: raw.dataset.generation.model,
-        prompt: {
-          id: raw.dataset.generation.prompt.id,
-          version: raw.dataset.generation.prompt.version,
-          sha256: raw.dataset.generation.prompt.sha256,
+        instructions: {
+          id: raw.dataset.generation.instructions.id,
+          version: raw.dataset.generation.instructions.version,
+          sha256: raw.dataset.generation.instructions.sha256,
         },
         generatedAt: raw.dataset.generation.generated_at,
-        generatorVersion: raw.dataset.generation.generator_version,
+        workflowVersion: raw.dataset.generation.workflow_version,
+        researchReport: raw.dataset.generation.research_report,
         parameters: {
           topic: raw.dataset.generation.parameters.topic,
           difficulty: raw.dataset.generation.parameters.difficulty,
