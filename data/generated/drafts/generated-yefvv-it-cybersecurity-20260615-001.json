@@ -1,0 +1,966 @@
+{
+  "schema_version": 2,
+  "dataset": {
+    "id": "generated-yefvv-it-cybersecurity-20260615-001",
+    "title": "Додаткові питання ЄФВВ — Кібербезпека",
+    "exam": "ЄФВВ",
+    "subject": "Інформаційні технології",
+    "year": 2026,
+    "languages": ["uk"],
+    "status": "ready",
+    "origin": "generated",
+    "generation": {
+      "batch_id": "generated-yefvv-it-cybersecurity-20260615-001",
+      "agent": "codex",
+      "instructions": {
+        "id": "yefvv-it-agent-question-generation",
+        "version": "1.0.0",
+        "sha256": "b530323b3bb2b3812476681ed81b6e11b251e2cc97657527d79779a840f2d593"
+      },
+      "generated_at": "2026-06-15T16:26:55Z",
+      "workflow_version": "1.0.0",
+      "research_report": "reports/generated/generated-yefvv-it-cybersecurity-20260615-001.research.md",
+      "parameters": {
+        "topic": "Кібербезпека та захист інформації",
+        "difficulty": "medium",
+        "task_type": "single_choice"
+      }
+    },
+    "task_count": 10,
+    "assessment_item_count": 10,
+    "stimulus_count": 0
+  },
+  "sections": [
+    {
+      "code": "cybersecurity",
+      "title": "Кібербезпека та захист інформації"
+    }
+  ],
+  "stimuli": [],
+  "tasks": [
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-task-01",
+      "number": 1,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "cybersecurity",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-cybersecurity-20260615-001-001",
+          "number": 1,
+          "display_label": "1",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Установа впроваджує сукупність організаційних, правових, інженерно-технічних і криптографічних заходів для захисту від кіберзагроз та забезпечення стійкості, цілісності, доступності й конфіденційності інформаційних ресурсів. Яке поняття найточніше описує цю діяльність?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "кіберпростір"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "кіберзахист"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "кіберрозвідка"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "кібероборона"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Описана сукупність заходів відповідає кіберзахисту: вона спрямована на захист від кіберзагроз і забезпечення стійкості та основних властивостей інформаційних ресурсів. Кіберпростір є середовищем взаємодії, кіберрозвідка пов’язана зі здобуванням відомостей, а кібероборона має державний оборонний контекст."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-cybersecurity-20260615-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-task-02",
+      "number": 2,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "cybersecurity",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-cybersecurity-20260615-001-002",
+          "number": 2,
+          "display_label": "2",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Для підтвердження автентичності та цілісності електронного повідомлення застосовують перетворення інформації з використанням спеціальних ключових даних. Який вид захисту інформації реалізовано?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "організаційний"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "інженерний"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "криптографічний"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "технічний"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Криптографічний захист ґрунтується на перетворенні інформації із застосуванням спеціальних ключових даних і може забезпечувати перевірку цілісності та автентичності. Інші наведені види захисту не визначаються використанням криптографічних перетворень."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-cybersecurity-20260615-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-task-03",
+      "number": 3,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "cybersecurity",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-cybersecurity-20260615-001-003",
+          "number": 3,
+          "display_label": "3",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Медична інформаційна система шифрує дані пацієнтів і контролює незмінність записів, але працює на єдиному сервері без резервування. Після відмови обладнання користувачі втратили доступ до системи. Яку властивість інформації забезпечено недостатньо?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "конфіденційність"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "цілісність"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "автентичність"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "доступність"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Доступність означає своєчасний і надійний доступ уповноважених користувачів до інформації та систем. Відсутність резервування створила єдину точку відмови, тому саме доступність не була належно забезпечена; шифрування та контроль незмінності стосуються інших властивостей."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-cybersecurity-20260615-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-task-04",
+      "number": 4,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "cybersecurity",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-cybersecurity-20260615-001-004",
+          "number": 4,
+          "display_label": "4",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Обліковому запису аналітика надали доступ лише до тих даних і операцій, які потрібні для виконання його посадових обов’язків. Який принцип кібербезпеки застосовано?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "мінімальних привілеїв"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "розподілу обов’язків"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "багаторівневого захисту"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "відкритого проєктування"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Принцип мінімальних привілеїв передбачає надання користувачеві або процесу лише тих прав доступу, які необхідні для виконання визначених завдань. Розподіл обов’язків розділяє критичні функції між кількома суб’єктами, а багаторівневий захист поєднує кілька захисних механізмів."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-cybersecurity-20260615-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-task-05",
+      "number": 5,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "cybersecurity",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-cybersecurity-20260615-001-005",
+          "number": 5,
+          "display_label": "5",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У вебсервісі залишили стандартний пароль адміністратора. Спроб несанкціонованого використання цього пароля ще не зафіксовано. Чим у такій ситуації є стандартний пароль?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "загрозою"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "вразливістю"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "кібератакою"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "наслідком інциденту"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Стандартний пароль є слабкістю системи, яку може використати джерело загрози, тобто вразливістю. Атака передбачає дію з використанням такої слабкості, а наслідок виникає після реалізації загрози."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-cybersecurity-20260615-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-task-06",
+      "number": 6,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "cybersecurity",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-cybersecurity-20260615-001-006",
+          "number": 6,
+          "display_label": "6",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Стороння особа перехоплює та зберігає мережевий трафік, не змінюючи повідомлень і не впливаючи на роботу системи. До якого класу за характером впливу належить така атака?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "активна атака на цілісність"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "активна атака на доступність"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "пасивна атака"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "фізична атака на обладнання"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Пасивна атака полягає в отриманні інформації із системи без зміни її ресурсів або функціонування. Перехоплення трафіку без модифікації повідомлень не має ознак активного впливу на цілісність чи доступність."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-cybersecurity-20260615-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-task-07",
+      "number": 7,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "cybersecurity",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-cybersecurity-20260615-001-007",
+          "number": 7,
+          "display_label": "7",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Фахівці оцінюють імовірність цілеспрямованої атаки на інформаційну систему та формують модель потенційного порушника. Який набір характеристик порушника є найбільш суттєвим для такої оцінки?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "намір, спроможності та цільова спрямованість"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "імовірність відмови обладнання, час відновлення та обсяг резервних копій"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "цінність активу, строк зберігання даних і вимоги до доступності"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "топологія мережі, пропускна здатність і алгоритм шифрування"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Для оцінювання навмисного джерела загрози важливі його намір, технічні та організаційні спроможності й спрямованість на конкретну ціль. Інші набори описують активи, надійність або архітектуру системи, але не характеристики порушника."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-cybersecurity-20260615-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-task-08",
+      "number": 8,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "cybersecurity",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-cybersecurity-20260615-001-008",
+          "number": 8,
+          "display_label": "8",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яка ознака дає змогу відрізнити шкідливе програмне забезпечення від ненавмисної помилки у звичайній програмі?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "великий розмір виконуваного файла"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "обов’язкова здатність до саморозмноження"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "необхідність постійного підключення до мережі"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "навмисне виконання несанкціонованих дій, що шкодять системі або даним"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Шкідливе програмне забезпечення навмисно призначене для виконання несанкціонованих процесів, що негативно впливають на систему або інформацію. Саморозмноження властиве лише окремим класам такого ПЗ, а розмір файла та мережеве підключення не є визначальними ознаками."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-cybersecurity-20260615-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-task-09",
+      "number": 9,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "cybersecurity",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-cybersecurity-20260615-001-009",
+          "number": 9,
+          "display_label": "9",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Користувач отримав повідомлення нібито від хмарного сервісу з вимогою терміново перейти за посиланням і повторно ввести облікові дані. Яка дія є найбільш доцільною?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "відповісти на повідомлення та попросити підтвердити справжність посилання"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "не використовувати посилання, самостійно відкрити офіційний сервіс і повідомити про підозріле звернення"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "відкрити посилання в приватному режимі браузера та ввести пароль"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "переслати повідомлення колегам, щоб вони перевірили посилання зі своїх пристроїв"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Ознаки терміновості та запит облікових даних через вкладене посилання характерні для фішингу. Безпечна дія — не взаємодіяти з посиланням, перевірити стан облікового запису через самостійно відкритий офіційний канал і повідомити про підозріле звернення."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-cybersecurity-20260615-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-task-10",
+      "number": 10,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "cybersecurity",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-cybersecurity-20260615-001-010",
+          "number": 10,
+          "display_label": "10",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Під час популярної онлайн-події вебсервіс отримав різке збільшення розподіленого трафіку та став недоступним. Чому самого факту недоступності й великої кількості запитів недостатньо, щоб однозначно стверджувати про DDoS-атаку?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "подібний ефект може спричинити легітимний масовий попит, тому потрібен аналіз джерел і характеру трафіку"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "DDoS-атака можлива лише тоді, коли всі запити надходять з однієї адреси"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "DDoS-атака обов’язково змінює дані, що зберігаються на сервері"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "зашифрований мережевий трафік не може бути використаний для DDoS-атаки"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Великий легітимний наплив користувачів може мати зовнішні ознаки, подібні до атаки на доступність. Для висновку про DDoS потрібні додаткові дані про джерела, структуру, намір і аномальність трафіку; розподіленість, шифрування або зміна даних окремо не визначають таку атаку."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-cybersecurity-20260615-001"
+          }
+        }
+      ]
+    }
+  ],
+  "release": {
+    "status": "ready_for_application",
+    "version": "0.1.0",
+    "verification": {
+      "method": "agent_validation",
+      "status": "passed",
+      "workflow_version": "1.0.0",
+      "validated_at": "2026-06-15T16:41:07Z",
+      "report": "reports/generated/generated-yefvv-it-cybersecurity-20260615-001.validation.json",
+      "checks": [
+        "schema",
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "duplicate_detection",
+        "official_similarity",
+        "exam_style"
+      ],
+      "similarity": {
+        "maximum_score": 0.022222,
+        "threshold": 0.35
+      }
+    }
+  }
+}

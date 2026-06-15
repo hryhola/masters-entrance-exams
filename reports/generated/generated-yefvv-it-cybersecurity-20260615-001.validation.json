@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "batch_id": "generated-yefvv-it-cybersecurity-20260615-001",
+  "status": "passed",
+  "validated_at": "2026-06-15T16:41:07Z",
+  "workflow_version": "1.0.0",
+  "validator": {
+    "agent": "codex",
+    "method": "agent_validation"
+  },
+  "inputs": {
+    "dataset": "data/generated/drafts/generated-yefvv-it-cybersecurity-20260615-001.json",
+    "taxonomy": "data/taxonomies/yefvv-it-program-2025.yaml",
+    "official_reference_dataset": "data/yefvv-it-2024.json",
+    "research_report": "reports/generated/generated-yefvv-it-cybersecurity-20260615-001.research.md",
+    "instruction": "docs/content-generation/YEFVV_IT_AGENT_QUESTION_GENERATION.md",
+    "instruction_sha256": "b530323b3bb2b3812476681ed81b6e11b251e2cc97657527d79779a840f2d593"
+  },
+  "summary": {
+    "questions_checked": 10,
+    "questions_passed": 10,
+    "questions_failed": 0,
+    "correct_choice_distribution": {
+      "a": 3,
+      "b": 3,
+      "c": 2,
+      "d": 2
+    }
+  },
+  "checks": {
+    "schema": {
+      "status": "passed",
+      "evidence": "JSON parsed successfully; schema v2 validator and runtime adapter accepted all 10 tasks and 10 assessment items."
+    },
+    "source_grounding": {
+      "status": "passed",
+      "evidence": "Every question is mapped to one primary and one corroborating authoritative source. All 10 requested taxonomy topics are covered."
+    },
+    "answer_integrity": {
+      "status": "passed",
+      "evidence": "All questions were solved independently after drafting. Each has exactly one unconditional correct answer and three mutually incompatible distractors."
+    },
+    "explanation_integrity": {
+      "status": "passed",
+      "evidence": "All explanations justify the selected concept and distinguish it from the distractors without relying on hidden context."
+    },
+    "duplicate_detection": {
+      "status": "passed",
+      "evidence": "No exact duplicate prompts, option sets, or 10-word sequences were found inside the batch. Maximum internal token-trigram Jaccard score is 0.009259."
+    },
+    "official_similarity": {
+      "status": "passed",
+      "evidence": "All 140 official 2024 questions were compared using normalized Unicode word-token trigram Jaccard similarity, followed by semantic review of related cybersecurity items. Maximum score is 0.022222, below the 0.35 threshold."
+    },
+    "exam_style": {
+      "status": "passed",
+      "evidence": "All questions use neutral Ukrainian academic language, one learning objective, four plausible same-level options, and no prohibited programming language, pseudocode, program fragment, trick wording, or version-sensitive trivia."
+    }
+  },
+  "similarity": {
+    "method": "Lowercase Unicode word tokenization; sets of contiguous 3-token n-grams; Jaccard intersection over union. Exact shared contiguous 10-token sequences were checked separately.",
+    "threshold": 0.35,
+    "maximum_score": 0.022222,
+    "maximum_pair": {
+      "generated_id": "generated-yefvv-it-cybersecurity-20260615-001-002",
+      "official_id": "yefvv-it-2024-132"
+    },
+    "maximum_internal_score": 0.009259,
+    "exact_shared_10_word_sequences": 0,
+    "per_question": [
+      {
+        "id": "generated-yefvv-it-cybersecurity-20260615-001-001",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-cybersecurity-20260615-001-002",
+        "nearest_official_id": "yefvv-it-2024-132",
+        "score": 0.022222,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-cybersecurity-20260615-001-003",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-cybersecurity-20260615-001-004",
+        "nearest_official_id": "yefvv-it-2024-137",
+        "score": 0.021739,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-cybersecurity-20260615-001-005",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-cybersecurity-20260615-001-006",
+        "nearest_official_id": "yefvv-it-2024-026",
+        "score": 0.017241,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-cybersecurity-20260615-001-007",
+        "nearest_official_id": "yefvv-it-2024-026",
+        "score": 0.013699,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-cybersecurity-20260615-001-008",
+        "nearest_official_id": "yefvv-it-2024-132",
+        "score": 0.017241,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-cybersecurity-20260615-001-009",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-cybersecurity-20260615-001-010",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      }
+    ],
+    "semantic_review": [
+      {
+        "generated_id": "generated-yefvv-it-cybersecurity-20260615-001-001",
+        "related_official_ids": ["yefvv-it-2024-048"],
+        "status": "distinct",
+        "reason": "The generated item applies the current cyber-protection concept to a set of safeguards; the official item tests a different statutory concept."
+      },
+      {
+        "generated_id": "generated-yefvv-it-cybersecurity-20260615-001-002",
+        "related_official_ids": ["yefvv-it-2024-087", "yefvv-it-2024-109"],
+        "status": "distinct",
+        "reason": "The generated item identifies a protection category from its mechanism; the official items test steganography and a specific cryptographic-function category."
+      },
+      {
+        "generated_id": "generated-yefvv-it-cybersecurity-20260615-001-003",
+        "related_official_ids": [
+          "yefvv-it-2024-049",
+          "yefvv-it-2024-137",
+          "yefvv-it-2024-138"
+        ],
+        "status": "distinct",
+        "reason": "The generated item diagnoses a missing CIA property from a resilience scenario; the official items use different attack and terminology tasks."
+      },
+      {
+        "generated_id": "generated-yefvv-it-cybersecurity-20260615-001-004",
+        "related_official_ids": ["yefvv-it-2024-137"],
+        "status": "distinct",
+        "reason": "The generated item applies least privilege to access assignment rather than testing the CIA triad."
+      },
+      {
+        "generated_id": "generated-yefvv-it-cybersecurity-20260615-001-005",
+        "related_official_ids": [],
+        "status": "distinct",
+        "reason": "No official item directly tests identification of an unexploited weakness as a vulnerability."
+      },
+      {
+        "generated_id": "generated-yefvv-it-cybersecurity-20260615-001-006",
+        "related_official_ids": ["yefvv-it-2024-026"],
+        "status": "distinct",
+        "reason": "The generated item classifies an applied traffic-observation scenario; the official item asks for a general classification list."
+      },
+      {
+        "generated_id": "generated-yefvv-it-cybersecurity-20260615-001-007",
+        "related_official_ids": [],
+        "status": "distinct",
+        "reason": "No official item directly tests the intent, capability, and targeting dimensions of an intentional threat actor."
+      },
+      {
+        "generated_id": "generated-yefvv-it-cybersecurity-20260615-001-008",
+        "related_official_ids": ["yefvv-it-2024-010", "yefvv-it-2024-132"],
+        "status": "distinct",
+        "reason": "The generated item tests the defining intentionality of malware; the official items test prevention tooling and identification of a malware class."
+      },
+      {
+        "generated_id": "generated-yefvv-it-cybersecurity-20260615-001-009",
+        "related_official_ids": [],
+        "status": "distinct",
+        "reason": "No official item directly tests safe response to a credential-phishing message."
+      },
+      {
+        "generated_id": "generated-yefvv-it-cybersecurity-20260615-001-010",
+        "related_official_ids": ["yefvv-it-2024-049"],
+        "status": "distinct",
+        "reason": "The generated item tests evidentiary ambiguity between DDoS and legitimate flash demand; the official item tests the affected security property."
+      }
+    ]
+  },
+  "question_results": [
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-001",
+      "topic_code": "5.1.3",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-002",
+      "topic_code": "5.1.4",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-003",
+      "topic_code": "5.1.5",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-004",
+      "topic_code": "5.1.6",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-005",
+      "topic_code": "5.2.1",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-006",
+      "topic_code": "5.2.2",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-007",
+      "topic_code": "5.2.5",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-008",
+      "topic_code": "5.3.1",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-009",
+      "topic_code": "5.3.2",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-cybersecurity-20260615-001-010",
+      "topic_code": "5.3.3",
+      "status": "passed"
+    }
+  ]
+}
