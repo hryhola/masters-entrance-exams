@@ -15,9 +15,19 @@ export interface TaskProjectionDatasetDefinition {
   sectionCodes: string[]
 }
 
+export interface CombinedDatasetDefinition {
+  id: string
+  kind: 'combined'
+  title: string
+  subject: string
+  language: string
+  sourceDatasetIds: string[]
+}
+
 export type DatasetDefinition =
   | QuestionDatasetDefinition
   | TaskProjectionDatasetDefinition
+  | CombinedDatasetDefinition
 
 export interface TaskDatasetDefinition {
   id: string
@@ -40,6 +50,17 @@ export interface ExamDefinition {
 }
 
 export const datasetRegistry: Record<string, DatasetDefinition> = {
+  'yefvv-it-2024-plus-generated': {
+    id: 'yefvv-it-2024-plus-generated',
+    kind: 'combined',
+    title: 'ЄФВВ: Інформаційні технології',
+    subject: 'Інформаційні технології',
+    language: 'uk',
+    sourceDatasetIds: [
+      'yefvv-it-2024',
+      'generated-yefvv-it-cybersecurity-20260615-001',
+    ],
+  },
   'yefvv-it-2024': {
     id: 'yefvv-it-2024',
     kind: 'questions',
@@ -64,6 +85,15 @@ export const datasetRegistry: Record<string, DatasetDefinition> = {
     language: 'en',
     sectionCodes: ['english-reading', 'english-use-of-language'],
   },
+  'generated-yefvv-it-cybersecurity-20260615-001': {
+    id: 'generated-yefvv-it-cybersecurity-20260615-001',
+    kind: 'task_projection',
+    sourceDatasetId: 'generated-yefvv-it-cybersecurity-20260615-001',
+    title: 'Додаткові питання ЄФВВ — Кібербезпека',
+    subject: 'Інформаційні технології',
+    language: 'uk',
+    sectionCodes: ['5'],
+  },
 }
 
 export const taskDatasetRegistry: Record<string, TaskDatasetDefinition> = {
@@ -75,6 +105,11 @@ export const taskDatasetRegistry: Record<string, TaskDatasetDefinition> = {
     id: 'evi-english-2023-source',
     dataPath: 'content/datasets/evi-english-2023-source/dataset.json',
   },
+  'generated-yefvv-it-cybersecurity-20260615-001': {
+    id: 'generated-yefvv-it-cybersecurity-20260615-001',
+    dataPath:
+      'content/datasets/generated-yefvv-it-cybersecurity-20260615-001/dataset.json',
+  },
 }
 
 export const examRegistry: ExamDefinition[] = [
@@ -85,7 +120,7 @@ export const examRegistry: ExamDefinition[] = [
     subject: 'Інформаційні технології',
     year: 2024,
     status: 'available',
-    datasetId: 'yefvv-it-2024',
+    datasetId: 'yefvv-it-2024-plus-generated',
     practice: {
       examDurationMinutes: 180,
       estimatedSecondsPerQuestion: 90,

@@ -17,7 +17,8 @@ import './dataset-pages.css'
 const yefvvFeaturedQuestionNumbers = [9, 13, 51, 71, 82, 86, 102, 140]
 
 function getFeaturedQuestionNumbers(datasetId: string, questionCount: number) {
-  if (datasetId === 'yefvv-it-2024') return yefvvFeaturedQuestionNumbers
+  if (datasetId?.startsWith('yefvv-it-2024'))
+    return yefvvFeaturedQuestionNumbers
   return [1, 5, 11, 19, 25, questionCount].filter(
     (number, index, values) =>
       number <= questionCount && values.indexOf(number) === index,
@@ -50,6 +51,9 @@ export function ExamDetailPage() {
   if (state.status === 'error') return <DatasetError error={state.error} />
 
   const dataset = state.dataset
+  const generatedQuestionCount = dataset.questions.filter(
+    (question) => question.origin === 'generated',
+  ).length
   const complexQuestionCount = dataset.questions.filter(
     (question) => question.features.hasComplexContent,
   ).length
@@ -69,7 +73,11 @@ export function ExamDetailPage() {
             Перевірити всі питання
           </Link>
         }
-        description={`Офіційний набір ${dataset.year} року, нормалізований для вебзастосунку та ручно перевірений за першоджерелом.`}
+        description={
+          generatedQuestionCount > 0
+            ? `Офіційний набір ${dataset.year} року доповнено ${generatedQuestionCount} згенерованими питаннями, які мають окреме маркування та агентську перевірку.`
+            : `Офіційний набір ${dataset.year} року, нормалізований для вебзастосунку та ручно перевірений за першоджерелом.`
+        }
         eyebrow={`${dataset.exam} · версія ${dataset.version}`}
         title={dataset.subject}
       />
@@ -78,7 +86,11 @@ export function ExamDetailPage() {
         <article>
           <span>Питань</span>
           <strong>{dataset.questions.length}</strong>
-          <small>усі пройшли ручну валідацію</small>
+          <small>
+            {generatedQuestionCount > 0
+              ? `${generatedQuestionCount} згенеровано й перевірено агентом`
+              : 'усі пройшли ручну валідацію'}
+          </small>
         </article>
         <article>
           <span>Розділів</span>

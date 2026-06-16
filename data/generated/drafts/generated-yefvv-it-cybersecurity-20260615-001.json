@@ -32,7 +32,7 @@
   },
   "sections": [
     {
-      "code": "cybersecurity",
+      "code": "5",
       "title": "Кібербезпека та захист інформації"
     }
   ],
@@ -43,7 +43,7 @@
       "number": 1,
       "type": "single_choice",
       "language": "uk",
-      "section_code": "cybersecurity",
+      "section_code": "5",
       "instruction": [
         {
           "type": "markdown",
@@ -133,7 +133,7 @@
       "number": 2,
       "type": "single_choice",
       "language": "uk",
-      "section_code": "cybersecurity",
+      "section_code": "5",
       "instruction": [
         {
           "type": "markdown",
@@ -223,7 +223,7 @@
       "number": 3,
       "type": "single_choice",
       "language": "uk",
-      "section_code": "cybersecurity",
+      "section_code": "5",
       "instruction": [
         {
           "type": "markdown",
@@ -313,7 +313,7 @@
       "number": 4,
       "type": "single_choice",
       "language": "uk",
-      "section_code": "cybersecurity",
+      "section_code": "5",
       "instruction": [
         {
           "type": "markdown",
@@ -403,7 +403,7 @@
       "number": 5,
       "type": "single_choice",
       "language": "uk",
-      "section_code": "cybersecurity",
+      "section_code": "5",
       "instruction": [
         {
           "type": "markdown",
@@ -493,7 +493,7 @@
       "number": 6,
       "type": "single_choice",
       "language": "uk",
-      "section_code": "cybersecurity",
+      "section_code": "5",
       "instruction": [
         {
           "type": "markdown",
@@ -583,7 +583,7 @@
       "number": 7,
       "type": "single_choice",
       "language": "uk",
-      "section_code": "cybersecurity",
+      "section_code": "5",
       "instruction": [
         {
           "type": "markdown",
@@ -673,7 +673,7 @@
       "number": 8,
       "type": "single_choice",
       "language": "uk",
-      "section_code": "cybersecurity",
+      "section_code": "5",
       "instruction": [
         {
           "type": "markdown",
@@ -763,7 +763,7 @@
       "number": 9,
       "type": "single_choice",
       "language": "uk",
-      "section_code": "cybersecurity",
+      "section_code": "5",
       "instruction": [
         {
           "type": "markdown",
@@ -853,7 +853,7 @@
       "number": 10,
       "type": "single_choice",
       "language": "uk",
-      "section_code": "cybersecurity",
+      "section_code": "5",
       "instruction": [
         {
           "type": "markdown",

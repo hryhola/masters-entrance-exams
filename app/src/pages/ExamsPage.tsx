@@ -25,6 +25,9 @@ function AvailableExamCard({ exam }: { exam: ExamDefinition }) {
   }
 
   const dataset = state.dataset
+  const generatedCount = dataset.questions.filter(
+    (question) => question.origin === 'generated',
+  ).length
   return (
     <article className="exam-card exam-card--available">
       <div className="exam-card__topline">
@@ -34,8 +37,9 @@ function AvailableExamCard({ exam }: { exam: ExamDefinition }) {
       <div>
         <h2>{exam.title}</h2>
         <p>
-          Офіційний тест {dataset.year} року, нормалізований для практики,
-          перевірки відповідей і повторення.
+          {generatedCount > 0
+            ? `Офіційний тест ${dataset.year} року та ${generatedCount} додаткових питань, перевірених агентом.`
+            : `Офіційний тест ${dataset.year} року, нормалізований для практики, перевірки відповідей і повторення.`}
         </p>
       </div>
       <dl className="exam-metrics">

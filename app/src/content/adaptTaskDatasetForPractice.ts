@@ -54,7 +54,7 @@ function resolveChoices(task: AssessmentTask, item: AssessmentItem): Choice[] {
   return choiceSet.choices
 }
 
-function topicFor(task: AssessmentTask) {
+function topicFor(task: AssessmentTask, sectionTitle: string) {
   if (task.sectionCode === 'english-reading') {
     return { code: 'english-reading', title: 'Reading' }
   }
@@ -67,9 +67,13 @@ function topicFor(task: AssessmentTask) {
       : { code: 'tznk-verbal-reading', title: 'Робота з текстами' }
   }
 
-  return task.number <= 18
-    ? { code: 'tznk-logical-reasoning', title: 'Логічні міркування' }
-    : { code: 'tznk-logical-situations', title: 'Аналіз ситуацій' }
+  if (task.sectionCode === 'tznk-logical') {
+    return task.number <= 18
+      ? { code: 'tznk-logical-reasoning', title: 'Логічні міркування' }
+      : { code: 'tznk-logical-situations', title: 'Аналіз ситуацій' }
+  }
+
+  return { code: task.sectionCode, title: sectionTitle }
 }
 
 function collectBlockTypes(question: Question): ContentBlockType[] {
@@ -94,7 +98,8 @@ function adaptItem(
 ): Question {
   const choices = resolveChoices(task, item)
   const correctOption = item.correctChoice
-  const topic = topicFor(task)
+  const topic = topicFor(task, sectionTitle)
+  const examTag = dataset.exam === 'ЄФВВ' ? 'yefvv' : 'evi'
   const question: Question = {
     id: item.id,
     number: position,
@@ -142,7 +147,7 @@ function adaptItem(
         expectedCognitiveLevel: 'application',
       },
       cognitiveLevel: 'application',
-      tags: ['tznk', task.type, `task-${task.number}`],
+      tags: [examTag, task.type, `task-${task.number}`],
       formatCompliance: 'compliant',
     },
     source:

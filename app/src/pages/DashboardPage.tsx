@@ -49,6 +49,16 @@ export function DashboardPage() {
           (learning.mastered / datasetState.dataset.questions.length) * 100,
         )
       : 0
+  const yefvvQuestionCount =
+    datasetState.status === 'ready'
+      ? datasetState.dataset.questions.length
+      : 140
+  const yefvvGeneratedCount =
+    datasetState.status === 'ready'
+      ? datasetState.dataset.questions.filter(
+          (question) => question.origin === 'generated',
+        ).length
+      : 0
   const daysUntilExam = settings.targetExamDate
     ? Math.ceil(
         (new Date(`${settings.targetExamDate}T23:59:59`).getTime() - now) /
@@ -109,7 +119,7 @@ export function DashboardPage() {
           <strong>{masteryPercentage}%</strong>
           <p>
             {hasHistory
-              ? `Засвоєно ${learning.mastered} із ${datasetState.status === 'ready' ? datasetState.dataset.questions.length : 140} питань. На повторення сьогодні: ${learning.dueNow}.`
+              ? `Засвоєно ${learning.mastered} із ${yefvvQuestionCount} питань. На повторення сьогодні: ${learning.dueNow}.`
               : 'Почніть першу сесію, щоб побачити персональний прогрес.'}
           </p>
           <div
@@ -186,11 +196,14 @@ export function DashboardPage() {
             </span>
           </div>
           <p className="panel-copy">
-            Офіційний тест 2024 року, класифікований за програмою 2025 року та
-            доповнений поясненнями.
+            Офіційний тест 2024 року, класифікований за програмою 2025 року,
+            доповнений поясненнями
+            {yefvvGeneratedCount > 0
+              ? ` та ${yefvvGeneratedCount} перевіреними generated питаннями.`
+              : '.'}
           </p>
           <div className="tag-row">
-            <span className="tag">140 питань</span>
+            <span className="tag">{yefvvQuestionCount} питань</span>
             <span className="tag">10 розділів</span>
             <span className="tag tag--ready">Готово</span>
           </div>

@@ -5,6 +5,7 @@ import {
   copyFileSync,
   existsSync,
   mkdirSync,
+  readdirSync,
   readFileSync,
   rmSync,
   statSync,
@@ -27,6 +28,7 @@ const eviFixtureSource = join(
 )
 const eviEnglishDatasetId = 'evi-english-2023-source'
 const eviEnglishSource = join(projectRoot, 'data', 'evi-english-2023.json')
+const generatedDraftsRoot = join(projectRoot, 'data', 'generated', 'drafts')
 const eviFixtureAssets = [
   'assets/evi-schema-v2/tznk-2024/firm-shares.png',
   'assets/evi-schema-v2/tznk-2024/company-a-profits.png',
@@ -54,6 +56,38 @@ function copyVerified(source, destination, expectedHash) {
   copyFileSync(source, destination)
 }
 
+function discoverGeneratedDatasets() {
+  if (!existsSync(generatedDraftsRoot)) return []
+
+  return readdirSync(generatedDraftsRoot)
+    .filter((file) => file.endsWith('.json'))
+    .sort()
+    .map((file) => {
+      const source = join(generatedDraftsRoot, file)
+      ensureFile(source)
+      const document = JSON.parse(readFileSync(source, 'utf8'))
+      if (
+        document.schema_version !== 2 ||
+        document.dataset?.origin !== 'generated' ||
+        document.dataset?.status !== 'ready' ||
+        document.release?.status !== 'ready_for_application' ||
+        document.release?.verification?.method !== 'agent_validation' ||
+        document.release?.verification?.status !== 'passed'
+      ) {
+        throw new Error(`Generated draft is not publishable: ${source}`)
+      }
+      if (document.dataset.id !== document.dataset.generation?.batch_id) {
+        throw new Error(`Generated draft batch_id mismatch: ${source}`)
+      }
+
+      return {
+        id: document.dataset.id,
+        source,
+        document,
+      }
+    })
+}
+
 ensureFile(datasetSource)
 ensureFile(manifestSource)
 ensureFile(eviFixtureSource)
@@ -64,6 +98,7 @@ const dataset = JSON.parse(readFileSync(datasetSource, 'utf8'))
 const manifest = JSON.parse(readFileSync(manifestSource, 'utf8'))
 const eviFixture = JSON.parse(readFileSync(eviFixtureSource, 'utf8'))
 const eviEnglish = JSON.parse(readFileSync(eviEnglishSource, 'utf8'))
+const generatedDatasets = discoverGeneratedDatasets()
 const optionCount = dataset.questions.reduce(
   (total, question) => total + question.options.length,
   0,
@@ -135,6 +170,11 @@ for (const asset of eviFixtureAssets) {
   mkdirSync(dirname(destination), { recursive: true })
   copyFileSync(join(projectRoot, asset), destination)
 }
+for (const generated of generatedDatasets) {
+  const outputDirectory = join(outputRoot, 'datasets', generated.id)
+  mkdirSync(outputDirectory, { recursive: true })
+  copyFileSync(generated.source, join(outputDirectory, 'dataset.json'))
+}
 
 const catalog = {
   schema_version: 1,
@@ -161,6 +201,39 @@ const catalog = {
       question_count: eviEnglish.dataset.assessment_item_count,
       task_count: eviEnglish.dataset.task_count,
       path: `datasets/${eviEnglishDatasetId}/dataset.json`,
+    },
+    ...generatedDatasets.map(({ document, id }) => ({
+      id,
+      title: document.dataset.title,
+      exam: document.dataset.exam,
+      subject: document.dataset.subject,
+      year: document.dataset.year,
+      version: document.release.version,
+      origin: 'generated',
+      verification: document.release.verification.method,
+      question_count: document.dataset.assessment_item_count,
+      task_count: document.dataset.task_count,
+      path: `datasets/${id}/dataset.json`,
+    })),
+    {
+      id: 'yefvv-it-2024-plus-generated',
+      title: 'ЄФВВ: Інформаційні технології',
+      exam: dataset.dataset.exam,
+      subject: dataset.dataset.subject,
+      year: dataset.dataset.year,
+      version: `${manifest.release.version}+generated`,
+      origin: 'mixed',
+      question_count:
+        dataset.questions.length +
+        generatedDatasets.reduce(
+          (total, { document }) =>
+            total + document.dataset.assessment_item_count,
+          0,
+        ),
+      sources: [
+        datasetId,
+        ...generatedDatasets.map((generated) => generated.id),
+      ],
     },
   ],
   fixtures: [
@@ -192,4 +265,5 @@ console.log(
 console.log(
   `EVI English: ${eviEnglish.tasks.length} tasks, ${eviEnglish.dataset.assessment_item_count} assessment items`,
 )
+console.log(`Generated datasets: ${generatedDatasets.length}`)
 console.log(`Output: ${outputRoot}`)

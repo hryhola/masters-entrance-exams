@@ -23,6 +23,22 @@ function readTaskFixture() {
   ) as unknown
 }
 
+function readGeneratedCybersecurityDataset() {
+  return JSON.parse(
+    readFileSync(
+      resolve(
+        process.cwd(),
+        '..',
+        'data',
+        'generated',
+        'drafts',
+        'generated-yefvv-it-cybersecurity-20260615-001.json',
+      ),
+      'utf8',
+    ),
+  ) as unknown
+}
+
 afterEach(() => {
   clearDatasetCache()
   clearTaskDatasetCache()
@@ -75,5 +91,50 @@ describe('loadDataset', () => {
     expect(fetchMock).toHaveBeenCalledWith(
       '/content/fixtures/evi-schema-v2.json',
     )
+  })
+
+  it('combines official ЄФВВ questions with published generated batches', async () => {
+    const fetchMock = vi.fn().mockImplementation((url: string) => {
+      if (url === '/content/datasets/yefvv-it-2024/dataset.json') {
+        return Promise.resolve({
+          ok: true,
+          json: async () => readReleaseDataset(),
+        })
+      }
+      if (
+        url ===
+        '/content/datasets/generated-yefvv-it-cybersecurity-20260615-001/dataset.json'
+      ) {
+        return Promise.resolve({
+          ok: true,
+          json: async () => readGeneratedCybersecurityDataset(),
+        })
+      }
+      return Promise.resolve({ ok: false, status: 404 })
+    })
+    vi.stubGlobal('fetch', fetchMock)
+
+    const dataset = await loadDataset('yefvv-it-2024-plus-generated')
+    const cybersecurity = dataset.sections.find(
+      (section) => section.code === '5',
+    )
+    const generatedQuestions = dataset.questions.filter(
+      (question) => question.origin === 'generated',
+    )
+
+    expect(dataset.questions).toHaveLength(150)
+    expect(cybersecurity?.questionCount).toBe(22)
+    expect(generatedQuestions).toHaveLength(10)
+    expect(generatedQuestions[0]).toMatchObject({
+      number: 141,
+      displayLabel: 'Дод. 1',
+      verification: { method: 'agent_validation' },
+      classification: {
+        topic: expect.objectContaining({
+          sectionCode: '5',
+          section: 'Кібербезпека та захист інформації',
+        }),
+      },
+    })
   })
 })

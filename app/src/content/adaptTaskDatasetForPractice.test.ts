@@ -17,6 +17,24 @@ function readFixture() {
   )
 }
 
+function readGeneratedCybersecurityDataset() {
+  return validateTaskDatasetDocument(
+    JSON.parse(
+      readFileSync(
+        resolve(
+          process.cwd(),
+          '..',
+          'data',
+          'generated',
+          'drafts',
+          'generated-yefvv-it-cybersecurity-20260615-001.json',
+        ),
+        'utf8',
+      ),
+    ),
+  )
+}
+
 describe('adaptTaskDatasetForPractice', () => {
   it('projects only the 33 TZNK assessment items into practice questions', () => {
     const dataset = adaptTaskDatasetForPractice(
@@ -57,5 +75,38 @@ describe('adaptTaskDatasetForPractice', () => {
     expect(
       dataset.questions.some((question) => question.id.startsWith('yevi-en')),
     ).toBe(false)
+  })
+
+  it('projects generated ЄФВВ questions into the official program section', () => {
+    const dataset = adaptTaskDatasetForPractice(
+      adaptTaskDataset(readGeneratedCybersecurityDataset()),
+      {
+        id: 'generated-yefvv-it-cybersecurity-20260615-001',
+        title: 'Додаткові питання ЄФВВ — Кібербезпека',
+        subject: 'Інформаційні технології',
+        language: 'uk',
+        sectionCodes: ['5'],
+      },
+    )
+
+    expect(dataset.questions).toHaveLength(10)
+    expect(dataset.sections).toEqual([
+      expect.objectContaining({
+        code: '5',
+        title: 'Кібербезпека та захист інформації',
+        questionCount: 10,
+      }),
+    ])
+    expect(dataset.questions[0]).toMatchObject({
+      origin: 'generated',
+      verification: { method: 'agent_validation' },
+      classification: {
+        topic: expect.objectContaining({
+          code: '5',
+          sectionCode: '5',
+          section: 'Кібербезпека та захист інформації',
+        }),
+      },
+    })
   })
 })
