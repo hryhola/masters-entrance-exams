@@ -225,13 +225,8 @@
 }
 
 .tag--generated {
-  color: var(--color-warning);
-  background: var(--color-accent-soft);
-}
-
-.tag--agent-validated {
-  color: var(--color-info);
-  background: var(--color-info-soft);
+  color: var(--color-primary-strong);
+  background: var(--color-primary-soft);
 }
 
 .tag--disputed {

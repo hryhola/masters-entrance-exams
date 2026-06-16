@@ -30,9 +30,6 @@ export function QuestionBadges({ question }: { question: Question }) {
       >
         {question.origin === 'official' ? 'Офіційне' : 'Згенероване'}
       </span>
-      {question.verification.method === 'agent_validation' ? (
-        <span className="tag tag--agent-validated">Перевірено агентом</span>
-      ) : null}
       <span
         className={`tag tag--alignment-${question.classification.alignment}`}
       >

@@ -34,7 +34,7 @@ describe('QuestionContent', () => {
     expect(screen.getByText('Спірний ключ')).toBeInTheDocument()
   })
 
-  it('labels generated questions and their agent verification', () => {
+  it('labels generated questions without showing agent verification as a badge', () => {
     const question: Question = {
       ...getQuestion(1),
       origin: 'generated',
@@ -69,10 +69,11 @@ describe('QuestionContent', () => {
     )
 
     expect(screen.getByText('Згенероване')).toBeInTheDocument()
-    expect(screen.getByText('Перевірено агентом')).toBeInTheDocument()
+    expect(screen.queryByText('Перевірено агентом')).not.toBeInTheDocument()
     expect(
       screen.getByText('Генерація generated-yefvv-it-os-medium-001'),
     ).toBeInTheDocument()
+    expect(screen.getByText('Агентська, workflow 1.0.0')).toBeInTheDocument()
     expect(screen.queryByText('Офіційна відповідь')).not.toBeInTheDocument()
   })
 })
