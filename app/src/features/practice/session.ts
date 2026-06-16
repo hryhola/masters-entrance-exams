@@ -1,7 +1,8 @@
-import type { OptionId, Question } from '../../content/types'
+import type { ContentOrigin, OptionId, Question } from '../../content/types'
 
 export type PracticeMode = 'full' | 'topic' | 'quick' | 'daily'
 export type PracticeExperience = 'learning' | 'exam'
+export type PracticeContentOrigin = 'all' | ContentOrigin
 export type SessionStatus = 'active' | 'completed'
 export type SessionCompletionReason = 'submitted' | 'timer'
 
@@ -10,6 +11,7 @@ export interface PracticeSessionConfig {
   datasetId: string
   mode: PracticeMode
   experience: PracticeExperience
+  contentOrigin?: PracticeContentOrigin
   questionCount?: number
   sectionCode?: string
   durationSeconds?: number
@@ -98,6 +100,24 @@ function deterministicShuffle<T>(items: T[], seed: string) {
   return shuffled
 }
 
+export function matchesContentOrigin(
+  question: Question,
+  contentOrigin: PracticeContentOrigin = 'all',
+) {
+  return contentOrigin === 'all' || question.origin === contentOrigin
+}
+
+export function filterQuestionsByContentOrigin(
+  questions: Question[],
+  contentOrigin: PracticeContentOrigin = 'all',
+) {
+  return contentOrigin === 'all'
+    ? questions
+    : questions.filter((question) =>
+        matchesContentOrigin(question, contentOrigin),
+      )
+}
+
 export function selectSessionQuestionIds(
   questions: Question[],
   config: PracticeSessionConfig,
@@ -119,12 +139,17 @@ export function selectSessionQuestionIds(
     return [...requestedQuestionIds]
   }
 
+  const availableQuestions = filterQuestionsByContentOrigin(
+    questions,
+    config.contentOrigin,
+  )
+
   if (config.mode === 'topic') {
     if (!config.sectionCode) {
       throw new Error('Для тематичної сесії потрібно вибрати розділ.')
     }
 
-    const questionIds = questions
+    const questionIds = availableQuestions
       .filter(
         (question) =>
           question.classification.topic?.sectionCode === config.sectionCode,
@@ -140,17 +165,17 @@ export function selectSessionQuestionIds(
 
   if (config.mode === 'quick') {
     const count = config.questionCount ?? 10
-    if (count < 1 || count > questions.length) {
+    if (count < 1 || count > availableQuestions.length) {
       throw new Error('Некоректна кількість питань для швидкої сесії.')
     }
 
     return deterministicShuffle(
-      questions.map((question) => question.id),
+      availableQuestions.map((question) => question.id),
       seed,
     ).slice(0, count)
   }
 
-  return questions.map((question) => question.id)
+  return availableQuestions.map((question) => question.id)
 }
 
 export function createPracticeSession({

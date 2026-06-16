@@ -10,6 +10,7 @@ function progress(overrides: Partial<QuestionProgress> = {}): QuestionProgress {
     datasetId: 'dataset',
     questionId: 'q1',
     questionNumber: 1,
+    origin: 'official',
     sectionCode: '1',
     sectionTitle: 'Розділ',
     topicCode: '1.1',

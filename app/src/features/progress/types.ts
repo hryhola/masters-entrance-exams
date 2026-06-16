@@ -1,5 +1,6 @@
 import type {
   AnswerReviewStatus,
+  ContentOrigin,
   OptionId,
   Question,
 } from '../../content/types'
@@ -21,6 +22,7 @@ export interface AttemptQuestionResult {
   officialOption: OptionId
   status: QuestionResultStatus
   answerReviewStatus: AnswerReviewStatus
+  origin: ContentOrigin
   sectionCode: string | null
   sectionTitle: string
   topicCode: string | null
@@ -48,6 +50,7 @@ export interface QuestionProgress {
   datasetId: string
   questionId: string
   questionNumber: number
+  origin: ContentOrigin
   sectionCode: string | null
   sectionTitle: string
   topicCode: string | null
@@ -101,6 +104,7 @@ export function createPracticeAttempt(
       officialOption: question.correctOption,
       status,
       answerReviewStatus: question.explanation.answerReview.status,
+      origin: question.origin,
       sectionCode: question.classification.topic?.sectionCode ?? null,
       sectionTitle: question.classification.topic?.section ?? 'Поза програмою',
       topicCode: question.classification.topic?.code ?? null,
@@ -168,6 +172,7 @@ export function updateQuestionProgress(
       datasetId: attempt.config.datasetId,
       questionId: result.questionId,
       questionNumber: result.questionNumber,
+      origin: result.origin ?? 'official',
       sectionCode: result.sectionCode,
       sectionTitle: result.sectionTitle,
       topicCode: result.topicCode,

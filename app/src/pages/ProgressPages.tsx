@@ -8,6 +8,7 @@ import {
   collectLatestReviewQuestions,
   summarizeLearning,
   summarizeAttempts,
+  summarizeAttemptsByOrigin,
   summarizePeriods,
   summarizeTopicsFromAttempts,
 } from '../features/progress/analytics'
@@ -70,6 +71,9 @@ export function ProgressPage() {
     ),
   )
   const summary = summarizeAttempts(filteredAttempts)
+  const originSummaries = summarizeAttemptsByOrigin(filteredAttempts, {
+    includeEmpty: true,
+  })
   const learning = summarizeLearning(filteredProgress, now)
   const periods = summarizePeriods(filteredAttempts, now)
   const topics = summarizeTopicsFromAttempts(filteredAttempts)
@@ -190,6 +194,35 @@ export function ProgressPage() {
           <strong>{formatSessionTime(summary.elapsedSeconds)}</strong>
           <small>Пропущено: {summary.skipped}</small>
         </article>
+      </section>
+
+      <section className="origin-progress">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">Походження питань</p>
+            <h2>Офіційні vs згенеровані</h2>
+          </div>
+          <p>
+            Показники розділено за джерелом, щоб додаткові generated-питання не
+            спотворювали картину по офіційному набору.
+          </p>
+        </div>
+        <div className="origin-progress-grid">
+          {originSummaries.map((origin) => (
+            <article key={origin.key}>
+              <span>{origin.title}</span>
+              <strong>{origin.accuracy}%</strong>
+              <small>
+                {origin.questionCount} питань · {origin.attemptCount} сесій ·{' '}
+                {formatSessionTime(origin.elapsedSeconds)}
+              </small>
+              <small>
+                Правильно: {origin.correct} · Помилок: {origin.incorrect} ·
+                Пропущено: {origin.skipped}
+              </small>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="learning-overview">

@@ -1,22 +1,43 @@
-import type { AnswerReviewStatus, OptionId, Question } from '../content/types'
+import type {
+  AnswerReviewStatus,
+  ContentOrigin,
+  OptionId,
+  Question,
+} from '../content/types'
 
 export function createTestQuestion({
   id = 'q1',
   number = 1,
   correctOption = 'b',
   answerReviewStatus = 'verified',
+  origin = 'official',
 }: {
   id?: string
   number?: number
   correctOption?: OptionId
   answerReviewStatus?: AnswerReviewStatus
+  origin?: ContentOrigin
 } = {}): Question {
   return {
     id,
     number,
     type: 'single_choice',
-    origin: 'official',
-    verification: { method: 'official_source' },
+    origin,
+    verification:
+      origin === 'official'
+        ? { method: 'official_source' }
+        : {
+            method: 'agent_validation',
+            status: 'passed',
+            workflowVersion: 'test',
+            validatedAt: '2026-01-01T00:00:00.000Z',
+            report: 'test',
+            checks: ['schema', 'answer_integrity', 'exam_style'],
+            similarity: {
+              maximumScore: 0,
+              threshold: 0.82,
+            },
+          },
     prompt: [{ type: 'markdown', text: `Умова питання ${number}` }],
     options: [
       {
@@ -87,12 +108,18 @@ export function createTestQuestion({
       tags: ['test'],
       formatCompliance: 'compliant',
     },
-    source: {
-      type: 'official_pdf',
-      pageStart: 1,
-      pageEnd: 1,
-      questionNumber: number,
-    },
+    source:
+      origin === 'official'
+        ? {
+            type: 'official_pdf',
+            pageStart: 1,
+            pageEnd: 1,
+            questionNumber: number,
+          }
+        : {
+            type: 'generated',
+            batchId: 'test-generated',
+          },
     features: { blockTypes: ['markdown'], hasComplexContent: false },
   }
 }

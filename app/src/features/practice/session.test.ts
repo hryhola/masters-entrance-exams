@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Question } from '../../content/types'
+import type { ContentOrigin, Question } from '../../content/types'
 import {
   createPracticeSession,
   practiceSessionReducer,
@@ -9,13 +9,31 @@ import {
   type PracticeSessionConfig,
 } from './session'
 
-function question(id: string, sectionCode = '1'): Question {
+function question(
+  id: string,
+  sectionCode = '1',
+  origin: ContentOrigin = 'official',
+): Question {
   return {
     id,
     number: Number(id.replace(/\D/g, '')),
     type: 'single_choice',
-    origin: 'official',
-    verification: { method: 'official_source' },
+    origin,
+    verification:
+      origin === 'official'
+        ? { method: 'official_source' }
+        : {
+            method: 'agent_validation',
+            status: 'passed',
+            workflowVersion: 'test',
+            validatedAt: '2026-01-01T00:00:00.000Z',
+            report: 'test',
+            checks: ['schema', 'answer_integrity', 'exam_style'],
+            similarity: {
+              maximumScore: 0,
+              threshold: 0.82,
+            },
+          },
     prompt: [],
     options: [
       { id: 'a', label: 'A', content: [] },
@@ -46,12 +64,18 @@ function question(id: string, sectionCode = '1'): Question {
       tags: [],
       formatCompliance: 'compliant',
     },
-    source: {
-      type: 'official_pdf',
-      pageStart: 1,
-      pageEnd: 1,
-      questionNumber: 1,
-    },
+    source:
+      origin === 'official'
+        ? {
+            type: 'official_pdf',
+            pageStart: 1,
+            pageEnd: 1,
+            questionNumber: 1,
+          }
+        : {
+            type: 'generated',
+            batchId: 'test-generated',
+          },
     features: { blockTypes: ['markdown'], hasComplexContent: false },
   }
 }
@@ -103,6 +127,41 @@ describe('selectSessionQuestionIds', () => {
 
     expect(ids).toHaveLength(7)
     expect(ids).toEqual(questions.slice(0, 7).map((item) => item.id))
+  })
+
+  it('filters a thematic session by selected content origin', () => {
+    const mixedQuestions = [
+      question('q1', '1'),
+      question('q2', '1', 'generated'),
+      question('q3', '2', 'generated'),
+    ]
+    const ids = selectSessionQuestionIds(
+      mixedQuestions,
+      config({
+        mode: 'topic',
+        sectionCode: '1',
+        contentOrigin: 'generated',
+      }),
+      'seed',
+    )
+
+    expect(ids).toEqual(['q2'])
+  })
+
+  it('builds quick sessions only from the selected content origin', () => {
+    const mixedQuestions = [
+      question('q1', '1'),
+      question('q2', '1', 'generated'),
+      question('q3', '2', 'generated'),
+    ]
+    const ids = selectSessionQuestionIds(
+      mixedQuestions,
+      config({ contentOrigin: 'generated', questionCount: 2 }),
+      'seed',
+    )
+
+    expect(ids).toHaveLength(2)
+    expect(ids.every((id) => id !== 'q1')).toBe(true)
   })
 
   it('keeps the exact order and reasons of a daily plan', () => {

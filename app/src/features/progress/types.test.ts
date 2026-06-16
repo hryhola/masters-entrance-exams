@@ -10,7 +10,12 @@ import { createPracticeAttempt, updateQuestionProgress } from './types'
 function createCompletedSession() {
   const questions = [
     createTestQuestion(),
-    createTestQuestion({ id: 'q2', number: 2, correctOption: 'c' }),
+    createTestQuestion({
+      id: 'q2',
+      number: 2,
+      correctOption: 'c',
+      origin: 'generated',
+    }),
   ]
   const active = createPracticeSession({
     id: 'attempt-1',
@@ -57,6 +62,10 @@ describe('progress snapshots', () => {
       'incorrect',
       'unanswered',
     ])
+    expect(attempt.questionResults.map((result) => result.origin)).toEqual([
+      'official',
+      'generated',
+    ])
 
     completed.answers.q1 = 'b'
     questions[0].correctOption = 'a'
@@ -80,6 +89,7 @@ describe('progress snapshots', () => {
       lastResult: 'incorrect',
     })
     expect(secondProgress['dataset:q2']).toMatchObject({
+      origin: 'generated',
       attempts: 2,
       answered: 0,
       skipped: 2,

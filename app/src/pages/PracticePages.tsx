@@ -1,5 +1,6 @@
 import {
   useEffect,
+  useMemo,
   useRef,
   useState,
   type ChangeEvent,
@@ -20,9 +21,14 @@ import type { ExamDataset, Question } from '../content/types'
 import { useDataset } from '../content/useDataset'
 import { PracticeQuestion } from '../features/practice/PracticeQuestion'
 import { AttemptReviewItem } from '../features/progress/AttemptReview'
-import { summarizeAttemptSections } from '../features/progress/analytics'
 import {
+  summarizeAttemptOrigins,
+  summarizeAttemptSections,
+} from '../features/progress/analytics'
+import {
+  filterQuestionsByContentOrigin,
   formatSessionTime,
+  type PracticeContentOrigin,
   type PracticeExperience,
   type PracticeMode,
   type PracticeSession,
@@ -56,20 +62,76 @@ const modeCopy: Record<
   },
 }
 
+const contentOriginCopy: Record<
+  PracticeContentOrigin,
+  { title: string; description: string; summary: string }
+> = {
+  all: {
+    title: 'Усі питання',
+    description: 'Офіційні й згенеровані разом.',
+    summary: 'усі джерела',
+  },
+  official: {
+    title: 'Офіційні',
+    description: 'Лише питання з першоджерела.',
+    summary: 'офіційні',
+  },
+  generated: {
+    title: 'Згенеровані',
+    description: 'Додаткові питання у стилі іспиту.',
+    summary: 'згенеровані',
+  },
+}
+
+const contentOriginOptions: PracticeContentOrigin[] = [
+  'all',
+  'official',
+  'generated',
+]
+
+function countQuestionsByOrigin(
+  questions: Question[],
+  contentOrigin: PracticeContentOrigin,
+) {
+  return filterQuestionsByContentOrigin(questions, contentOrigin).length
+}
+
+function getQuestionsForSetup(
+  dataset: ExamDataset,
+  mode: PracticeMode,
+  sectionCode: string,
+  contentOrigin: PracticeContentOrigin,
+) {
+  const originQuestions = filterQuestionsByContentOrigin(
+    dataset.questions,
+    contentOrigin,
+  )
+
+  return mode === 'topic'
+    ? originQuestions.filter(
+        (question) =>
+          question.classification.topic?.sectionCode === sectionCode,
+      )
+    : originQuestions
+}
+
 function calculateQuestionCount(
   dataset: ExamDataset,
   mode: PracticeMode,
   quickCount: number,
   sectionCode: string,
+  contentOrigin: PracticeContentOrigin,
 ) {
-  if (mode === 'quick') return quickCount
-  if (mode === 'topic') {
-    return (
-      dataset.sections.find((section) => section.code === sectionCode)
-        ?.questionCount ?? 0
-    )
-  }
-  return dataset.questions.length
+  const questions = getQuestionsForSetup(
+    dataset,
+    mode,
+    sectionCode,
+    contentOrigin,
+  )
+
+  return mode === 'quick'
+    ? Math.min(quickCount, questions.length)
+    : questions.length
 }
 
 function calculateDurationSeconds(
@@ -103,17 +165,66 @@ function PracticeSetupForm({
   const [sectionCode, setSectionCode] = useState(
     dataset.sections[0]?.code ?? '',
   )
+  const [contentOrigin, setContentOrigin] =
+    useState<PracticeContentOrigin>('all')
+  const quickCountOptions = exam.practice?.quickQuestionCounts ?? [5, 10, 20]
+  const sourceCounts = useMemo<Record<PracticeContentOrigin, number>>(
+    () => ({
+      all: dataset.questions.length,
+      official: countQuestionsByOrigin(dataset.questions, 'official'),
+      generated: countQuestionsByOrigin(dataset.questions, 'generated'),
+    }),
+    [dataset.questions],
+  )
+  const sectionOptions = useMemo(
+    () =>
+      dataset.sections.map((section) => ({
+        ...section,
+        filteredQuestionCount: getQuestionsForSetup(
+          dataset,
+          'topic',
+          section.code,
+          contentOrigin,
+        ).length,
+      })),
+    [contentOrigin, dataset],
+  )
+  const availableQuickQuestionCount = countQuestionsByOrigin(
+    dataset.questions,
+    contentOrigin,
+  )
+  const availableQuickCountOptions = quickCountOptions.filter(
+    (count) => count <= availableQuickQuestionCount,
+  )
+  const maxAvailableQuickCount =
+    availableQuickCountOptions.at(-1) ?? availableQuickQuestionCount
+  const selectedSection = sectionOptions.find(
+    (section) => section.code === sectionCode,
+  )
+  const firstAvailableSection = sectionOptions.find(
+    (section) => section.filteredQuestionCount > 0,
+  )
+  const activeSectionCode =
+    selectedSection && selectedSection.filteredQuestionCount > 0
+      ? sectionCode
+      : (firstAvailableSection?.code ?? sectionCode)
+  const effectiveQuickCount =
+    mode === 'quick' && availableQuickQuestionCount > 0
+      ? Math.min(quickCount, maxAvailableQuickCount)
+      : quickCount
   const questionCount = calculateQuestionCount(
     dataset,
     mode,
-    quickCount,
-    sectionCode,
+    effectiveQuickCount,
+    activeSectionCode,
+    contentOrigin,
   )
   const durationSeconds = calculateDurationSeconds(exam, mode, questionCount)
+  const canSubmit = Boolean(exam.datasetId && questionCount > 0)
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    if (!exam.datasetId) return
+    if (!canSubmit || !exam.datasetId) return
 
     const session = createSession({
       config: {
@@ -121,8 +232,9 @@ function PracticeSetupForm({
         datasetId: exam.datasetId,
         mode,
         experience,
-        questionCount: mode === 'quick' ? quickCount : undefined,
-        sectionCode: mode === 'topic' ? sectionCode : undefined,
+        contentOrigin,
+        questionCount: mode === 'quick' ? questionCount : undefined,
+        sectionCode: mode === 'topic' ? activeSectionCode : undefined,
         durationSeconds: experience === 'exam' ? durationSeconds : undefined,
       },
       questions: dataset.questions,
@@ -196,16 +308,55 @@ function PracticeSetupForm({
           )}
         </div>
 
+        <fieldset className="source-filter">
+          <legend>Джерело питань</legend>
+          <div>
+            {contentOriginOptions.map((item) => {
+              const disabled = sourceCounts[item] === 0
+              const className = [
+                'source-filter__choice',
+                contentOrigin === item ? 'source-filter__choice--selected' : '',
+                disabled ? 'source-filter__choice--disabled' : '',
+              ]
+                .filter(Boolean)
+                .join(' ')
+
+              return (
+                <label className={className} key={item}>
+                  <input
+                    checked={contentOrigin === item}
+                    disabled={disabled}
+                    name="content-origin"
+                    onChange={() => setContentOrigin(item)}
+                    type="radio"
+                    value={item}
+                  />
+                  <span>
+                    <strong>{contentOriginCopy[item].title}</strong>
+                    <small>{contentOriginCopy[item].description}</small>
+                  </span>
+                  <b>{sourceCounts[item]}</b>
+                </label>
+              )
+            })}
+          </div>
+        </fieldset>
+
         {mode === 'topic' ? (
           <label className="setup-select setup-select--nested">
             <span>Розділ програми</span>
             <select
               onChange={(event) => setSectionCode(event.target.value)}
-              value={sectionCode}
+              value={activeSectionCode}
             >
-              {dataset.sections.map((section) => (
-                <option key={section.code} value={section.code}>
-                  {section.code}. {section.title} ({section.questionCount})
+              {sectionOptions.map((section) => (
+                <option
+                  disabled={section.filteredQuestionCount === 0}
+                  key={section.code}
+                  value={section.code}
+                >
+                  {section.code}. {section.title} (
+                  {section.filteredQuestionCount})
                 </option>
               ))}
             </select>
@@ -216,11 +367,17 @@ function PracticeSetupForm({
           <fieldset className="quick-count">
             <legend>Кількість питань</legend>
             <div>
-              {(exam.practice?.quickQuestionCounts ?? [5, 10, 20]).map(
-                (count) => (
-                  <label key={count}>
+              {quickCountOptions.map((count) => {
+                const disabled = count > availableQuickQuestionCount
+
+                return (
+                  <label
+                    className={disabled ? 'quick-count__disabled' : undefined}
+                    key={count}
+                  >
                     <input
-                      checked={quickCount === count}
+                      checked={effectiveQuickCount === count}
+                      disabled={disabled}
                       name="quick-count"
                       onChange={() => setQuickCount(count)}
                       type="radio"
@@ -228,8 +385,8 @@ function PracticeSetupForm({
                     />
                     <span>{count}</span>
                   </label>
-                ),
-              )}
+                )
+              })}
             </div>
           </fieldset>
         ) : null}
@@ -295,19 +452,27 @@ function PracticeSetupForm({
         <div>
           <span>Ваша сесія</span>
           <strong>
-            {questionCount} питань
-            {experience === 'exam'
-              ? ` · ${Math.ceil(durationSeconds / 60)} хв`
-              : ' · без таймера'}
+            {questionCount > 0
+              ? `${questionCount} питань${
+                  experience === 'exam'
+                    ? ` · ${Math.ceil(durationSeconds / 60)} хв`
+                    : ' · без таймера'
+                }`
+              : 'Немає доступних питань'}
           </strong>
           <small>
-            {modeCopy[mode].title} ·{' '}
+            {modeCopy[mode].title} · {contentOriginCopy[contentOrigin].summary}{' '}
+            ·{' '}
             {experience === 'learning'
               ? 'навчальний режим'
               : 'симуляція іспиту'}
           </small>
         </div>
-        <button className="button button--primary" type="submit">
+        <button
+          className="button button--primary"
+          disabled={!canSubmit}
+          type="submit"
+        >
           Почати сесію
           <Icon name="arrow" size={18} />
         </button>
@@ -769,6 +934,7 @@ export function ResultsPage() {
   const questionsById = getQuestionMap(state.dataset.questions)
   const elapsedSeconds = attempt.elapsedSeconds
   const sectionSummaries = summarizeAttemptSections(attempt)
+  const originSummaries = summarizeAttemptOrigins(attempt)
   const disputedCount = attempt.questionResults.filter(
     (result) => result.answerReviewStatus === 'disputed',
   ).length
@@ -831,6 +997,31 @@ export function ResultsPage() {
           </span>
         </aside>
       ) : null}
+
+      <section className="result-origin">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">Походження</p>
+            <h2>Результат за джерелом питань</h2>
+          </div>
+          <p>
+            Офіційні та згенеровані питання рахуються окремо, щоб прогрес не
+            змішував різні типи матеріалів.
+          </p>
+        </div>
+        <div className="result-origin-grid">
+          {originSummaries.map((origin) => (
+            <article key={origin.key}>
+              <span>{origin.title}</span>
+              <strong>{origin.accuracy}%</strong>
+              <small>
+                Правильно: {origin.correct} · Помилок: {origin.incorrect} ·
+                Пропущено: {origin.skipped}
+              </small>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="result-sections">
         <div className="section-heading">

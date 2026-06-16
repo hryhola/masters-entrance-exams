@@ -1,4 +1,4 @@
-import type { OptionId } from '../content/types'
+import type { ContentOrigin, OptionId } from '../content/types'
 import type {
   AttemptQuestionResult,
   PracticeAttempt,
@@ -67,6 +67,10 @@ function isOptionId(value: unknown): value is OptionId {
   return typeof value === 'string' && value.length > 0 && value.length <= 64
 }
 
+function isContentOrigin(value: unknown): value is ContentOrigin {
+  return value === 'official' || value === 'generated'
+}
+
 function isAnswers(value: unknown): value is Record<string, OptionId> {
   return (
     isRecord(value) &&
@@ -90,7 +94,10 @@ function isSessionConfig(value: unknown): value is PracticeSessionConfig {
       value.mode === 'topic' ||
       value.mode === 'quick' ||
       value.mode === 'daily') &&
-    (value.experience === 'learning' || value.experience === 'exam')
+    (value.experience === 'learning' || value.experience === 'exam') &&
+    (value.contentOrigin === undefined ||
+      value.contentOrigin === 'all' ||
+      isContentOrigin(value.contentOrigin))
   )
 }
 
@@ -129,6 +136,7 @@ function isQuestionResult(value: unknown): value is AttemptQuestionResult {
     (value.answerReviewStatus === 'verified' ||
       value.answerReviewStatus === 'verified_with_caveat' ||
       value.answerReviewStatus === 'disputed') &&
+    isContentOrigin(value.origin) &&
     typeof value.sectionTitle === 'string' &&
     typeof value.topicTitle === 'string'
   )
@@ -168,6 +176,7 @@ function isQuestionProgress(value: unknown): value is QuestionProgress {
     typeof value.datasetId === 'string' &&
     typeof value.questionId === 'string' &&
     typeof value.questionNumber === 'number' &&
+    isContentOrigin(value.origin) &&
     typeof value.sectionTitle === 'string' &&
     typeof value.topicTitle === 'string' &&
     typeof value.attempts === 'number' &&
@@ -269,6 +278,18 @@ function migrateAttempt(value: unknown): PracticeAttempt | null {
     questionReasons: isQuestionReasons(value.questionReasons)
       ? value.questionReasons
       : {},
+    questionResults: Array.isArray(value.questionResults)
+      ? value.questionResults.map((result) =>
+          isRecord(result)
+            ? {
+                ...result,
+                origin: isContentOrigin(result.origin)
+                  ? result.origin
+                  : 'official',
+              }
+            : result,
+        )
+      : value.questionResults,
   }
 
   return isPracticeAttempt(migrated) ? migrated : null
@@ -299,6 +320,7 @@ function migrateProgressItem(value: unknown): QuestionProgress | null {
     typeof value.lastAttemptAt === 'number' ? value.lastAttemptAt : 0
   const migrated = {
     ...value,
+    origin: isContentOrigin(value.origin) ? value.origin : 'official',
     firstAttemptAt:
       typeof value.firstAttemptAt === 'number'
         ? value.firstAttemptAt

@@ -4,6 +4,7 @@ import type { PracticeAttempt, QuestionProgressMap } from './types'
 import {
   collectLatestReviewQuestions,
   summarizeAttempts,
+  summarizeAttemptsByOrigin,
   summarizeTopics,
 } from './analytics'
 
@@ -40,6 +41,7 @@ const attempt: PracticeAttempt = {
       officialOption: 'b',
       status: 'correct',
       answerReviewStatus: 'verified',
+      origin: 'official',
       sectionCode: '1',
       sectionTitle: 'Розділ',
       topicCode: '1.1',
@@ -52,6 +54,7 @@ const attempt: PracticeAttempt = {
       officialOption: 'c',
       status: 'unanswered',
       answerReviewStatus: 'disputed',
+      origin: 'generated',
       sectionCode: '1',
       sectionTitle: 'Розділ',
       topicCode: '1.2',
@@ -74,6 +77,35 @@ describe('progress analytics', () => {
     })
   })
 
+  it('summarizes completed attempts by content origin', () => {
+    expect(summarizeAttemptsByOrigin([attempt])).toEqual([
+      {
+        key: 'official',
+        title: 'Офіційні',
+        attemptCount: 1,
+        questionCount: 1,
+        answered: 1,
+        correct: 1,
+        incorrect: 0,
+        skipped: 0,
+        accuracy: 100,
+        elapsedSeconds: 30,
+      },
+      {
+        key: 'generated',
+        title: 'Згенеровані',
+        attemptCount: 1,
+        questionCount: 1,
+        answered: 0,
+        correct: 0,
+        incorrect: 0,
+        skipped: 1,
+        accuracy: 0,
+        elapsedSeconds: 30,
+      },
+    ])
+  })
+
   it('sorts topics from lowest accuracy', () => {
     const progress: QuestionProgressMap = {
       'dataset:q1': {
@@ -81,6 +113,7 @@ describe('progress analytics', () => {
         datasetId: 'dataset',
         questionId: 'q1',
         questionNumber: 1,
+        origin: 'official',
         sectionCode: '1',
         sectionTitle: 'Розділ',
         topicCode: '1.1',
@@ -103,6 +136,7 @@ describe('progress analytics', () => {
         datasetId: 'dataset',
         questionId: 'q2',
         questionNumber: 2,
+        origin: 'generated',
         sectionCode: '1',
         sectionTitle: 'Розділ',
         topicCode: '1.2',

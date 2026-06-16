@@ -1,3 +1,4 @@
+import type { ContentOrigin } from '../../content/types'
 import type {
   AttemptQuestionResult,
   PracticeAttempt,
@@ -14,6 +15,11 @@ export interface ProgressSummary {
   skipped: number
   accuracy: number
   elapsedSeconds: number
+}
+
+export interface OriginSummary extends ProgressSummary {
+  key: ContentOrigin
+  title: string
 }
 
 export interface TopicSummary {
@@ -55,6 +61,21 @@ export interface SectionSummary {
   accuracy: number
 }
 
+const contentOriginLabels: Record<ContentOrigin, string> = {
+  official: 'Офіційні',
+  generated: 'Згенеровані',
+}
+
+const contentOriginOrder: ContentOrigin[] = ['official', 'generated']
+
+function getResultOrigin(result: AttemptQuestionResult): ContentOrigin {
+  return result.origin ?? 'official'
+}
+
+function calculateAccuracy(correct: number, answered: number) {
+  return answered === 0 ? 0 : Math.round((correct / answered) * 100)
+}
+
 export function summarizeAttemptSections(
   attempt: PracticeAttempt,
 ): SectionSummary[] {
@@ -86,12 +107,86 @@ export function summarizeAttemptSections(
   return [...sections.values()]
     .map((section) => ({
       ...section,
-      accuracy:
-        section.answered === 0
-          ? 0
-          : Math.round((section.correct / section.answered) * 100),
+      accuracy: calculateAccuracy(section.correct, section.answered),
     }))
     .sort((left, right) => left.key.localeCompare(right.key, 'uk'))
+}
+
+export function summarizeAttemptsByOrigin(
+  attempts: PracticeAttempt[],
+  { includeEmpty = false }: { includeEmpty?: boolean } = {},
+): OriginSummary[] {
+  const groups = new Map<
+    ContentOrigin,
+    Omit<OriginSummary, 'attemptCount' | 'accuracy' | 'elapsedSeconds'> & {
+      attemptIds: Set<string>
+      elapsedSeconds: number
+    }
+  >()
+
+  for (const attempt of attempts) {
+    const secondsPerQuestion =
+      attempt.score.total === 0
+        ? 0
+        : attempt.elapsedSeconds / attempt.score.total
+
+    for (const result of attempt.questionResults) {
+      const origin = getResultOrigin(result)
+      const current = groups.get(origin) ?? {
+        key: origin,
+        title: contentOriginLabels[origin],
+        attemptIds: new Set<string>(),
+        questionCount: 0,
+        answered: 0,
+        correct: 0,
+        incorrect: 0,
+        skipped: 0,
+        elapsedSeconds: 0,
+      }
+
+      current.attemptIds.add(attempt.id)
+      current.questionCount += 1
+      current.answered += result.status === 'unanswered' ? 0 : 1
+      current.correct += result.status === 'correct' ? 1 : 0
+      current.incorrect += result.status === 'incorrect' ? 1 : 0
+      current.skipped += result.status === 'unanswered' ? 1 : 0
+      current.elapsedSeconds += secondsPerQuestion
+      groups.set(origin, current)
+    }
+  }
+
+  return contentOriginOrder
+    .map((origin) => {
+      const group = groups.get(origin) ?? {
+        key: origin,
+        title: contentOriginLabels[origin],
+        attemptIds: new Set<string>(),
+        questionCount: 0,
+        answered: 0,
+        correct: 0,
+        incorrect: 0,
+        skipped: 0,
+        elapsedSeconds: 0,
+      }
+
+      return {
+        key: group.key,
+        title: group.title,
+        attemptCount: group.attemptIds.size,
+        questionCount: group.questionCount,
+        answered: group.answered,
+        correct: group.correct,
+        incorrect: group.incorrect,
+        skipped: group.skipped,
+        accuracy: calculateAccuracy(group.correct, group.answered),
+        elapsedSeconds: Math.round(group.elapsedSeconds),
+      }
+    })
+    .filter((summary) => includeEmpty || summary.questionCount > 0)
+}
+
+export function summarizeAttemptOrigins(attempt: PracticeAttempt) {
+  return summarizeAttemptsByOrigin([attempt])
 }
 
 export function summarizeAttempts(
@@ -120,10 +215,7 @@ export function summarizeAttempts(
 
   return {
     ...totals,
-    accuracy:
-      totals.answered === 0
-        ? 0
-        : Math.round((totals.correct / totals.answered) * 100),
+    accuracy: calculateAccuracy(totals.correct, totals.answered),
   }
 }
 
@@ -158,10 +250,7 @@ export function summarizeTopics(progress: QuestionProgressMap): TopicSummary[] {
   return [...groups.values()]
     .map((group) => ({
       ...group,
-      accuracy:
-        group.answered === 0
-          ? 0
-          : Math.round((group.correct / group.answered) * 100),
+      accuracy: calculateAccuracy(group.correct, group.answered),
       elapsedSeconds: 0,
     }))
     .sort(
@@ -262,10 +351,7 @@ export function summarizeTopicsFromAttempts(
     .map((group) => ({
       ...group,
       elapsedSeconds: Math.round(group.elapsedSeconds),
-      accuracy:
-        group.answered === 0
-          ? 0
-          : Math.round((group.correct / group.answered) * 100),
+      accuracy: calculateAccuracy(group.correct, group.answered),
     }))
     .sort(
       (left, right) =>
@@ -311,7 +397,5 @@ export function collectLatestReviewQuestions(
 }
 
 export function getQuestionAccuracy(progress: QuestionProgress) {
-  return progress.answered === 0
-    ? 0
-    : Math.round((progress.correct / progress.answered) * 100)
+  return calculateAccuracy(progress.correct, progress.answered)
 }
