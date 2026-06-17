@@ -1,0 +1,1418 @@
+{
+  "schema_version": 2,
+  "dataset": {
+    "id": "generated-yefvv-it-networks-20260617-001",
+    "title": "Додаткові питання ЄФВВ — Комп’ютерні мережі та обмін даними",
+    "exam": "ЄФВВ",
+    "subject": "Інформаційні технології",
+    "year": 2026,
+    "languages": [
+      "uk"
+    ],
+    "status": "ready",
+    "origin": "generated",
+    "generation": {
+      "batch_id": "generated-yefvv-it-networks-20260617-001",
+      "agent": "codex",
+      "instructions": {
+        "id": "yefvv-it-agent-question-generation",
+        "version": "1.0.0",
+        "sha256": "b530323b3bb2b3812476681ed81b6e11b251e2cc97657527d79779a840f2d593"
+      },
+      "generated_at": "2026-06-17T12:20:00Z",
+      "workflow_version": "1.0.0",
+      "research_report": "reports/generated/generated-yefvv-it-networks-20260617-001.research.md",
+      "parameters": {
+        "topic": "Комп’ютерні мережі та обмін даними",
+        "difficulty": "hard",
+        "task_type": "single_choice"
+      }
+    },
+    "task_count": 15,
+    "assessment_item_count": 15,
+    "stimulus_count": 0
+  },
+  "sections": [
+    {
+      "code": "7",
+      "title": "Комп’ютерні мережі та обмін даними"
+    }
+  ],
+  "stimuli": [],
+  "tasks": [
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-task-01",
+      "number": 1,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "7",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-networks-20260617-001-001",
+          "number": 1,
+          "display_label": "1",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Під час передавання веб-запиту прикладні дані послідовно проходять через транспортний, мережевий і канальний рівні. Яке твердження найкраще описує інкапсуляцію в такій багаторівневій моделі?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кожен нижчий рівень додає власну службову інформацію до даних вищого рівня, не змінюючи їхньої прикладної семантики."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кожен нижчий рівень повністю розшифровує прикладний текст і замінює його власним форматом."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Інкапсуляція означає, що всі рівні використовують один спільний заголовок без розмежування функцій."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Канальний рівень самостійно обирає HTTP-метод і TCP-порт призначення."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Інкапсуляція означає додавання заголовків або трейлерів конкретного рівня до блока даних, отриманого згори. Прикладна семантика не переписується нижчими рівнями: вони додають службові поля для доставки на своєму рівні."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-networks-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-task-02",
+      "number": 2,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "7",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-networks-20260617-001-002",
+          "number": 2,
+          "display_label": "2",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Два вузли перебувають у різних IP-мережах. Пакет має пройти через кілька маршрутизаторів, причому кожен маршрутизатор знає лише наступний крок до префікса призначення. Яка ідея найточніше описує цю доставку?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кожен проміжний маршрутизатор встановлює окреме прикладне HTTP-з’єднання з наступним вузлом."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Маршрутизація виконується hop-by-hop за таблицями маршрутів і мережевими префіксами."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Усі маршрутизатори заздалегідь отримують повний список фізичних портів кінцевого пристрою."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Пакет завжди надсилається широкомовно в усі мережі Інтернету."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "IP-маршрутизація відбувається поетапно: кожен маршрутизатор вибирає наступний перехід за адресою призначення та локальною таблицею маршрутів. Йому не потрібно знати повний фізичний шлях до кінцевого вузла."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-networks-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-task-03",
+      "number": 3,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "7",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-networks-20260617-001-003",
+          "number": 3,
+          "display_label": "3",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Канал має пропускну здатність 100 Мбіт/с і кругову затримку 40 мс. Який висновок найкраще пояснює, чому протоколу з віконним керуванням може знадобитися достатньо велике вікно передавання?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Затримка не впливає на кількість даних у польоті, якщо канал цифровий."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вікно завжди має дорівнювати одному байту, щоб уникнути втрат."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Щоб повністю завантажити канал, у мережі одночасно має перебувати приблизно bandwidth-delay product даних."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Пропускна здатність визначається тільки розміром IP-адреси."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Bandwidth-delay product оцінює обсяг даних, який може заповнити канал між відправленням і підтвердженням. Якщо вікно значно менше за цей обсяг, відправник простоюватиме, чекаючи ACK."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-networks-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-task-04",
+      "number": 4,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "7",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-networks-20260617-001-004",
+          "number": 4,
+          "display_label": "4",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Адміністратор має мережу 192.0.2.0/27. Скільки IPv4-адрес містить такий CIDR-блок?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "8"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "16"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "27"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "32"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "IPv4 має 32 біти адреси. Префікс /27 залишає 5 бітів для адрес усередині блока, тобто 2^5 = 32 адреси. Питання просить кількість адрес у блоці, а не кількість придатних host-адрес."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-networks-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-task-05",
+      "number": 5,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "7",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-networks-20260617-001-005",
+          "number": 5,
+          "display_label": "5",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Чотири суміжні префікси 203.0.113.0/26, 203.0.113.64/26, 203.0.113.128/26 і 203.0.113.192/26 потрібно оголосити одним агрегованим маршрутом без охоплення зайвих адрес. Який префікс є коректною агрегацією?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "203.0.113.0/24"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "203.0.113.0/25"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "203.0.113.64/24"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "203.0.112.0/23"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Кожен /26 містить 64 адреси; чотири суміжні блоки разом покривають 256 адрес від 203.0.113.0 до 203.0.113.255. Це рівно один /24."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-networks-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-task-06",
+      "number": 6,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "7",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-networks-20260617-001-006",
+          "number": 6,
+          "display_label": "6",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яку адресу можна використати як приватну IPv4-адресу всередині організації без прямої маршрутизації в глобальному Інтернеті за RFC 1918?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "8.8.8.8"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "172.20.10.5"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "198.51.100.7"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "224.0.0.1"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "RFC 1918 резервує приватні діапазони 10.0.0.0/8, 172.16.0.0/12 і 192.168.0.0/16. Адреса 172.20.10.5 входить у 172.16.0.0–172.31.255.255."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-networks-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-task-07",
+      "number": 7,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "7",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-networks-20260617-001-007",
+          "number": 7,
+          "display_label": "7",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "IPv4-пакет більший за MTU наступної ланки, а прапорець “Do not fragment” не встановлено. Який механізм IPv4 найдоречніше описує можливу обробку такого пакета?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Пакет автоматично перетворюється на IPv6-пакет без зміни заголовків."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Маршрутизатор зобов’язаний відкинути пакет завжди, навіть якщо фрагментація дозволена."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Пакет може бути розділений на фрагменти з полями ідентифікації та зміщення для подальшого збирання."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "TCP-порт призначення замінюється на номер MTU."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "IPv4 підтримує фрагментацію датаграм, коли це потрібно для проходження ланки з меншим MTU і фрагментація не заборонена. Фрагменти несуть службові поля для збирання оригінальної датаграми."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-networks-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-task-08",
+      "number": 8,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "7",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-networks-20260617-001-008",
+          "number": 8,
+          "display_label": "8",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "В IPv6-пакеті після базового заголовка розміщено кілька extension headers. Яке твердження про поле Next Header є правильним?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Воно завжди містить тільки номер TCP-порту призначення."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Воно ігнорується, якщо пакет містить Hop Limit."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Воно вказує розмір IPv6-адреси джерела в бітах."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Воно утворює ланцюжок, вказуючи тип наступного extension header або upper-layer header."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "В IPv6 поле Next Header вказує, який заголовок іде далі: extension header або заголовок протоколу вищого рівня. Так формується послідовний ланцюжок обробки заголовків."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-networks-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-task-09",
+      "number": 9,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "7",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-networks-20260617-001-009",
+          "number": 9,
+          "display_label": "9",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яка відмінність між multicast і anycast адресами IPv6 є найсуттєвішою для доставки?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Multicast доставляє пакет усім членам групи, а anycast — одному з найближчих вузлів, що мають спільну адресу."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Multicast використовується лише для TCP, а anycast лише для UDP."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Anycast завжди означає широкомовну доставку в усі підмережі."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Multicast і anycast є різними назвами однієї індивідуальної unicast-адреси."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "IPv6 multicast адресує групу інтерфейсів, і пакет доставляється членам цієї групи. Anycast адреса може бути призначена кільком інтерфейсам, але маршрутизація доставляє пакет одному з них."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-networks-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-task-10",
+      "number": 10,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "7",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-networks-20260617-001-010",
+          "number": 10,
+          "display_label": "10",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Застосунок передає файл і потребує, щоб байти були доставлені отримувачу без пропусків, дублікатів і в правильному порядку. Яка властивість TCP найкраще відповідає цій вимозі?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Відсутність стану між кінцевими вузлами."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Надійний упорядкований байтовий потік із підтвердженнями та повторними передаваннями."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Передавання кожного повідомлення незалежною датаграмою без ACK."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Обов’язкова доставка всіх даних усім вузлам локальної мережі."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "TCP надає абстракцію надійного впорядкованого байтового потоку. Для цього він використовує послідовні номери, підтвердження, контроль потоку й повторне передавання втрачених сегментів."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-networks-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-task-11",
+      "number": 11,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "7",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-networks-20260617-001-011",
+          "number": 11,
+          "display_label": "11",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Сервіс надсилає короткі телеметричні повідомлення, де допустима втрата окремих датаграм, але важлива мінімальна службова надбудова й збереження меж повідомлень. Який транспортний протокол найкраще відповідає такому опису?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "TCP, бо він завжди зберігає межі прикладних повідомлень."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "TLS, бо він замінює IP-маршрутизацію."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "UDP, бо він передає незалежні датаграми з мінімальним станом протоколу."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "ICMP, бо він призначений для передавання файлів."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "UDP є датаграмним протоколом із невеликою службовою надбудовою та без вбудованих гарантій доставки або порядку. Це корисно, коли застосунок сам вирішує, чи потрібні повтори."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-networks-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-task-12",
+      "number": 12,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "7",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-networks-20260617-001-012",
+          "number": 12,
+          "display_label": "12",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Клієнт обмінюється HTTP-повідомленнями з сервером через незахищену мережу. Який протокол найдоречніше використати поверх транспортного рівня, щоб зменшити ризики прослуховування, підміни й фальсифікації повідомлень?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "CIDR"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "ARP"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "NAT без криптографії"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "TLS"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "TLS призначений для захисту клієнт-серверної взаємодії від прослуховування, модифікації та підроблення повідомлень. Він додає криптографічний захист для прикладного протоколу."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-networks-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-task-13",
+      "number": 13,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "7",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-networks-20260617-001-013",
+          "number": 13,
+          "display_label": "13",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "HTTP-сервер отримав коректний запит, але доступ до ресурсу заборонено політикою авторизації. Який клас HTTP status code найкраще відповідає такій ситуації?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "4xx, бо це помилка на стороні клієнтського запиту або його прав доступу."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "1xx, бо це остаточна відповідь про успішну обробку."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "2xx, бо заборона доступу завжди означає успіх."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "5xx, бо будь-яка заборона доступу є помилкою мережевого маршрутизатора."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "HTTP 4xx коди описують ситуації, коли запит не може бути виконаний через проблему із самим запитом або правами клієнта. Заборона доступу є клієнтською/авторизаційною умовою."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-networks-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-task-14",
+      "number": 14,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "7",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-networks-20260617-001-014",
+          "number": 14,
+          "display_label": "14",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Декілька логічних потоків прикладних даних передаються в межах одного захищеного транспортного з’єднання, побудованого поверх UDP. Втрата даних в одному потоці не повинна блокувати доставку вже доступних даних іншого потоку. Який протокол найкраще відповідає такій характеристиці?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Класичний UDP без жодної надбудови надійності або потоків."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "QUIC"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "IPv4 fragmentation"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "ARP"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "QUIC побудований поверх UDP і надає захищений транспорт із мультиплексованими потоками. Мультиплексування на рівні QUIC зменшує head-of-line blocking між незалежними потоками."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-networks-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-task-15",
+      "number": 15,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "7",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-networks-20260617-001-015",
+          "number": 15,
+          "display_label": "15",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "IoT-система вимірює температуру, локально обчислює перевищення порогу, передає повідомлення шлюзу і вмикає вентиляцію. Який набір функцій найкраще відображає типовий цикл IoT/Network of Things?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Лише зберігання адрес у DNS без фізичних вимірювань."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Тільки маршрутизація IP-пакетів без взаємодії з фізичним середовищем."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Sensing, computing, communication and actuation."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Тільки шифрування TLS без сенсорів і виконавчих механізмів."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "IoT поєднує вимірювання стану середовища, обчислення або прийняття рішення, комунікацію між компонентами та дію через виконавчі пристрої."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-networks-20260617-001"
+          }
+        }
+      ]
+    }
+  ],
+  "release": {
+    "status": "ready_for_application",
+    "version": "0.1.0",
+    "verification": {
+      "method": "agent_validation",
+      "status": "passed",
+      "workflow_version": "1.0.0",
+      "validated_at": "2026-06-17T12:40:00Z",
+      "report": "reports/generated/generated-yefvv-it-networks-20260617-001.validation.json",
+      "checks": [
+        "schema",
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "duplicate_detection",
+        "official_similarity",
+        "exam_style"
+      ],
+      "similarity": {
+        "maximum_score": 0.010753,
+        "threshold": 0.35
+      }
+    }
+  }
+}

@@ -1,0 +1,401 @@
+{
+  "schema_version": 1,
+  "batch_id": "generated-yefvv-it-networks-20260617-001",
+  "status": "passed",
+  "validated_at": "2026-06-17T12:40:00Z",
+  "workflow_version": "1.0.0",
+  "validator": {
+    "agent": "codex",
+    "method": "agent_validation"
+  },
+  "inputs": {
+    "dataset": "data/generated/drafts/generated-yefvv-it-networks-20260617-001.json",
+    "taxonomy": "data/taxonomies/yefvv-it-program-2025.yaml",
+    "official_reference_dataset": "data/yefvv-it-2024.json",
+    "research_report": "reports/generated/generated-yefvv-it-networks-20260617-001.research.md",
+    "instruction": "docs/content-generation/YEFVV_IT_AGENT_QUESTION_GENERATION.md",
+    "instruction_sha256": "b530323b3bb2b3812476681ed81b6e11b251e2cc97657527d79779a840f2d593"
+  },
+  "summary": {
+    "questions_checked": 15,
+    "questions_passed": 15,
+    "questions_failed": 0,
+    "correct_choice_distribution": {
+      "a": 4,
+      "b": 4,
+      "c": 4,
+      "d": 3
+    }
+  },
+  "checks": {
+    "schema": {
+      "status": "passed",
+      "evidence": "JSON parsed successfully; schema v2 validator and runtime adapter accepted all 15 tasks and 15 assessment items."
+    },
+    "source_grounding": {
+      "status": "passed",
+      "evidence": "Every question is mapped to one primary and one corroborating authoritative source. The batch covers 7.1, 7.2 and 7.3."
+    },
+    "answer_integrity": {
+      "status": "passed",
+      "evidence": "All questions were solved independently after drafting. Each has exactly one unconditional correct answer and three mutually incompatible distractors."
+    },
+    "explanation_integrity": {
+      "status": "passed",
+      "evidence": "All explanations justify the selected concept and distinguish it from distractors without relying on hidden context."
+    },
+    "duplicate_detection": {
+      "status": "passed",
+      "evidence": "No exact duplicate prompts, option sets, or 10-word sequences were found inside the batch. Maximum internal token-trigram Jaccard score is 0.010929."
+    },
+    "official_similarity": {
+      "status": "passed",
+      "evidence": "All 140 official 2024 questions were compared using normalized Unicode word-token trigram Jaccard similarity, followed by semantic review of related network items. Maximum score is 0.010753, below the 0.35 threshold."
+    },
+    "exam_style": {
+      "status": "passed",
+      "evidence": "All questions use neutral Ukrainian academic language, one learning objective, four plausible same-level options, and no prohibited programming language, pseudocode, program fragment, trick wording, or version-sensitive trivia."
+    }
+  },
+  "similarity": {
+    "method": "Lowercase Unicode word tokenization; sets of contiguous 3-token n-grams; Jaccard intersection over union. Exact shared contiguous 10-token sequences were checked separately.",
+    "threshold": 0.35,
+    "maximum_score": 0.010753,
+    "maximum_pair": {
+      "generated_id": "generated-yefvv-it-networks-20260617-001-006",
+      "official_id": "yefvv-it-2024-117"
+    },
+    "maximum_internal_score": 0.010929,
+    "maximum_internal_pair": {
+      "generated_id_a": "generated-yefvv-it-networks-20260617-001-001",
+      "generated_id_b": "generated-yefvv-it-networks-20260617-001-007"
+    },
+    "exact_shared_10_word_sequences": 0,
+    "per_question": [
+      {
+        "id": "generated-yefvv-it-networks-20260617-001-001",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-networks-20260617-001-002",
+        "nearest_official_id": "yefvv-it-2024-113",
+        "score": 0.008772,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-networks-20260617-001-003",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-networks-20260617-001-004",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-networks-20260617-001-005",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-networks-20260617-001-006",
+        "nearest_official_id": "yefvv-it-2024-117",
+        "score": 0.010753,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-networks-20260617-001-007",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-networks-20260617-001-008",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-networks-20260617-001-009",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-networks-20260617-001-010",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-networks-20260617-001-011",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-networks-20260617-001-012",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-networks-20260617-001-013",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-networks-20260617-001-014",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-networks-20260617-001-015",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      }
+    ],
+    "semantic_review": [
+      {
+        "generated_id": "generated-yefvv-it-networks-20260617-001-001",
+        "related_official_ids": [
+          "yefvv-it-2024-008",
+          "yefvv-it-2024-025"
+        ],
+        "status": "distinct",
+        "reason": "Generated item uses a new scenario, calculation or protocol-comparison task and does not reuse the official section-7 prompt, option set or answer pattern."
+      },
+      {
+        "generated_id": "generated-yefvv-it-networks-20260617-001-002",
+        "related_official_ids": [
+          "yefvv-it-2024-008"
+        ],
+        "status": "distinct",
+        "reason": "Generated item uses a new scenario, calculation or protocol-comparison task and does not reuse the official section-7 prompt, option set or answer pattern."
+      },
+      {
+        "generated_id": "generated-yefvv-it-networks-20260617-001-003",
+        "related_official_ids": [
+          "yefvv-it-2024-008"
+        ],
+        "status": "distinct",
+        "reason": "Generated item uses a new scenario, calculation or protocol-comparison task and does not reuse the official section-7 prompt, option set or answer pattern."
+      },
+      {
+        "generated_id": "generated-yefvv-it-networks-20260617-001-004",
+        "related_official_ids": [
+          "yefvv-it-2024-008",
+          "yefvv-it-2024-025"
+        ],
+        "status": "distinct",
+        "reason": "Generated item uses a new scenario, calculation or protocol-comparison task and does not reuse the official section-7 prompt, option set or answer pattern."
+      },
+      {
+        "generated_id": "generated-yefvv-it-networks-20260617-001-005",
+        "related_official_ids": [
+          "yefvv-it-2024-008"
+        ],
+        "status": "distinct",
+        "reason": "Generated item uses a new scenario, calculation or protocol-comparison task and does not reuse the official section-7 prompt, option set or answer pattern."
+      },
+      {
+        "generated_id": "generated-yefvv-it-networks-20260617-001-006",
+        "related_official_ids": [
+          "yefvv-it-2024-008"
+        ],
+        "status": "distinct",
+        "reason": "Generated item uses a new scenario, calculation or protocol-comparison task and does not reuse the official section-7 prompt, option set or answer pattern."
+      },
+      {
+        "generated_id": "generated-yefvv-it-networks-20260617-001-007",
+        "related_official_ids": [
+          "yefvv-it-2024-008",
+          "yefvv-it-2024-025"
+        ],
+        "status": "distinct",
+        "reason": "Generated item uses a new scenario, calculation or protocol-comparison task and does not reuse the official section-7 prompt, option set or answer pattern."
+      },
+      {
+        "generated_id": "generated-yefvv-it-networks-20260617-001-008",
+        "related_official_ids": [
+          "yefvv-it-2024-008"
+        ],
+        "status": "distinct",
+        "reason": "Generated item uses a new scenario, calculation or protocol-comparison task and does not reuse the official section-7 prompt, option set or answer pattern."
+      },
+      {
+        "generated_id": "generated-yefvv-it-networks-20260617-001-009",
+        "related_official_ids": [
+          "yefvv-it-2024-008"
+        ],
+        "status": "distinct",
+        "reason": "Generated item uses a new scenario, calculation or protocol-comparison task and does not reuse the official section-7 prompt, option set or answer pattern."
+      },
+      {
+        "generated_id": "generated-yefvv-it-networks-20260617-001-010",
+        "related_official_ids": [
+          "yefvv-it-2024-008",
+          "yefvv-it-2024-025"
+        ],
+        "status": "distinct",
+        "reason": "Generated item uses a new scenario, calculation or protocol-comparison task and does not reuse the official section-7 prompt, option set or answer pattern."
+      },
+      {
+        "generated_id": "generated-yefvv-it-networks-20260617-001-011",
+        "related_official_ids": [
+          "yefvv-it-2024-008"
+        ],
+        "status": "distinct",
+        "reason": "Generated item uses a new scenario, calculation or protocol-comparison task and does not reuse the official section-7 prompt, option set or answer pattern."
+      },
+      {
+        "generated_id": "generated-yefvv-it-networks-20260617-001-012",
+        "related_official_ids": [
+          "yefvv-it-2024-008"
+        ],
+        "status": "distinct",
+        "reason": "Generated item uses a new scenario, calculation or protocol-comparison task and does not reuse the official section-7 prompt, option set or answer pattern."
+      },
+      {
+        "generated_id": "generated-yefvv-it-networks-20260617-001-013",
+        "related_official_ids": [
+          "yefvv-it-2024-008",
+          "yefvv-it-2024-025"
+        ],
+        "status": "distinct",
+        "reason": "Generated item uses a new scenario, calculation or protocol-comparison task and does not reuse the official section-7 prompt, option set or answer pattern."
+      },
+      {
+        "generated_id": "generated-yefvv-it-networks-20260617-001-014",
+        "related_official_ids": [
+          "yefvv-it-2024-008"
+        ],
+        "status": "distinct",
+        "reason": "Generated item uses a new scenario, calculation or protocol-comparison task and does not reuse the official section-7 prompt, option set or answer pattern."
+      },
+      {
+        "generated_id": "generated-yefvv-it-networks-20260617-001-015",
+        "related_official_ids": [
+          "yefvv-it-2024-008"
+        ],
+        "status": "distinct",
+        "reason": "Generated item uses a new scenario, calculation or protocol-comparison task and does not reuse the official section-7 prompt, option set or answer pattern."
+      }
+    ]
+  },
+  "question_results": [
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-001",
+      "topic_code": "7.1",
+      "primary_source": "MON-PROGRAM-2026",
+      "corroborating_source": "RFC-8200",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-002",
+      "topic_code": "7.1",
+      "primary_source": "RFC-791",
+      "corroborating_source": "RFC-4632",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-003",
+      "topic_code": "7.1",
+      "primary_source": "RFC-9293",
+      "corroborating_source": "RFC-9000",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-004",
+      "topic_code": "7.2",
+      "primary_source": "RFC-4632",
+      "corroborating_source": "RFC-791",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-005",
+      "topic_code": "7.2",
+      "primary_source": "RFC-4632",
+      "corroborating_source": "RFC-791",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-006",
+      "topic_code": "7.2",
+      "primary_source": "RFC-1918",
+      "corroborating_source": "RFC-4632",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-007",
+      "topic_code": "7.2",
+      "primary_source": "RFC-791",
+      "corroborating_source": "RFC-8200",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-008",
+      "topic_code": "7.2",
+      "primary_source": "RFC-8200",
+      "corroborating_source": "RFC-4291",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-009",
+      "topic_code": "7.2",
+      "primary_source": "RFC-4291",
+      "corroborating_source": "RFC-8200",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-010",
+      "topic_code": "7.2",
+      "primary_source": "RFC-9293",
+      "corroborating_source": "RFC-768",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-011",
+      "topic_code": "7.2",
+      "primary_source": "RFC-768",
+      "corroborating_source": "RFC-9293",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-012",
+      "topic_code": "7.2",
+      "primary_source": "RFC-8446",
+      "corroborating_source": "RFC-9110",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-013",
+      "topic_code": "7.2",
+      "primary_source": "RFC-9110",
+      "corroborating_source": "RFC-8446",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-014",
+      "topic_code": "7.2",
+      "primary_source": "RFC-9000",
+      "corroborating_source": "RFC-768",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-networks-20260617-001-015",
+      "topic_code": "7.3",
+      "primary_source": "NIST-NOT",
+      "corroborating_source": "RFC-8446",
+      "status": "passed"
+    }
+  ]
+}

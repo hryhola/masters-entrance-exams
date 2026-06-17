@@ -71,6 +71,22 @@ function readGeneratedComputerArchitectureDataset() {
   ) as unknown
 }
 
+function readGeneratedNetworksDataset() {
+  return JSON.parse(
+    readFileSync(
+      resolve(
+        process.cwd(),
+        '..',
+        'data',
+        'generated',
+        'drafts',
+        'generated-yefvv-it-networks-20260617-001.json',
+      ),
+      'utf8',
+    ),
+  ) as unknown
+}
+
 afterEach(() => {
   clearDatasetCache()
   clearTaskDatasetCache()
@@ -160,6 +176,15 @@ describe('loadDataset', () => {
           json: async () => readGeneratedComputerArchitectureDataset(),
         })
       }
+      if (
+        url ===
+        '/content/datasets/generated-yefvv-it-networks-20260617-001/dataset.json'
+      ) {
+        return Promise.resolve({
+          ok: true,
+          json: async () => readGeneratedNetworksDataset(),
+        })
+      }
       return Promise.resolve({ ok: false, status: 404 })
     })
     vi.stubGlobal('fetch', fetchMock)
@@ -172,6 +197,7 @@ describe('loadDataset', () => {
     const cybersecurity = dataset.sections.find(
       (section) => section.code === '5',
     )
+    const networks = dataset.sections.find((section) => section.code === '7')
     const generatedQuestions = dataset.questions.filter(
       (question) => question.origin === 'generated',
     )
@@ -181,12 +207,16 @@ describe('loadDataset', () => {
     const generatedComputerArchitectureQuestions = generatedQuestions.filter(
       (question) => question.classification.topic?.sectionCode === '2',
     )
+    const generatedNetworkQuestions = generatedQuestions.filter(
+      (question) => question.classification.topic?.sectionCode === '7',
+    )
 
-    expect(dataset.questions).toHaveLength(190)
+    expect(dataset.questions).toHaveLength(205)
     expect(computerArchitecture?.questionCount).toBe(34)
     expect(databases?.questionCount).toBe(37)
     expect(cybersecurity?.questionCount).toBe(22)
-    expect(generatedQuestions).toHaveLength(50)
+    expect(networks?.questionCount).toBe(28)
+    expect(generatedQuestions).toHaveLength(65)
     expect(generatedQuestions[0]).toMatchObject({
       number: 141,
       displayLabel: 'Дод. 1',
@@ -219,6 +249,18 @@ describe('loadDataset', () => {
         topic: expect.objectContaining({
           sectionCode: '2',
           section: 'Архітектура комп’ютера',
+        }),
+      },
+    })
+    expect(generatedNetworkQuestions).toHaveLength(15)
+    expect(generatedNetworkQuestions[0]).toMatchObject({
+      number: 191,
+      displayLabel: 'Дод. 1',
+      verification: { method: 'agent_validation' },
+      classification: {
+        topic: expect.objectContaining({
+          sectionCode: '7',
+          section: 'Комп’ютерні мережі та обмін даними',
         }),
       },
     })

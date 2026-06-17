@@ -61,6 +61,7 @@ export const datasetRegistry: Record<string, DatasetDefinition> = {
       'generated-yefvv-it-cybersecurity-20260615-001',
       'generated-yefvv-it-databases-20260617-001',
       'generated-yefvv-it-computer-architecture-20260617-001',
+      'generated-yefvv-it-networks-20260617-001',
     ],
   },
   'yefvv-it-2024': {
@@ -114,6 +115,15 @@ export const datasetRegistry: Record<string, DatasetDefinition> = {
     language: 'uk',
     sectionCodes: ['2'],
   },
+  'generated-yefvv-it-networks-20260617-001': {
+    id: 'generated-yefvv-it-networks-20260617-001',
+    kind: 'task_projection',
+    sourceDatasetId: 'generated-yefvv-it-networks-20260617-001',
+    title: 'Додаткові питання ЄФВВ — Комп’ютерні мережі та обмін даними',
+    subject: 'Інформаційні технології',
+    language: 'uk',
+    sectionCodes: ['7'],
+  },
 }
 
 export const taskDatasetRegistry: Record<string, TaskDatasetDefinition> = {
@@ -139,6 +149,11 @@ export const taskDatasetRegistry: Record<string, TaskDatasetDefinition> = {
     id: 'generated-yefvv-it-computer-architecture-20260617-001',
     dataPath:
       'content/datasets/generated-yefvv-it-computer-architecture-20260617-001/dataset.json',
+  },
+  'generated-yefvv-it-networks-20260617-001': {
+    id: 'generated-yefvv-it-networks-20260617-001',
+    dataPath:
+      'content/datasets/generated-yefvv-it-networks-20260617-001/dataset.json',
   },
 }
 
