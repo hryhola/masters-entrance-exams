@@ -1,0 +1,1868 @@
+{
+  "schema_version": 2,
+  "dataset": {
+    "id": "generated-yefvv-it-computer-architecture-20260617-001",
+    "title": "Додаткові питання ЄФВВ — Архітектура комп’ютера",
+    "exam": "ЄФВВ",
+    "subject": "Інформаційні технології",
+    "year": 2026,
+    "languages": [
+      "uk"
+    ],
+    "status": "ready",
+    "origin": "generated",
+    "generation": {
+      "batch_id": "generated-yefvv-it-computer-architecture-20260617-001",
+      "agent": "codex",
+      "instructions": {
+        "id": "yefvv-it-agent-question-generation",
+        "version": "1.0.0",
+        "sha256": "b530323b3bb2b3812476681ed81b6e11b251e2cc97657527d79779a840f2d593"
+      },
+      "generated_at": "2026-06-17T10:45:00Z",
+      "workflow_version": "1.0.0",
+      "research_report": "reports/generated/generated-yefvv-it-computer-architecture-20260617-001.research.md",
+      "parameters": {
+        "topic": "Архітектура комп’ютера",
+        "difficulty": "hard",
+        "task_type": "single_choice"
+      }
+    },
+    "task_count": 20,
+    "assessment_item_count": 20,
+    "stimulus_count": 0
+  },
+  "sections": [
+    {
+      "code": "2",
+      "title": "Архітектура комп’ютера"
+    }
+  ],
+  "stimuli": [],
+  "tasks": [
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-01",
+      "number": 1,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-001",
+          "number": 1,
+          "display_label": "1",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Для трьох бінарних сигналів A, B, C потрібно отримати 1 тоді й лише тоді, коли A = 1, а серед B і C рівно один сигнал дорівнює 1. Який логічний вираз найточніше задає потрібну функцію?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "A ∧ (B ⊕ C)"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "(A ∧ B) ∨ C"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "A ⊕ B ⊕ C"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "A ∨ (B ∧ C)"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Умова вимагає одночасно A = 1 і взаємної відмінності B та C. Саме XOR дорівнює 1, коли рівно один із двох входів має значення 1, тому A ∧ (B ⊕ C) відсікає всі випадки з A = 0."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-02",
+      "number": 2,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-002",
+          "number": 2,
+          "display_label": "2",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Контроль парності має видавати 1, якщо у чотирибітному слові непарна кількість одиниць. Яка властивість XOR найкраще пояснює побудову такого контролю?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "XOR дорівнює 1 лише тоді, коли всі входи дорівнюють 1."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Послідовне XOR усіх бітів дорівнює 1 тоді, коли кількість одиниць непарна."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "XOR завжди зберігає старший біт слова без змін."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "XOR перетворює будь-яке ненульове слово на одиницю."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "XOR змінює результат щоразу, коли зустрічає одиницю. Тому після згортання всіх бітів результат 1 означає непарну кількість одиниць, а 0 — парну."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-03",
+      "number": 3,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-003",
+          "number": 3,
+          "display_label": "3",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Схему дозволено будувати тільки з двовходових NAND-елементів. Чому цього достатньо для реалізації довільної комбінаційної булевої функції?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "NAND безпосередньо реалізує тільки XOR, а XOR достатній для всіх функцій."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "NAND не потребує інверсії, тому не може створити NOT, але може створити OR."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "За допомогою NAND можна побудувати NOT, AND і OR, а ці операції функціонально повні."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "NAND є послідовним елементом пам’яті, тому замінює і логіку, і регістри."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "NAND є функціонально повною операцією: інвертор отримують з’єднанням входів, AND — інверсією результату NAND, OR — через закони де Моргана. Маючи NOT, AND і OR, можна реалізувати будь-яку комбінаційну булеву функцію."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-04",
+      "number": 4,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-004",
+          "number": 4,
+          "display_label": "4",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У 8-бітній беззнаковій арифметиці додають 250 і 12, а результат зберігають з відкиданням переносу за межі восьми бітів. Яке значення буде збережено?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "262"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "250"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "12"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "6"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Беззнакове 8-бітне слово зберігає значення за модулем 256. Сума 250 + 12 = 262, а 262 mod 256 = 6, тому старший перенос втрачається."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-05",
+      "number": 5,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-005",
+          "number": 5,
+          "display_label": "5",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Який діапазон значень має 8-бітне ціле число у доповнювальному коді?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "від −128 до 127"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "від −127 до 127"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "від 0 до 255"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "від −255 до 255"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У n-бітному two’s complement діапазон становить від −2^(n−1) до 2^(n−1)−1. Для 8 бітів це від −128 до 127, бо один код використовується для нуля, а найменше від’ємне число не має додатного симетричного представника."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-06",
+      "number": 6,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-006",
+          "number": 6,
+          "display_label": "6",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У 8-бітному доповнювальному коді значення 11110000 інтерпретується як від’ємне число. Який результат найкраще описує арифметичний зсув цього слова праворуч на 2 біти?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "00111100, бо правий зсув завжди заповнює старші біти нулями"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "11111100, бо арифметичний зсув зберігає знаковий біт"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "00001111, бо біти циклічно переходять з молодших позицій у старші"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "11000000, бо зсув праворуч не змінює молодші біти"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Арифметичний правий зсув для від’ємного two’s complement числа заповнює звільнені старші позиції копіями знакового біта. Для 11110000 після двох таких зсувів отримуємо 11111100."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-07",
+      "number": 7,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-007",
+          "number": 7,
+          "display_label": "7",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "32-бітне слово має шістнадцяткове значення 0x12345678. У little-endian системі його записують у пам’ять, починаючи з найменшої адреси. Яка послідовність байтів лежатиме за зростанням адрес?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "12 34 56 78"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "34 12 78 56"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "78 56 34 12"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "56 78 12 34"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У little-endian поданні найменш значущий байт багатобайтового слова зберігається за найменшою адресою. Для 0x12345678 байти за зростанням адрес будуть 78, 56, 34, 12."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-08",
+      "number": 8,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-008",
+          "number": 8,
+          "display_label": "8",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У 8-бітному доповнювальному коді додають 01111111 і 00000001. Який висновок про результат є правильним?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Отримано 10000000, що є коректним додатним числом 128."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Отримано 00000000, бо додавання переходить через максимум до нуля."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Переповнення немає, бо додавали числа з різними знаками."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Отримано 10000000, але це знакове переповнення: додатні доданки дали від’ємний результат."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "01111111 — це 127, а 00000001 — це 1. Математична сума 128 не входить у діапазон 8-бітного two’s complement, тому бітовий результат 10000000 інтерпретується як −128 і означає знакове переповнення."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-09",
+      "number": 9,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-009",
+          "number": 9,
+          "display_label": "9",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Чому десяткове значення 0,1 у типовому двійковому форматі з плаваючою комою не зберігається точно?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо 1/10 має нескінченне періодичне подання у системі з основою 2, тому його доводиться округлювати."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо формат з плаваючою комою не може подати жодного дробового числа."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо мантиса завжди зберігається у десятковому коді BCD."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо знак числа займає всі біти експоненти."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Деякі скінченні десяткові дроби не мають скінченного двійкового подання. Формат із фіксованою кількістю бітів значущості зберігає найближче представне число, тому виникає помилка округлення."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-10",
+      "number": 10,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-010",
+          "number": 10,
+          "display_label": "10",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У нормалізованому двійковому форматі з плаваючою комою збільшили кількість бітів експоненти, але загальна довжина слова лишилася сталою. Який наслідок є найімовірнішим?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Збільшиться і діапазон, і точність, бо експонента та мантиса незалежні від довжини слова."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Зросте діапазон можливих порядків, але зменшиться кількість бітів значущості для точності."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Зникне потреба в біті знака для від’ємних чисел."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Усі десяткові дроби почнуть подаватися точно."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "За сталої довжини слова додаткові біти експоненти треба взяти з інших полів, найчастіше зі significand. Це розширює діапазон порядків, але зменшує кількість значущих бітів і, відповідно, точність."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-11",
+      "number": 11,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-011",
+          "number": 11,
+          "display_label": "11",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Після серії обчислень із числами з плаваючою комою потрібно перевірити, чи два результати практично однакові. Який підхід є найобґрунтованішим?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Порівнювати лише текстовий десятковий запис результатів."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вимагати побітової рівності завжди, бо арифметика з плаваючою комою точна."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Порівнювати абсолютну або відносну різницю з допустимою похибкою."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Перед порівнянням примусово відкидати біт знака."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Через округлення і накопичення похибок математично еквівалентні перетворення можуть давати трохи різні представні числа. Тому практичне порівняння часто використовує абсолютну або відносну tolerance, а не безумовну побітову рівність."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-12",
+      "number": 12,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-012",
+          "number": 12,
+          "display_label": "12",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У задачі потрібно одночасно зберігати дуже малі й дуже великі дійсні величини, але точність у всьому діапазоні обмежена. Яка характеристика floating point найкраще пояснює таку поведінку?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Фіксована кома автоматично масштабує всі числа за експонентою."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кожне дійсне число зберігається як точний дріб із необмеженою кількістю бітів."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Порядок байтів у пам’яті визначає кількість десяткових знаків після коми."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Експонента масштабує число, а скінченна значущість обмежує кількість точних бітів."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Floating point відокремлює масштаб, який задає експонента, від значущих бітів, які задають точність. Це дозволяє покривати широкий діапазон величин, але не гарантує однакову абсолютну точність для всіх чисел."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-13",
+      "number": 13,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-013",
+          "number": 13,
+          "display_label": "13",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У системі пристрій введення-виведення відображено в частину адресного простору пам’яті, і процесор звертається до його регістрів звичайними операціями читання та запису за адресами. Який термін найточніше описує таку організацію?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "memory-mapped I/O"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "тільки портовий I/O з окремим адресним простором"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "арифметичний конвеєр"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "асоціативний кеш команд"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "За memory-mapped I/O регістри пристрою займають адреси в загальному адресному просторі, тому доступ до них відбувається через операції читання/запису пам’яті. Портовий I/O, навпаки, використовує окремий простір портів та спеціальні інструкції."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-14",
+      "number": 14,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-014",
+          "number": 14,
+          "display_label": "14",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Кілька пристроїв можуть ініціювати передачу даних однією системною шиною. Яка функція арбітражу шини є ключовою?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "перетворювати всі дані на floating point перед передачею"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "визначати, який майстер шини тимчасово отримує право виконати передачу"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "зберігати всі інструкції програми в окремому стеку"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "замінювати адресну шину арифметико-логічним пристроєм"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Коли кілька майстрів претендують на спільний ресурс, арбітр вирішує, хто отримує шину на певний час. Це запобігає одночасному конфліктному керуванню лініями шини."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-15",
+      "number": 15,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-015",
+          "number": 15,
+          "display_label": "15",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яка відмінність між класичною архітектурою фон Неймана і Гарвардською архітектурою є принциповою для доступу до команд і даних?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Фон Нейман використовує тільки десяткове подання, а Гарвардська — тільки двійкове."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Фон Нейман не має процесора, а Гарвардська не має пам’яті."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "У фон Неймана команди й дані поділяють пам’ять і шлях доступу, а в Гарвардській вони розділені."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Гарвардська архітектура забороняє використання пристроїв введення-виведення."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Класична модель фон Неймана зберігає команди і дані в єдиній пам’яті, тоді як Гарвардська архітектура розділяє пам’ять або принаймні шляхи доступу для команд і даних. Це може дозволити паралельніший доступ."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-16",
+      "number": 16,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-016",
+          "number": 16,
+          "display_label": "16",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Процесор у кожному циклі потребує і вибірки наступної команди, і доступу до операнда даних, але команди й дані проходять через одну спільну пам’ять і одну спільну шину. Яке обмеження найкраще описує цю ситуацію?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "перевага Гарвардської архітектури над усіма кешами"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "неможливість подання від’ємних чисел у CPU"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "перетворення всіх операцій на пристрої введення-виведення"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "вузьке місце фон Неймана через конкуренцію команд і даних за спільний шлях"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Якщо команди і дані конкурують за той самий шлях до пам’яті, пропускна здатність цього шляху може обмежити процесор. Це класичний прояв вузького місця фон Неймана."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-17",
+      "number": 17,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-017",
+          "number": 17,
+          "display_label": "17",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Програма багато разів обробляє сусідні елементи масиву. Чому кеш-пам’ять особливо добре прискорює такий доступ?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо просторова й часова локальність підвищують імовірність повторного використання вже завантажених кеш-ліній."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо кеш повністю вимикає оперативну пам’ять після першого звернення."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо кеш завжди має більший обсяг, ніж зовнішній накопичувач."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо кеш змінює логічні адреси на шістнадцяткові."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Послідовний доступ до сусідніх елементів використовує просторову локальність, а повторні проходи — часову локальність. Кеш-лінія приносить кілька сусідніх байтів, і повторні звернення часто обслуговуються швидшим рівнем пам’яті."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-18",
+      "number": 18,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-018",
+          "number": 18,
+          "display_label": "18",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Нехай попадання в кеш триває 2 нс, промах потребує додаткових 80 нс доступу до нижчого рівня, а частка промахів дорівнює 5%. Який середній час доступу є найближчим?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "2 нс"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "6 нс"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "80 нс"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "82 нс"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Середній час доступу можна оцінити як hit time + miss rate × miss penalty. Маємо 2 нс + 0,05 × 80 нс = 6 нс."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-19",
+      "number": 19,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-019",
+          "number": 19,
+          "display_label": "19",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У load-store архітектурі арифметичні операції працюють лише з регістрами, а пам’ять доступна окремими операціями завантаження і збереження. Який наслідок для виконання операції “додати значення з пам’яті до регістра” є правильним?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Додавання завжди напряму читає обидва операнди з пам’яті без регістрів."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Пам’ять автоматично стає арифметико-логічним пристроєм."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Спочатку значення з пам’яті треба завантажити в регістр, а потім виконати додавання регістрів."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Таку операцію неможливо виконати в принципі."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У load-store ISA арифметичні інструкції не звертаються напряму до пам’яті. Тому дані спочатку завантажують у регістр, а потім ALU виконує операцію над регістровими операндами."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-computer-architecture-20260617-001-task-20",
+      "number": 20,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "2",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-computer-architecture-20260617-001-020",
+          "number": 20,
+          "display_label": "20",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Пристрій має передати великий блок даних у пам’ять, мінімізуючи участь CPU у копіюванні кожного слова. Який механізм найкраще відповідає цій меті?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "циклічне опитування статусного біта CPU після кожного байта"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "ручне копіювання кожного слова через арифметико-логічний пристрій"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "заміна кешу на регістр прапорців"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "DMA-передача, за якої контролер пристрою сам ініціює доступи до пам’яті"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "DMA дозволяє контролеру пристрою передавати блоки між пристроєм і пам’яттю без участі CPU в копіюванні кожного слова. CPU зазвичай лише налаштовує передачу й обробляє завершення або помилки."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-computer-architecture-20260617-001"
+          }
+        }
+      ]
+    }
+  ],
+  "release": {
+    "status": "ready_for_application",
+    "version": "0.1.0",
+    "verification": {
+      "method": "agent_validation",
+      "status": "passed",
+      "workflow_version": "1.0.0",
+      "validated_at": "2026-06-17T11:05:00Z",
+      "report": "reports/generated/generated-yefvv-it-computer-architecture-20260617-001.validation.json",
+      "checks": [
+        "schema",
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "duplicate_detection",
+        "official_similarity",
+        "exam_style"
+      ],
+      "similarity": {
+        "maximum_score": 0.031915,
+        "threshold": 0.35
+      }
+    }
+  }
+}
