@@ -1,0 +1,1873 @@
+{
+  "schema_version": 2,
+  "dataset": {
+    "id": "generated-yefvv-it-operating-systems-20260617-001",
+    "title": "Додаткові питання ЄФВВ — Операційні системи",
+    "exam": "ЄФВВ",
+    "subject": "Інформаційні технології",
+    "year": 2026,
+    "languages": [
+      "uk"
+    ],
+    "status": "ready",
+    "origin": "generated",
+    "generation": {
+      "batch_id": "generated-yefvv-it-operating-systems-20260617-001",
+      "agent": "codex",
+      "instructions": {
+        "id": "yefvv-it-agent-question-generation",
+        "version": "1.0.0",
+        "sha256": "b530323b3bb2b3812476681ed81b6e11b251e2cc97657527d79779a840f2d593"
+      },
+      "generated_at": "2026-06-17T13:05:00Z",
+      "workflow_version": "1.0.0",
+      "research_report": "reports/generated/generated-yefvv-it-operating-systems-20260617-001.research.md",
+      "parameters": {
+        "topic": "Операційні системи",
+        "difficulty": "hard",
+        "difficulty_distribution": {
+          "easy": 5,
+          "medium": 5,
+          "hard": 10
+        },
+        "task_type": "single_choice"
+      }
+    },
+    "task_count": 20,
+    "assessment_item_count": 20,
+    "stimulus_count": 0
+  },
+  "sections": [
+    {
+      "code": "8",
+      "title": "Операційні системи"
+    }
+  ],
+  "stimuli": [],
+  "tasks": [
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-01",
+      "number": 1,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-001",
+          "number": 1,
+          "display_label": "1",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яке твердження найкраще описує роль операційної системи у комп’ютері загального призначення?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона керує апаратними ресурсами й надає службове середовище для виконання програм."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона є лише текстовим редактором для створення прикладних документів."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона замінює всі прикладні програми єдиним драйвером пристрою."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона зберігається тільки в кеші процесора і не взаємодіє з пристроями."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Операційна система координує ресурси комп’ютера: процесорний час, пам’ять, файли, пристрої та взаємодію програм із апаратурою. Текстовий редактор або драйвер є лише окремими програмними компонентами."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-02",
+      "number": 2,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-002",
+          "number": 2,
+          "display_label": "2",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яка характеристика найкраще відрізняє багатокористувацьку операційну систему від однокористувацької?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона не має файлової системи, бо всі дані зберігаються в регістрах."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона підтримує ізоляцію, облік і керування ресурсами для кількох користувачів."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона може виконувати лише одну команду після перезавантаження."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона не потребує механізмів автентифікації або прав доступу."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Багатокористувацька ОС має розділяти ресурси між кількома користувачами, захищати їхні дані та підтримувати облік доступу. Це потребує механізмів ідентифікації, прав і політик використання ресурсів."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-03",
+      "number": 3,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-003",
+          "number": 3,
+          "display_label": "3",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Що найточніше описує потік виконання в межах процесу?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Потік завжди має власну незалежну файлову систему."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Потік є копією всього дискового образу операційної системи."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Потік є одиницею виконання, яку ОС може планувати, і він поділяє ресурси процесу."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Потік не може мати власного контексту виконання."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Потік є планованою одиницею виконання всередині процесу. Потоки одного процесу зазвичай спільно використовують адресний простір і ресурси процесу, але мають власний контекст виконання."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-04",
+      "number": 4,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-004",
+          "number": 4,
+          "display_label": "4",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яке твердження найкраще описує призначення файлової системи?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона виконує арифметичні операції замість процесора."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона перетворює всі файли на мережеві пакети без збереження на носії."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона забороняє створення каталогів, щоб уникнути імен файлів."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона організує зберігання, іменування, пошук і доступ до файлів на носії або в абстрактному просторі."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Файлова система надає структуру для зберігання та знаходження даних за іменами, каталогами, метаданими й правилами доступу. Вона не замінює CPU і не обмежується мережевою передачею."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-05",
+      "number": 5,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-005",
+          "number": 5,
+          "display_label": "5",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яка властивість найближче пов’язана з відмовостійкістю операційної системи?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Здатність продовжувати роботу або коректно відновлюватися після часткових збоїв."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Обов’язкове вимкнення всіх служб після першої помилки користувача."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Використання лише одного процесу для всіх програм."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Заборона резервного копіювання системних даних."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Відмовостійкість означає здатність системи зберігати доступність або контрольовано відновлюватися після збоїв. Вона часто спирається на ізоляцію, журналювання, резервування та коректне відновлення стану."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-06",
+      "number": 6,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-006",
+          "number": 6,
+          "display_label": "6",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У системі з витісняльною багатозадачністю один потік довго виконує обчислення й не викликає операцій введення-виведення. Чому інші потоки все одно можуть отримувати процесорний час?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо кожен потік фізично має окремий процесор незалежно від системи."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо планувальник може перервати потік після кванта або події та передати CPU іншому потоку."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо витісняльна багатозадачність забороняє виконання обчислювальних потоків."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо файлові системи автоматично виконують інструкції замість CPU."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У preemptive multitasking ОС не залежить лише від добровільної передачі керування. Планувальник може витіснити потік, зберегти його контекст і запустити інший готовий потік."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-07",
+      "number": 7,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-007",
+          "number": 7,
+          "display_label": "7",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Два процеси мають однакове числове значення віртуальної адреси, але звертаються до різних об’єктів у фізичній пам’яті. Який механізм ОС найкраще пояснює це?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Єдина глобальна адресація без таблиць сторінок."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Зберігання всіх процесів в одному спільному стеку."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Окремі віртуальні адресні простори процесів і трансляція через таблиці сторінок."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вимкнення MMU під час виконання користувацьких програм."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Віртуальна пам’ять дає кожному процесу власний адресний простір. Однакові віртуальні адреси можуть транслюватися через різні таблиці сторінок у різні фізичні кадри."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-08",
+      "number": 8,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-008",
+          "number": 8,
+          "display_label": "8",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Процес звернувся до сторінки, яка належить його віртуальному адресному простору, але зараз не має відповідного фізичного кадру в пам’яті. Яка подія найімовірніше виникне?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Негайне завершення всієї операційної системи без обробки."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Автоматичне створення нового файлу з іменем сторінки."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Зміна HTTP-порту процесу."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Page fault, після якого ядро перевірить допустимість доступу й може завантажити або виділити сторінку."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Page fault виникає, коли MMU не може завершити трансляцію або сторінка не присутня. Якщо доступ допустимий, ядро може підготувати сторінку й оновити таблиці; якщо ні, процес отримує помилку доступу."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-09",
+      "number": 9,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-009",
+          "number": 9,
+          "display_label": "9",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У традиційній POSIX-моделі прав доступу файл має класи owner, group та other. Яка інтерпретація є правильною?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Для кожного класу окремо задаються права читання, запису й виконання."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Права задаються лише для всіх користувачів одразу, без власника файлу."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Право виконання означає автоматичне право змінювати власника будь-якого файлу."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Групові права завжди мають вищий пріоритет за права власника."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Класична модель POSIX розділяє користувачів на owner, group та other і задає для кожного класу біти read, write, execute. Власник, група та інші користувачі можуть мати різні ефективні права."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-10",
+      "number": 10,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-010",
+          "number": 10,
+          "display_label": "10",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Чим логічна організація файлу відрізняється від фізичної організації?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Логічна організація завжди описує тільки температуру диска."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Логічна організація описує подання даних для користувача або програми, а фізична — розміщення блоків і структур на носії."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Фізична організація не має жодного зв’язку з продуктивністю доступу."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Логічна організація можлива лише для файлів нульового розміру."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Логічна організація стосується структури даних як її бачить програма: записи, байтовий потік, каталоги тощо. Фізична організація описує, як ці дані розкладені по блоках, індексах або інших структурах носія."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-11",
+      "number": 11,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-011",
+          "number": 11,
+          "display_label": "11",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Три процеси одночасно готові до виконання на одному CPU. Їхні тривалості CPU-burst становлять 8 мс, 4 мс і 2 мс у порядку надходження. Якщо застосувати невитісняльне FCFS-планування, яким буде середній час очікування?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "4 мс"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "5 мс"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "6,67 мс"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "14 мс"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "За FCFS перший процес не чекає, другий чекає 8 мс, третій чекає 8 + 4 = 12 мс. Середній час очікування дорівнює (0 + 8 + 12) / 3 = 6,67 мс."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-12",
+      "number": 12,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-012",
+          "number": 12,
+          "display_label": "12",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У round-robin плануванні квант часу занадто малий порівняно з вартістю перемикання контексту. Який наслідок є найімовірнішим?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Усі процеси виконуватимуться без жодного перемикання контексту."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Система автоматично перетвориться на невитісняльну FCFS."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Файлова система втратить усі імена каталогів."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Зросте частка часу на перемикання контексту, і корисна продуктивність CPU зменшиться."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Дуже малий квант збільшує частоту перемикань контексту. Якщо overhead перемикання суттєвий, значна частина CPU витрачається не на виконання процесів, а на адміністративні дії ядра."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-13",
+      "number": 13,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-013",
+          "number": 13,
+          "display_label": "13",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Система активно підкачує сторінки з диска й майже весь час витрачає на обробку page fault замість виконання корисних інструкцій процесів. Який термін найкраще описує цю ситуацію?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "thrashing"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "hard link"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "round-robin quantum"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "ACL inheritance"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Thrashing виникає, коли робочі набори процесів не вміщуються у фізичну пам’ять і система надмірно часто витісняє та повертає сторінки. У результаті I/O для сторінок домінує над корисним виконанням."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-14",
+      "number": 14,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-014",
+          "number": 14,
+          "display_label": "14",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Після створення нового процесу ОС тимчасово дозволяє батьківському й дочірньому процесам посилатися на ті самі фізичні сторінки лише для читання, а копію створює тільки під час першого запису. Який механізм описано?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "polling"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "copy-on-write"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "defragmentation of directory names"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "round-robin без кванта"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Copy-on-write відкладає реальне копіювання сторінок до моменту запису. Це економить пам’ять і час, якщо частина сторінок після створення процесу ніколи не змінюється."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-15",
+      "number": 15,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-015",
+          "number": 15,
+          "display_label": "15",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У файловій системі два різні імена в каталогах посилаються на той самий inode. Який висновок є найобґрунтованішим?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Це дві незалежні копії файлу з різними наборами блоків даних."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Один із записів обов’язково є мережевим сокетом."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Це hard links: метадані й дані спільні, а різними є directory entries."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Таке неможливо, бо inode завжди має рівно одне ім’я."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Hard link створює ще один directory entry, який посилається на той самий inode. Дані й частина метаданих файлу спільні, а імена в каталогах можуть бути різними."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-16",
+      "number": 16,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-016",
+          "number": 16,
+          "display_label": "16",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Файлова система перед зміною метаданих спочатку записує опис майбутньої операції в спеціальну область, щоб після збою можна було завершити або відкотити незавершену зміну. Який підхід описано?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "round-robin scheduling"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "copy-on-write thread scheduling"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "безумовне вимкнення кешування CPU"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "journaling"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Журналювання файлової системи фіксує намір або опис операції до внесення критичних змін у структури файлової системи. Після збою журнал допомагає відновити узгоджений стан."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-17",
+      "number": 17,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-017",
+          "number": 17,
+          "display_label": "17",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Система керує промисловим контролером, де реакція на подію має відбутися не пізніше фіксованого дедлайну. Яка характеристика ОС є найважливішою?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Передбачувана верхня межа часу реакції, а не лише висока середня продуктивність."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Максимальна кількість шрифтів у графічному інтерфейсі."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Відсутність будь-яких механізмів пріоритетів."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Зберігання всіх файлів тільки в одному каталозі."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Для операційних систем реального часу критичною є передбачуваність і гарантія дедлайнів. Висока середня швидкодія не достатня, якщо інколи реакція може запізнюватися."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-18",
+      "number": 18,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-018",
+          "number": 18,
+          "display_label": "18",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "На одному фізичному сервері працюють кілька гостьових ОС. Який компонент насамперед забезпечує розподіл фізичних ресурсів і ізоляцію гостей один від одного?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "звичайний текстовий редактор у кожній гостьовій ОС"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "гіпервізор"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "розширення імені файлу"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "таблиця HTTP status codes"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Гіпервізор керує віртуальними машинами, розподіляє CPU, пам’ять і пристрої та ізолює гостьові ОС. Це не функція текстового редактора або формату імені файлу."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-19",
+      "number": 19,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-019",
+          "number": 19,
+          "display_label": "19",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У розширеному ACL файл має entries для кількох named users і named groups, а також mask entry. Яка роль mask entry є найточнішою?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона завжди надає власнику файлу повні права незалежно від інших entries."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона визначає фізичний номер першого блока файлу на диску."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона обмежує ефективні права для групового класу та named user/group entries."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона вимикає всі directory entries, що посилаються на inode."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У POSIX ACL mask entry задає максимальні ефективні права для групового класу та додаткових named user/group entries. Тому запис із ширшими правами може фактично отримати менше через mask."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-operating-systems-20260617-001-task-20",
+      "number": 20,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "8",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-operating-systems-20260617-001-020",
+          "number": 20,
+          "display_label": "20",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Файлова система використовує пов’язаний список блоків для кожного файлу. Який недолік такого фізичного розміщення є найсуттєвішим для довільного доступу до середини великого файлу?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Неможливо зберігати файли більш як одного байта."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кожен блок обов’язково дублюється в усіх каталогах."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Зникає потреба в будь-яких метаданих."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Щоб знайти потрібний блок, часто треба послідовно пройти ланцюжок попередніх блоків."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Пов’язане розміщення добре уникає вимоги суміжних блоків, але довільний доступ слабкий: позицію в середині файлу складно знайти без проходження ланцюжка або додаткового індекса."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-operating-systems-20260617-001"
+          }
+        }
+      ]
+    }
+  ],
+  "release": {
+    "status": "ready_for_application",
+    "version": "0.1.0",
+    "verification": {
+      "method": "agent_validation",
+      "status": "passed",
+      "workflow_version": "1.0.0",
+      "validated_at": "2026-06-17T13:25:00Z",
+      "report": "reports/generated/generated-yefvv-it-operating-systems-20260617-001.validation.json",
+      "checks": [
+        "schema",
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "duplicate_detection",
+        "official_similarity",
+        "exam_style"
+      ],
+      "similarity": {
+        "maximum_score": 0.019231,
+        "threshold": 0.35
+      }
+    }
+  }
+}
