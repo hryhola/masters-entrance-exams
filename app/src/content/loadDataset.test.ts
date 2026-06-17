@@ -39,6 +39,22 @@ function readGeneratedCybersecurityDataset() {
   ) as unknown
 }
 
+function readGeneratedDatabaseDataset() {
+  return JSON.parse(
+    readFileSync(
+      resolve(
+        process.cwd(),
+        '..',
+        'data',
+        'generated',
+        'drafts',
+        'generated-yefvv-it-databases-20260617-001.json',
+      ),
+      'utf8',
+    ),
+  ) as unknown
+}
+
 afterEach(() => {
   clearDatasetCache()
   clearTaskDatasetCache()
@@ -110,21 +126,35 @@ describe('loadDataset', () => {
           json: async () => readGeneratedCybersecurityDataset(),
         })
       }
+      if (
+        url ===
+        '/content/datasets/generated-yefvv-it-databases-20260617-001/dataset.json'
+      ) {
+        return Promise.resolve({
+          ok: true,
+          json: async () => readGeneratedDatabaseDataset(),
+        })
+      }
       return Promise.resolve({ ok: false, status: 404 })
     })
     vi.stubGlobal('fetch', fetchMock)
 
     const dataset = await loadDataset('yefvv-it-2024-plus-generated')
+    const databases = dataset.sections.find((section) => section.code === '3')
     const cybersecurity = dataset.sections.find(
       (section) => section.code === '5',
     )
     const generatedQuestions = dataset.questions.filter(
       (question) => question.origin === 'generated',
     )
+    const generatedDatabaseQuestions = generatedQuestions.filter(
+      (question) => question.classification.topic?.sectionCode === '3',
+    )
 
-    expect(dataset.questions).toHaveLength(150)
+    expect(dataset.questions).toHaveLength(170)
+    expect(databases?.questionCount).toBe(37)
     expect(cybersecurity?.questionCount).toBe(22)
-    expect(generatedQuestions).toHaveLength(10)
+    expect(generatedQuestions).toHaveLength(30)
     expect(generatedQuestions[0]).toMatchObject({
       number: 141,
       displayLabel: 'Дод. 1',
@@ -133,6 +163,18 @@ describe('loadDataset', () => {
         topic: expect.objectContaining({
           sectionCode: '5',
           section: 'Кібербезпека та захист інформації',
+        }),
+      },
+    })
+    expect(generatedDatabaseQuestions).toHaveLength(20)
+    expect(generatedDatabaseQuestions[0]).toMatchObject({
+      number: 151,
+      displayLabel: 'Дод. 1',
+      verification: { method: 'agent_validation' },
+      classification: {
+        topic: expect.objectContaining({
+          sectionCode: '3',
+          section: 'Бази та сховища даних',
         }),
       },
     })

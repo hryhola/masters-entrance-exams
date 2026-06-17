@@ -1,0 +1,491 @@
+{
+  "schema_version": 1,
+  "batch_id": "generated-yefvv-it-databases-20260617-001",
+  "status": "passed",
+  "validated_at": "2026-06-17T10:20:00Z",
+  "workflow_version": "1.0.0",
+  "validator": {
+    "agent": "codex",
+    "method": "agent_validation"
+  },
+  "inputs": {
+    "dataset": "data/generated/drafts/generated-yefvv-it-databases-20260617-001.json",
+    "taxonomy": "data/taxonomies/yefvv-it-program-2025.yaml",
+    "official_reference_dataset": "data/yefvv-it-2024.json",
+    "research_report": "reports/generated/generated-yefvv-it-databases-20260617-001.research.md",
+    "instruction": "docs/content-generation/YEFVV_IT_AGENT_QUESTION_GENERATION.md",
+    "instruction_sha256": "b530323b3bb2b3812476681ed81b6e11b251e2cc97657527d79779a840f2d593"
+  },
+  "summary": {
+    "questions_checked": 20,
+    "questions_passed": 20,
+    "questions_failed": 0,
+    "correct_choice_distribution": {
+      "a": 5,
+      "b": 5,
+      "c": 5,
+      "d": 5
+    }
+  },
+  "checks": {
+    "schema": {
+      "status": "passed",
+      "evidence": "JSON parsed successfully; schema v2 validator and runtime adapter accepted all 20 tasks and 20 assessment items."
+    },
+    "source_grounding": {
+      "status": "passed",
+      "evidence": "Every question is mapped to one primary and one corroborating authoritative source. The batch covers 3.1 through 3.6, including normalization, transactions, indexing, modeling, SQL and relational algebra."
+    },
+    "answer_integrity": {
+      "status": "passed",
+      "evidence": "All questions were solved independently after drafting. Each has exactly one unconditional correct answer and three mutually incompatible distractors."
+    },
+    "explanation_integrity": {
+      "status": "passed",
+      "evidence": "All explanations justify the selected concept and distinguish it from distractors without relying on hidden context."
+    },
+    "duplicate_detection": {
+      "status": "passed",
+      "evidence": "No exact duplicate prompts, option sets, or 10-word sequences were found inside the batch. Maximum internal token-trigram Jaccard score is 0.015544."
+    },
+    "official_similarity": {
+      "status": "passed",
+      "evidence": "All 140 official 2024 questions were compared using normalized Unicode word-token trigram Jaccard similarity, followed by semantic review of related database items. Maximum score is 0.018519, below the 0.35 threshold."
+    },
+    "exam_style": {
+      "status": "passed",
+      "evidence": "All questions use neutral Ukrainian academic language, one learning objective, four plausible same-level options, and no prohibited general-purpose programming language, pseudocode, program fragment, trick wording, or version-sensitive trivia."
+    }
+  },
+  "similarity": {
+    "method": "Lowercase Unicode word tokenization; sets of contiguous 3-token n-grams; Jaccard intersection over union. Exact shared contiguous 10-token sequences were checked separately.",
+    "threshold": 0.35,
+    "maximum_score": 0.018519,
+    "maximum_pair": {
+      "generated_id": "generated-yefvv-it-databases-20260617-001-019",
+      "official_id": "yefvv-it-2024-018"
+    },
+    "maximum_internal_score": 0.015544,
+    "maximum_internal_pair": {
+      "generated_id_a": "generated-yefvv-it-databases-20260617-001-003",
+      "generated_id_b": "generated-yefvv-it-databases-20260617-001-004"
+    },
+    "exact_shared_10_word_sequences": 0,
+    "per_question": [
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-001",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-002",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-003",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-004",
+        "nearest_official_id": "yefvv-it-2024-037",
+        "score": 0.006897,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-005",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-006",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-007",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-008",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-009",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-010",
+        "nearest_official_id": "yefvv-it-2024-021",
+        "score": 0.00641,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-011",
+        "nearest_official_id": "yefvv-it-2024-112",
+        "score": 0.009615,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-012",
+        "nearest_official_id": "yefvv-it-2024-095",
+        "score": 0.005917,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-013",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-014",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-015",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-016",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-017",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-018",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-019",
+        "nearest_official_id": "yefvv-it-2024-018",
+        "score": 0.018519,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-databases-20260617-001-020",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      }
+    ],
+    "semantic_review": [
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-001",
+        "related_official_ids": [
+          "yefvv-it-2024-037"
+        ],
+        "status": "distinct",
+        "reason": "Generated item applies decomposition to order-line redundancy; official item checks a different 3NF structure."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-002",
+        "related_official_ids": [],
+        "status": "distinct",
+        "reason": "The item tests a boundary case between 3NF and BCNF not directly present in the official set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-003",
+        "related_official_ids": [
+          "yefvv-it-2024-033"
+        ],
+        "status": "distinct",
+        "reason": "Generated item checks 2NF partial dependency; official item checks atomic values for 1NF."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-004",
+        "related_official_ids": [
+          "yefvv-it-2024-037"
+        ],
+        "status": "distinct",
+        "reason": "Generated item asks for diagnosis of transitive dependency in a new scenario."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-005",
+        "related_official_ids": [],
+        "status": "distinct",
+        "reason": "No official database item directly tests rollback from failed transfer using ACID atomicity."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-006",
+        "related_official_ids": [],
+        "status": "distinct",
+        "reason": "The item focuses on serial equivalence under isolation rather than SQL syntax."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-007",
+        "related_official_ids": [
+          "yefvv-it-2024-041",
+          "yefvv-it-2024-084"
+        ],
+        "status": "distinct",
+        "reason": "Generated item tests left-prefix reasoning for multicolumn indexes; official items test simpler index use."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-008",
+        "related_official_ids": [
+          "yefvv-it-2024-084"
+        ],
+        "status": "distinct",
+        "reason": "Generated item tests partial-index workload selection, not generic index search."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-009",
+        "related_official_ids": [
+          "yefvv-it-2024-009"
+        ],
+        "status": "distinct",
+        "reason": "Generated item models a weak entity; official item uses a different ER recognition pattern."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-010",
+        "related_official_ids": [],
+        "status": "distinct",
+        "reason": "The item targets analytical star schema design, which is not directly duplicated in the official items."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-011",
+        "related_official_ids": [
+          "yefvv-it-2024-112"
+        ],
+        "status": "distinct",
+        "reason": "Generated item distinguishes modeling levels in a project stage; official item checks a separate model artifact."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-012",
+        "related_official_ids": [
+          "yefvv-it-2024-133"
+        ],
+        "status": "distinct",
+        "reason": "Generated item applies referential integrity to an insertion case."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-013",
+        "related_official_ids": [
+          "yefvv-it-2024-102"
+        ],
+        "status": "distinct",
+        "reason": "Generated item tests reference to a non-primary unique key, not primary-key identification."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-014",
+        "related_official_ids": [
+          "yefvv-it-2024-133"
+        ],
+        "status": "distinct",
+        "reason": "Generated item tests cascade behavior rather than identifying an integrity constraint."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-015",
+        "related_official_ids": [
+          "yefvv-it-2024-050",
+          "yefvv-it-2024-060"
+        ],
+        "status": "distinct",
+        "reason": "Generated item tests the placement of WHERE, GROUP BY and HAVING in a new aggregation scenario."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-016",
+        "related_official_ids": [
+          "yefvv-it-2024-072"
+        ],
+        "status": "distinct",
+        "reason": "Generated item tests preserving unmatched rows in LEFT JOIN."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-017",
+        "related_official_ids": [],
+        "status": "distinct",
+        "reason": "No official item directly tests SAVEPOINT as partial rollback inside a transaction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-018",
+        "related_official_ids": [],
+        "status": "distinct",
+        "reason": "The item classifies SQL command families rather than solving a specific query output."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-019",
+        "related_official_ids": [
+          "yefvv-it-2024-023"
+        ],
+        "status": "distinct",
+        "reason": "Generated item tests relational division for a for-all query; official item uses a different relational-algebra operation scenario."
+      },
+      {
+        "generated_id": "generated-yefvv-it-databases-20260617-001-020",
+        "related_official_ids": [
+          "yefvv-it-2024-023"
+        ],
+        "status": "distinct",
+        "reason": "Generated item tests equivalence transformation and selection pushdown, not recognition of a single table operation."
+      }
+    ]
+  },
+  "question_results": [
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-001",
+      "topic_code": "3.1",
+      "primary_source": "IBM-NORMALIZATION",
+      "corroborating_source": "MS-NORMALIZATION",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-002",
+      "topic_code": "3.1",
+      "primary_source": "IBM-NORMALIZATION",
+      "corroborating_source": "MS-NORMALIZATION",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-003",
+      "topic_code": "3.1",
+      "primary_source": "IBM-NORMALIZATION",
+      "corroborating_source": "MS-NORMALIZATION",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-004",
+      "topic_code": "3.1",
+      "primary_source": "IBM-NORMALIZATION",
+      "corroborating_source": "MS-NORMALIZATION",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-005",
+      "topic_code": "3.2",
+      "primary_source": "PG-TRANSACTIONS",
+      "corroborating_source": "PG-ISOLATION",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-006",
+      "topic_code": "3.2",
+      "primary_source": "PG-ISOLATION",
+      "corroborating_source": "PG-TRANSACTIONS",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-007",
+      "topic_code": "3.2",
+      "primary_source": "PG-MULTICOLUMN-INDEX",
+      "corroborating_source": "PG-SELECT",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-008",
+      "topic_code": "3.2",
+      "primary_source": "PG-PARTIAL-INDEX",
+      "corroborating_source": "PG-SELECT",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-009",
+      "topic_code": "3.3",
+      "primary_source": "ORACLE-DATA-MODELING",
+      "corroborating_source": "MS-DESIGN-BASICS",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-010",
+      "topic_code": "3.3",
+      "primary_source": "ORACLE-DWH-LOGICAL",
+      "corroborating_source": "MS-DESIGN-BASICS",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-011",
+      "topic_code": "3.3",
+      "primary_source": "ORACLE-DATA-MODELING",
+      "corroborating_source": "MS-DESIGN-BASICS",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-012",
+      "topic_code": "3.4",
+      "primary_source": "PG-CONSTRAINTS",
+      "corroborating_source": "MS-DESIGN-BASICS",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-013",
+      "topic_code": "3.4",
+      "primary_source": "PG-CONSTRAINTS",
+      "corroborating_source": "MS-DESIGN-BASICS",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-014",
+      "topic_code": "3.4",
+      "primary_source": "PG-CONSTRAINTS",
+      "corroborating_source": "MS-DESIGN-BASICS",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-015",
+      "topic_code": "3.5",
+      "primary_source": "PG-AGGREGATES",
+      "corroborating_source": "PG-SELECT",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-016",
+      "topic_code": "3.5",
+      "primary_source": "PG-SELECT",
+      "corroborating_source": "PG-CONSTRAINTS",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-017",
+      "topic_code": "3.5",
+      "primary_source": "PG-TRANSACTIONS",
+      "corroborating_source": "PG-SELECT",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-018",
+      "topic_code": "3.5",
+      "primary_source": "PG-SELECT",
+      "corroborating_source": "PG-CONSTRAINTS",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-019",
+      "topic_code": "3.6",
+      "primary_source": "DB-BOOK-DIVISION",
+      "corroborating_source": "WATERLOO-RELALG",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-020",
+      "topic_code": "3.6",
+      "primary_source": "WATERLOO-RELALG",
+      "corroborating_source": "PG-SELECT",
+      "status": "passed"
+    }
+  ]
+}

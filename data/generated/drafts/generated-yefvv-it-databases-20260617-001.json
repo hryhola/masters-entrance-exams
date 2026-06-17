@@ -1,0 +1,1868 @@
+{
+  "schema_version": 2,
+  "dataset": {
+    "id": "generated-yefvv-it-databases-20260617-001",
+    "title": "Додаткові питання ЄФВВ — Бази та сховища даних",
+    "exam": "ЄФВВ",
+    "subject": "Інформаційні технології",
+    "year": 2026,
+    "languages": [
+      "uk"
+    ],
+    "status": "ready",
+    "origin": "generated",
+    "generation": {
+      "batch_id": "generated-yefvv-it-databases-20260617-001",
+      "agent": "codex",
+      "instructions": {
+        "id": "yefvv-it-agent-question-generation",
+        "version": "1.0.0",
+        "sha256": "b530323b3bb2b3812476681ed81b6e11b251e2cc97657527d79779a840f2d593"
+      },
+      "generated_at": "2026-06-17T10:00:00Z",
+      "workflow_version": "1.0.0",
+      "research_report": "reports/generated/generated-yefvv-it-databases-20260617-001.research.md",
+      "parameters": {
+        "topic": "Бази та сховища даних",
+        "difficulty": "hard",
+        "task_type": "single_choice"
+      }
+    },
+    "task_count": 20,
+    "assessment_item_count": 20,
+    "stimulus_count": 0
+  },
+  "sections": [
+    {
+      "code": "3",
+      "title": "Бази та сховища даних"
+    }
+  ],
+  "stimuli": [],
+  "tasks": [
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-01",
+      "number": 1,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-001",
+          "number": 1,
+          "display_label": "1",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У таблиці замовлень зберігають атрибути: НомерЗамовлення, ДатаЗамовлення, КодКлієнта, НазваКлієнта, МістоКлієнта, КодТовару, НазваТовару, Кількість. Одне замовлення може містити багато товарів. Яка декомпозиція найкраще усуває надлишковість без втрати відомостей про склад замовлення?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Замовлення(НомерЗамовлення, ДатаЗамовлення, КодКлієнта), Клієнти(КодКлієнта, НазваКлієнта, МістоКлієнта), Товари(КодТовару, НазваТовару), РядкиЗамовлення(НомерЗамовлення, КодТовару, Кількість)"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Замовлення(НомерЗамовлення, ДатаЗамовлення, КодКлієнта, НазваКлієнта, МістоКлієнта), Товари(КодТовару, НазваТовару, Кількість)"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Клієнти(КодКлієнта, НазваКлієнта), Замовлення(НомерЗамовлення, КодТовару, НазваТовару, Кількість, ДатаЗамовлення)"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "РядкиЗамовлення(НомерЗамовлення, ДатаЗамовлення, КодКлієнта, КодТовару, НазваТовару, Кількість)"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Правильна декомпозиція відокремлює сутності клієнтів, товарів і заголовків замовлень, а зв’язок “замовлення-товар” фіксує в окремій таблиці рядків. Так зникають повтори назв клієнтів і товарів, але зберігається склад кожного замовлення."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-02",
+      "number": 2,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-002",
+          "number": 2,
+          "display_label": "2",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Для відношення R(A, B, C) задано функціональні залежності A → B та B → A. Кандидатними ключами є AC і BC. Яке твердження про залежність A → B є правильним щодо 3NF і BCNF?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона порушує і 3NF, і BCNF, бо A не містить усіх атрибутів відношення."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона задовольняє 3NF, але порушує BCNF, бо B є простим атрибутом, а A не є суперключем."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона задовольняє BCNF, бо права частина залежності входить до кандидатного ключа."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона порушує 3NF лише тоді, коли C функціонально залежить від A."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У 3NF залежність допускається, якщо права частина є простим атрибутом, тобто входить хоча б до одного кандидатного ключа. Для BCNF кожна нетривіальна ліва частина має бути суперключем, а A сама не визначає C, тому не є суперключем."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-03",
+      "number": 3,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-003",
+          "number": 3,
+          "display_label": "3",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Відношення Запис(Студент, Курс, Ім’яСтудента, НазваКурсу, Оцінка) має складений ключ (Студент, Курс). Яка ознака найточніше показує порушення другої нормальної форми?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Оцінка залежить від обох атрибутів складеного ключа одночасно."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Усі атрибути мають атомарні значення і не містять списків."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Ім’яСтудента залежить тільки від Студент, а НазваКурсу тільки від Курс."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Ключ складається з двох атрибутів, тому відношення не може бути у першій нормальній формі."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "2NF порушується частковою залежністю неключового атрибута від частини складеного ключа. Ім’я студента визначається лише студентом, а назва курсу лише курсом, тому ці атрибути треба винести до окремих відношень."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-04",
+      "number": 4,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-004",
+          "number": 4,
+          "display_label": "4",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У відношенні Заняття(Група, Дисципліна, Викладач, Кафедра, Аудиторія) ключем є пара (Група, Дисципліна). Додатково відомо, що Викладач → Кафедра. Який висновок щодо нормалізації є найобґрунтованішим?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Відношення порушує 1NF, бо кафедра є похідним атрибутом від викладача."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Відношення автоматично перебуває в BCNF, бо ключ складається з двох атрибутів."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Залежність Викладач → Кафедра не впливає на нормальні форми, бо викладач не входить до ключа."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Є транзитивна залежність від ключа до кафедри через викладача, тому для 3NF кафедру доцільно винести до відношення викладачів."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Якщо ключ визначає викладача для заняття, а викладач визначає кафедру, то кафедра транзитивно залежить від ключа через неключовий атрибут. Це створює аномалії оновлення і є типовою підставою для декомпозиції до 3NF."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-05",
+      "number": 5,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-005",
+          "number": 5,
+          "display_label": "5",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Банківська операція списує суму з одного рахунку і зараховує її на інший. Після успішного списання сталася помилка перед зарахуванням. Яка ACID-властивість вимагає скасувати вже виконане списання?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "атомарність"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "ізольованість"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "довговічність"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "узгодженість схеми"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Атомарність вимагає, щоб транзакція виконувалася як неподільна одиниця: або всі її зміни фіксуються, або жодна. Ізольованість стосується паралельного виконання, довговічність — збереження зафіксованих змін, а узгодженість не означає часткове виконання операції."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-06",
+      "number": 6,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-006",
+          "number": 6,
+          "display_label": "6",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Дві транзакції паралельно перевіряють кількість вільних місць у групі та записують студентів, якщо місце ще є. За якого рівня ізоляції найприродніше вимагати, щоб результат був еквівалентний деякому послідовному виконанню цих транзакцій?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Read Uncommitted"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Serializable"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Read Committed"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Snapshot without validation"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Serializable задає найсильнішу вимогу: паралельний результат має бути еквівалентним певному серійному порядку транзакцій. Слабші рівні допускають аномалії, через які обидві транзакції можуть ухвалити рішення на основі неповного уявлення про паралельні зміни."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-07",
+      "number": 7,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-007",
+          "number": 7,
+          "display_label": "7",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Для таблиці Продажі створено B-tree індекс за атрибутами (Регіон, Дата, Категорія). Який запит найімовірніше використає цей індекс найефективніше для звуження діапазону пошуку?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "пошук тільки за Категорія без умов на Регіон і Дата"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "пошук за Дата і Категорія без умови на Регіон"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "пошук за Регіон і діапазоном Дата"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "сортування тільки за Категорія у зворотному порядку"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Для багатостовпчикового B-tree індексу найважливішими є умови на ліві, провідні атрибути. Умова на Регіон і діапазон за Дата використовують лівий префікс індексу, тоді як умови лише на пізніші атрибути значно слабші."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-08",
+      "number": 8,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-008",
+          "number": 8,
+          "display_label": "8",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У таблиці Повідомлення 96% рядків мають Стан = “прочитано”, а типові запити швидко шукають непрочитані повідомлення конкретного користувача. Який індекс найкраще відповідає такому профілю використання?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "звичайний індекс тільки за Стан, що містить усі рядки таблиці"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "індекс за текстом повідомлення без урахування користувача і стану"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "унікальний індекс за Стан, бо стан має мало різних значень"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "частковий індекс за Користувач для рядків, у яких Стан = “непрочитано”"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Частковий індекс охоплює лише рядки, які задовольняють предикат. Якщо запити майже завжди цікавляться рідкісними непрочитаними повідомленнями, такий індекс менший і релевантніший за індекс, що зберігає масові прочитані рядки."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-09",
+      "number": 9,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-009",
+          "number": 9,
+          "display_label": "9",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У системі обліку рахунок-фактура має рядки. Рядок не існує без свого рахунку, а його номер унікальний лише в межах конкретного рахунку. Як найдоречніше змоделювати РядокРахунку в ER-моделі?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "як незалежну сильну сутність із глобальним ключем НомерРядка"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "як атрибут типу список усередині сутності Рахунок"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "як слабку сутність із ідентифікувальним зв’язком до Рахунок і частковим ключем НомерРядка"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "як довідник можливих номерів рядків, спільний для всіх рахунків"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Рядок рахунку залежить від існування рахунку, а його локальний номер ідентифікує рядок лише разом із ключем рахунку. Це відповідає слабкій сутності з ідентифікувальним зв’язком і частковим ключем."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-10",
+      "number": 10,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-010",
+          "number": 10,
+          "display_label": "10",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Для аналітичного сховища потрібно зберігати суму продажів, кількість одиниць і собівартість за днями, магазинами та товарами. Яка логічна структура найкраще відповідає моделі “зірка”?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "одна широка таблиця, де для кожного продажу повторюються всі атрибути дня, магазину й товару"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "таблиця тільки з довідниками вимірів без окремого зберігання вимірюваних числових показників"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "набір взаємно незалежних таблиць, які не мають ключів і зв’язків між собою"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "фактова таблиця з числовими показниками продажів і ключами до таблиць вимірів День, Магазин і Товар"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У схемі “зірка” числові міри зберігаються у фактовій таблиці, а контекст аналізу — у таблицях вимірів. Ключі до дня, магазину і товару дозволяють агрегувати показники за потрібними розрізами."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-11",
+      "number": 11,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-011",
+          "number": 11,
+          "display_label": "11",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Команда вже погодила предметні сутності та зв’язки з експертами, а тепер має визначити таблиці, первинні ключі, зовнішні ключі та атрибути без прив’язки до конкретного способу зберігання файлів. Який рівень моделі описано?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "логічна модель даних"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "концептуальна карта бізнес-термінів без структур таблиць"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "фізична модель із розмірами сторінок та параметрами індексів"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "резервна копія продукційної бази даних"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Логічна модель деталізує структуру даних у термінах таблиць, ключів, атрибутів і зв’язків, але ще не описує фізичні параметри конкретної СКБД. Концептуальна модель грубіша, а фізична додає реалізаційні деталі зберігання."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-12",
+      "number": 12,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-012",
+          "number": 12,
+          "display_label": "12",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Є таблиці Автор(АвторID PRIMARY KEY) і Книга(КнигаID PRIMARY KEY, АвторID FOREIGN KEY REFERENCES Автор(АвторID)). Що має відбутися під час спроби вставити книгу з АвторID, якого немає в таблиці Автор, якщо спеціальних правил відкладеної перевірки не задано?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "рядок буде вставлено, а зовнішній ключ автоматично створить нового автора"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "операцію буде відхилено через порушення посилальної цілісності"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "значення АвторID автоматично стане NULL навіть якщо це не вказано в запиті"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "книга буде вставлена, але її не можна буде вибрати запитом SELECT"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Зовнішній ключ вимагає, щоб значення в дочірній таблиці посилалося на наявний допустимий рядок батьківської таблиці. Якщо відповідного автора немає, вставка порушує посилальну цілісність і має бути відхилена."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-13",
+      "number": 13,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-013",
+          "number": 13,
+          "display_label": "13",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Таблиця Працівник має первинний ключ ТабельнийНомер і окреме обмеження UNIQUE(Email). Інша таблиця ОбліковийЗапис повинна посилатися саме на Email працівника. Яка умова робить таке посилання коректним у реляційній СКБД?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "зовнішній ключ може посилатися лише на первинний ключ, тому Email не можна використовувати за жодних умов"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Email має бути текстовим атрибутом, а тип зовнішнього ключа може бути довільним"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Email має бути унікальним ключем або іншим допустимим унікальним обмеженням, на яке дозволено посилання"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "у таблиці ОбліковийЗапис достатньо створити індекс за Email без обмежень у Працівник"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Зовнішній ключ може посилатися не лише на первинний ключ, а й на набір атрибутів, що гарантовано унікальний у батьківській таблиці. Індекс у дочірній таблиці сам по собі не гарантує існування відповідного працівника."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-14",
+      "number": 14,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-014",
+          "number": 14,
+          "display_label": "14",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У таблиці Коментар кожен рядок посилається на Повідомлення. Потрібно, щоб під час видалення повідомлення всі його коментарі видалялися автоматично, але коментарі не могли існувати без повідомлення. Яке правило зовнішнього ключа відповідає вимозі?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "ON DELETE SET NULL"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "ON UPDATE CASCADE"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "CHECK (ПовідомленняID IS NOT NULL)"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "ON DELETE CASCADE"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "ON DELETE CASCADE автоматично видаляє дочірні рядки, коли видаляється батьківський рядок. SET NULL залишив би коментарі без повідомлення, ON UPDATE CASCADE стосується оновлення ключа, а CHECK не описує дію під час видалення."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-15",
+      "number": 15,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-015",
+          "number": 15,
+          "display_label": "15",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Потрібно отримати категорії товарів, для яких сумарний обсяг оплачених продажів перевищує 100000. Яка структура SQL-запиту логічно правильна?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "WHERE Статус = 'paid' GROUP BY Категорія HAVING SUM(Сума) > 100000"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "GROUP BY Категорія WHERE Статус = 'paid' AND SUM(Сума) > 100000"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "WHERE SUM(Сума) > 100000 GROUP BY Категорія HAVING Статус = 'paid'"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "HAVING Статус = 'paid' WHERE SUM(Сума) > 100000 GROUP BY Категорія"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Спочатку WHERE відбирає рядки оплачених продажів, потім GROUP BY формує групи за категоріями, а HAVING фільтрує вже агреговані групи за сумою. Агрегатні умови не належать до WHERE."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-16",
+      "number": 16,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-016",
+          "number": 16,
+          "display_label": "16",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Потрібно отримати всіх клієнтів і, якщо вони мають замовлення за 2026 рік, показати ідентифікатор такого замовлення. Клієнти без замовлень за 2026 рік також мають залишитися в результаті. Де має бути умова про рік замовлення?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "у WHERE після LEFT JOIN, бо так простіше відфільтрувати праву таблицю"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "у HAVING без GROUP BY, бо йдеться про наявність рядків у правій таблиці"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "у предикаті ON для LEFT JOIN, щоб не перетворити з’єднання на фактичний INNER JOIN"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "у SELECT як псевдонім стовпця, бо фільтрація не потрібна"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Якщо умову на праву таблицю винести у WHERE, рядки без відповідного замовлення матимуть NULL і будуть відкинуті. Розміщення умови в ON обмежує приєднані замовлення, але зберігає клієнтів без відповідників."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-17",
+      "number": 17,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-017",
+          "number": 17,
+          "display_label": "17",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У межах однієї транзакції потрібно спробувати необов’язкове оновлення статистики. Якщо воно не вдасться, треба скасувати лише цю частину, а попередні зміни транзакції залишити для подальшої фіксації. Який механізм SQL/TCL найкраще підходить?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "COMMIT перед необов’язковим оновленням, а потім нова незалежна транзакція"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "DROP TABLE для тимчасового усунення помилки в статистиці"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "GRANT, щоб надати транзакції право ігнорувати помилки"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "SAVEPOINT і подальший ROLLBACK TO SAVEPOINT у разі помилки"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "SAVEPOINT створює точку всередині транзакції, до якої можна відкотити тільки частину змін. Це дозволяє залишити попередні операції транзакції чинними до фінального COMMIT."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-18",
+      "number": 18,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-018",
+          "number": 18,
+          "display_label": "18",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Адміністратор створив таблицю, додав до неї рядки, надав користувачу право читання і зафіксував транзакцію. Яке зіставлення класів SQL-команд із діями є найточнішим?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "CREATE TABLE — DML, INSERT — DCL, GRANT — DDL, COMMIT — TCL"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "CREATE TABLE — DDL, INSERT — DML, GRANT — DCL, COMMIT — TCL"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "CREATE TABLE — TCL, INSERT — DDL, GRANT — DML, COMMIT — DCL"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "CREATE TABLE — DCL, INSERT — TCL, GRANT — DDL, COMMIT — DML"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "DDL описує структури бази даних, DML змінює або читає дані, DCL керує правами доступу, а TCL керує межами транзакцій. Тому CREATE, INSERT, GRANT і COMMIT відповідають DDL, DML, DCL і TCL відповідно."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-19",
+      "number": 19,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-019",
+          "number": 19,
+          "display_label": "19",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Є відношення Відвідує(Студент, Курс) і Обов’язковий(Курс). Потрібно отримати студентів, які відвідують усі обов’язкові курси. Яка операція реляційної алгебри найпряміше відповідає такому запиту “для всіх”?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "ділення Відвідує ÷ Обов’язковий"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "декартовий добуток Відвідує × Обов’язковий"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "проєкція πКурс(Відвідує)"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "об’єднання Відвідує ∪ Обов’язковий"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Реляційне ділення застосовують для умов типу “пов’язаний з усіма елементами заданої множини”. Воно повертає ті значення Студент, для яких існують пари з кожним курсом із відношення Обов’язковий."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260617-001-task-20",
+      "number": 20,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260617-001-020",
+          "number": 20,
+          "display_label": "20",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Оптимізатор має виконати вираз σA=10(R ⋈ R.B=S.B S). За якої умови відбір σA=10 можна без зміни результату перенести до відношення R перед з’єднанням?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "тільки якщо атрибут A належить і R, і S одночасно"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "якщо атрибут A належить лише R і предикат відбору не залежить від атрибутів S"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "тільки якщо з’єднання є декартовим добутком без умови"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "ніколи, бо відбір завжди має виконуватися після будь-якого з’єднання"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Відбір, що використовує лише атрибути одного операнда з’єднання, можна проштовхнути до цього операнда: σA=10(R ⋈ S) еквівалентне (σA=10(R)) ⋈ S. Це зменшує проміжний результат і не змінює семантики."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260617-001"
+          }
+        }
+      ]
+    }
+  ],
+  "release": {
+    "status": "ready_for_application",
+    "version": "0.1.0",
+    "verification": {
+      "method": "agent_validation",
+      "status": "passed",
+      "workflow_version": "1.0.0",
+      "validated_at": "2026-06-17T10:20:00Z",
+      "report": "reports/generated/generated-yefvv-it-databases-20260617-001.validation.json",
+      "checks": [
+        "schema",
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "duplicate_detection",
+        "official_similarity",
+        "exam_style"
+      ],
+      "similarity": {
+        "maximum_score": 0.018519,
+        "threshold": 0.35
+      }
+    }
+  }
+}
