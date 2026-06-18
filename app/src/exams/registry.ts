@@ -63,6 +63,7 @@ export const datasetRegistry: Record<string, DatasetDefinition> = {
       'generated-yefvv-it-computer-architecture-20260617-001',
       'generated-yefvv-it-networks-20260617-001',
       'generated-yefvv-it-operating-systems-20260617-001',
+      'generated-yefvv-it-artificial-intelligence-20260618-001',
     ],
   },
   'yefvv-it-2024': {
@@ -134,6 +135,15 @@ export const datasetRegistry: Record<string, DatasetDefinition> = {
     language: 'uk',
     sectionCodes: ['8'],
   },
+  'generated-yefvv-it-artificial-intelligence-20260618-001': {
+    id: 'generated-yefvv-it-artificial-intelligence-20260618-001',
+    kind: 'task_projection',
+    sourceDatasetId: 'generated-yefvv-it-artificial-intelligence-20260618-001',
+    title: 'Додаткові питання ЄФВВ — Штучний інтелект',
+    subject: 'Інформаційні технології',
+    language: 'uk',
+    sectionCodes: ['10'],
+  },
 }
 
 export const taskDatasetRegistry: Record<string, TaskDatasetDefinition> = {
@@ -169,6 +179,11 @@ export const taskDatasetRegistry: Record<string, TaskDatasetDefinition> = {
     id: 'generated-yefvv-it-operating-systems-20260617-001',
     dataPath:
       'content/datasets/generated-yefvv-it-operating-systems-20260617-001/dataset.json',
+  },
+  'generated-yefvv-it-artificial-intelligence-20260618-001': {
+    id: 'generated-yefvv-it-artificial-intelligence-20260618-001',
+    dataPath:
+      'content/datasets/generated-yefvv-it-artificial-intelligence-20260618-001/dataset.json',
   },
 }
 

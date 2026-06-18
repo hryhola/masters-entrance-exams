@@ -1,0 +1,725 @@
+{
+  "schema_version": 1,
+  "batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001",
+  "status": "passed",
+  "validated_at": "2026-06-18T09:30:00Z",
+  "workflow_version": "1.0.0",
+  "validator": {
+    "agent": "codex",
+    "method": "agent_validation"
+  },
+  "inputs": {
+    "dataset": "data/generated/drafts/generated-yefvv-it-artificial-intelligence-20260618-001.json",
+    "taxonomy": "data/taxonomies/yefvv-it-program-2025.yaml",
+    "official_reference_dataset": "data/yefvv-it-2024.json",
+    "research_report": "reports/generated/generated-yefvv-it-artificial-intelligence-20260618-001.research.md",
+    "instruction": "docs/content-generation/YEFVV_IT_AGENT_QUESTION_GENERATION.md",
+    "instruction_sha256": "b530323b3bb2b3812476681ed81b6e11b251e2cc97657527d79779a840f2d593"
+  },
+  "summary": {
+    "questions_checked": 20,
+    "questions_passed": 20,
+    "questions_failed": 0,
+    "difficulty_distribution": {
+      "medium": 5,
+      "hard": 15
+    },
+    "correct_choice_distribution": {
+      "a": 5,
+      "b": 5,
+      "c": 5,
+      "d": 5
+    }
+  },
+  "checks": {
+    "schema": {
+      "status": "passed",
+      "evidence": "JSON parsed successfully; schema v2 publication validator and runtime adapter accepted all 20 tasks and assessment items."
+    },
+    "source_grounding": {
+      "status": "passed",
+      "evidence": "Every question maps to two authoritative sources; all six taxonomy topics in section 10 are covered."
+    },
+    "answer_integrity": {
+      "status": "passed",
+      "evidence": "Each item was independently solved after drafting and has exactly one unconditional correct choice among four mutually exclusive options."
+    },
+    "explanation_integrity": {
+      "status": "passed",
+      "evidence": "All 20 explanations are non-empty, justify the key, and distinguish the governing concept from the distractors."
+    },
+    "duplicate_detection": {
+      "status": "passed",
+      "evidence": "No duplicate prompts, option sets, or shared 10-word sequences were found. Maximum internal trigram Jaccard score is 0."
+    },
+    "official_similarity": {
+      "status": "passed",
+      "evidence": "All 140 official questions were compared by Unicode token-trigram Jaccard similarity and section-10 items received semantic review. Maximum score is 0.035088, below 0.35."
+    },
+    "exam_style": {
+      "status": "passed",
+      "evidence": "Items use neutral Ukrainian academic language, one learning objective, plausible same-level distractors, and no prohibited code, pseudocode, trick wording, or version-sensitive trivia."
+    }
+  },
+  "similarity": {
+    "method": "Lowercase Unicode word tokenization; sets of contiguous 3-token n-grams; Jaccard intersection over union. Exact shared contiguous 10-token sequences checked separately.",
+    "threshold": 0.35,
+    "maximum_score": 0.035088,
+    "maximum_pair": {
+      "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-013",
+      "official_id": "yefvv-it-2024-017"
+    },
+    "maximum_internal_score": 0,
+    "maximum_internal_pair": {
+      "generated_id_a": null,
+      "generated_id_b": null
+    },
+    "exact_shared_10_word_sequences": 0,
+    "per_question": [
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-001",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-002",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-003",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-004",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-005",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-006",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-007",
+        "nearest_official_id": "yefvv-it-2024-053",
+        "score": 0.009709,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-008",
+        "nearest_official_id": "yefvv-it-2024-134",
+        "score": 0.010989,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-009",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-010",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-011",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-012",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-013",
+        "nearest_official_id": "yefvv-it-2024-017",
+        "score": 0.035088,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-014",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-015",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-016",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-017",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-018",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-019",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-artificial-intelligence-20260618-001-020",
+        "nearest_official_id": "yefvv-it-2024-099",
+        "score": 0.0125,
+        "shared_10_word_sequences": 0
+      }
+    ],
+    "semantic_review": [
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-001",
+        "related_official_ids": [
+          "yefvv-it-2024-098",
+          "yefvv-it-2024-105"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-002",
+        "related_official_ids": [
+          "yefvv-it-2024-030",
+          "yefvv-it-2024-046"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-003",
+        "related_official_ids": [
+          "yefvv-it-2024-039"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-004",
+        "related_official_ids": [
+          "yefvv-it-2024-017",
+          "yefvv-it-2024-085",
+          "yefvv-it-2024-093"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-005",
+        "related_official_ids": [
+          "yefvv-it-2024-045"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-006",
+        "related_official_ids": [
+          "yefvv-it-2024-098",
+          "yefvv-it-2024-105"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-007",
+        "related_official_ids": [
+          "yefvv-it-2024-030",
+          "yefvv-it-2024-046"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-008",
+        "related_official_ids": [
+          "yefvv-it-2024-030",
+          "yefvv-it-2024-046"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-009",
+        "related_official_ids": [
+          "yefvv-it-2024-030",
+          "yefvv-it-2024-046"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-010",
+        "related_official_ids": [
+          "yefvv-it-2024-039"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-011",
+        "related_official_ids": [
+          "yefvv-it-2024-039"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-012",
+        "related_official_ids": [
+          "yefvv-it-2024-039"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-013",
+        "related_official_ids": [
+          "yefvv-it-2024-017",
+          "yefvv-it-2024-085",
+          "yefvv-it-2024-093"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-014",
+        "related_official_ids": [
+          "yefvv-it-2024-045"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-015",
+        "related_official_ids": [
+          "yefvv-it-2024-045"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-016",
+        "related_official_ids": [
+          "yefvv-it-2024-045"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-017",
+        "related_official_ids": [
+          "yefvv-it-2024-016",
+          "yefvv-it-2024-031",
+          "yefvv-it-2024-129"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-018",
+        "related_official_ids": [
+          "yefvv-it-2024-016",
+          "yefvv-it-2024-031",
+          "yefvv-it-2024-129"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-019",
+        "related_official_ids": [
+          "yefvv-it-2024-016",
+          "yefvv-it-2024-031",
+          "yefvv-it-2024-129"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      },
+      {
+        "generated_id": "generated-yefvv-it-artificial-intelligence-20260618-001-020",
+        "related_official_ids": [
+          "yefvv-it-2024-016",
+          "yefvv-it-2024-031",
+          "yefvv-it-2024-129"
+        ],
+        "status": "distinct",
+        "reason": "The generated item tests a new scenario, inference, comparison, or calculation and does not reuse the official prompt, option pattern, or answer construction."
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-001",
+      "topic_code": "10.1",
+      "difficulty": "medium",
+      "status": "passed",
+      "sources": [
+        "BERKELEY-AGENTS",
+        "MON-PROGRAM-2026"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-002",
+      "topic_code": "10.2.1",
+      "difficulty": "medium",
+      "status": "passed",
+      "sources": [
+        "BERKELEY-SEARCH",
+        "MON-PROGRAM-2026"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-003",
+      "topic_code": "10.2.2",
+      "difficulty": "medium",
+      "status": "passed",
+      "sources": [
+        "MIT-RULES",
+        "STANFORD-PRODUCTIONS"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-004",
+      "topic_code": "10.3.1",
+      "difficulty": "medium",
+      "status": "passed",
+      "sources": [
+        "SKLEARN-SUPERVISED",
+        "SKLEARN-UNSUPERVISED"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-005",
+      "topic_code": "10.3.2",
+      "difficulty": "medium",
+      "status": "passed",
+      "sources": [
+        "SKLEARN-CV",
+        "SKLEARN-PITFALLS"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-006",
+      "topic_code": "10.1",
+      "difficulty": "hard",
+      "status": "passed",
+      "sources": [
+        "BERKELEY-AGENTS",
+        "NIST-AI-RMF"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-007",
+      "topic_code": "10.2.1",
+      "difficulty": "hard",
+      "status": "passed",
+      "sources": [
+        "BERKELEY-SEARCH",
+        "BERKELEY-GRAPH-SEARCH"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-008",
+      "topic_code": "10.2.1",
+      "difficulty": "hard",
+      "status": "passed",
+      "sources": [
+        "BERKELEY-BIDIRECTIONAL",
+        "BERKELEY-SEARCH"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-009",
+      "topic_code": "10.2.1",
+      "difficulty": "hard",
+      "status": "passed",
+      "sources": [
+        "BERKELEY-GRAPH-SEARCH",
+        "BERKELEY-SEARCH"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-010",
+      "topic_code": "10.2.2",
+      "difficulty": "hard",
+      "status": "passed",
+      "sources": [
+        "MIT-RULES",
+        "MIT-BACKWARD"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-011",
+      "topic_code": "10.2.2",
+      "difficulty": "hard",
+      "status": "passed",
+      "sources": [
+        "STANFORD-KG",
+        "WPI-SEMANTIC"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-012",
+      "topic_code": "10.2.2",
+      "difficulty": "hard",
+      "status": "passed",
+      "sources": [
+        "MIT-RULES",
+        "STANFORD-PRODUCTIONS"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-013",
+      "topic_code": "10.3.1",
+      "difficulty": "hard",
+      "status": "passed",
+      "sources": [
+        "SKLEARN-UNSUPERVISED",
+        "SKLEARN-SUPERVISED"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-014",
+      "topic_code": "10.3.2",
+      "difficulty": "hard",
+      "status": "passed",
+      "sources": [
+        "SKLEARN-PITFALLS",
+        "SKLEARN-CV"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-015",
+      "topic_code": "10.3.2",
+      "difficulty": "hard",
+      "status": "passed",
+      "sources": [
+        "SKLEARN-CV",
+        "SKLEARN-STRATIFIED"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-016",
+      "topic_code": "10.3.2",
+      "difficulty": "hard",
+      "status": "passed",
+      "sources": [
+        "SKLEARN-CV",
+        "SKLEARN-PITFALLS"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-017",
+      "topic_code": "10.3.3",
+      "difficulty": "hard",
+      "status": "passed",
+      "sources": [
+        "GOOGLE-ACTIVATIONS",
+        "TENSORFLOW-ACTIVATIONS"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-018",
+      "topic_code": "10.3.3",
+      "difficulty": "hard",
+      "status": "passed",
+      "sources": [
+        "TENSORFLOW-RELU",
+        "GOOGLE-ACTIVATIONS"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-019",
+      "topic_code": "10.3.3",
+      "difficulty": "hard",
+      "status": "passed",
+      "sources": [
+        "TENSORFLOW-ACTIVATIONS",
+        "GOOGLE-ACTIVATIONS"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-020",
+      "topic_code": "10.3.3",
+      "difficulty": "hard",
+      "status": "passed",
+      "sources": [
+        "GOOGLE-ACTIVATIONS",
+        "TENSORFLOW-ACTIVATIONS"
+      ],
+      "checks": [
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "exam_style"
+      ],
+      "issues": []
+    }
+  ],
+  "issues": [],
+  "fixes": []
+}

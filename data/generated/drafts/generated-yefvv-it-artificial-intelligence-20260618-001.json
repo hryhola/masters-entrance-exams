@@ -1,0 +1,1872 @@
+{
+  "schema_version": 2,
+  "dataset": {
+    "id": "generated-yefvv-it-artificial-intelligence-20260618-001",
+    "title": "Додаткові питання ЄФВВ — Штучний інтелект",
+    "exam": "ЄФВВ",
+    "subject": "Інформаційні технології",
+    "year": 2026,
+    "languages": [
+      "uk"
+    ],
+    "status": "ready",
+    "origin": "generated",
+    "generation": {
+      "batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001",
+      "agent": "codex",
+      "instructions": {
+        "id": "yefvv-it-agent-question-generation",
+        "version": "1.0.0",
+        "sha256": "b530323b3bb2b3812476681ed81b6e11b251e2cc97657527d79779a840f2d593"
+      },
+      "generated_at": "2026-06-18T09:00:00Z",
+      "workflow_version": "1.0.0",
+      "research_report": "reports/generated/generated-yefvv-it-artificial-intelligence-20260618-001.research.md",
+      "parameters": {
+        "topic": "Штучний інтелект",
+        "difficulty": "hard",
+        "difficulty_distribution": {
+          "medium": 5,
+          "hard": 15
+        },
+        "task_type": "single_choice"
+      }
+    },
+    "task_count": 20,
+    "assessment_item_count": 20,
+    "stimulus_count": 0
+  },
+  "sections": [
+    {
+      "code": "10",
+      "title": "Штучний інтелект"
+    }
+  ],
+  "stimuli": [],
+  "tasks": [
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-01",
+      "number": 1,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-001",
+          "number": 1,
+          "display_label": "1",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яка характеристика найточніше відрізняє інтелектуального агента від пасивної інформаційної системи?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Агент сприймає середовище та обирає дії, що впливають на нього."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Агент обов’язково відтворює всі когнітивні здібності людини."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Агент працює лише тоді, коли середовище повністю спостережуване."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Агент зберігає дані, але не використовує їх для вибору дій."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Інтелектуальний агент отримує інформацію про середовище через засоби сприйняття й діє на нього, обираючи дії відповідно до поставленої мети. Людиноподібність і повна спостережуваність не є обов’язковими."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-02",
+      "number": 2,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-002",
+          "number": 2,
+          "display_label": "2",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Усі переходи в просторі станів мають однакову вартість. Яка організація фронту пошуку забезпечує знаходження розв’язку з найменшою кількістю переходів?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Стек, з якого завжди вилучають останній доданий стан."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Черга, з якої стани вилучають у порядку їх додавання."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Множина, з якої стан обирають випадково."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Черга, у якій перевагу має стан із найбільшою глибиною."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Пошук у ширину використовує FIFO-чергу й розгортає стани за неспаданням глибини. За однакової вартості переходів найменша глибина відповідає найменшій кількості переходів."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-03",
+      "number": 3,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-003",
+          "number": 3,
+          "display_label": "3",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Який набір компонентів є достатнім для виконання міркувань у класичній продукційній системі?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Лише ієрархія понять і зв’язки успадкування."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Лише набір цілей без відомих фактів і правил."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "База фактів, правила виду «умова — дія» та механізм виведення."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Матриця ознак і функція числової оптимізації."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Продукційна система поєднує факти, правила з умовою та наслідком і механізм, який зіставляє правила з поточними фактами та застосовує їх. Інші варіанти описують інші моделі або неповні системи."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-04",
+      "number": 4,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-004",
+          "number": 4,
+          "display_label": "4",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Для кожного навчального прикладу задано вектор ознак і одну з наперед визначених категорій. Який тип задачі та навчання описано?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кластеризація у навчанні без учителя."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Зниження розмірності у навчанні без учителя."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Регресія у навчанні з учителем."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Класифікація у навчанні з учителем."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Наперед визначена категоріальна мітка робить задачу класифікацією з учителем. Кластеризація не використовує заданих міток, а регресія прогнозує числову величину."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-05",
+      "number": 5,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-005",
+          "number": 5,
+          "display_label": "5",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яке використання валідаційної вибірки є методологічно правильним?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Порівнювати конфігурації моделі та обрати гіперпараметри, не навчаючись на валідаційних прикладах."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Оновлювати ваги моделі на кожному валідаційному прикладі після завершення епохи."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Оцінювати остаточну якість після того, як результати цієї вибірки багаторазово визначали всі рішення."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Обчислювати параметри нормалізації спільно за навчальними й валідаційними прикладами."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Валідаційні дані використовують для вибору моделі та гіперпараметрів, але не для безпосереднього навчання її параметрів. Остаточну неупереджену оцінку отримують на окремій тестовій вибірці."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-06",
+      "number": 6,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-006",
+          "number": 6,
+          "display_label": "6",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Агент діє у частково спостережуваному середовищі та не може наперед знати фактичний результат кожної дії. За якої умови його вибір вважають раціональним?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Лише якщо обрана дія завжди приводить до найкращого фактичного результату."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Якщо дія максимізує очікуваний результат за наявною історією сприйняття та знаннями агента."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Лише якщо агент не використовує припущень про прихований стан середовища."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Якщо агент повторює одну дію для всіх можливих історій сприйняття."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Раціональність оцінюють відносно доступної агенту інформації та очікуваної міри результативності, а не за всезнанням про майбутній фактичний результат. Часткова спостережуваність потребує роботи з невизначеністю."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-07",
+      "number": 7,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-007",
+          "number": 7,
+          "display_label": "7",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Простір станів є скінченним деревом із великим коефіцієнтом розгалуження; усі переходи рівноцінні, а ціль може бути на значній глибині. Яке порівняння BFS і DFS правильне?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "DFS гарантовано знаходить наймілкішу ціль і потребує більше пам’яті за BFS."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "BFS і DFS завжди розгортають однакову кількість станів та мають однакову просторову складність."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "DFS зазвичай потребує менше пам’яті, але не гарантує наймілкішого розв’язку; BFS має протилежні властивості."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "BFS потребує пам’яті лише пропорційно максимальній глибині, а DFS — кількості станів останнього рівня."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "DFS зберігає переважно поточний шлях і сусідні гілки, тому має менші вимоги до пам’яті, але його перший розв’язок може бути глибшим. BFS зберігає широкий фронт і за рівних вартостей знаходить наймілкішу ціль."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-08",
+      "number": 8,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-008",
+          "number": 8,
+          "display_label": "8",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Коли двонаправлений пошук від початкового й цільового станів можна коректно застосувати замість звичайного пошуку в ширину?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Коли ціль задається лише предикатом і жоден конкретний цільовий стан не відомий."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Коли переходи незворотні й неможливо визначити попередників стану."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Коли обидва напрями використовують один спільний стек без перевірки відвіданих станів."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Коли відомий конкретний цільовий стан, можна породжувати попередників і виявити перетин двох фронтів."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Для пошуку з боку цілі потрібна конкретна ціль і можливість будувати зворотні переходи або попередників. Також необхідна надійна перевірка зустрічі двох областей пошуку."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-09",
+      "number": 9,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-009",
+          "number": 9,
+          "display_label": "9",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У графі станів є цикли та кілька шляхів до того самого стану. Яка зміна перетворює деревоподібний пошук на графовий і запобігає необмеженому повторному розгортанню?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Зберігати множину вже розгорнутих станів і не розгортати їх повторно."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Додавати кожен породжений стан у фронт двічі."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Замінити перевірку цілі випадковим вибором наступного стану."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Видаляти зі стану інформацію про шлях до нього."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Графовий пошук відстежує відвідані або розгорнуті стани. Це відсікає повторне обходження циклів і дублікати шляхів до одного стану; інші дії цього не забезпечують."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-10",
+      "number": 10,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-010",
+          "number": 10,
+          "display_label": "10",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Експертна система має перевірити одну конкретну гіпотезу за великої бази правил, але відомо лише кілька початкових фактів. Яка стратегія виведення найдоцільніша?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Пошук у ширину без використання наслідків правил."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Зворотне виведення від гіпотези до умов правил, здатних її підтвердити."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Побудова кластерів фактів без урахування правил."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Пряме виведення всіх можливих наслідків незалежно від гіпотези."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Зворотне виведення є цілеспрямованим: воно починається з гіпотези, знаходить правила з відповідним наслідком і рекурсивно перевіряє їхні передумови. Це уникає породження багатьох нерелевантних фактів."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-11",
+      "number": 11,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-011",
+          "number": 11,
+          "display_label": "11",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У семантичній мережі клас «птах» має типову властивість «літає», а підклас «пінгвін» — явну властивість «не літає». Який висновок щодо конкретного пінгвіна узгоджується з успадкуванням із винятками?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Властивості класу й підкласу взаємно знищуються, тому висновок неможливий."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Загальніша властивість класу завжди має пріоритет над властивістю підкласу."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Специфічна властивість підкласу перекриває типову властивість загальнішого класу."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Екземпляр успадковує обидві властивості як одночасно істинні."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У дефолтному успадкуванні більш специфічне знання про підклас має пріоритет над типовою властивістю надкласу. Тому для екземпляра пінгвіна діє явно заданий виняток."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-12",
+      "number": 12,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-012",
+          "number": 12,
+          "display_label": "12",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У базі фактів спочатку є лише A. Правила мають вигляд: «якщо A, то B»; «якщо B і C, то D»; «якщо D, то E». Який результат дасть пряме виведення до досягнення нерухомої точки?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Буде виведено B, D та E, оскільки правила застосовують послідовно."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Не буде виведено жодного нового факту, бо початкова ціль не задана."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Буде виведено C, а потім D та E."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Буде виведено лише B, оскільки для D бракує факту C."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Перше правило додає B. Друге потребує одночасної наявності B і C, але C не виводиться жодним правилом, тому ланцюг до D та E не запускається."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-13",
+      "number": 13,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-013",
+          "number": 13,
+          "display_label": "13",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Набір містить лише ознаки об’єктів без цільових міток. Потрібно виявити природні групи подібних об’єктів. Яка постановка відповідає цій меті?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кластеризація як задача навчання без учителя."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Класифікація як задача навчання з учителем."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Регресія з категоріальною цільовою змінною."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Валідація моделі на навчальних мітках."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "За відсутності цільових міток пошук груп за подібністю є кластеризацією, типовою задачею навчання без учителя. Класифікація потребує відомих категорій для навчальних прикладів."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-14",
+      "number": 14,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-014",
+          "number": 14,
+          "display_label": "14",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Перед розбиттям даних дослідник обчислив середнє та стандартне відхилення кожної ознаки за всім набором, а потім нормалізував навчальну й валідаційну частини. У чому головна проблема?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Навчальна частина стане більшою за валідаційну."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Статистика валідаційних даних потрапила в підготовку навчальних ознак, створивши витік даних."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Нормалізація автоматично перетворила класифікацію на регресію."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Модель більше не зможе обчислювати помилку на навчальних даних."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Параметри перетворення слід оцінювати лише на навчальній частині, а потім застосовувати до інших частин. Інакше інформація з валідаційної вибірки впливає на навчальний процес і завищує оцінку якості."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-15",
+      "number": 15,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-015",
+          "number": 15,
+          "display_label": "15",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У задачі класифікації один клас становить 5% прикладів. Який спосіб розбиття найкраще зменшує ризик випадково отримати валідаційну вибірку майже без цього класу?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Сортувати приклади за міткою й узяти останні 20% як валідаційні."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Дублювати всі приклади меншого класу одночасно в обох вибірках."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Застосувати стратифіковане розбиття зі збереженням часток класів."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Використати лише приклади більшого класу для валідації."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Стратифікація підтримує приблизно однакові пропорції класів у частинах набору. Дублювання тих самих прикладів між частинами спричиняє витік, а сортування або вилучення класу спотворює оцінювання."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-16",
+      "number": 16,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-016",
+          "number": 16,
+          "display_label": "16",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Дослідник сотні разів змінював модель, щоразу обираючи варіант із найкращим результатом на тій самій валідаційній вибірці. Який наслідок найбільш імовірний?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Валідаційна оцінка автоматично стає тотожною оцінці на нових даних."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Навчальна вибірка перестає впливати на параметри моделі."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Зникає потреба в окремій тестовій вибірці."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Рішення пристосовуються до випадкових особливостей валідаційної вибірки, тому її оцінка стає оптимістичною."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Багаторазове прийняття рішень за тією самою валідаційною оцінкою фактично підлаштовує процес розробки під цю вибірку. Для остаточної оцінки потрібні дані, які не впливали на вибір моделі."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-17",
+      "number": 17,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-017",
+          "number": 17,
+          "display_label": "17",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Усі шари багатошарової нейронної мережі використовують лише лінійні функції активації. Яку принципову властивість має така мережа?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Композицію її шарів можна подати одним лінійним або афінним перетворенням."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кожний доданий шар обов’язково створює нову нелінійну межу рішень."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вона автоматично реалізує будь-яку булеву функцію без прихованих нейронів."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Її вихід завжди належить інтервалу від нуля до одиниці."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Композиція лінійних перетворень лишається лінійною, а з урахуванням зсувів — афінною. Без нелінійних активацій глибина не додає здатності моделювати нелінійні залежності."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-18",
+      "number": 18,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-018",
+          "number": 18,
+          "display_label": "18",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Нейрон має ваги 1,5 і 2, зсув −2 та входи 2 і −1. Який вихід він сформує за функції активації ReLU?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "−1"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "0"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "1"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "3"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Зважена сума дорівнює 1,5·2 + 2·(−1) − 2 = −1. Стандартна ReLU повертає max(0, −1), тобто 0."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-19",
+      "number": 19,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-019",
+          "number": 19,
+          "display_label": "19",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "До кожного з трьох вхідних значень функції softmax додали ту саму сталу. Як зміниться вихідний розподіл?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кожна ймовірність збільшиться на цю сталу."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Найбільша ймовірність стане рівною одиниці, а решта — нулю."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Розподіл не зміниться, оскільки спільний множник у чисельниках і знаменнику скорочується."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Усі ймовірності стануть однаковими незалежно від початкових значень."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Після додавання сталої c кожний експоненційний член множиться на e^c. Цей спільний множник є і в чисельнику, і в сумі знаменника, тому значення softmax не змінюються."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-artificial-intelligence-20260618-001-task-20",
+      "number": 20,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "10",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-artificial-intelligence-20260618-001-020",
+          "number": 20,
+          "display_label": "20",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Потрібно точно відтворити функцію XOR для двох бінарних входів нейронною мережею. Яка архітектурна властивість є необхідною серед наведених?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Один вихідний нейрон із лінійною активацією без прихованого шару."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Один пороговий нейрон, оскільки XOR лінійно відокремлювана."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кілька послідовних шарів, але всі з лінійними активаціями."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Прихований шар із нелінійною активацією, що дає змогу утворити нелінійну межу."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "XOR не є лінійно відокремлюваною функцією, тому один лінійний або пороговий нейрон її не реалізує. Прихований шар із нелінійною активацією дає змогу поєднати кілька лінійних меж."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-artificial-intelligence-20260618-001"
+          }
+        }
+      ]
+    }
+  ],
+  "release": {
+    "status": "ready_for_application",
+    "version": "0.1.0",
+    "verification": {
+      "method": "agent_validation",
+      "status": "passed",
+      "workflow_version": "1.0.0",
+      "validated_at": "2026-06-18T09:30:00Z",
+      "report": "reports/generated/generated-yefvv-it-artificial-intelligence-20260618-001.validation.json",
+      "checks": [
+        "schema",
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "duplicate_detection",
+        "official_similarity",
+        "exam_style"
+      ],
+      "similarity": {
+        "maximum_score": 0.035088,
+        "threshold": 0.35
+      }
+    }
+  }
+}

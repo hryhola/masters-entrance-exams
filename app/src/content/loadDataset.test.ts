@@ -103,6 +103,22 @@ function readGeneratedOperatingSystemsDataset() {
   ) as unknown
 }
 
+function readGeneratedArtificialIntelligenceDataset() {
+  return JSON.parse(
+    readFileSync(
+      resolve(
+        process.cwd(),
+        '..',
+        'data',
+        'generated',
+        'drafts',
+        'generated-yefvv-it-artificial-intelligence-20260618-001.json',
+      ),
+      'utf8',
+    ),
+  ) as unknown
+}
+
 afterEach(() => {
   clearDatasetCache()
   clearTaskDatasetCache()
@@ -210,6 +226,15 @@ describe('loadDataset', () => {
           json: async () => readGeneratedOperatingSystemsDataset(),
         })
       }
+      if (
+        url ===
+        '/content/datasets/generated-yefvv-it-artificial-intelligence-20260618-001/dataset.json'
+      ) {
+        return Promise.resolve({
+          ok: true,
+          json: async () => readGeneratedArtificialIntelligenceDataset(),
+        })
+      }
       return Promise.resolve({ ok: false, status: 404 })
     })
     vi.stubGlobal('fetch', fetchMock)
@@ -226,6 +251,9 @@ describe('loadDataset', () => {
     const operatingSystems = dataset.sections.find(
       (section) => section.code === '8',
     )
+    const artificialIntelligence = dataset.sections.find(
+      (section) => section.code === '10',
+    )
     const generatedQuestions = dataset.questions.filter(
       (question) => question.origin === 'generated',
     )
@@ -241,14 +269,18 @@ describe('loadDataset', () => {
     const generatedOperatingSystemQuestions = generatedQuestions.filter(
       (question) => question.classification.topic?.sectionCode === '8',
     )
+    const generatedArtificialIntelligenceQuestions = generatedQuestions.filter(
+      (question) => question.classification.topic?.sectionCode === '10',
+    )
 
-    expect(dataset.questions).toHaveLength(225)
+    expect(dataset.questions).toHaveLength(245)
     expect(computerArchitecture?.questionCount).toBe(34)
     expect(databases?.questionCount).toBe(37)
     expect(cybersecurity?.questionCount).toBe(22)
     expect(networks?.questionCount).toBe(28)
     expect(operatingSystems?.questionCount).toBe(32)
-    expect(generatedQuestions).toHaveLength(85)
+    expect(artificialIntelligence?.questionCount).toBe(32)
+    expect(generatedQuestions).toHaveLength(105)
     expect(generatedQuestions[0]).toMatchObject({
       number: 141,
       displayLabel: 'Дод. 1',
@@ -305,6 +337,18 @@ describe('loadDataset', () => {
         topic: expect.objectContaining({
           sectionCode: '8',
           section: 'Операційні системи',
+        }),
+      },
+    })
+    expect(generatedArtificialIntelligenceQuestions).toHaveLength(20)
+    expect(generatedArtificialIntelligenceQuestions[0]).toMatchObject({
+      number: 226,
+      displayLabel: 'Дод. 1',
+      verification: { method: 'agent_validation' },
+      classification: {
+        topic: expect.objectContaining({
+          sectionCode: '10',
+          section: 'Штучний інтелект',
         }),
       },
     })
