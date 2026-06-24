@@ -1,0 +1,1872 @@
+{
+  "schema_version": 2,
+  "dataset": {
+    "id": "generated-yefvv-it-databases-20260624-001",
+    "title": "Додаткові питання ЄФВВ — Бази та сховища даних",
+    "exam": "ЄФВВ",
+    "subject": "Інформаційні технології",
+    "year": 2026,
+    "languages": [
+      "uk"
+    ],
+    "status": "ready",
+    "origin": "generated",
+    "generation": {
+      "batch_id": "generated-yefvv-it-databases-20260624-001",
+      "agent": "codex",
+      "instructions": {
+        "id": "yefvv-it-agent-question-generation",
+        "version": "1.0.0",
+        "sha256": "b530323b3bb2b3812476681ed81b6e11b251e2cc97657527d79779a840f2d593"
+      },
+      "generated_at": "2026-06-24T10:29:47Z",
+      "workflow_version": "1.0.0",
+      "research_report": "reports/generated/generated-yefvv-it-databases-20260624-001.research.md",
+      "parameters": {
+        "topic": "Бази та сховища даних",
+        "difficulty": "medium",
+        "difficulty_distribution": {
+          "medium": 15,
+          "hard": 5
+        },
+        "task_type": "single_choice"
+      }
+    },
+    "task_count": 20,
+    "assessment_item_count": 20,
+    "stimulus_count": 0
+  },
+  "sections": [
+    {
+      "code": "3",
+      "title": "Бази та сховища даних"
+    }
+  ],
+  "stimuli": [],
+  "tasks": [
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-01",
+      "number": 1,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-001",
+          "number": 1,
+          "display_label": "1",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У таблиці Навчання(СтудентID, КурсID, Ім’яСтудента, НазваКурсу, Оцінка) первинним ключем є пара (СтудентID, КурсID). Яка декомпозиція найкраще усуває часткові залежності та зберігає відомості про оцінки?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Студенти(СтудентID, Ім’яСтудента), Курси(КурсID, НазваКурсу), Навчання(СтудентID, КурсID, Оцінка)"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Студенти(СтудентID, КурсID, Ім’яСтудента), Курси(КурсID, НазваКурсу, Оцінка)"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Навчання(СтудентID, КурсID, Оцінка), Довідник(Ім’яСтудента, НазваКурсу)"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Студенти(СтудентID, Ім’яСтудента, НазваКурсу, Оцінка), Курси(КурсID)"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "За складеного ключа атрибути Ім’яСтудента та НазваКурсу залежать лише від частин ключа, а Оцінка залежить від усієї пари СтудентID і КурсID. Декомпозиція на сутності студентів, курсів і таблицю зв’язку усуває часткові залежності без втрати оцінок."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-02",
+      "number": 2,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-002",
+          "number": 2,
+          "display_label": "2",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У таблиці Клієнти є поле Телефони, у якому для одного клієнта зберігають кілька номерів через кому. Яке рішення найкраще приводить цю частину моделі до першої нормальної форми?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Залишити поле Телефони, але збільшити його максимальну довжину."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Створити окрему таблицю ТелефониКлієнтів(КлієнтID, Телефон), де кожен номер зберігається окремим рядком."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Додати поля Телефон1, Телефон2, Телефон3 до таблиці Клієнти."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Перенести всі телефони в текстове поле Примітка, щоб не змінювати ключ таблиці."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Перша нормальна форма вимагає атомарних значень і відсутності повторюваних груп у стовпцях. Окрема таблиця для номерів дозволяє зберігати довільну кількість телефонів як окремі факти, а не як список у полі."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-03",
+      "number": 3,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-003",
+          "number": 3,
+          "display_label": "3",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У відношенні Замовлення(ЗамовленняID, КлієнтID, МістоКлієнта, Дата) ключем є ЗамовленняID. Відомо, що ЗамовленняID → КлієнтID, а КлієнтID → МістоКлієнта. Яке твердження про це відношення є правильним?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Відношення порушує 1NF, бо містить атрибут Дата."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Відношення обов’язково перебуває в BCNF, бо має один первинний ключ."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "МістоКлієнта транзитивно залежить від ЗамовленняID, тому його доцільно винести до даних клієнта."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "КлієнтID треба видалити, бо він не може бути зовнішнім ключем у таблиці замовлень."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Якщо неключовий атрибут МістоКлієнта залежить від ключа через інший неключовий атрибут КлієнтID, виникає транзитивна залежність. Для 3NF такі дані слід відокремити в таблицю клієнтів або адресних атрибутів."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-04",
+      "number": 4,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-004",
+          "number": 4,
+          "display_label": "4",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Після виконання COMMIT система підтвердила завершення транзакції. Яка ACID-властивість безпосередньо вимагає, щоб результат не було втрачено після збою живлення?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Узгодженість, бо вона забороняє всі паралельні транзакції."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Ізольованість, бо вона зберігає попередні версії всіх таблиць назавжди."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Атомарність, бо вона дозволяє виконати лише першу операцію транзакції."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Довговічність, бо зафіксовані зміни мають зберігатися після підтвердження транзакції."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Довговічність означає, що після успішного COMMIT результат транзакції має бути надійно зафіксований. Атомарність відповідає за принцип “усе або нічого”, ізольованість — за видимість паралельних змін, а узгодженість — за дотримання обмежень."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-05",
+      "number": 5,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-005",
+          "number": 5,
+          "display_label": "5",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Для бази даних потрібно зменшити втрату даних у разі аварії між щоденними повними резервними копіями. Який підхід є найбільш доречним?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Зберігати повні копії та архівувати журнали транзакцій, щоб відновлювати стан до потрібного моменту."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Залишити лише один повний backup без журналів, бо він завжди містить усі майбутні зміни."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Замінити резервне копіювання індексами, оскільки індекси дублюють усі рядки таблиць."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Виконувати VACUUM або дефрагментацію замість backup, бо це є процедура відновлення даних."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Повна копія дає базовий стан, а журнали транзакцій дозволяють відтворити зміни після неї. Індекси й обслуговування таблиць не є заміною резервного копіювання та не гарантують point-in-time recovery."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-06",
+      "number": 6,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-006",
+          "number": 6,
+          "display_label": "6",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яке твердження найточніше описує співвідношення реплікації та резервного копіювання в системах баз даних?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Реплікація завжди замінює backup, бо помилкові видалення не потрапляють на репліки."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Реплікація може підвищувати доступність або масштабувати читання, але backup потрібен для відновлення після логічних помилок і пошкоджень."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Backup потрібен лише для тимчасових таблиць, а постійні таблиці відновлюються з індексів."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Реплікація і backup є однаковими операціями, бо обидві виконуються тільки командою SELECT."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Репліки часто повторюють і корисні зміни, і помилкові операції, тому вони не покривають усі сценарії відновлення. Backup зберігає окремий відновлюваний стан, а реплікація переважно працює для доступності, відмовостійкості або читальних навантажень."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-07",
+      "number": 7,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-007",
+          "number": 7,
+          "display_label": "7",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У таблиці з мільйонами рядків часто виконують пошук за полем Email, але також регулярно додають нові записи. Який наслідок створення індексу за Email є найбільш типовим?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Усі INSERT гарантовано стануть швидшими, бо індекс не потрібно оновлювати."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Пошук за Email стане неможливим без повного сканування таблиці."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Запити пошуку можуть прискоритися, але вставлення й оновлення потребуватимуть додаткової роботи для підтримки індексу."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Індекс автоматично нормалізує таблицю до BCNF."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Індекс дає структуру доступу для швидшого пошуку, але він займає місце і має підтримуватися під час змін даних. Він не змінює нормальну форму таблиці й не скасовує витрати на операції запису."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-08",
+      "number": 8,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-008",
+          "number": 8,
+          "display_label": "8",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "В ER-моделі сутності Студент і Проєкт пов’язані зв’язком багато-до-багатьох; для кожної участі потрібно зберігати роль студента в проєкті. Яке реляційне подання є найдоречнішим?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Додати до таблиці Студенти одне поле ПроєктID і поле Роль."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Додати до таблиці Проєкти чотири поля Студент1ID, Студент2ID, Студент3ID, Студент4ID."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Зберігати список студентів і ролей одним текстовим рядком у таблиці Проєкти."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Створити таблицю Участь(СтудентID, ПроєктID, Роль) із зовнішніми ключами на Студенти та Проєкти."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Зв’язок багато-до-багатьох у реляційній моделі реалізують асоціативною таблицею. Якщо сам зв’язок має атрибут Роль, цей атрибут належить саме таблиці участі, а не одній із сутностей окремо."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-09",
+      "number": 9,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-009",
+          "number": 9,
+          "display_label": "9",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яке зіставлення рівнів моделювання даних є найбільш коректним?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Концептуальна модель описує сутності та зв’язки предметної області; логічна уточнює структуру даних у вибраній моделі; фізична визначає зберігання, індекси та інші реалізаційні деталі."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Концептуальна модель містить лише індекси, логічна — файли на диску, фізична — словесний опис предметної області."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Усі три моделі відрізняються тільки кольором ER-діаграм і не впливають на проєктування."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Фізична модель завжди створюється першою і повністю замінює концептуальну та логічну моделі."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Рівні моделювання розділяють опис предметної області, логічну структуру даних і технічну реалізацію. Це дозволяє спочатку уточнити зміст і зв’язки, а вже потім обирати таблиці, ключі, індекси та параметри зберігання."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-10",
+      "number": 10,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-010",
+          "number": 10,
+          "display_label": "10",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У сховищі даних потрібно аналізувати продажі за датою, товаром і регіоном. Який варіант найкраще відповідає ідеї зіркової схеми?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Одна таблиця Продажі з усіма текстовими описами товарів, регіонів і дат, без окремих довідників."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Фактова таблиця Продажі з числовими показниками та ключами на виміри Дата, Товар і Регіон."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Тільки таблиці Дата, Товар і Регіон без таблиці фактів, бо виміри вже містять усі вимірювання."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Окрема база для кожного товару, щоб уникнути будь-яких JOIN у запитах."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У зірковій схемі факти містять вимірювані події або показники, а виміри дають контекст аналізу. Продажі як фактова таблиця природно посилаються на дату, товар і регіон."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-11",
+      "number": 11,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-011",
+          "number": 11,
+          "display_label": "11",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У таблиці Замовлення поле КлієнтID є зовнішнім ключем на таблицю Клієнти. Що має забезпечувати це обмеження під час вставлення нового замовлення?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Автоматичне створення нового клієнта для будь-якого невідомого КлієнтID."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Заборону будь-яких повторів КлієнтID у таблиці Замовлення."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Неможливість послатися на неіснуючий запис клієнта, якщо значення зовнішнього ключа не є NULL."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Автоматичне сортування всіх замовлень за датою після кожної вставки."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Зовнішній ключ підтримує посилальну цілісність: значення в дочірній таблиці має відповідати запису в батьківській таблиці або бути припустимим NULL. Він не створює автоматично батьківські записи і не означає унікальності на стороні багатьох."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-12",
+      "number": 12,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-012",
+          "number": 12,
+          "display_label": "12",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яке твердження про первинний ключ реляційної таблиці є правильним?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Первинний ключ може однозначно містити дублікати, якщо на таблиці є індекс."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Первинний ключ потрібен лише для текстових полів і не може складатися з кількох атрибутів."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Первинний ключ завжди є зовнішнім ключем на ту саму таблицю."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Первинний ключ однозначно ідентифікує рядок і не допускає невизначених значень у своїх атрибутах."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Первинний ключ задає ідентичність рядка, тому його значення мають бути унікальними й визначеними. Він може бути складеним і не зобов’язаний бути зовнішнім ключем."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-13",
+      "number": 13,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-013",
+          "number": 13,
+          "display_label": "13",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Є зв’язок один-до-багатьох: один Відділ має багато Працівників, а кожен Працівник належить одному Відділу. Як найтиповіше реалізувати цей зв’язок у реляційній базі даних?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Додати ВідділID як зовнішній ключ у таблицю Працівники."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Додати до таблиці Відділи окреме поле для кожного можливого працівника."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Об’єднати всі відділи й усіх працівників в один текстовий стовпець."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Створити первинний ключ ПрацівникID у таблиці Відділи замість таблиці Працівники."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У зв’язку один-до-багатьох зовнішній ключ зазвичай зберігається на стороні “багато”. Тому кожен працівник містить посилання на свій відділ."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-14",
+      "number": 14,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-014",
+          "number": 14,
+          "display_label": "14",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Потрібно отримати ідентифікатори клієнтів, які мають понад три замовлення. Який фрагмент SQL-запиту є коректним для фільтрування саме груп клієнтів?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "WHERE COUNT(*) > 3 GROUP BY КлієнтID"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "GROUP BY КлієнтID HAVING COUNT(*) > 3"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "HAVING КлієнтID > 3 без GROUP BY і агрегатів"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "ORDER BY COUNT(*) > 3 WHERE КлієнтID IS NOT NULL"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "WHERE відбирає рядки до групування, а HAVING фільтрує вже сформовані групи. Умова на кількість замовлень є агрегатною, тому її ставлять після GROUP BY у HAVING."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-15",
+      "number": 15,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-015",
+          "number": 15,
+          "display_label": "15",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Є два запити з однаковою кількістю стовпців і сумісними типами результатів: перший повертає клієнтів із замовленнями, другий — клієнтів із підпискою на розсилку. Яка SQL-операція поверне лише клієнтів, що належать до обох результатів?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "UNION, бо вона повертає всі рядки, що є хоча б в одному з двох результатів."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "EXCEPT, бо вона повертає рядки першого результату, яких немає в другому."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "INTERSECT, бо вона повертає рядки, спільні для обох результатів."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "ORDER BY, бо вона об’єднує два результати та лишає тільки дублікати."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "INTERSECT реалізує перетин двох сумісних результатів і залишає лише рядки, що присутні в обох наборах. UNION об’єднує рядки з обох результатів, EXCEPT виконує різницю, а ORDER BY лише впорядковує уже сформований результат."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-16",
+      "number": 16,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-016",
+          "number": 16,
+          "display_label": "16",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У відношенні ПозиціяЗамовлення(ЗамовленняID, ТоварID, НазваТовару, ПостачальникID, НазваПостачальника, Кількість) ключем є (ЗамовленняID, ТоварID). Також відомо: ТоварID → НазваТовару, ПостачальникID; ПостачальникID → НазваПостачальника. Яка діагностика є найточнішою?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Відношення перебуває в BCNF, бо всі атрибути належать до одного замовлення."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Порушено лише 1NF, бо НазваТовару має текстовий тип."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Порушено тільки посилальну цілісність, але нормальні форми не стосуються цієї ситуації."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Є часткові залежності від ТоварID і транзитивна залежність НазваПостачальника через ПостачальникID; модель потребує декомпозиції."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "НазваТовару й ПостачальникID залежать від частини складеного ключа, тобто від ТоварID, а НазваПостачальника залежить від ПостачальникID. Це створює і часткові, і транзитивні залежності, тому одну таблицю слід розділити на позиції замовлення, товари та постачальників."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-17",
+      "number": 17,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-017",
+          "number": 17,
+          "display_label": "17",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Транзакція T1 двічі виконує запит “усі неоплачені рахунки клієнта”. Між двома виконаннями T2 додає новий неоплачений рахунок і фіксує зміни. T1 вдруге бачить додатковий рядок. Як називається така аномалія і який стандартний рівень ізоляції її забороняє?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Фантомне читання; Serializable."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Брудне читання; Read Uncommitted."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Втрачена зміна; Read Committed."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Порушення довговічності; будь-який рівень ізоляції."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Якщо повторне виконання предикатного запиту повертає новий рядок через зафіксовану паралельну транзакцію, це фантомне читання. За стандартною ієрархією рівнів ізоляції Serializable не допускає таких аномалій."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-18",
+      "number": 18,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-018",
+          "number": 18,
+          "display_label": "18",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Потрібно вивести всі відділи та кількість активних працівників у кожному, включно з відділами без активних працівників. Який підхід найкраще зберігає рядки відділів без збігів?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Виконати INNER JOIN Працівники й поставити умову активності в WHERE."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Виконати LEFT JOIN Працівники з умовою активності в ON, а потім агрегувати за відділом."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Виконати LEFT JOIN, але додати WHERE Працівники.Активний = TRUE після з’єднання."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Замінити JOIN на ORDER BY, бо сортування автоматично підраховує активних працівників."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Умова в WHERE після LEFT JOIN відкине рядки, де правої сторони немає, і фактично перетворить запит на inner-поведінку для цієї умови. Якщо фільтр активності належить до ON, відділи без активних працівників залишаються з нульовою кількістю."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-19",
+      "number": 19,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-019",
+          "number": 19,
+          "display_label": "19",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У таблиці Працівники(ПрацівникID, КерівникID) потрібно отримати всіх прямих і непрямих підлеглих заданого керівника. Яка SQL-конструкція найкраще відповідає цій задачі?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Звичайний ORDER BY за КерівникID, бо сортування саме обходить ієрархію на довільну глибину."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Один нерекурсивний INNER JOIN, бо він завжди знаходить підлеглих усіх рівнів без повторення."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "WITH RECURSIVE із початковим запитом для прямих підлеглих і рекурсивним кроком для наступних рівнів."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Команда GRANT, бо права доступу визначають транзитивне замикання ієрархії."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Ієрархія невідомої глибини потребує повторюваного застосування зв’язку “працівник — керівник”. Recursive CTE задає базовий набір і рекурсивний крок, тоді як один JOIN покриває лише фіксовану кількість рівнів."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-databases-20260624-001-task-20",
+      "number": 20,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "3",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-databases-20260624-001-020",
+          "number": 20,
+          "display_label": "20",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Є відношення Склав(Студент, Дисципліна) і Обов’язкова(Дисципліна). Потрібно отримати студентів, які склали всі обов’язкові дисципліни. Яка операція реляційної алгебри найпряміше виражає цю умову?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Проєкція πСтудент(Склав), бо вона не враховує перелік обов’язкових дисциплін."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Декартовий добуток Склав × Обов’язкова, бо він автоматично відкидає нескладені дисципліни."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Різниця Обов’язкова − Склав, бо вона повертає студентів замість дисциплін."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Ділення Склав(Студент, Дисципліна) ÷ Обов’язкова(Дисципліна)."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Реляційне ділення моделює умову “для всіх”: результат містить ті значення Студент, для яких існують пари з кожною дисципліною з дільника. Проєкція, добуток або проста різниця не перевіряють повне покриття всіх обов’язкових дисциплін."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-databases-20260624-001"
+          }
+        }
+      ]
+    }
+  ],
+  "release": {
+    "status": "ready_for_application",
+    "version": "0.1.0",
+    "verification": {
+      "method": "agent_validation",
+      "status": "passed",
+      "workflow_version": "1.0.0",
+      "validated_at": "2026-06-24T10:29:47Z",
+      "report": "reports/generated/generated-yefvv-it-databases-20260624-001.validation.json",
+      "checks": [
+        "schema",
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "duplicate_detection",
+        "official_similarity",
+        "exam_style"
+      ],
+      "similarity": {
+        "maximum_score": 0.00885,
+        "threshold": 0.35
+      }
+    }
+  }
+}
