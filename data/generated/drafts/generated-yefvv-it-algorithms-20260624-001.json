@@ -1,0 +1,2772 @@
+{
+  "schema_version": 2,
+  "dataset": {
+    "id": "generated-yefvv-it-algorithms-20260624-001",
+    "title": "Додаткові питання ЄФВВ — Алгоритми та обчислювальна складність",
+    "exam": "ЄФВВ",
+    "subject": "Інформаційні технології",
+    "year": 2026,
+    "languages": [
+      "uk"
+    ],
+    "status": "ready",
+    "origin": "generated",
+    "generation": {
+      "batch_id": "generated-yefvv-it-algorithms-20260624-001",
+      "agent": "codex",
+      "instructions": {
+        "id": "yefvv-it-agent-question-generation",
+        "version": "1.0.0",
+        "sha256": "b530323b3bb2b3812476681ed81b6e11b251e2cc97657527d79779a840f2d593"
+      },
+      "generated_at": "2026-06-24T14:55:21Z",
+      "workflow_version": "1.0.0",
+      "research_report": "reports/generated/generated-yefvv-it-algorithms-20260624-001.research.md",
+      "parameters": {
+        "topic": "Алгоритми та обчислювальна складність",
+        "difficulty": "medium",
+        "difficulty_distribution": {
+          "medium": 20,
+          "hard": 10
+        },
+        "task_type": "single_choice"
+      }
+    },
+    "task_count": 30,
+    "assessment_item_count": 30,
+    "stimulus_count": 0
+  },
+  "sections": [
+    {
+      "code": "1",
+      "title": "Алгоритми та обчислювальна складність"
+    }
+  ],
+  "stimuli": [],
+  "tasks": [
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-01",
+      "number": 1,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-001",
+          "number": 1,
+          "display_label": "1",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Алгоритм спочатку один раз переглядає n елементів, а потім окремо обробляє всі невпорядковані пари цих елементів. Яка асимптотична оцінка часу найточніше описує весь алгоритм?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(n²), бо кількість пар зростає квадратично і домінує над лінійним переглядом."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(n), бо кожен елемент переглядається щонайбільше один раз."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(log n), бо кількість елементів щоразу ділиться навпіл."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(2ⁿ), бо будь-яка робота з парами завжди є експоненційною."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Лінійний етап має порядок Θ(n), а кількість невпорядкованих пар дорівнює n(n−1)/2, тобто Θ(n²). У сумі домінує квадратичний доданок, тому весь алгоритм має Θ(n²)."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-02",
+      "number": 2,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-002",
+          "number": 2,
+          "display_label": "2",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яке твердження правильно інтерпретує запис f(n) = O(g(n)) для часової складності алгоритму?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "f(n) і g(n) мають бути рівними для всіх можливих значень n."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Починаючи з деякого n, f(n) не перевищує g(n), помножену на сталий коефіцієнт."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "f(n) завжди є нижньою межею для g(n)."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Запис означає точну кількість елементарних операцій без сталих множників."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Big O задає асимптотичну верхню межу з точністю до сталого множника та достатньо великих значень n. Це не точна формула кількості операцій і не нижня межа."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-03",
+      "number": 3,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-003",
+          "number": 3,
+          "display_label": "3",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яка функція зростає асимптотично швидше, ніж n log n, але повільніше, ніж n²?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "(log n)²"
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "n"
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "n√n"
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "2ⁿ"
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Функція n√n = n^(3/2) має степінь між 1 і 2, тому для великих n вона перевищує n log n, але поступається n². Лінійна й логарифмічна функції ростуть повільніше, а 2ⁿ — швидше за n²."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-04",
+      "number": 4,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-004",
+          "number": 4,
+          "display_label": "4",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Потрібна структура, у якій елемент, доданий раніше, має бути оброблений раніше за елементи, додані пізніше. Який абстрактний тип даних відповідає цій вимозі?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Стек, бо він вилучає найновіший елемент першим."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Множина, бо вона зберігає кількість однакових елементів."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Словник, бо він обов’язково впорядковує ключі за часом додавання."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Черга, бо вона реалізує принцип first-in, first-out."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Черга обслуговує елементи у порядку надходження: першим вилучається той, що був доданий першим. Стек має протилежну LIFO-поведінку, а множина й словник не задають такої дисципліни обробки."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-05",
+      "number": 5,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-005",
+          "number": 5,
+          "display_label": "5",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У системі планування потрібно багато разів додавати заявки та щоразу швидко вибирати заявку з найменшим числовим пріоритетом. Який абстрактний тип даних найкраще відповідає такій операції?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Черга з пріоритетами."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Невпорядкована множина без операції вибору мінімуму."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Стек, бо остання заявка завжди має бути найважливішою."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кортеж фіксованої довжини, бо кількість заявок наперед невідома."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Черга з пріоритетами підтримує вставлення елементів і вилучення елемента з найвищим або найнижчим пріоритетом. Саме тому її часто реалізують через heap-подібні структури."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-06",
+      "number": 6,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-006",
+          "number": 6,
+          "display_label": "6",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Потрібно зберігати не лише факт появи ідентифікатора, а й кількість його повторень у потоці подій. Який тип даних найточніше відповідає цій потребі?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Звичайна множина, бо вона зберігає кожен елемент рівно один раз."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Мультимножина, бо вона зберігає елементи разом із їхньою кратністю."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Стек, бо він автоматично підраховує дублікати."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Черга, бо вона видаляє всі однакові елементи під час додавання."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Мультимножина відрізняється від звичайної множини тим, що однаковий елемент може мати кратність. Якщо важлива кількість повторень, звичайної множини недостатньо."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-07",
+      "number": 7,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-007",
+          "number": 7,
+          "display_label": "7",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У редакторі потрібно скасувати спочатку найостаннішу виконану дію, потім попередню тощо. Яка структура даних природно моделює таку поведінку?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Черга, бо вона скасовує найдавнішу дію першою."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Множина, бо вона зберігає дії без повторів."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Стек, бо він вилучає найновіший доданий елемент першим."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Вектор, бо він не дозволяє доступ до останнього елемента."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Для скасування дій потрібна LIFO-дисципліна: остання дія має бути оброблена першою. Саме так поводиться стек із операціями додавання на вершину та вилучення з вершини."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-08",
+      "number": 8,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-008",
+          "number": 8,
+          "display_label": "8",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У двобічнозв’язному списку вже відомий вузол, який треба видалити, і доступні посилання на його сусідів. Яке твердження про складність операцій є найточнішим?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Видалення відомого вузла завжди потребує Θ(n log n), бо список треба відсортувати."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Доступ до елемента за довільним номером і видалення відомого вузла завжди мають однакову складність Θ(1)."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Видалення неможливе без копіювання всього списку."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Видалення відомого вузла можна виконати за Θ(1), але пошук вузла за позицією загалом потребує Θ(n)."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Якщо вузол уже знайдено, достатньо перепід’єднати сусідні посилання, тобто локальна операція має сталу складність. Але довільний доступ за індексом у зв’язному списку зазвичай потребує послідовного проходу."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-09",
+      "number": 9,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-009",
+          "number": 9,
+          "display_label": "9",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Для послідовності даних часто потрібні доступ за номером і додавання в кінець, а вставлення всередину трапляється рідко. Яка реалізація зазвичай найкраще відповідає такому профілю операцій?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Динамічний масив: доступ за номером є сталим, а додавання в кінець зазвичай амортизовано стале."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Однобічний список: доступ за номером завжди швидший, ніж у масиві."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Стек: він надає прямий доступ до будь-якого номера без проходу."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Невпорядкована множина: вона зберігає всі позиції і дублікати без втрати порядку."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Динамічний масив зберігає елементи послідовно, тому підтримує швидкий доступ за індексом і ефективне додавання в кінець у типовій амортизованій моделі. Вставлення всередину може вимагати зсуву елементів."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-10",
+      "number": 10,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-010",
+          "number": 10,
+          "display_label": "10",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Словник реалізовано хеш-таблицею. Яке твердження про пошук за ключем є коректним для типової оцінки складності?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Пошук завжди має Θ(log n), незалежно від хеш-функції та колізій."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Середня складність може бути Θ(1), але за несприятливих колізій найгірший випадок може погіршитися."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Пошук завжди має Θ(n²), бо ключ треба порівняти з кожною парою елементів."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Хеш-таблиця за означенням зберігає ключі у відсортованому порядку."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Хеш-таблиці проєктують для майже сталого середнього доступу за ключем. Однак колізії, поганий розподіл або невдала організація бакетів можуть погіршити найгірший випадок."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-11",
+      "number": 11,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-011",
+          "number": 11,
+          "display_label": "11",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Потрібно підтримувати змінну множину чисел з операціями додавання та багаторазового вилучення найменшого елемента. Яка структура зазвичай є природною реалізацією для такої задачі?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Невпорядкований масив, якщо вилучення мінімуму має виконуватися за Θ(1) без додаткових даних."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Звичайна черга, бо мінімальний елемент завжди додається першим."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Двійкова купа як реалізація черги з пріоритетами."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кортеж фіксованої довжини, бо кількість елементів постійно змінюється."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Heap підтримує частковий порядок, достатній для швидкого доступу до екстремального елемента, і є типовою реалізацією пріоритетної черги. Звичайна FIFO-черга не враховує числовий пріоритет."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-12",
+      "number": 12,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-012",
+          "number": 12,
+          "display_label": "12",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "За якої умови бінарний пошук у масиві коректно знаходить елемент за логарифмічну кількість порівнянь?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Елементи можуть бути в довільному порядку, якщо масив має парну довжину."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Масив має містити тільки різні елементи, але порядок не має значення."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Пошук має починатися з першого елемента і рухатися тільки вправо."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Елементи мають бути впорядковані за ключем, щоб можна було відкидати половину області пошуку."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Бінарний пошук спирається на впорядкованість: після порівняння з середнім елементом одна половина масиву гарантовано не містить шуканого ключа. Без порядку таке відкидання некоректне."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-13",
+      "number": 13,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-013",
+          "number": 13,
+          "display_label": "13",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яка ситуація найкраще пояснює, чому сортування вставками може бути практично доречним попри квадратичну складність у найгіршому випадку?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Послідовність майже впорядкована, тому кожен елемент треба зміщувати на невелику відстань."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Потрібно гарантувати Θ(n log n) у найгіршому випадку для довільного входу."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Потрібно сортувати тільки графи, а не лінійні послідовності."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кількість порівнянь завжди дорівнює нулю для будь-якого входу."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Сортування вставками добре поводиться на малих або майже впорядкованих послідовностях, бо кількість необхідних зміщень може бути малою. Але для довільного зворотно впорядкованого входу воно має квадратичну поведінку."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-14",
+      "number": 14,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-014",
+          "number": 14,
+          "display_label": "14",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яка властивість найточніше характеризує сортування вибором у типовій реалізації?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Воно завжди виконує Θ(log n) порівнянь, бо працює як бінарний пошук."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Воно робить квадратичну кількість порівнянь, але кількість обмінів може бути лінійною."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Воно потребує попередньо відсортованого входу, інакше не завершується."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Воно гарантовано стабільне для будь-якої реалізації без додаткових умов."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Сортування вибором багато разів шукає мінімальний елемент у невідсортованій частині, тому порівнянь має Θ(n²). Водночас після кожного проходу зазвичай виконується не більше одного обміну."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-15",
+      "number": 15,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-015",
+          "number": 15,
+          "display_label": "15",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яке твердження про швидке сортування є найточнішим?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Його найгірший випадок завжди Θ(n log n), незалежно від розбиття."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Воно не використовує розбиття послідовності відносно опорного елемента."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "У середньому воно може мати Θ(n log n), але невдалі розбиття можуть призвести до Θ(n²)."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Воно застосовне лише до вже відсортованих послідовностей."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Швидке сортування ефективне, коли розбиття достатньо збалансовані, але послідовно невдалі вибори опорного елемента можуть давати дуже нерівні підзадачі й квадратичний час."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-16",
+      "number": 16,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-016",
+          "number": 16,
+          "display_label": "16",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Чому для довільного порівняльного сортування не очікують алгоритму з найгіршим випадком Θ(n) для всіх можливих наборів різних ключів?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо будь-яке сортування зобов’язане використовувати графи."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо порівняння двох ключів завжди коштує Θ(n)."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо лінійна пам’ять заборонена для всіх алгоритмів сортування."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Бо модель порівнянь має нижню межу порядку Ω(n log n) для розрізнення всіх перестановок."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Порівняльне сортування можна розглядати як дерево рішень, що має відрізнити n! можливих порядків. Висота такого дерева дає асимптотичну нижню межу Ω(n log n)."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-17",
+      "number": 17,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-017",
+          "number": 17,
+          "display_label": "17",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "У неваговому графі потрібно знайти найменшу кількість ребер від заданої вершини до всіх досяжних вершин. Який підхід є найдоречнішим?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Пошук вшир, бо він переглядає вершини шарами за відстанню в ребрах."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Сортування вибором усіх вершин за назвами."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Побудова хеш-таблиці без обходу ребер."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Пошук у глибину, якщо треба гарантувати найкоротшу кількість ребер у першому знайденому шляху."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "BFS використовує чергу і відкриває вершини за зростанням кількості ребер від старту. Тому в неваговому графі перше відкриття вершини дає найкоротшу відстань у ребрах."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-18",
+      "number": 18,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-018",
+          "number": 18,
+          "display_label": "18",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Потрібно визначити кількість зв’язних компонентів у неорієнтованому графі. Який загальний підхід є коректним?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Відсортувати ваги ребер і взяти лише найдорожчі ребра."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Запускати BFS або DFS з кожної ще не відвіданої вершини; кожен такий запуск відповідає новій компоненті."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Видалити всі вершини степеня один, бо вони не можуть належати компонентам."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Порахувати тільки кількість ребер; вона однозначно дорівнює кількості компонентів."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Обхід із невідвіданої вершини знаходить усі вершини її компоненти. Повторюючи це для решти невідвіданих вершин, можна порахувати всі компоненти зв’язності."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-19",
+      "number": 19,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-019",
+          "number": 19,
+          "display_label": "19",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Граф зберігається списками суміжності. Яка асимптотична оцінка часу повного BFS або DFS-обходу є типовою?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(V²E), бо кожне ребро треба порівняти з кожною парою вершин."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(log V), бо обхід завжди ділить граф навпіл."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(V + E), бо кожну вершину та кожне ребро розглядають обмежену кількість разів."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(2V), бо кожна вершина має рівно двох сусідів."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У представленні списками суміжності стандартний обхід відвідує вершини й переглядає інцидентні ребра. Тому час природно оцінюється сумою кількості вершин і ребер."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-20",
+      "number": 20,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-020",
+          "number": 20,
+          "display_label": "20",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Який опис відповідає ідеї алгоритму Крускала для побудови мінімального кістякового дерева зв’язного зваженого неорієнтованого графа?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Почати з довільної вершини і завжди переходити ребром до найвіддаленішої вершини."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Взяти всі ребра графа, а потім вилучити вершини з найбільшим степенем."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Обрати найкоротший шлях між двома заданими вершинами і вважати його кістяковим деревом."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Розглядати ребра за зростанням ваги та додавати ребро, якщо воно не створює цикл."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Крускал будує ліс часткових дерев і додає найменші допустимі ребра, що з’єднують різні компоненти. Ребра, які створюють цикл, пропускаються."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-21",
+      "number": 21,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-021",
+          "number": 21,
+          "display_label": "21",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Для зваженого графа потрібно знайти найкоротші шляхи від однієї вершини. Яке обмеження є принциповим для стандартного застосування алгоритму Дейкстри?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Ваги ребер мають бути невід’ємними, інакше жадібне фіксування найменшої поточної відстані може стати некоректним."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Усі ребра мають мати однакову вагу, інакше алгоритм не може працювати."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Граф обов’язково має бути повним, тобто містити всі можливі ребра."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кількість вершин має бути степенем двійки."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Алгоритм Дейкстри спирається на те, що після вибору вершини з мінімальною поточною відстанню її оцінку уже не покращить майбутній шлях через невід’ємні ребра. Від’ємні ваги руйнують цю властивість."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-22",
+      "number": 22,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-022",
+          "number": 22,
+          "display_label": "22",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Усі ребра графа мають однакову додатну вагу. Потрібно знайти найкоротші шляхи від заданої вершини. Яке твердження є коректним?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Пошук вшир некоректний, бо він ніколи не враховує ребра графа."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "BFS достатній, бо мінімізація сумарної ваги збігається з мінімізацією кількості ребер."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Потрібно обов’язково застосувати сортування всіх вершин за алфавітом."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Найкоротший шлях завжди містить усі вершини графа."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Якщо всі ваги однакові й додатні, шлях із меншою кількістю ребер має меншу сумарну вагу. BFS саме знаходить найменшу кількість ребер від старту в неваговій інтерпретації такого графа."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-23",
+      "number": 23,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-023",
+          "number": 23,
+          "display_label": "23",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Неорієнтований граф має кілька зв’язних компонентів. Потрібно отримати ациклічну підструктуру, що охоплює всі вершини кожної компоненти. Який результат слід очікувати?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Одне кістякове дерево для всього графа незалежно від зв’язності."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Набір найкоротших шляхів між усіма парами вершин."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кістяковий ліс, тобто окреме кістякове дерево для кожної компоненти."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Порожній граф, бо незв’язний граф не має жодних ребер."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Кістякове дерево для всього графа існує лише за зв’язності. Якщо компонент кілька, природним аналогом є кістяковий ліс: у кожній компоненті будується своє дерево."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-24",
+      "number": 24,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-024",
+          "number": 24,
+          "display_label": "24",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Алгоритм ділить задачу розміру n на дві підзадачі розміру n/2, а об’єднання результатів потребує лінійного часу. Яка оцінка відповідає рекурентності T(n)=2T(n/2)+Θ(n)?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(n), бо на кожному рівні є лише одна підзадача."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(n²), бо будь-який рекурсивний алгоритм є квадратичним."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(log n), бо глибина рекурсії логарифмічна і робота на рівнях нульова."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(n log n), бо кожен рівень дає сумарно Θ(n), а рівнів Θ(log n)."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "На кожному рівні дерева рекурсії сумарний розмір підзадач дає лінійну роботу для об’єднання. Кількість рівнів до задач сталого розміру є логарифмічною, тому загальна оцінка Θ(n log n)."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-25",
+      "number": 25,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-025",
+          "number": 25,
+          "display_label": "25",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яка комбінація властивостей найкраще вказує, що задачу доцільно розв’язувати методом динамічного програмування?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Оптимальна відповідь складається з оптимальних відповідей підзадач, а однакові підзадачі виникають багаторазово."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Кожен локально найкращий вибір завжди достатній, і підзадачі ніколи не повторюються."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Розв’язок не можна розбити на підзадачі, але можна випадково вибрати відповідь."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Усі вхідні дані вже впорядковані, тому будь-яке обчислення має сталу складність."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Динамічне програмування використовує оптимальну підструктуру й перекриття підзадач: підраховані значення зберігають, щоб не обчислювати їх повторно. Це відрізняє його від простого жадібного вибору."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-26",
+      "number": 26,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-026",
+          "number": 26,
+          "display_label": "26",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Чому балансування дерев пошуку принципово впливає на асимптотичну складність операцій пошуку?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Балансування робить кількість ключів у дереві сталою."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Воно обмежує висоту дерева логарифмічним порядком, тому шлях пошуку не вироджується в лінійний."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Воно забороняє порівнювати ключі між собою."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Воно перетворює будь-яке дерево на хеш-таблицю без колізій."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "У незбалансованому дереві пошуку висота може стати Θ(n), і операції вздовж шляху також стануть лінійними. Балансування підтримує малу висоту, зазвичай порядку Θ(log n)."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-27",
+      "number": 27,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-027",
+          "number": 27,
+          "display_label": "27",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Для алгоритму “розділяй та володарюй” маємо T(n)=3T(n/2)+Θ(n). Який висновок про порядок зростання є найточнішим?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(n), бо додаткова робота поза рекурсією є лінійною."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(n log n), бо будь-яке ділення навпіл дає саме такий порядок."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(n^(log₂3)), бо сумарна робота зростає швидше за лінійну, але повільніше за квадратичну."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Θ(2ⁿ), бо три рекурсивні виклики завжди означають експоненційність за n."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "c",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Кількість підзадач на рівнях зростає як 3^k, а розмір зменшується як n/2^k. Для цієї рекурентності домінує член n^(log₂3), який лежить між n і n²."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-28",
+      "number": 28,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-028",
+          "number": 28,
+          "display_label": "28",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Динамічне програмування використовує таблицю станів з індексами i=1..n та j=1..m. Кожен стан обчислюється за сталу кількість уже відомих сусідніх станів. Якщо для відновлення відповіді достатньо попереднього рядка, яка оцінка є коректною?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Час Θ(n+m), бо таблиця має два індекси."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Час Θ(log(nm)), бо кожен стан шукається бінарно."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Пам’ять обов’язково Θ(nm), навіть якщо потрібен лише попередній рядок."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Час Θ(nm), а пам’ять можна зменшити до Θ(m) за збереження лише потрібних рядків."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "d",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Станів у таблиці nm, і кожен обчислюється за сталий час, тому час Θ(nm). Якщо залежності використовують лише попередній рядок, усю таблицю тримати не потрібно, і пам’ять можна оптимізувати до Θ(m)."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-29",
+      "number": 29,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-029",
+          "number": 29,
+          "display_label": "29",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яке розрізнення імперативного та декларативного підходів є найбільш коректним у контексті моделей обчислень?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Імперативний підхід описує послідовність зміни стану, а декларативний більше фіксує властивість або результат, який має бути отриманий."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Декларативний підхід завжди вимагає ручного керування пам’яттю, а імперативний забороняє змінні."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Імперативний і декларативний підходи відрізняються лише назвами файлів, а не способом опису обчислень."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Декларативний підхід можливий тільки для задач із числовими графами."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "a",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Імперативне описання зосереджується на кроках і зміні стану. Декларативне описання робить акцент на тому, що має бути істинним або отриманим, залишаючи спосіб виконання менш явно заданим."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-task-30",
+      "number": 30,
+      "type": "single_choice",
+      "language": "uk",
+      "section_code": "1",
+      "instruction": [
+        {
+          "type": "markdown",
+          "text": "Оберіть одну правильну відповідь."
+        }
+      ],
+      "stimulus_ids": [],
+      "choice_sets": [],
+      "items": [
+        {
+          "id": "generated-yefvv-it-algorithms-20260624-001-030",
+          "number": 30,
+          "display_label": "30",
+          "prompt": [
+            {
+              "type": "markdown",
+              "text": "Яке твердження найточніше відображає зміст проблеми зупинки?"
+            }
+          ],
+          "stimulus_ids": [],
+          "response": {
+            "type": "single_choice",
+            "options": [
+              {
+                "id": "a",
+                "label": "А",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Існує універсальний алгоритм, який для будь-якого алгоритму й будь-якого входу завжди правильно визначає, чи завершиться виконання."
+                  }
+                ]
+              },
+              {
+                "id": "b",
+                "label": "Б",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Не існує алгоритму, який для всіх можливих алгоритмів і входів завжди завершується та правильно вирішує, чи буде зупинка."
+                  }
+                ]
+              },
+              {
+                "id": "c",
+                "label": "В",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Проблема зупинки означає лише те, що деякі алгоритми працюють повільніше за інші."
+                  }
+                ]
+              },
+              {
+                "id": "d",
+                "label": "Г",
+                "content": [
+                  {
+                    "type": "markdown",
+                    "text": "Нерозв’язність проблеми зупинки зникає, якщо збільшити обсяг оперативної пам’яті."
+                  }
+                ]
+              }
+            ]
+          },
+          "answer": {
+            "correct_choice": "b",
+            "source": "generated_key"
+          },
+          "explanation": {
+            "status": "generated",
+            "summary": [
+              {
+                "type": "markdown",
+                "text": "Проблема зупинки є класичним прикладом нерозв’язної проблеми: універсальний вирішувач для всіх алгоритмів і входів неможливий. Окремі спеціальні випадки можуть бути вирішуваними, але загального алгоритму немає."
+              }
+            ]
+          },
+          "source": {
+            "generation_batch_id": "generated-yefvv-it-algorithms-20260624-001"
+          }
+        }
+      ]
+    }
+  ],
+  "release": {
+    "status": "ready_for_application",
+    "version": "0.1.0",
+    "verification": {
+      "method": "agent_validation",
+      "status": "passed",
+      "workflow_version": "1.0.0",
+      "validated_at": "2026-06-24T14:55:21Z",
+      "report": "reports/generated/generated-yefvv-it-algorithms-20260624-001.validation.json",
+      "checks": [
+        "schema",
+        "source_grounding",
+        "answer_integrity",
+        "explanation_integrity",
+        "duplicate_detection",
+        "official_similarity",
+        "exam_style"
+      ],
+      "similarity": {
+        "maximum_score": 0.054795,
+        "threshold": 0.35
+      }
+    }
+  }
+}

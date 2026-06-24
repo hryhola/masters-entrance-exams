@@ -1,0 +1,669 @@
+{
+  "schema_version": 1,
+  "batch_id": "generated-yefvv-it-algorithms-20260624-001",
+  "status": "passed",
+  "validated_at": "2026-06-24T14:55:21Z",
+  "workflow_version": "1.0.0",
+  "validator": {
+    "agent": "codex",
+    "method": "agent_validation"
+  },
+  "inputs": {
+    "dataset": "data/generated/drafts/generated-yefvv-it-algorithms-20260624-001.json",
+    "taxonomy": "data/taxonomies/yefvv-it-program-2025.yaml",
+    "official_reference_dataset": "data/yefvv-it-2024.json",
+    "research_report": "reports/generated/generated-yefvv-it-algorithms-20260624-001.research.md",
+    "instruction": "docs/content-generation/YEFVV_IT_AGENT_QUESTION_GENERATION.md",
+    "instruction_sha256": "b530323b3bb2b3812476681ed81b6e11b251e2cc97657527d79779a840f2d593"
+  },
+  "summary": {
+    "questions_checked": 30,
+    "questions_passed": 30,
+    "questions_failed": 0,
+    "difficulty_distribution": {
+      "medium": 20,
+      "hard": 10
+    },
+    "correct_choice_distribution": {
+      "a": 8,
+      "b": 8,
+      "c": 7,
+      "d": 7
+    }
+  },
+  "checks": {
+    "schema": {
+      "status": "passed",
+      "evidence": "JSON parsed successfully; schema v2 validator and runtime adapter accepted all 30 tasks and 30 assessment items."
+    },
+    "source_grounding": {
+      "status": "passed",
+      "evidence": "Every question is mapped to the official 2026 program and/or authoritative algorithm/data-structure references. The batch covers taxonomy items 1.1.1 through 1.3.2."
+    },
+    "answer_integrity": {
+      "status": "passed",
+      "evidence": "All questions were solved independently after drafting. Each has exactly one unconditional correct answer and three mutually incompatible distractors."
+    },
+    "explanation_integrity": {
+      "status": "passed",
+      "evidence": "All explanations justify the selected concept and distinguish it from distractors without relying on hidden context."
+    },
+    "duplicate_detection": {
+      "status": "passed",
+      "evidence": "No exact duplicate prompts, option sets, or 10-word sequences were found inside the batch. Maximum internal token-trigram Jaccard score is 0.06383. Existing generated drafts were also checked; maximum cross-generated score is 0.016."
+    },
+    "official_similarity": {
+      "status": "passed",
+      "evidence": "All 140 official 2024 questions were compared using normalized Unicode word-token trigram Jaccard similarity. Maximum score is 0.054795, below the 0.35 threshold."
+    },
+    "exam_style": {
+      "status": "passed",
+      "evidence": "All questions use neutral Ukrainian academic language, one learning objective, four plausible same-level options, and no prohibited concrete programming language, pseudocode, or program fragment."
+    }
+  },
+  "source_grounding": [
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-001",
+      "topic_code": "1.1.1",
+      "difficulty": "medium",
+      "primary_source": "NIST-BIGO",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-002",
+      "topic_code": "1.1.1",
+      "difficulty": "medium",
+      "primary_source": "NIST-BIGO",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-003",
+      "topic_code": "1.1.1",
+      "difficulty": "medium",
+      "primary_source": "NIST-BIGO",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-004",
+      "topic_code": "1.1.2",
+      "difficulty": "medium",
+      "primary_source": "NIST-QUEUE",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-005",
+      "topic_code": "1.1.2",
+      "difficulty": "medium",
+      "primary_source": "NIST-HEAP",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-006",
+      "topic_code": "1.1.2",
+      "difficulty": "medium",
+      "primary_source": "NIST-TERMS",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-007",
+      "topic_code": "1.1.2",
+      "difficulty": "medium",
+      "primary_source": "NIST-STACK",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-008",
+      "topic_code": "1.1.3",
+      "difficulty": "medium",
+      "primary_source": "NIST-TERMS",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-009",
+      "topic_code": "1.1.3",
+      "difficulty": "medium",
+      "primary_source": "NIST-DYNAMIC-ARRAY",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-010",
+      "topic_code": "1.1.3",
+      "difficulty": "medium",
+      "primary_source": "NIST-DADS-PUBLICATION",
+      "corroborating_source": "NIST-TERMS",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-011",
+      "topic_code": "1.1.2",
+      "difficulty": "medium",
+      "primary_source": "NIST-HEAP",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-012",
+      "topic_code": "1.1.4",
+      "difficulty": "medium",
+      "primary_source": "NIST-BINARY-SEARCH",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-013",
+      "topic_code": "1.1.4",
+      "difficulty": "medium",
+      "primary_source": "NIST-TERMS",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-014",
+      "topic_code": "1.1.4",
+      "difficulty": "medium",
+      "primary_source": "NIST-TERMS",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-015",
+      "topic_code": "1.1.4",
+      "difficulty": "medium",
+      "primary_source": "NIST-DUTCH-FLAG",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-016",
+      "topic_code": "1.1.4",
+      "difficulty": "medium",
+      "primary_source": "NIST-BIGO",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-017",
+      "topic_code": "1.1.5",
+      "difficulty": "medium",
+      "primary_source": "NIST-QUEUE",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-018",
+      "topic_code": "1.1.5",
+      "difficulty": "medium",
+      "primary_source": "NIST-TERMS",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-019",
+      "topic_code": "1.1.5",
+      "difficulty": "medium",
+      "primary_source": "NIST-TERMS",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-020",
+      "topic_code": "1.1.5",
+      "difficulty": "medium",
+      "primary_source": "NIST-KRUSKAL",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-021",
+      "topic_code": "1.1.5",
+      "difficulty": "hard",
+      "primary_source": "NIST-JOHNSON",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-022",
+      "topic_code": "1.1.5",
+      "difficulty": "hard",
+      "primary_source": "NIST-QUEUE",
+      "corroborating_source": "NIST-JOHNSON",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-023",
+      "topic_code": "1.1.5",
+      "difficulty": "hard",
+      "primary_source": "NIST-KRUSKAL",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-024",
+      "topic_code": "1.2.1",
+      "difficulty": "hard",
+      "primary_source": "NIST-BIGO",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-025",
+      "topic_code": "1.2.3",
+      "difficulty": "hard",
+      "primary_source": "NIST-DYNAMIC-PROG",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-026",
+      "topic_code": "1.2.2",
+      "difficulty": "hard",
+      "primary_source": "NIST-TERMS",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-027",
+      "topic_code": "1.2.4",
+      "difficulty": "hard",
+      "primary_source": "NIST-BIGO",
+      "corroborating_source": "MON-PROGRAM-2026",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-028",
+      "topic_code": "1.2.3",
+      "difficulty": "hard",
+      "primary_source": "NIST-DYNAMIC-PROG",
+      "corroborating_source": "NIST-BIGO",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-029",
+      "topic_code": "1.3.1",
+      "difficulty": "hard",
+      "primary_source": "MON-PROGRAM-2026",
+      "corroborating_source": "STANFORD-PARADIGMS",
+      "status": "passed"
+    },
+    {
+      "id": "generated-yefvv-it-algorithms-20260624-001-030",
+      "topic_code": "1.3.2",
+      "difficulty": "hard",
+      "primary_source": "NIST-HALTING",
+      "corroborating_source": "NIST-UNDECIDABLE",
+      "status": "passed"
+    }
+  ],
+  "similarity": {
+    "method": "Lowercase Unicode word tokenization; sets of contiguous 3-token n-grams; Jaccard intersection over union. Exact shared contiguous 10-token sequences were checked separately.",
+    "threshold": 0.35,
+    "maximum_score": 0.054795,
+    "maximum_pair": {
+      "generated_id": "generated-yefvv-it-algorithms-20260624-001-013",
+      "official_id": "yefvv-it-2024-066"
+    },
+    "maximum_internal_score": 0.06383,
+    "maximum_internal_pair": {
+      "generated_id_a": "generated-yefvv-it-algorithms-20260624-001-004",
+      "generated_id_b": "generated-yefvv-it-algorithms-20260624-001-007"
+    },
+    "exact_shared_10_word_sequences": 0,
+    "exact_internal_shared_10_word_sequences": 0,
+    "per_question": [
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-001",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-002",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-003",
+        "nearest_official_id": "yefvv-it-2024-066",
+        "score": 0.025,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-004",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-005",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-006",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-007",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-008",
+        "nearest_official_id": "yefvv-it-2024-066",
+        "score": 0.010989,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-009",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-010",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-011",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-012",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-013",
+        "nearest_official_id": "yefvv-it-2024-066",
+        "score": 0.054795,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-014",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-015",
+        "nearest_official_id": "yefvv-it-2024-066",
+        "score": 0.014706,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-016",
+        "nearest_official_id": "yefvv-it-2024-066",
+        "score": 0.012658,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-017",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-018",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-019",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-020",
+        "nearest_official_id": "yefvv-it-2024-051",
+        "score": 0.006623,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-021",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-022",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-023",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-024",
+        "nearest_official_id": "yefvv-it-2024-066",
+        "score": 0.010638,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-025",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-026",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-027",
+        "nearest_official_id": "yefvv-it-2024-066",
+        "score": 0.011494,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-028",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-029",
+        "nearest_official_id": null,
+        "score": 0,
+        "shared_10_word_sequences": 0
+      },
+      {
+        "id": "generated-yefvv-it-algorithms-20260624-001-030",
+        "nearest_official_id": "yefvv-it-2024-108",
+        "score": 0.011494,
+        "shared_10_word_sequences": 0
+      }
+    ],
+    "semantic_review": [
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-001",
+        "status": "distinct",
+        "reason": "Generated item checks домінувальний доданок часової складності in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-002",
+        "status": "distinct",
+        "reason": "Generated item checks зміст нотації big o in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-003",
+        "status": "distinct",
+        "reason": "Generated item checks порівняння порядків зростання in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-004",
+        "status": "distinct",
+        "reason": "Generated item checks черга як fifo-структура in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-005",
+        "status": "distinct",
+        "reason": "Generated item checks черга з пріоритетами in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-006",
+        "status": "distinct",
+        "reason": "Generated item checks мультимножина і збереження кратності in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-007",
+        "status": "distinct",
+        "reason": "Generated item checks стек як lifo-структура in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-008",
+        "status": "distinct",
+        "reason": "Generated item checks одно- та двобічнозв’язні списки in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-009",
+        "status": "distinct",
+        "reason": "Generated item checks динамічний масив і амортизована складність in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-010",
+        "status": "distinct",
+        "reason": "Generated item checks словник на основі хеш-таблиці in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-011",
+        "status": "distinct",
+        "reason": "Generated item checks heap як реалізація пріоритетної черги in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-012",
+        "status": "distinct",
+        "reason": "Generated item checks бінарний пошук in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-013",
+        "status": "distinct",
+        "reason": "Generated item checks сортування вставками in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-014",
+        "status": "distinct",
+        "reason": "Generated item checks сортування вибором in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-015",
+        "status": "distinct",
+        "reason": "Generated item checks швидке сортування і вибір опорного елемента in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-016",
+        "status": "distinct",
+        "reason": "Generated item checks нижня межа порівняльного сортування in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-017",
+        "status": "distinct",
+        "reason": "Generated item checks bfs для найкоротших шляхів у неваговому графі in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-018",
+        "status": "distinct",
+        "reason": "Generated item checks пошук зв’язних компонентів in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-019",
+        "status": "distinct",
+        "reason": "Generated item checks складність обходу графа зі списками суміжності in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-020",
+        "status": "distinct",
+        "reason": "Generated item checks кістякове дерево мінімальної ваги in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-021",
+        "status": "distinct",
+        "reason": "Generated item checks умова застосування алгоритму дейкстри in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-022",
+        "status": "distinct",
+        "reason": "Generated item checks bfs як окремий випадок найкоротших шляхів in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-023",
+        "status": "distinct",
+        "reason": "Generated item checks кістяковий ліс у незв’язному графі in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-024",
+        "status": "distinct",
+        "reason": "Generated item checks рекурентність divide and conquer in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-025",
+        "status": "distinct",
+        "reason": "Generated item checks ознаки динамічного програмування in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-026",
+        "status": "distinct",
+        "reason": "Generated item checks стратегія балансування in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-027",
+        "status": "distinct",
+        "reason": "Generated item checks оцінювання рекурентності з трьома підзадачами in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-028",
+        "status": "distinct",
+        "reason": "Generated item checks складність табличного динамічного програмування in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-029",
+        "status": "distinct",
+        "reason": "Generated item checks імперативний і декларативний підходи in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      },
+      {
+        "generated_id": "generated-yefvv-it-algorithms-20260624-001-030",
+        "status": "distinct",
+        "reason": "Generated item checks проблема зупинки й нерозв’язність in a new scenario and does not reuse an official 2024 task structure or distractor set."
+      }
+    ]
+  },
+  "existing_generated_similarity": {
+    "method": "Lowercase Unicode word tokenization; sets of contiguous 3-token n-grams; Jaccard intersection over union. Exact shared contiguous 10-token sequences were checked separately.",
+    "threshold": 0.35,
+    "maximum_score": 0.016,
+    "maximum_pair": {
+      "generated_id": "generated-yefvv-it-algorithms-20260624-001-009",
+      "existing_generated_id": "generated-yefvv-it-databases-20260617-001-008"
+    },
+    "exact_shared_10_word_sequences": 0,
+    "status": "passed"
+  },
+  "issues_found": [],
+  "fixes_applied": []
+}
