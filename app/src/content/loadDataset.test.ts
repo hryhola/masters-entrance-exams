@@ -55,6 +55,22 @@ function readGeneratedDatabaseDataset() {
   ) as unknown
 }
 
+function readGeneratedDatabaseSupplementDataset() {
+  return JSON.parse(
+    readFileSync(
+      resolve(
+        process.cwd(),
+        '..',
+        'data',
+        'generated',
+        'drafts',
+        'generated-yefvv-it-databases-20260624-001.json',
+      ),
+      'utf8',
+    ),
+  ) as unknown
+}
+
 function readGeneratedComputerArchitectureDataset() {
   return JSON.parse(
     readFileSync(
@@ -113,6 +129,22 @@ function readGeneratedArtificialIntelligenceDataset() {
         'generated',
         'drafts',
         'generated-yefvv-it-artificial-intelligence-20260618-001.json',
+      ),
+      'utf8',
+    ),
+  ) as unknown
+}
+
+function readGeneratedAlgorithmsDataset() {
+  return JSON.parse(
+    readFileSync(
+      resolve(
+        process.cwd(),
+        '..',
+        'data',
+        'generated',
+        'drafts',
+        'generated-yefvv-it-algorithms-20260624-001.json',
       ),
       'utf8',
     ),
@@ -235,11 +267,30 @@ describe('loadDataset', () => {
           json: async () => readGeneratedArtificialIntelligenceDataset(),
         })
       }
+      if (
+        url ===
+        '/content/datasets/generated-yefvv-it-databases-20260624-001/dataset.json'
+      ) {
+        return Promise.resolve({
+          ok: true,
+          json: async () => readGeneratedDatabaseSupplementDataset(),
+        })
+      }
+      if (
+        url ===
+        '/content/datasets/generated-yefvv-it-algorithms-20260624-001/dataset.json'
+      ) {
+        return Promise.resolve({
+          ok: true,
+          json: async () => readGeneratedAlgorithmsDataset(),
+        })
+      }
       return Promise.resolve({ ok: false, status: 404 })
     })
     vi.stubGlobal('fetch', fetchMock)
 
     const dataset = await loadDataset('yefvv-it-2024-plus-generated')
+    const algorithms = dataset.sections.find((section) => section.code === '1')
     const computerArchitecture = dataset.sections.find(
       (section) => section.code === '2',
     )
@@ -257,6 +308,9 @@ describe('loadDataset', () => {
     const generatedQuestions = dataset.questions.filter(
       (question) => question.origin === 'generated',
     )
+    const generatedAlgorithmQuestions = generatedQuestions.filter(
+      (question) => question.classification.topic?.sectionCode === '1',
+    )
     const generatedDatabaseQuestions = generatedQuestions.filter(
       (question) => question.classification.topic?.sectionCode === '3',
     )
@@ -273,14 +327,15 @@ describe('loadDataset', () => {
       (question) => question.classification.topic?.sectionCode === '10',
     )
 
-    expect(dataset.questions).toHaveLength(245)
+    expect(dataset.questions).toHaveLength(295)
+    expect(algorithms?.questionCount).toBe(43)
     expect(computerArchitecture?.questionCount).toBe(34)
-    expect(databases?.questionCount).toBe(37)
+    expect(databases?.questionCount).toBe(57)
     expect(cybersecurity?.questionCount).toBe(22)
     expect(networks?.questionCount).toBe(28)
     expect(operatingSystems?.questionCount).toBe(32)
     expect(artificialIntelligence?.questionCount).toBe(32)
-    expect(generatedQuestions).toHaveLength(105)
+    expect(generatedQuestions).toHaveLength(155)
     expect(generatedQuestions[0]).toMatchObject({
       number: 141,
       displayLabel: 'Дод. 1',
@@ -292,7 +347,19 @@ describe('loadDataset', () => {
         }),
       },
     })
-    expect(generatedDatabaseQuestions).toHaveLength(20)
+    expect(generatedAlgorithmQuestions).toHaveLength(30)
+    expect(generatedAlgorithmQuestions[0]).toMatchObject({
+      number: 266,
+      displayLabel: 'Дод. 1',
+      verification: { method: 'agent_validation' },
+      classification: {
+        topic: expect.objectContaining({
+          sectionCode: '1',
+          section: 'Алгоритми та обчислювальна складність',
+        }),
+      },
+    })
+    expect(generatedDatabaseQuestions).toHaveLength(40)
     expect(generatedDatabaseQuestions[0]).toMatchObject({
       number: 151,
       displayLabel: 'Дод. 1',
