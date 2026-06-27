@@ -42,6 +42,15 @@ describe('EVI English 2023 dataset', () => {
       },
     })
     expect(dataset.questions[0].options).toHaveLength(8)
+    expect(
+      dataset.questions[0].prompt.flatMap((block) =>
+        block.type === 'markdown' ? [block.text] : [],
+      ),
+    ).toEqual([
+      expect.stringContaining('Match choices'),
+      'Biblioburro',
+      expect.stringContaining('mobile library in rural Colombia'),
+    ])
     expect(dataset.questions[11]).toMatchObject({
       id: 'yevi-en-2023-12',
       correctOption: 'd',

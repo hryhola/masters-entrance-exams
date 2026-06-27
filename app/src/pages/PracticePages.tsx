@@ -17,6 +17,7 @@ import {
 import { Icon } from '../components/Icon'
 import { PageIntro } from '../components/PageIntro'
 import { DatasetError, DatasetLoading } from '../content/DatasetState'
+import { getQuestionOptionLabel } from '../content/questionOptions'
 import type { ExamDataset, Question } from '../content/types'
 import { useDataset } from '../content/useDataset'
 import { PracticeQuestion } from '../features/practice/PracticeQuestion'
@@ -539,6 +540,178 @@ function getQuestionMap(questions: Question[]) {
   return new Map(questions.map((question) => [question.id, question]))
 }
 
+interface MatchingContextItem {
+  id: string
+  answerLabel: string | null
+  displayLabel: string
+  isCurrent: boolean
+  sessionIndex: number
+  title: string
+}
+
+interface MatchingContext {
+  answeredCount: number
+  currentAnswerLabel: string | null
+  currentDisplayLabel: string
+  currentTitle: string
+  items: MatchingContextItem[]
+  labelRange: string
+  total: number
+}
+
+function simplifyMarkdownTitle(text: string) {
+  return text
+    .replace(/^[#>\s-]+/g, '')
+    .replace(/[*_`[\]()]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function getMatchingQuestionTitle(question: Question) {
+  const title = question.prompt
+    .flatMap((block) => (block.type === 'markdown' ? [block.text] : []))
+    .map(simplifyMarkdownTitle)
+    .filter(
+      (text) =>
+        text.length > 0 &&
+        text.length <= 90 &&
+        !/^read\b/i.test(text) &&
+        !text.includes('____') &&
+        !text.endsWith('?'),
+    )
+    .at(0)
+
+  return title ?? `Текст ${question.displayLabel ?? question.number}`
+}
+
+function getMatchingContext(
+  session: PracticeSession,
+  questions: Question[],
+  question: Question,
+): MatchingContext | null {
+  if (!question.answerConstraint?.groupId) return null
+
+  const items = questions
+    .filter(
+      (candidate) =>
+        candidate.answerConstraint?.groupId ===
+        question.answerConstraint?.groupId,
+    )
+    .sort((left, right) => left.number - right.number)
+    .map((candidate) => {
+      const selectedOption = session.answers[candidate.id]
+
+      return {
+        id: candidate.id,
+        answerLabel: selectedOption
+          ? getQuestionOptionLabel(candidate, selectedOption)
+          : null,
+        displayLabel: candidate.displayLabel ?? String(candidate.number),
+        isCurrent: candidate.id === question.id,
+        sessionIndex: session.questionIds.indexOf(candidate.id),
+        title: getMatchingQuestionTitle(candidate),
+      }
+    })
+
+  if (items.length <= 1) return null
+
+  const currentItem = items.find((item) => item.isCurrent)
+  const labels = items.map((item) => item.displayLabel)
+
+  return {
+    answeredCount: items.filter((item) => item.answerLabel !== null).length,
+    currentAnswerLabel: currentItem?.answerLabel ?? null,
+    currentDisplayLabel:
+      currentItem?.displayLabel ??
+      question.displayLabel ??
+      String(question.number),
+    currentTitle: currentItem?.title ?? getMatchingQuestionTitle(question),
+    items,
+    labelRange:
+      labels.length > 1
+        ? `${labels[0]}-${labels[labels.length - 1]}`
+        : labels[0],
+    total: items.length,
+  }
+}
+
+function MatchingContextPanel({
+  context,
+  onGoTo,
+}: {
+  context: MatchingContext
+  onGoTo: (index: number) => void
+}) {
+  return (
+    <aside
+      aria-label="Стан завдання на відповідність"
+      className="matching-context-panel"
+    >
+      <div className="matching-context-panel__heading">
+        <div>
+          <p className="eyebrow">Завдання на відповідність</p>
+          <h2>Тексти {context.labelRange}</h2>
+        </div>
+        <strong>
+          {context.answeredCount}/{context.total}
+        </strong>
+      </div>
+
+      <div className="matching-context-panel__current">
+        <span>Поточний текст</span>
+        <strong>
+          {context.currentDisplayLabel}. {context.currentTitle}
+        </strong>
+        <small>
+          {context.currentAnswerLabel
+            ? `Відповідь ${context.currentAnswerLabel}`
+            : 'Без відповіді'}
+        </small>
+      </div>
+
+      <div className="matching-context-list">
+        {context.items.map((item) => {
+          const className = [
+            'matching-context-item',
+            item.isCurrent ? 'matching-context-item--current' : '',
+            item.answerLabel ? 'matching-context-item--answered' : '',
+            item.sessionIndex < 0 ? 'matching-context-item--unavailable' : '',
+          ]
+            .filter(Boolean)
+            .join(' ')
+          const content = (
+            <>
+              <span className="matching-context-item__number">
+                {item.displayLabel}
+              </span>
+              <span className="matching-context-item__title">{item.title}</span>
+              <span className="matching-context-item__answer">
+                {item.answerLabel ?? '—'}
+              </span>
+            </>
+          )
+
+          return item.sessionIndex >= 0 ? (
+            <button
+              aria-current={item.isCurrent ? 'step' : undefined}
+              className={className}
+              key={item.id}
+              onClick={() => onGoTo(item.sessionIndex)}
+              type="button"
+            >
+              {content}
+            </button>
+          ) : (
+            <span className={className} key={item.id}>
+              {content}
+            </span>
+          )
+        })}
+      </div>
+    </aside>
+  )
+}
+
 function SessionNavigator({
   session,
   questionsById,
@@ -709,6 +882,7 @@ export function SessionPage() {
   const revealed = activeSession.revealedQuestionIds.includes(questionId)
   const recommendationReasons = activeSession.questionReasons[questionId] ?? []
   const answeredCount = Object.keys(activeSession.answers).length
+  const matchingContext = getMatchingContext(activeSession, questions, question)
   const progress = Math.round(
     ((session.currentIndex + 1) / session.questionIds.length) * 100,
   )
@@ -821,6 +995,12 @@ export function SessionPage() {
             ref={questionAnchorRef}
             tabIndex={-1}
           >
+            {matchingContext ? (
+              <MatchingContextPanel
+                context={matchingContext}
+                onGoTo={(index) => dispatch({ type: 'go_to', index })}
+              />
+            ) : null}
             <PracticeQuestion
               experience={session.config.experience}
               disabledOptionIds={disabledOptionIds}

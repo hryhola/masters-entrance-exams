@@ -85,6 +85,7 @@ describe('PracticeQuestion', () => {
     expect(
       screen.queryByText('Пояснення правильної відповіді.'),
     ).not.toBeInTheDocument()
+    expect(screen.getByText('Вибрано')).toBeInTheDocument()
   })
 
   it('lets the user choose an answer and shows learning feedback', async () => {

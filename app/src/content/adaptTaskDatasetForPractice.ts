@@ -54,6 +54,21 @@ function resolveChoices(task: AssessmentTask, item: AssessmentItem): Choice[] {
   return choiceSet.choices
 }
 
+function resolvePracticePrompt(
+  task: AssessmentTask,
+  item: AssessmentItem,
+  stimuliById: Map<string, Stimulus>,
+): ContentBlock[] {
+  const taskStimuli = resolveStimuli(task.stimulusIds, stimuliById)
+  const itemStimuli = resolveStimuli(item.stimulusIds, stimuliById)
+
+  if (task.type === 'matching') {
+    return [...task.instruction, ...taskStimuli, ...item.prompt, ...itemStimuli]
+  }
+
+  return [...task.instruction, ...taskStimuli, ...itemStimuli, ...item.prompt]
+}
+
 function topicFor(task: AssessmentTask, sectionTitle: string) {
   if (task.sectionCode === 'english-reading') {
     return { code: 'english-reading', title: 'Reading' }
@@ -115,12 +130,7 @@ function adaptItem(
             unique: task.choiceSets[0].unique,
           }
         : undefined,
-    prompt: [
-      ...task.instruction,
-      ...resolveStimuli(task.stimulusIds, stimuliById),
-      ...resolveStimuli(item.stimulusIds, stimuliById),
-      ...item.prompt,
-    ],
+    prompt: resolvePracticePrompt(task, item, stimuliById),
     options: choices.map((choice) => ({
       id: choice.id,
       label: choice.label,

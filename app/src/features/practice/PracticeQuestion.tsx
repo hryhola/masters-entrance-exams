@@ -100,6 +100,9 @@ export function PracticeQuestion({
                     Ваша відповідь
                   </span>
                 ) : null}
+                {!revealed && isSelected ? (
+                  <span className="practice-option__status">Вибрано</span>
+                ) : null}
                 {isDisabled ? (
                   <span className="practice-option__status">
                     Уже використано
